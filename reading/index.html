@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Reading - Exploration Seismology</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">Exploration Seismology</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="../info/">Info</a>
+                            </li>
+                            <li >
+                                <a href="../outline/">Outline</a>
+                            </li>
+                            <li >
+                                <a href="../goals/">Goals</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">Reading</a>
+                            </li>
+                            <li >
+                                <a href="../homework/">Homework</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../goals/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../homework/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#general-introduction">General introduction</a></li>
+            <li><a href="#reading-material">Reading material</a></li>
+            <li><a href="#material-presented-in-class">Material presented in class</a></li>
+        <li class="main "><a href="#seismic-data-acquisition">Seismic data acquisition</a></li>
+            <li><a href="#material-presented-in-class_1">Material presented in class</a></li>
+        <li class="main "><a href="#from-processing-to-inversion">From processing to inversion</a></li>
+            <li><a href="#reading-material_1">Reading material</a></li>
+            <li><a href="#material-presented-in-class_2">Material presented in class</a></li>
+        <li class="main "><a href="#compressive-sensing">Compressive sensing</a></li>
+            <li><a href="#reading-material_2">Reading material</a></li>
+            <li><a href="#material-presented-in-class_3">Material presented in class</a></li>
+        <li class="main "><a href="#linearized-inversion">Linearized inversion</a></li>
+            <li><a href="#reading-material_3">Reading material</a></li>
+            <li><a href="#material-presented-in-class_4">Material presented in class</a></li>
+        <li class="main "><a href="#rtm-fwi">RTM &amp; FWI</a></li>
+            <li><a href="#reading-material_4">Reading material</a></li>
+            <li><a href="#material-presented-in-class_5">Material presented in class</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="general-introduction">General introduction</h1>
+<h4 id="reading-material">Reading material</h4>
+<ul>
+<li>John Scales: <a href="https://www.slim.eos.ubc.ca/~felix/Teaching/EOSC454/2014/reading/imaging.pdf">Theory of Seismic Imaging</a> Chapters 1, 2, 10.3</li>
+<li>Guy Drijkoningen: Seismic Data Processing - TG001 / TA3600 Chapters 1,2,3, 4.6, 4.7. and Introduction to Reflection Seismology TA3520 Chapter 5.</li>
+<li>Yilmaz's “bible”</li>
+</ul>
+<h4 id="material-presented-in-class">Material presented in class</h4>
+<ul>
+<li>Slides for basics of seismic data processing</li>
+<li>Slides for wavefield extrapolation, prestack migration, and velocity analysis</li>
+<li>Slides for f-k filtering, Radon filtering, and deconvolution</li>
+</ul>
+<hr />
+<h1 id="seismic-data-acquisition">Seismic data acquisition</h1>
+<h4 id="material-presented-in-class_1">Material presented in class</h4>
+<ul>
+<li>Practical aspects of seismic acquisition</li>
+</ul>
+<hr />
+<h1 id="from-processing-to-inversion">From processing to inversion</h1>
+<h4 id="reading-material_1">Reading material</h4>
+<ul>
+<li>Jon Claerbout: IMAGE ESTIMATION BY EXAMPLE: Geophysical Soundings Image Construction Chapter 1.</li>
+<li>John A. Scales, Martin L. Smith and Sven Treitel Introductory Geophysical Inverse Theory Chapter 4</li>
+<li>Richard Baraniuk: More Is Less: Signal Processing and the Data Deluge</li>
+<li>Felix J. Herrmann, Michael P.Friedlander, Ozgur Yilmaz: Fighting the curse of dimensionality: compressive sensing in exploration seismology</li>
+<li>Felix J. Herrmann: Randomized sampling and sparsity: getting more information from fewer samples. Geophysics 75, WB173 (2010); doi:10.1190/1.350614</li>
+</ul>
+<h4 id="material-presented-in-class_2">Material presented in class</h4>
+<ul>
+<li>From Processing to Inversion</li>
+</ul>
+<hr />
+<h1 id="compressive-sensing">Compressive sensing</h1>
+<h4 id="reading-material_2">Reading material</h4>
+<ul>
+<li>IEEE Signal Processing Magazine Richard Baraniuk: Compressive sensing and More Is Less: Signal Processing and the Data Deluge</li>
+<li>Emmanuel Candes and Michael Wakin: An introduction to Compressive Sensing</li>
+<li>Justin Romberg: Imaging via compressive sampling</li>
+<li>Felix J. Herrmann: Randomized sampling and sparsity: getting more information from fewer samples. Geophysics 75, WB173 (2010); doi:10.1190/1.350614</li>
+<li>Felix J. Herrmann, Michael P. Friedlander, Ozgur Yilmaz: Fighting the curse of dimensionality: compressive sensing in exploration seismology</li>
+</ul>
+<h4 id="material-presented-in-class_3">Material presented in class</h4>
+<ul>
+<li>Basics of Compressive sensing</li>
+</ul>
+<hr />
+<h1 id="linearized-inversion">Linearized inversion</h1>
+<h4 id="reading-material_3">Reading material</h4>
+<ul>
+<li>A. Gisolf. On the shortcomings of linear AVP( AVO/AVA) inversion.</li>
+</ul>
+<h4 id="material-presented-in-class_4">Material presented in class</h4>
+<ul>
+<li>Linearized inversion of amplitude-versus-offset data</li>
+</ul>
+<hr />
+<h1 id="rtm-fwi">RTM &amp; FWI</h1>
+<h4 id="reading-material_4">Reading material</h4>
+<ul>
+<li>Gerhard Pratt: Gauss-Newton and full Newton methods in frequency domain seismic waveform inversion. Geophysical Journal International, 133, 341-362.</li>
+<li>Andreas Fichtner: Full Seismic Waveform Modelling and Inversion chapter 10 and 11</li>
+</ul>
+<h4 id="material-presented-in-class_5">Material presented in class</h4>
+<ul>
+<li>Full-waveform inversion</li>
+</ul></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
