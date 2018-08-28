@@ -2,13 +2,13 @@
 
 #### Reading material
 
-- John Scales: [Theory of Seismic Imaging](https://www.slim.eos.ubc.ca/~felix/Teaching/EOSC454/2014/reading/imaging.pdf) Chapters 1, 2, 10.3
-- Guy Drijkoningen: Seismic Data Processing - TG001 / TA3600 Chapters 1,2,3, 4.6, 4.7. and Introduction to Reflection Seismology TA3520 Chapter 5.
+- John Scales: [Theory of Seismic Imaging](https://www.dropbox.com/s/cdt8ndqy3fnvqpf/imaging_scales.pdf?dl=0) Chapters 1, 2, 10.3
+- Guy Drijkoningen: [Seismic Data Processing](https://www.dropbox.com/s/x7sng1s982484o0/SeismicProcessing2%28tg001_ta3600%29.pdf?dl=0) - TG001 / TA3600 Chapters 1,2,3, 4.6, 4.7. and [Introduction to Reflection Seismology TA3520](https://www.dropbox.com/s/hgheb1u1rrflzpk/IntroductionreflectionSeismology%28ta3520%29.pdf?dl=0) Chapter 5.
 - Yilmaz's “bible”
 
 #### Material presented in class
 
-- Slides for basics of seismic data processing
+- [Slides for Lecture 1: Introduction](https://www.dropbox.com/s/5e4mn6zhq4jn6fr/1-Exploration_Seismology.pdf?dl=0)
 - Slides for wavefield extrapolation, prestack migration, and velocity analysis
 - Slides for f-k filtering, Radon filtering, and deconvolution
 
