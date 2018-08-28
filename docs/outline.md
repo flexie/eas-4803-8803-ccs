@@ -18,7 +18,7 @@
 
 - Wavefield extrapolation via Rayleigh II
 - Wavefield extrapolation via the f-k domain
-- $V(z)$ migration
+- \(V(z)\) migration
 - Shot record migration
 - Recursive extrapolation in varying media
 - Pre-stack shot migration
@@ -27,6 +27,7 @@
 - Velocity-model estimation
    - Traveltime tomography
    - migration-velocity analysis
+
 
 ### Filtering
 
