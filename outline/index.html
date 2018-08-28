@@ -47,7 +47,7 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="..">Info</a>
+                                <a href="../info/">Info</a>
                             </li>
                             <li class="active">
                                 <a href="./">Outline</a>
@@ -70,7 +70,7 @@
                             </a>
                         </li>
                             <li >
-                                <a rel="next" href="..">
+                                <a rel="next" href="../info/">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -119,7 +119,8 @@
 <ul>
 <li>Wavefield extrapolation via Rayleigh II</li>
 <li>Wavefield extrapolation via the f-k domain</li>
-<li>(V(z)) migration</li>
+<li>
+<script type="math/tex">V(z)</script> migration</li>
 <li>Shot record migration</li>
 <li>Recursive extrapolation in varying media</li>
 <li>Pre-stack shot migration</li>
@@ -200,11 +201,10 @@
         </footer>
         <script>
             var base_url = "..",
-                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../js/base.js" defer></script>
-        <script src="../javascripts/extra.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
         <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
