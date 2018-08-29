@@ -74,7 +74,7 @@ This will give you access to a terminal, in which you can start Julia/Python, ru
 
 During the course you will work on the following excercises
 
-1. A first look at seismic data.
+1. A first look at seismic data. [Exercise 1](Assignments/Exercise1.md)
 
 1. NMO correction and velocity analysis
 
