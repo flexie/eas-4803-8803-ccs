@@ -9,6 +9,7 @@
 #### Material presented in class
 
 - [Slides for Lecture 1: Introduction](https://www.dropbox.com/s/5e4mn6zhq4jn6fr/1-Exploration_Seismology.pdf?dl=0)
+- [Slides for Lecture 2: Introduction](https://www.dropbox.com/s/7qi7kgm3d4ciakx/2-Exploration_Seismology-basics.pdf?dl=0)
 - Slides for wavefield extrapolation, prestack migration, and velocity analysis
 - Slides for f-k filtering, Radon filtering, and deconvolution
 
