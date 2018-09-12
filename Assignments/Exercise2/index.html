@@ -82,7 +82,7 @@
         <li class="main "><a href="#constant-velocity-nmo-correction">Constant velocity NMO correction</a></li>
         <li class="main "><a href="#windowing">Windowing</a></li>
         <li class="main "><a href="#stack-power">Stack power</a></li>
-        <li class="main "><a href="#look-at-the-velocity-profile-with-the-picket-tauv-pairs">Look at the velocity profile with the picket tau/v pairs</a></li>
+        <li class="main "><a href="#look-at-the-velocity-profile-with-the-picked-tauv-pairs">Look at the velocity profile with the picked tau/v pairs</a></li>
         <li class="main "><a href="#velocity-analysis">Velocity analysis</a></li>
     </ul>
 </div></div>
@@ -98,7 +98,7 @@ $</p>
 <p>$
 d_{NMO}(t_0,h) = d(\tau(t_0,h),h)
 $</p>
-<p>You can use the function <code>nmo</code> omplement later for this for this.</p>
+<p>You can use the function <code>nmo</code> implemented below for this exercise.</p>
 <pre><code class="julia">using Dierckx
 function nmo(cmp, t, off, v)
 # NMO correction and adjoint
@@ -145,14 +145,12 @@ end
 blocks = segy_read(&quot;/data/mlouboutin3/Class_data/cube2.segy&quot;);
 </code></pre>
 
-<pre><code>[1m[33mWARNING: [39m[22m[33mFixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=90663444, maxsize=Inf, ptr=3601, mark=-1)[39m
-</code></pre>
 <pre><code class="julia">sx = get_header(blocks, &quot;SourceX&quot;;scale=false)
 rx = get_header(blocks, &quot;GroupX&quot;;scale=false);
 
 </code></pre>
 
-<pre><code class="julia"># Get the tme axis. In this case the time axis is the same for all traces so we only need to extract it from the first trace
+<pre><code class="julia"># Get the time axis. In this case the time axis is the same for all traces so we only need to extract it from the first trace
 # dt needs to be corrected for the binary setup
 # All the times are in ms
 dt = get_header(blocks, &quot;dt&quot;)[1]/1000
@@ -162,7 +160,7 @@ T = 0:dt:(nt-1)*dt
 
 <pre><code>0.0:4.0:2000.0
 </code></pre>
-<pre><code class="julia">#Midpoint and offset
+<pre><code class="julia"># Midpoint and offset
 h = (sx .- rx);
 m = (sx .+ rx)./2;
 </code></pre>
@@ -238,7 +236,7 @@ ylabel(&quot;time&quot;)
 <p>The function $ S(t_0,v) $ is called a semblance panel.</p>
 <p>The desired NMO velocity can be found by picking the maximum as a function of $t_0$ and $v$ from the semblance panel.</p>
 <p>An example of a semblance panel and the resulting NMO velocity is shown below.</p>
-<pre><code class="julia">v = linspace(1000, 6000, 500)
+<pre><code class="julia">v = linspace(1000, 3000, 500)
 # scan over velocities
 S = zeros(length(T),length(v));
 for k = 1:length(v)
@@ -266,7 +264,7 @@ spl = Spline1D(tv, vnmo; k=1)
 vnmo_all = spl(T);
 </code></pre>
 
-<h1 id="look-at-the-velocity-profile-with-the-picket-tauv-pairs">Look at the velocity profile with the picket tau/v pairs</h1>
+<h1 id="look-at-the-velocity-profile-with-the-picked-tauv-pairs">Look at the velocity profile with the picked tau/v pairs</h1>
 <pre><code class="julia"># Enable gui to have the cursor and pick v/tau pairs
 figure()
 imshow(S, vmin=0, vmax=1e3, cmap=&quot;jet&quot;, aspect=1, extent=[v[1], v[end], T[end], 0])
