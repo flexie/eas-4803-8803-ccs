@@ -72,9 +72,9 @@ This will give you access to a terminal, in which you can start Julia/Python, ru
 
 ## Exercises
 
-During the course you will work on the following excercises
+During the course you will work on the following exercises
 
-1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md) [Exercise 1](Assignments/Exercise1.md)
+1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md) [Exercise 1](Assignments/Exercise1.md) [[Solution]](https://www.slim.eos.ubc.ca/Teaching/EOSC454/exercise1_sol.html)
 
 1. NMO correction and velocity analysis [Exercise 2](Assignments/Exercise2.md)
 
