@@ -14,7 +14,7 @@ $
 d_{NMO}(t_0,h) = d(\tau(t_0,h),h)
 $
 
-You can use the function `nmo` omplement later for this for this.
+You can use the function `nmo` implemented below for this exercise.
 
 
 
@@ -75,8 +75,6 @@ using SeisIO, PyPlot
 blocks = segy_read("/data/mlouboutin3/Class_data/cube2.segy");
 ```
 
-    [1m[33mWARNING: [39m[22m[33mFixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=90663444, maxsize=Inf, ptr=3601, mark=-1)[39m
-
 
 
 ```julia
@@ -87,7 +85,7 @@ rx = get_header(blocks, "GroupX";scale=false);
 
 
 ```julia
-# Get the tme axis. In this case the time axis is the same for all traces so we only need to extract it from the first trace
+# Get the time axis. In this case the time axis is the same for all traces so we only need to extract it from the first trace
 # dt needs to be corrected for the binary setup
 # All the times are in ms
 dt = get_header(blocks, "dt")[1]/1000
@@ -104,7 +102,7 @@ T = 0:dt:(nt-1)*dt
 
 
 ```julia
-#Midpoint and offset
+# Midpoint and offset
 h = (sx .- rx);
 m = (sx .+ rx)./2;
 ```
@@ -239,7 +237,7 @@ An example of a semblance panel and the resulting NMO velocity is shown below.
 
 
 ```julia
-v = linspace(1000, 6000, 500)
+v = linspace(1000, 3000, 500)
 # scan over velocities
 S = zeros(length(T),length(v));
 for k = 1:length(v)
@@ -281,7 +279,7 @@ spl = Spline1D(tv, vnmo; k=1)
 vnmo_all = spl(T);
 ```
 
-# Look at the velocity profile with the picket tau/v pairs
+# Look at the velocity profile with the picked tau/v pairs
 
 
 ```julia
