@@ -78,7 +78,7 @@ During the course you will work on the following exercises
 
 1. NMO correction and velocity analysis [Exercise 2](Assignments/Exercise2.md)
 
-1. Wavefield extrapolation and migration.
+1. Wavefield extrapolation and migration. [Exercise 3](Assignments/Exercise3.md)
 
 1. Fourier, Radon and filtering.
 
