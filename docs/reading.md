@@ -15,7 +15,9 @@
 - [Slides for Lecture 5: Basic seismic data processing 4](https://www.dropbox.com/s/hfyc81n012s8o4a/5-Exploration_Seismology-basics.pdf?dl=0)
 - [Slides for Lecture 6: Basic seismic data processing 5](https://www.dropbox.com/s/5sl67ssdzehu7jl/6-Exploration_Seismology-migration.pdf?dl=0)
 - [Slides for Lecture 7: Basic seismic data processing 6](https://www.dropbox.com/s/589st3bu5a5qwpg/7-Exploration_Seismology-migration.pdf?dl=0)
-
+- [Slides for Lecture 8: Basic seismic data processing 7](https://www.dropbox.com/s/w3yv0atpmm46fa6/8-Exploration_Seismology-migration.pdf?dl=0)
+- [Slides for Lecture 7: Basic seismic data processing 6](https://www.dropbox.com/s/589st3bu5a5qwpg/7-Exploration_Seismology-migration.pdf?dl=0)
+- [Slides for Lecture 8: Basic seismic data processing 7](https://www.dropbox.com/s/w3yv0atpmm46fa6/8-Exploration_Seismology-migration.pdf?dl=0)
 - Slides for wavefield extrapolation, prestack migration, and velocity analysis
 - Slides for f-k filtering, Radon filtering, and deconvolution
 
