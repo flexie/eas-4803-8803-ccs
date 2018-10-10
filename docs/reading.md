@@ -22,8 +22,8 @@
 )
 - [Slides for Lecture 10: Basic seismic data processing 9](https://www.dropbox.com/s/x2hfi4k0kcflvq3/10-Exploration_Seismology-fk-radon.pdf?dl=0
 )
-- Slides for wavefield extrapolation, prestack migration, and velocity analysis
-- Slides for f-k filtering, Radon filtering, and deconvolution
+- [Slides for Lecture 11: Basic seismic data processing 9](https://www.dropbox.com/s/2y2proguwxhtooq/11-Exploration_Seismology-fk-radon.pdf?dl=0
+)
 
 *** 
 
@@ -31,7 +31,8 @@
 
 #### Material presented in class
 
-- Practical aspects of seismic acquisition
+- - [Slides for Lecture 12: Practical aspects of seismic acquisition](https://www.dropbox.com/s/psfngqbbli2uvm3/12-Exploration_Seismology-acquisition.pdf?dl=0
+)
 
 ***
 
