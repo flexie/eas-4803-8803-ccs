@@ -86,7 +86,7 @@ xlabel("offset [m]");ylabel("time [s]");
 ```
 
 
-![png](../img//Exercise4_4_0.png)
+![png](../img/Exercise4_4_0.png)
 
 
 **Temporal Fourier transform**
@@ -159,7 +159,7 @@ xlabel("offset [m]");ylabel("frequency [Hz]")
 ```
 
 
-![png](../img//Exercise4_8_0.png)
+![png](../img/Exercise4_8_0.png)
 
 
 
@@ -245,7 +245,7 @@ xlabel("wavenumber [1/m");ylabel("frequency [Hz]")
 ```
 
 
-![png](../img//Exercise4_12_0.png)
+![png](../img/Exercise4_12_0.png)
 
 
 
@@ -276,7 +276,7 @@ xlabel("offset [m]");ylabel("frequency [Hz]")
 ```
 
 
-![png](../img//Exercise4_15_0.png)
+![png](../img/Exercise4_15_0.png)
 
 
 
@@ -295,7 +295,7 @@ xlabel("offset [m]");ylabel("frequency [Hz]")
 ```
 
 
-![png](../img//Exercise4_17_0.png)
+![png](../img/Exercise4_17_0.png)
 
 
 
@@ -336,7 +336,7 @@ xlabel("offset [m]");ylabel("frequency [Hz]")
 ```
 
 
-![png](../img//Exercise4_20_0.png)
+![png](../img/Exercise4_20_0.png)
 
 
 
@@ -354,7 +354,7 @@ xlabel("offset [m]");ylabel("frequency [Hz]")
 ```
 
 
-![png](../img//Exercise4_21_0.png)
+![png](../img/Exercise4_21_0.png)
 
 
 
@@ -381,7 +381,7 @@ xlabel("wavenumber [1/m");ylabel("frequency [Hz]")
 ```
 
 
-![png](../img//Exercise4_23_0.png)
+![png](../img/Exercise4_23_0.png)
 
 
 
@@ -552,7 +552,7 @@ xlabel("offset [m]");ylabel("time [s]");
 ```
 
 
-![png](../img//Exercise4_28_0.png)
+![png](../img/Exercise4_28_0.png)
 
 
 
@@ -607,7 +607,7 @@ xlabel("slowness [s/m]");ylabel("time [s]");
 ```
 
 
-![png](../img//Exercise4_30_0.png)
+![png](../img/Exercise4_30_0.png)
 
 
 #  Questions

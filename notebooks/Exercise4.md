@@ -210,7 +210,7 @@ function fktran(a,t,x,mode)
     elseif mode == -1
         b = circshift(a,[0 floor(Int, nx/2)+1]);
         b = fft(b, 2)
-        b = ifft(b, 1)
+        b = ifft([b;conj(b[end:-1:2,:])], 1)
         b = real(b)
     else
         error("unknown mode")
@@ -255,6 +255,29 @@ xlabel("wavenumber [1/m");ylabel("frequency [Hz]")
 
 
 
+
+```julia
+back, _, _ = fktran(Data_fk, fk, kx, -1)
+imshow(back, vmin=-1, vmax=1, cmap="Greys", extent=[h[end], h[1], T[end], T[1]], aspect=1000)
+xlabel("offset [m]");ylabel("time [s]");
+```
+
+
+![png](Exercise4_files/Exercise4_13_0.png)
+
+
+
+```julia
+size(shot_data)
+```
+
+
+
+
+    (1001, 401)
+
+
+
 # Questions:
 Subsample the data in the offset direction and look at the Fourier transform. (Hint: use Data[:,1:n:end] and h[1:n:end] where n is the number of times you want to subsample).
 
@@ -276,7 +299,7 @@ xlabel("offset [m]");ylabel("frequency [Hz]")
 ```
 
 
-![png](Exercise4_files/Exercise4_15_0.png)
+![png](Exercise4_files/Exercise4_17_0.png)
 
 
 
@@ -295,7 +318,7 @@ xlabel("offset [m]");ylabel("frequency [Hz]")
 ```
 
 
-![png](Exercise4_files/Exercise4_17_0.png)
+![png](Exercise4_files/Exercise4_19_0.png)
 
 
 
@@ -336,7 +359,7 @@ xlabel("offset [m]");ylabel("frequency [Hz]")
 ```
 
 
-![png](Exercise4_files/Exercise4_20_0.png)
+![png](Exercise4_files/Exercise4_22_0.png)
 
 
 
@@ -354,7 +377,7 @@ xlabel("offset [m]");ylabel("frequency [Hz]")
 ```
 
 
-![png](Exercise4_files/Exercise4_21_0.png)
+![png](Exercise4_files/Exercise4_23_0.png)
 
 
 
@@ -381,7 +404,7 @@ xlabel("wavenumber [1/m");ylabel("frequency [Hz]")
 ```
 
 
-![png](Exercise4_files/Exercise4_23_0.png)
+![png](Exercise4_files/Exercise4_25_0.png)
 
 
 
@@ -552,7 +575,7 @@ xlabel("offset [m]");ylabel("time [s]");
 ```
 
 
-![png](Exercise4_files/Exercise4_28_0.png)
+![png](Exercise4_files/Exercise4_30_0.png)
 
 
 
@@ -607,7 +630,7 @@ xlabel("slowness [s/m]");ylabel("time [s]");
 ```
 
 
-![png](Exercise4_files/Exercise4_30_0.png)
+![png](Exercise4_files/Exercise4_32_0.png)
 
 
 #  Questions

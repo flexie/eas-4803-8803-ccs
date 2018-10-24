@@ -80,9 +80,9 @@ During the course you will work on the following exercises
 
 1. Wavefield extrapolation and migration. [Exercise 3](Assignments/Exercise3.md)
 
-1. Fourier, Radon and filtering.
+1. Fourier, Radon and filtering.[Exercise 4](Assignments/Exercise4.md)
 
-1. From processing to inversion I.
+1. From processing to inversion I.[Exercise 5](Assignments/Exercise5.md)
 
 1. From processing to inversion II.
 
