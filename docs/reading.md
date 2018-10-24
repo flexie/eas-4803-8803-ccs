@@ -22,7 +22,7 @@
 )
 - [Slides for Lecture 10: Basic seismic data processing 9](https://www.dropbox.com/s/x2hfi4k0kcflvq3/10-Exploration_Seismology-fk-radon.pdf?dl=0
 )
-- [Slides for Lecture 11: Basic seismic data processing 9](https://www.dropbox.com/s/2y2proguwxhtooq/11-Exploration_Seismology-fk-radon.pdf?dl=0
+- [Slides for Lecture 11: Basic seismic data processing 10](https://www.dropbox.com/s/2y2proguwxhtooq/11-Exploration_Seismology-fk-radon.pdf?dl=0
 )
 
 *** 
@@ -31,7 +31,7 @@
 
 #### Material presented in class
 
-- - [Slides for Lecture 12: Practical aspects of seismic acquisition](https://www.dropbox.com/s/psfngqbbli2uvm3/12-Exploration_Seismology-acquisition.pdf?dl=0
+- [Slides for Lecture 12: Practical aspects of seismic acquisition](https://www.dropbox.com/s/psfngqbbli2uvm3/12-Exploration_Seismology-acquisition.pdf?dl=0
 )
 
 ***
@@ -40,11 +40,12 @@
 
 #### Reading material
 
-- Jon Claerbout: IMAGE ESTIMATION BY EXAMPLE: Geophysical Soundings Image Construction Chapter 1.
-- John A. Scales, Martin L. Smith and Sven Treitel Introductory Geophysical Inverse Theory Chapter 4
-- Richard Baraniuk: More Is Less: Signal Processing and the Data Deluge
-- Felix J. Herrmann, Michael P.Friedlander, Ozgur Yilmaz: Fighting the curse of dimensionality: compressive sensing in exploration seismology
-- Felix J. Herrmann: Randomized sampling and sparsity: getting more information from fewer samples. Geophysics 75, WB173 (2010); doi:10.1190/1.350614
+- Jon Claerbout: IMAGE ESTIMATION BY EXAMPLE: [Geophysical Soundings Image Construction](http://sep.stanford.edu/sep/prof/gee7-2011.pdf) Chapter 1.
+- John A. Scales, Martin L. Smith and Sven Treitel [Introductory Geophysical Inverse Theory](https://www.dropbox.com/s/okubbea8ohp632q/Book_Inversion_Theory.pdf.pdf?dl=0) Chapter 4
+- Richard Baraniuk: [More Is Less: Signal Processing and the Data Deluge](http://science.sciencemag.org/content/sci/331/6018/717.full.pdf)
+- Felix J. Herrmann, Michael P.Friedlander, Ozgur Yilmaz: [Fighting the curse of dimensionality: compressive sensing in exploration seismology](https://www.dropbox.com/s/m7v4pkb2qr4qww5/sigprocmag.pdf?dl=0
+)
+- Felix J. Herrmann: [Randomized sampling and sparsity: getting more information from fewer samples](http://slim.eos.ubc.ca/Publications/Public/Journals/herrmann2010rsa.pdf). Geophysics 75, WB173 (2010); doi:10.1190/1.350614
 
 #### Material presented in class
 
