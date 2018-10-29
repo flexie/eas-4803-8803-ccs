@@ -34,6 +34,8 @@
 - [Slides for Lecture 12: Practical aspects of seismic acquisition](https://www.dropbox.com/s/psfngqbbli2uvm3/12-Exploration_Seismology-acquisition.pdf?dl=0
 )
 
+- - [Slides for Lecture 13: Practical aspects of seismic acquisition](https://www.dropbox.com/s/2ob9rynqvwa9mtt/13-Exploration_Seismology-deconvolution.pdf?dl=0)
+
 ***
 
 # From processing to inversion
@@ -49,7 +51,7 @@
 
 #### Material presented in class
 
-- From Processing to Inversion
+- [Slides for Lecture 14: From Processing to Inversion](https://www.dropbox.com/s/rok2gfwp8y3zagd/14-inversion_intro.pdf?dl=0)
 
 *** 
 
