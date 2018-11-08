@@ -84,7 +84,7 @@ During the course you will work on the following exercises
 
 1. From processing to inversion I.[Exercise 5](Assignments/Exercise5.md)
 
-1. From processing to inversion II.
+1. From processing to inversion II. [Exercise 6](Assignments/Exercise6.md)
 
 1. Introduction to Compressive Sensing
 
