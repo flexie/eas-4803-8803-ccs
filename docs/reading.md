@@ -52,6 +52,7 @@
 #### Material presented in class
 
 - [Slides for Lecture 14: From Processing to Inversion](https://www.dropbox.com/s/rok2gfwp8y3zagd/14-inversion_intro.pdf?dl=0)
+- [Slides for Lecture 15: From Processing to Inversion-Radon](https://www.dropbox.com/s/atl71lgiivkxqon/15-Exploration_Seismology-inversion_radon.pdf?dl=0)
 
 *** 
 
@@ -67,7 +68,8 @@
 
 #### Material presented in class
 
-- Basics of Compressive sensing
+- [Slides for Lecture 16: Basics Compressive Sensing](https://www.dropbox.com/s/hvngq6y0yyqx8lw/16-Exploration_Seismology-cs-1.pdf?dl=0)
+- [Slides for Lecture 17: Theory Compressive Sensing](https://www.dropbox.com/s/73iuuysqz3ts11h/17-Exploration_Seismology-inversion-cs-2.pdf?dl=0)
 
 ***
 
