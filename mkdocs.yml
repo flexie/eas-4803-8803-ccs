@@ -5,6 +5,7 @@ pages:
     - Goals: goals.md
     - Reading: reading.md
     - Homework: homework.md
+    - Projects: project.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML

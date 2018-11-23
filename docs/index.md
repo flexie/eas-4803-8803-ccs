@@ -81,6 +81,7 @@ There will be homework exercises, which will mostly involve geophysics-related p
 ## Project
 
 You are required to write a term paper on any topic related to geophysics. This can be a literature review of a selected topic, or research project involving calculations, data analysis, or theoretical results done in consultation with the instructor. The topic needed to be approved by the instructor before the midterm. Your paper should be written up in a journal form with length, figures and referencing in a format suitable for submission to journals like Geophysical Research Letters (GRL). Preliminary version of the final paper should be shown to the instructor for approval at least two weeks before the final due date. You will present your term paper in a 15 minute AGU-style talk; a 12 minute presentation with 3 minutes of questions. The project will count as 15% of your overall course grade. Grading for your project will be based on the 12% of the quality of the research and the written paper, and 3% of your presentation.
+You can find more details on the [Projects](project.md) page.
 
 *** 
 
