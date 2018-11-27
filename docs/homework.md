@@ -76,19 +76,17 @@ During the course you will work on the following exercises
 
 1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md) [Exercise 1](Assignments/Exercise1.md) [[Solution]](https://www.slim.eos.ubc.ca/Teaching/EOSC454/exercise1_sol.html)
 
-1. NMO correction and velocity analysis [Exercise 2](Assignments/Exercise2.md)
+2. NMO correction and velocity analysis [Exercise 2](Assignments/Exercise2.md)
 
-1. Wavefield extrapolation and migration. [Exercise 3](Assignments/Exercise3.md)
+3. Wavefield extrapolation and migration. [Exercise 3](Assignments/Exercise3.md)
 
-1. Fourier, Radon and filtering.[Exercise 4](Assignments/Exercise4.md)
+4. Fourier, Radon and filtering.[Exercise 4](Assignments/Exercise4.md)
 
-1. From processing to inversion I.[Exercise 5](Assignments/Exercise5.md)
+5. From processing to inversion I.[Exercise 5](Assignments/Exercise5.md)
 
-1. From processing to inversion II. [Exercise 6](Assignments/Exercise6.md)
+6. From processing to inversion II. [Exercise 6](Assignments/Exercise6.md)
 
-1. Introduction to Compressive Sensing
-
-1. Full Waveform inversion
+7. Full Waveform inversion. [Exercise 7](Assignments/Exercise7.md)
 
 These exercises will introduce you to the [Julia programming language](https://julialang.org), [Devito](https://www.devitoproject.org)-a Domain-specific Language (DSL) for automatic code generation for highly optimized finite differences, and [Judi](https://github.com/slimgroup/JUDI.jl)-a framework for large-scale seismic modeling and inversion and designed to enable rapid translations of algorithms to fast and efficient code that scales to industry-size problems.
 
