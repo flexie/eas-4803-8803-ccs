@@ -102,4 +102,4 @@
 
 # Review
 
-- - [Slides for Lecture 20: Linearized inversion of amplitude-versus-offset data](https://www.dropbox.com/s/05tyot8l4yaejfc/21-Exploration_Seismology-review.pdf?dl=0)
+- [Slides for Lecture 21: Linearized inversion of amplitude-versus-offset data](https://www.dropbox.com/s/05tyot8l4yaejfc/21-Exploration_Seismology-review.pdf?dl=0)
