@@ -33,7 +33,6 @@
 
 - [Slides for Lecture 12: Practical aspects of seismic acquisition](https://www.dropbox.com/s/psfngqbbli2uvm3/12-Exploration_Seismology-acquisition.pdf?dl=0
 )
-
 - [Slides for Lecture 13: Practical aspects of seismic acquisition](https://www.dropbox.com/s/2ob9rynqvwa9mtt/13-Exploration_Seismology-deconvolution.pdf?dl=0)
 
 ***
@@ -73,8 +72,6 @@
 - [Slides for Lecture 18: Theory Compressive Sensing - Design Principles Sensing](https://www.dropbox.com/s/v1d1s6cmvi8nw87/18-Exploration_Seismology-inversion-cs-3.pdf?dl=0)
 - [Slides for Lecture 19: Compressive Sensing - Latest](https://www.dropbox.com/s/gntmsrpiy8yyndf/19-Exploration_Seismology-CS-4.pdf?dl=0)
 
-
-
 ***
 
 # Linearized inversion 
@@ -85,7 +82,7 @@
 
 ####Material presented in class
 
-- [Slides for Lecture 20: Linearized inversion of amplitude-versus-offset data](https://www.dropbox.com/s/6530m03nwj4edeo/20-Exploration_Geophysics-AVO.pdf?dl=0)
+- [Slides for Lecture 20: Linearized inversion of amplitude-versus-offset data](https://www.dropbox.com/s/6530m03nwj4edeo/20-Exploration_Seismology-AVO.pdf?dl=0)
 
 ***
 
@@ -101,3 +98,8 @@
 
 - Full-waveform inversion
 
+*** 
+
+# Review
+
+- - [Slides for Lecture 20: Linearized inversion of amplitude-versus-offset data](https://www.dropbox.com/s/05tyot8l4yaejfc/21-Exploration_Seismology-review.pdf?dl=0)
