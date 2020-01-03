@@ -47,9 +47,6 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../../info.md">Info</a>
-                            </li>
-                            <li >
                                 <a href="../../outline/">Outline</a>
                             </li>
                             <li >
@@ -132,9 +129,8 @@ Y  = transpose(F2*transpose(X));
 </code></pre>
 
 <p>We can do the equivalent operation on the vectorized version of X via the Kronecker product. The formula is :</p>
-<p>
-<script type="math/tex"> \mathrm{vec}(AXB) = (B^T\otimes A)\mathrm{vec}(X) </script>.</p>
-<p>where <script type="math/tex">\mathrm{vec}</script> vectorizes a matrix <script type="math/tex">X(:)</script>.</p>
+<p>$ \mathrm{vec}(AXB) = (B^T\otimes A)\mathrm{vec}(X) $.</p>
+<p>where $\mathrm{vec}$ vectorizes a matrix $X(:)$.</p>
 <p>Use joKron to construct a 2D fft operator that works on a vectorized version of X, X(:).
 Show that the result is the same as when using the operators F1 and F2 separately.</p>
 <pre><code class="julia"># 2D FFT operator
@@ -242,7 +238,7 @@ Y = X*[1;1]
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>

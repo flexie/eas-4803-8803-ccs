@@ -47,9 +47,6 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../../info.md">Info</a>
-                            </li>
-                            <li >
                                 <a href="../../outline/">Outline</a>
                             </li>
                             <li >
@@ -193,18 +190,12 @@ recGeometry_transmission = Geometry(xrec,yrec,zrec;dt=dtR,t=timeR, nsrc=nsrc)
 </code></pre>
 <h1 id="optimization">Optimization</h1>
 <p>lbfgs (minConf_PQN here) can be used to solve optimization problems of the form:</p>
-<p>
-<script type="math/tex">\min_{\mathbf{m}}\quad \phi(\mathbf{m})</script>
-</p>
+<p>$\min_{\mathbf{m}}\quad \phi(\mathbf{m})$</p>
 <p>The method needs a function that calculates the misfit and gradient. The gradient of the LS misfit:</p>
-<p>
-<script type="math/tex">\phi(\mathbf{m}) = \frac{1}{2}|F(\mathbf{m}) {-} \mathbf{d}|_2^2</script>
-</p>
+<p>$\phi(\mathbf{m}) = \frac{1}{2}|F(\mathbf{m}) {-} \mathbf{d}|_2^2$</p>
 <p>is given by</p>
-<p>
-<script type="math/tex">\nabla\phi(\mathbf{m}) = J(\mathbf{m})^*(F(\mathbf{m}) {-} \mathbf{d})</script>
-</p>
-<p>where <script type="math/tex">J(\mathbf{m})</script> is the Jacobian matrix of <script type="math/tex">F</script> and $^*# denotes the complex-conjugate-transpose (' in Julia). The Jacobian is provided by the modeling operator: <code>J = judiJacobian(F, q)</code></p>
+<p>$\nabla\phi(\mathbf{m}) = J(\mathbf{m})^*(F(\mathbf{m}) {-} \mathbf{d})$</p>
+<p>where $J(\mathbf{m})$ is the Jacobian matrix of $F$ and $^*# denotes the complex-conjugate-transpose (' in Julia). The Jacobian is provided by the modeling operator: <code>J = judiJacobian(F, q)</code></p>
 <p>Write a julia function misfit(m) that returns the value of the misfit and the gradient for the given model <code>m</code>.
 minConf_SQP that function as an input</p>
 <h1 id="inversion">Inversion</h1>
@@ -376,7 +367,7 @@ Step size below progTol
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>

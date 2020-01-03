@@ -47,9 +47,6 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../../info.md">Info</a>
-                            </li>
-                            <li >
                                 <a href="../../outline/">Outline</a>
                             </li>
                             <li >
@@ -93,18 +90,14 @@
 
 <h1 id="nmo-correction">NMO correction</h1>
 <p>The traveltime as a function of offset of a reflected event can be approximated by the NMO traveltime:</p>
-<p>
-<script type="math/tex">
+<p>$
 \tau(t_0,h) = \sqrt{t_0 + h^2/v^2}
-</script>
-</p>
-<p>where <script type="math/tex">(t_0)</script> is the zero-offset or vertical traveltime and <script type="math/tex">v</script> is the effective or NMO velocity.</p>
+$</p>
+<p>where $(t_0)$ is the zero-offset or vertical traveltime and $v$ is the effective or NMO velocity.</p>
 <p>We can now correct the data for the moveout via a simple coordinate transform:</p>
-<p>
-<script type="math/tex">
+<p>$
 d_{NMO}(t_0,h) = d(\tau(t_0,h),h)
-</script>
-</p>
+$</p>
 <p>You can use the function <code>nmo</code> implemented below for this exercise.</p>
 <pre><code class="julia">using Dierckx
 function nmo(cmp, t, off, v)
@@ -239,11 +232,9 @@ ylabel(&quot;time&quot;)
 </code></pre>
 <h1 id="stack-power">Stack power</h1>
 <p>To figure out which NMO velocity optimally flattens all the events, we can scan through a range of constant NMO velocities and see which events are flattened for which velocity. One way to judge flatness of an event is via the stackpower. The stackpower is just a sum along the offset direction of the values-squared of the NMO-corrected gather:</p>
-<p>
-<script type="math/tex"> S(t_0,v) = \int\!\!\mathrm{d}h\, d(\tau(t_0,h,v),h)^2 </script>
-</p>
-<p>The function <script type="math/tex"> S(t_0,v) </script> is called a semblance panel.</p>
-<p>The desired NMO velocity can be found by picking the maximum as a function of <script type="math/tex">t_0</script> and <script type="math/tex">v</script> from the semblance panel.</p>
+<p>$ S(t_0,v) = \int!!\mathrm{d}h\, d(\tau(t_0,h,v),h)^2 $</p>
+<p>The function $ S(t_0,v) $ is called a semblance panel.</p>
+<p>The desired NMO velocity can be found by picking the maximum as a function of $t_0$ and $v$ from the semblance panel.</p>
 <p>An example of a semblance panel and the resulting NMO velocity is shown below.</p>
 <pre><code class="julia">v = linspace(1000, 3000, 500)
 # scan over velocities
@@ -308,7 +299,7 @@ ylabel(&quot;time&quot;)
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>

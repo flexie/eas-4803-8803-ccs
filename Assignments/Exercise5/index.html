@@ -47,9 +47,6 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li >
-                                <a href="../../info.md">Info</a>
-                            </li>
-                            <li >
                                 <a href="../../outline/">Outline</a>
                             </li>
                             <li >
@@ -200,7 +197,7 @@ G2 = joOnes(N);
                             G2    246 bytes  JOLI.joMatrix{Float64,Float64}
 </code></pre>
 <h1 id="deconvolution">Deconvolution</h1>
-<p>We some signal <script type="math/tex">f(t)</script> which is a convolution of some unkown signal <script type="math/tex">g(t)</script> and a known filter <script type="math/tex">w(t)</script>. Given <script type="math/tex">f</script> and <script type="math/tex">w</script> we would like to retreive <script type="math/tex">g</script>.</p>
+<p>We some signal $f(t)$ which is a convolution of some unkown signal $g(t)$ and a known filter $w(t)$. Given $f$ and $w$ we would like to retreive $g$.</p>
 <p>For the example we use:</p>
 <pre><code class="julia"># time axis
 t = 0:.001:2';
@@ -319,7 +316,7 @@ opts = spgOptions(optTol = 1e-10,
         </footer>
         <script>
             var base_url = "../..",
-                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
