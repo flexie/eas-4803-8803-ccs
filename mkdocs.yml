@@ -1,6 +1,5 @@
 site_name: Exploration Seismology
 pages:
-    - Info: info.md
     - Outline: outline.md
     - Goals: goals.md
     - Reading: reading.md
@@ -10,6 +9,3 @@ pages:
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
-markdown_extensions:
-    - mdx_math:
-        enable_dollar_delimiter: True #for use of inline $..$

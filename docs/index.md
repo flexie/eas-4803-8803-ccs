@@ -1,23 +1,41 @@
 # Exploration Seismology EAS 4520/8803
 
-## Instructor
+### Instructor
 
 [Felix J. Herrmann](mailto:felix.herrmann@gatech.edu)
 Phone: +1 (404) 385-7069  
-Cherry Emerson, room 203  
+CODA, room S1375B
 
 ## General Information
 
-Time and Location Monday/Wednesday 3:00 pm - 4:15 pm, ES&T L1114
+Time and Location Monday/Wednesday 1:30 pm - 2:45 pm, Cherry Emerson 204
 
-Office Hours: Tuesday/Thursday 13:30 pm - 14:30 pm (or by appointment) 
+Office Hours: by appointment 
 
 ### Course Description 
 
-
 *This course contains a comprehensive review of reflection seismology and its application to oil and gas exploration. It includes key aspects of basic seismic data acquisition & processing and wave-equation based imaging and inversion.*
 
-### Required Textbook 
+### Course Outline
+
+See [Outline](outline.md) tab
+
+- [General introduction](outline.md#General introduction)
+
+- [Seismic data acquisition](outline.md#Seismic data acquisition)
+
+- [From processing to inversion](outline.md#From processing to inversion)
+
+- [Compressive sensing](outline.md#Compressive sensing)
+
+- [Linearized inversion](outline.md#Linearized inversion)
+
+- [RTM & FWI](outline.md#RTM & FWI)
+
+
+### Course Material
+
+#### Textbook 
 
 None required
 
@@ -40,27 +58,25 @@ Additional material will be made available under the tab [Reading](reading.md).
 
 [website]:https://flexie.github.io/-EAS4803-8803/
 
-***
 
-## Course Outline
+### Homework 
 
-See [Outline](outline.md) tab
+There will be homework exercises, which will mostly involve geophysics-related programs, computer simulations, and data analysis. These assignments is designed for each student to work by him/herself. This [homework](homework.md) will count as 35% of your overall course grade.
 
-- [General introduction](outline.md#General introduction)
 
-- [Seismic data acquisition](outline.md#Seismic data acquisition)
+### Project
 
-- [From processing to inversion](outline.md#From processing to inversion)
+You are required to write a term paper on any topic related to geophysics. This can be a literature review of a selected topic, or research project involving calculations, data analysis, or theoretical results done in consultation with the instructor. The topic needed to be approved by the instructor before the midterm. Your paper should be written up in a journal form with length, figures and referencing in a format suitable for submission to journals like Geophysical Research Letters (GRL). Preliminary version of the final paper should be shown to the instructor for approval at least two weeks before the final due date. You will present your term paper in a 15 minute AGU-style talk; a 12 minute presentation with 3 minutes of questions. The project will count as 15% of your overall course grade. Grading for your project will be based on the 12% of the quality of the research and the written paper, and 3% of your presentation.
 
-- [Compressive sensing](outline.md#Compressive sensing)
+You can find more details on the [Projects](project.md) page.
 
-- [Linearized inversion](outline.md#Linearized inversion)
 
-- [RTM & FWI](outline.md#RTM & FWI)
+### Exams 
 
-*** 
+There will be a midterm (25%) and a final exam (25%). Both of them are closed book. Reference to texts or other documents such as previous semester course materials during exams is strictly forbidden. Using these materials will be considered a direct violation of academic policy and will be dealt with according to the GT Academic Honor Code. The use of electronic devices (e.g. cellular phones, computers etc.) other than non-programmable calculators during exams and quizzes is not allowed. 
 
-## Evaluation
+
+### Evaluation
 
 - Homework assignments (35%)
 
@@ -69,27 +85,6 @@ See [Outline](outline.md) tab
 - Course project (15%)
 
 - Final exam (25%)
-
-*** 
-
-## Homework 
-
-There will be homework exercises, which will mostly involve geophysics-related programs, computer simulations, and data analysis. These assignments is designed for each student to work by him/herself. This [homework](homework.md) will count as 35% of your overall course grade.
-
-*** 
-
-## Project
-
-You are required to write a term paper on any topic related to geophysics. This can be a literature review of a selected topic, or research project involving calculations, data analysis, or theoretical results done in consultation with the instructor. The topic needed to be approved by the instructor before the midterm. Your paper should be written up in a journal form with length, figures and referencing in a format suitable for submission to journals like Geophysical Research Letters (GRL). Preliminary version of the final paper should be shown to the instructor for approval at least two weeks before the final due date. You will present your term paper in a 15 minute AGU-style talk; a 12 minute presentation with 3 minutes of questions. The project will count as 15% of your overall course grade. Grading for your project will be based on the 12% of the quality of the research and the written paper, and 3% of your presentation.
-You can find more details on the [Projects](project.md) page.
-
-*** 
-
-## Exams 
-
-There will be a midterm (25%) and a final exam (25%). Both of them are closed book. Reference to texts or other documents such as previous semester course materials during exams is strictly forbidden. Using these materials will be considered a direct violation of academic policy and will be dealt with according to the GT Academic Honor Code. The use of electronic devices (e.g. cellular phones, computers etc.) other than non-programmable calculators during exams and quizzes is not allowed. 
-
-***
 
 ## Academic Honesty
 
