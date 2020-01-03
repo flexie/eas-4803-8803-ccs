@@ -8,7 +8,7 @@ CODA, room S1375B
 
 ## General Information
 
-Time and Location Monday/Wednesday 1:30 pm - 2:45 pm, Cherry Emerson 204
+Time and Location Tuesday/Thursday 1:30 pm - 2:45 pm, Cherry Emerson 204
 
 Office Hours: by appointment 
 
