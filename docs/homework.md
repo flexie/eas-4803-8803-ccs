@@ -9,9 +9,8 @@ To install julia follow
 
 https://julialang.org/downloads/
 
-And install Julia 0.7 or earlier
+And install Julia 1.2
 
-DO NOT INSTALL JULIA 1.0
 
 ## Python
 
