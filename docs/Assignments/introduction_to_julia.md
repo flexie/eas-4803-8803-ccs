@@ -1,8 +1,8 @@
+# A quick introduction to the Julia language
 
-## A quick introduction to the Julia language
+Getting started
 
-### Getting started
-Start an interactive Julia session by running `julia` from the command line. You can quit the session with `quit()`. Generally, all functions in Julia are run using parenthesis, even if there are no input arguments.
+Start an interactive Julia session by running julia from the command line. You can quit the session with exit(). Generally, all functions in Julia are run using parenthesis, even if there are no input arguments.
 
 
 ```julia
@@ -12,36 +12,25 @@ pwd()
 
 
 
-    "/home/philipp"
+    "/home/yzhang3198"
 
 
+
+You can define Julia scripts as regular text files that end with .jl and use your favourite text editor to code. Once you have your script, e.g.:
+
+hello-world.jl
 
 
 ```julia
-whos()
-```
-
-                              Base               Module
-                            Compat  19502 KB     Module
-                              Core               Module
-                            IJulia  19567 KB     Module
-                              JSON  19384 KB     Module
-                              Main               Module
-                           MbedTLS  19412 KB     Module
-                         Nullables   1120 bytes  Module
-                               ZMQ  19357 KB     Module
-
-
-You can define Julia scripts as regular text files that end with `.jl` and use your favourite text editor to code. Once you have your script, e.g.:
-
-hello-world.jl
-```
 println("Hello world")
 ```
 
-you can run the script with `include("hello-world.jl")`.
+    Hello world
 
-### The Julia REPL
+
+you can run the script with include("hello-world.jl").
+The Julia REPL
+
 REPL stands for Read/Evaluate/Print/Loop and refers to the interactive Julia session (it's just like a Matlab session). It's good for experimenting, but any serious coding should be done using scripts instead.
 
 
@@ -58,8 +47,7 @@ REPL stands for Read/Evaluate/Print/Loop and refers to the interactive Julia ses
 
 
 ```julia
-4 + 5
-
+4+5
 ```
 
 
@@ -69,42 +57,44 @@ REPL stands for Read/Evaluate/Print/Loop and refers to the interactive Julia ses
 
 
 
-
-```julia
-100 / 5;
-```
-
 Unlike Matlab, you can access Julia's help functions by typing the question mark, followed by the function that you want the documention of:
 
 
 ```julia
-? quit
+? exit
 ```
 
-    search: [1mq[22m[1mu[22m[1mi[22m[1mt[22m [1mQ[22m[1mu[22m[1mi[22mckSor[1mt[22m Partial[1mQ[22m[1mu[22m[1mi[22mckSor[1mt[22m [1mq[22m[1mu[22mant[1mi[22mle [1mq[22m[1mu[22mant[1mi[22mle!
-
+    search: [0m[1me[22m[0m[1mx[22m[0m[1mi[22m[0m[1mt[22m at[0m[1me[22m[0m[1mx[22m[0m[1mi[22m[0m[1mt[22m t[0m[1me[22m[0m[1mx[22mtw[0m[1mi[22md[0m[1mt[22mh proc[0m[1me[22mss_e[0m[1mx[22m[0m[1mi[22m[0m[1mt[22med ind[0m[1me[22m[0m[1mx[22m[0m[1mi[22mn n[0m[1me[22m[0m[1mx[22mt[0m[1mi[22mnd Ind[0m[1me[22m[0m[1mx[22mL[0m[1mi[22mnear
+    
 
 
 
 
 
 ```
-quit()
+exit(code=0)
 ```
 
-Quit the program indicating that the processes completed successfully. This function calls `exit(0)` (see [`exit`](@ref)).
+Stop the program with an exit code. The default exit code is zero, indicating that the program completed successfully. In an interactive session, `exit()` can be called with the keyboard shortcut `^D`.
 
 
 
 
-Similarly, you can enter the shell mode by typing `;`, which gives you access to a full bash terminal.
+
+```julia
+exit()
+```
+
+Quit the program indicating that the processes completed successfully. This function calls exit(0) (see exit).
+
+Similarly, you can enter the shell mode by typing ;, which gives you access to a full bash terminal.
 
 
 ```julia
 ; pwd
 ```
 
-    /home/philipp
+    /home/yzhang3198
 
 
 In contrast to Matlab, Julia treats all operators as functions. This means you can add two numbers in either of the two ways:
@@ -140,7 +130,7 @@ The same applies for any other operations, such as subtraction, multiplications 
 print(pi)
 ```
 
-    π = 3.1415926535897...
+    π
 
 Julia was designed with the intend to write code that resembles mathematics as close as possible. For example, you can omit the multiplication operator when working with variables:
 
@@ -203,37 +193,47 @@ rand()
 
 
 
-    0.5282624241978122
+    0.24072220081526052
 
 
 
-### Packages and Plotting
+# Packages and Plotting
 
 Packages provide additional functionalities, that are not included in core Julia. Packages are written both by official Julia programmers, as well as anyone else who programs in Julia.
 
-Since native Julia does not include any plotting tools, we have to download a third-party package, such as `PyPlot` or `Plots`:
+Since native Julia does not include any plotting tools, we have to download a third-party package, such as PyPlot or Plots:
+
+
+```julia
+using Pkg
+```
 
 
 ```julia
 Pkg.add("PyPlot")
 ```
 
-    [1m[36mINFO: [39m[22m[36mInstalling JUDI v0.1.0
-    [39m[1m[36mINFO: [39m[22m[36mBuilding Dierckx
-    [39m
+    [32m[1m  Updating[22m[39m registry at `~/.julia/registries/General`
+    [32m[1m  Updating[22m[39m git-repo `https://github.com/JuliaRegistries/General.git`
+    [2K[?25h[1mFetching:[22m[39m [========================================>]  99.9 %0.0 %]  14.5 %============>                            ]  29.0 %43.4 %>                ]  57.9 % [=============================>           ]  72.4 %86.7 %[32m[1m Resolving[22m[39m package versions...
+    [32m[1m Installed[22m[39m AWSS3 ────────── v0.6.6
+    [32m[1m Installed[22m[39m AbstractTrees ── v0.3.1
+    [32m[1m Installed[22m[39m DataStructures ─ v0.17.9
+    [32m[1m Installed[22m[39m ZMQ ──────────── v1.1.0
+    [32m[1m Installed[22m[39m NNlib ────────── v0.6.4
+    [32m[1m Installed[22m[39m ForwardDiff ──── v0.10.9
+    [32m[1m  Updating[22m[39m `~/.julia/environments/v1.2/Project.toml`
+    [90m [no changes][39m
+    [32m[1m  Updating[22m[39m `~/.julia/environments/v1.2/Manifest.toml`
+     [90m [1c724243][39m[93m ↑ AWSS3 v0.6.5 ⇒ v0.6.6[39m
+     [90m [1520ce14][39m[93m ↑ AbstractTrees v0.2.1 ⇒ v0.3.1[39m
+     [90m [864edb3b][39m[93m ↑ DataStructures v0.17.7 ⇒ v0.17.9[39m
+     [90m [f6369f11][39m[93m ↑ ForwardDiff v0.10.8 ⇒ v0.10.9[39m
+     [90m [872c559c][39m[93m ↑ NNlib v0.6.2 ⇒ v0.6.4[39m
+     [90m [c2297ded][39m[93m ↑ ZMQ v1.0.0 ⇒ v1.1.0[39m
+    [32m[1m  Building[22m[39m ZMQ ──→ `~/.julia/packages/ZMQ/ItfqT/deps/build.log`
+    [32m[1m  Building[22m[39m NNlib → `~/.julia/packages/NNlib/3krvM/deps/build.log`
 
-    make: Nothing to be done for `all'.
-
-
-    [1m[36mINFO: [39m[22m[36mBuilding Conda
-    [39m[1m[36mINFO: [39m[22m[36mBuilding PyCall
-    [39m[1m[36mInfo: [39m[22m[36mPyCall is using /home/philipp/GATechBundle/Miniconda3/bin/python3 (Python 3.6.6) at /home/philipp/GATechBundle/Miniconda3/bin/python3, libpython = /home/philipp/GATechBundle/Miniconda3/lib/libpython3.6m
-    [39m[1m[36mInfo: [39m[22m[36m/home/philipp/.julia/v0.6/PyCall/deps/deps.jl has been updated
-    [39m[1m[36mInfo: [39m[22m[36m/home/philipp/.julia/v0.6/PyCall/deps/PYTHON has been updated
-    [39m[1m[36mINFO: [39m[22m[36mPackage database updated
-    [39m[1m[36mINFO: [39m[22m[36mMETADATA is out-of-date — you may not have the latest version of PyPlot
-    [39m[1m[36mINFO: [39m[22m[36mUse `Pkg.update()` to get the latest versions of your packages
-    [39m
 
 Once you have downloaded a package, you can use it by typing:
 
@@ -242,28 +242,28 @@ Once you have downloaded a package, you can use it by typing:
 using PyPlot
 ```
 
+    ┌ Info: Recompiling stale cache file /home/yzhang3198/.julia/compiled/v1.2/PyPlot/oatAj.ji for PyPlot [d330b81b-6aea-500a-939a-2ce795aea3ee]
+    └ @ Base loading.jl:1240
+
+
 This plotting package is based off Python's Matplotlib package and therefore shares much of the Syntax. Some common plotting commands include:
 
 
 ```julia
 x = 1:100;
 f = x .^ 2;
-```
-
-
-```julia
 plot(x, f)
 ```
 
 
-![png](../img/introduction_to_julia_35_0.png)
+![png](../img/output_30_0.png)
 
 
 
 
 
     1-element Array{PyCall.PyObject,1}:
-     PyObject <matplotlib.lines.Line2D object at 0x7f4b10781d30>
+     PyObject <matplotlib.lines.Line2D object at 0x7fdfe39703c8>
 
 
 
@@ -274,17 +274,18 @@ imshow(A, extent=[0,30,20,40])
 ```
 
 
-![png](../img//introduction_to_julia_36_0.png)
+![png](../img/output_31_0.png)
 
 
 
 
 
-    PyObject <matplotlib.image.AxesImage object at 0x7f4b105585c0>
+    PyObject <matplotlib.image.AxesImage object at 0x7fdfe32bcef0>
 
 
 
-### Arrays and tuples
+# Arrays and tuples
+
 Arrays are defined in a similar fashion to Matlab:
 
 
@@ -351,10 +352,10 @@ s = ["string", 4.0, sin, pi]
 
 
     4-element Array{Any,1}:
-       "string"            
-      4.0                  
-       sin                 
-     π = 3.1415926535897...
+      "string"
+     4.0      
+      sin     
+     π        
 
 
 
@@ -374,7 +375,7 @@ A = [1 2 3 4; 5 6 7 8]
 
 
 
-Note that entries of the same row are separated by spaces and rows are separated by `;`
+Note that entries of the same row are separated by spaces and rows are separated by ;
 
 You can also initialize vectors/matrices of a given dimension in various ways:
 
@@ -403,8 +404,8 @@ C = rand(2,3)
 
 
     2×3 Array{Float64,2}:
-     0.189405  0.938612  0.359612
-     0.553322  0.868266  0.102811
+     0.340534  0.885904  0.101062
+     0.374042  0.735454  0.87115 
 
 
 
@@ -434,7 +435,7 @@ C[1,1]
 
 
 
-    0.1894051459813404
+    0.34053376741471464
 
 
 
@@ -447,9 +448,9 @@ C[1,:]
 
 
     3-element Array{Float64,1}:
-     0.189405
-     0.938612
-     0.359612
+     0.34053376741471464
+     0.885904149330188  
+     0.10106172780311784
 
 
 
@@ -462,12 +463,12 @@ C[1,2:end]
 
 
     2-element Array{Float64,1}:
-     0.938612
-     0.359612
+     0.885904149330188  
+     0.10106172780311784
 
 
 
-Another useful structure, e.g. for plotting and loops, are `range` and `linspace`:
+Another useful structure, e.g. for plotting is range.
 
 
 ```julia
@@ -477,15 +478,7 @@ print(typeof(r))
 
     StepRange{Int64,Int64}
 
-
-```julia
-l = linspace(4,8.5, 7)
-print(typeof(l))
-```
-
-    StepRangeLen{Float64,Base.TwicePrecision{Float64},Base.TwicePrecision{Float64}}
-
-You can convert the vectors `r` and `l` to regular Julia arrays using the `collect` function:
+You can convert the vectors r to regular Julia arrays using the collect function:
 
 
 ```julia
@@ -504,25 +497,6 @@ collect(r)
 
 
 
-
-```julia
-collect(l)
-```
-
-
-
-
-    7-element Array{Float64,1}:
-     4.0
-     4.75
-     5.5
-     6.25
-     7.0
-     7.75
-     8.5
-
-
-
 Similar to Matlab, it is possible to reshape arrays or stack multiple arrays to form new matrices:
 
 
@@ -534,9 +508,9 @@ A = randn(3,4)
 
 
     3×4 Array{Float64,2}:
-      0.509555   -1.79653    0.842718  -0.713901
-     -0.0580305   0.609266   1.72787   -0.731359
-      0.10706     2.91134   -1.26744   -0.0453605
+      0.0369507   0.927287   0.0910324  -0.823177
+      1.16696    -1.96511    0.514165   -0.282542
+     -0.191315    0.427349  -0.474449   -0.646095
 
 
 
@@ -549,10 +523,10 @@ reshape(A, 4, 3)
 
 
     4×3 Array{Float64,2}:
-      0.509555   0.609266  -1.26744  
-     -0.0580305  2.91134   -0.713901
-      0.10706    0.842718  -0.731359
-     -1.79653    1.72787   -0.0453605
+      0.0369507  -1.96511    -0.474449
+      1.16696     0.427349   -0.823177
+     -0.191315    0.0910324  -0.282542
+      0.927287    0.514165   -0.646095
 
 
 
@@ -565,18 +539,18 @@ vec(A)
 
 
     12-element Array{Float64,1}:
-      0.509555
-     -0.0580305
-      0.10706  
-     -1.79653  
-      0.609266
-      2.91134  
-      0.842718
-      1.72787  
-     -1.26744  
-     -0.713901
-     -0.731359
-     -0.0453605
+      0.036950663624245546
+      1.166961382172285   
+     -0.19131484147164307 
+      0.9272871492954569  
+     -1.9651066634883936  
+      0.4273486305806718  
+      0.09103240076728031 
+      0.5141654653005298  
+     -0.4744493116000106  
+     -0.8231770890847984  
+     -0.2825422481869328  
+     -0.6460948383122057  
 
 
 
@@ -589,12 +563,12 @@ B = [A; A]
 
 
     6×4 Array{Float64,2}:
-      0.509555   -1.79653    0.842718  -0.713901
-     -0.0580305   0.609266   1.72787   -0.731359
-      0.10706     2.91134   -1.26744   -0.0453605
-      0.509555   -1.79653    0.842718  -0.713901
-     -0.0580305   0.609266   1.72787   -0.731359
-      0.10706     2.91134   -1.26744   -0.0453605
+      0.0369507   0.927287   0.0910324  -0.823177
+      1.16696    -1.96511    0.514165   -0.282542
+     -0.191315    0.427349  -0.474449   -0.646095
+      0.0369507   0.927287   0.0910324  -0.823177
+      1.16696    -1.96511    0.514165   -0.282542
+     -0.191315    0.427349  -0.474449   -0.646095
 
 
 
@@ -630,7 +604,7 @@ B = A
 
 
 ```julia
-A[1,:] = 2
+A[1,:] .= 2
 println(A)
 ```
 
@@ -640,12 +614,11 @@ println(A)
 
 ```julia
 show(B)
-
 ```
 
     [2.0 2.0 2.0; 1.0 1.0 1.0]
 
-To copy an array, use the `copy` function
+To copy an array, use the copy function
 
 
 ```julia
@@ -677,7 +650,7 @@ B = copy(A)
 
 
 ```julia
-A[1,:] = 2
+A[1,:] .= 2
 println(A)
 ```
 
@@ -692,9 +665,9 @@ println(B)
     [1.0 1.0 1.0; 1.0 1.0 1.0]
 
 
-We see that `B` has not been changed!
+We see that B has not been changed!
 
-Some other differences between Matlab and Julia are `min` and `max` functions. These functions only return the min/max of two input variables:
+Some other differences between Matlab and Julia are min and max functions. These functions only return the min/max of two input variables:
 
 
 ```julia
@@ -708,7 +681,7 @@ min(5,100)
 
 
 
-To obtain the smallest/largest entry of a vector, use the `minimum` and `maximum` functions:
+To obtain the smallest/largest entry of a vector, use the minimum and maximum functions:
 
 
 ```julia
@@ -721,8 +694,9 @@ println(maximum(x))
     6
 
 
-### Controll Flow
-Control flow in Julia, i.e. `if/else` statements, `for` loops or `while` loops, are similar to other programming languages. Here are some examples of different ways of controlling the flow:
+# Controll Flow
+
+Control flow in Julia, i.e. if/else statements, for loops or while loops, are similar to other programming languages. Here are some examples of different ways of controlling the flow:
 
 
 ```julia
@@ -744,7 +718,7 @@ for color in ["red", "green", "blue"] # an array
 end
 ```
 
-    red green blue
+    red green blue 
 
 
 ```julia
@@ -782,7 +756,7 @@ end
     I like Julia
 
 
-### Functions
+# Functions
 
 Functions are a useful building block to structure your code and build subroutines etc. The most generic way to define functions in Julia is like this:
 
@@ -817,7 +791,7 @@ end
 
 
 
-By default, Julia functions always return the output from the last line of function. By using the `return` keyword, you can indicate a specific value that should be returned.
+By default, Julia functions always return the output from the last line of function. By using the return keyword, you can indicate a specific value that should be returned.
 
 
 ```julia
@@ -867,3 +841,10 @@ z = my_func(3,4)
 
 
     (6, 8)
+
+
+
+
+```julia
+
+```
