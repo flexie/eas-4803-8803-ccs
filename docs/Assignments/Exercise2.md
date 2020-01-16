@@ -1,4 +1,3 @@
-
 # NMO correction
 The traveltime as a function of offset of a reflected event can be approximated by the NMO traveltime:
 
@@ -18,25 +17,31 @@ You can use the function `nmo` implemented below for this exercise.
 
 
 
+Please download data from Dropbox: https://www.dropbox.com/sh/ux1mhzids61pclx/AACtP4RG1BGSs8su_qPU0ncfa?dl=0
+
 
 ```julia
+using Pkg
+Pkg.add("Dierckx")
 using Dierckx
 function nmo(cmp, t, off, v)
-# NMO correction and adjoint
+# NMO correction and adjoint 
 #
 # use:
 #   out = nmo(in,t,h,v,flag)
 #
 # input:
-#   in   - data matrix of size [length(t) x length(h)], each column is a trace
+#   in   - data matrix of size [length(t) x length(h)], each column is a trace 
 #   t    - time vector [s]
 #   offsets    - offset vector [m]
 #   v    - NMO velocity [m/s] as vector of size [length(t) x 1].
 #   flag - 1:forward, -1:adjoint
 #
 # output
-#   out  - data matrix of size [length(t) x length(h)], each column is a trace
-
+#   out  - data matrix of size [length(t) x length(h)], each column is a trace 
+    if size(cmp, 2) == 1
+        return cmp
+    end
     # size of data
     nt, nh = size(cmp)
     # make sure t and v are column vectors
@@ -47,7 +52,7 @@ function nmo(cmp, t, off, v)
     # loop over offset
     for i = 1:nh
         # NMO traveltime
-        tau = sqrt.(t.^2 + off[i].^2./v.^2);
+        tau = sqrt.(t.^2 + off[i].^2 ./v.^2);
         # interpolate, forward or adjoint
         spl = Spline1D(t, cmp[1e-3*T.-t.<1e-5, i])
         out[:,i] = spl(tau)
@@ -55,6 +60,15 @@ function nmo(cmp, t, off, v)
     return out
 end
 ```
+
+    [32m[1m  Updating[22m[39m registry at `~/.julia/registries/General`
+    [32m[1m  Updating[22m[39m git-repo `https://github.com/JuliaRegistries/General.git`
+    [2K[?25h[1mFetching:[22m[39m [========================================>]  100.0 %.0 %[32m[1m Resolving[22m[39m package versions...
+    [32m[1m  Updating[22m[39m `~/.julia/environments/v1.2/Project.toml`
+    [90m [no changes][39m
+    [32m[1m  Updating[22m[39m `~/.julia/environments/v1.2/Manifest.toml`
+    [90m [no changes][39m
+
 
 
 
@@ -65,15 +79,18 @@ end
 
 
 ```julia
-using SeisIO, PyPlot
+using SegyIO, PyPlot
 ```
 
 
 ```julia
 # read the dataset
 
-blocks = segy_read("/data/mlouboutin3/Class_data/cube2.segy");
+blocks = segy_read("/home/yzhang3198/Downloads/data_segy/cube2.segy");
 ```
+
+    ┌ Warning: Fixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=90663444, maxsize=Inf, ptr=3601, mark=-1)
+    └ @ SegyIO /home/yzhang3198/.julia/packages/SegyIO/ak2qG/src/read/read_file.jl:26
 
 
 
@@ -119,7 +136,7 @@ all_h = hcat(h'...)';
 
 
 ```julia
-Im = find(all_m .== all_m[1000])
+Im = findall(all_m .== all_m[1000])
 offsets = sort((all_h[Im]));
 inds = sortperm(all_h[Im])
 cmp = Float32.(blocks.data[:, Im[inds]]);
@@ -134,13 +151,13 @@ ylabel("time")
 ```
 
 
-![png](../img/Exercise2_10_0.png)
+![png](../img/output_11_0.png)
 
 
 
 
 
-    PyObject Text(24,0.5,'time')
+    PyObject Text(24.0, 0.5, 'time')
 
 
 
@@ -148,7 +165,7 @@ ylabel("time")
 
 
 ```julia
-nmo_corrected1 = nmo(cmp, 1e-3.*T, offsets, 2000. + 0.*T);
+nmo_corrected1 = nmo(cmp, 1e-3.*T, offsets, 2000 .+ 0 .*T);
 ```
 
 
@@ -160,13 +177,13 @@ ylabel("time")
 ```
 
 
-![png](../img/Exercise2_13_0.png)
+![png](../img/output_14_0.png)
 
 
 
 
 
-    PyObject Text(24,0.5,'time')
+    PyObject Text(24.0, 0.5, 'time')
 
 
 
@@ -181,7 +198,7 @@ tt = [1e-3*ti for ti in T for h in offsets]
 hh = [h for ti in T for h in offsets]
 
 # initialize window to zero and set times later than first arrival to 1.
-W=0.*tt;W[tt.>(.1+ abs.(hh)./1500)] = 1
+W=0 .*tt;W[tt .> (.1 .+ abs.(hh)./1500)] .= 1
 W = reshape(W, size(cmp)[2], size(cmp)[1])
 imshow(W', vmin=0, vmax=1, cmap="jet", aspect=3, extent=[offsets[1], offsets[end], T[end], 0])
 xlabel("offset")
@@ -190,13 +207,13 @@ ylabel("time")
 ```
 
 
-![png](../img/Exercise2_15_0.png)
+![png](../img/output_16_0.png)
 
 
 
 
 
-    PyObject Text(24,0.5,'time')
+    PyObject Text(24.0, 0.5, 'time')
 
 
 
@@ -214,13 +231,13 @@ ylabel("time")
 ```
 
 
-![png](../img/Exercise2_17_0.png)
+![png](../img/output_18_0.png)
 
 
 
 
 
-    PyObject Text(24,0.5,'time')
+    PyObject Text(24.0, 0.5, 'time')
 
 
 
@@ -237,12 +254,12 @@ An example of a semblance panel and the resulting NMO velocity is shown below.
 
 
 ```julia
-v = linspace(1000, 3000, 500)
+v = 1000:(3000-1000)/(500-1):3000
 # scan over velocities
 S = zeros(length(T),length(v));
 for k = 1:length(v)
-    cmp_nmo = nmo(muted, 1e-3.*T, offsets, v[k] .+ 0.*T);
-    S[:,k]  = sum(cmp_nmo.^2,2);
+    cmp_nmo = nmo(muted, 1e-3.*T, offsets, v[k] .+ 0 .*T);
+    S[:,k]  = sum(cmp_nmo .^2, dims = 2);
 end
 ```
 
@@ -256,13 +273,13 @@ ylabel("tau")
 ```
 
 
-![png](../img/Exercise2_20_0.png)
+![png](../img/output_21_0.png)
 
 
 
 
 
-    PyObject Text(24,0.5,'tau')
+    PyObject Text(24.0, 0.5, 'tau')
 
 
 
@@ -292,13 +309,13 @@ ylabel("tau")
 ```
 
 
-![png](../img/Exercise2_24_0.png)
+![png](../img/output_25_0.png)
 
 
 
 
 
-    PyObject Text(24,0.5,'tau')
+    PyObject Text(24.0, 0.5, 'tau')
 
 
 
@@ -316,13 +333,13 @@ ylabel("time")
 ```
 
 
-![png](../img/Exercise2_26_0.png)
+![png](../img/output_27_0.png)
 
 
 
 
 
-    PyObject Text(24,0.5,'time')
+    PyObject Text(24.0, 0.5, 'time')
 
 
 
@@ -331,3 +348,10 @@ ylabel("time")
 Repeat the above outline procedure for a couple of mipdoint positions xm (e.g., `xm = [500 1000 2000]`). Organize the resulting NMO velocities in a matrix `Vm` (where column i is the NMO velocity for midpoint `xm[i]`) interpolate the results to obtain a velocity for all the midpoints using `Spline1D(xm, VM); spl(all_m)`. Plot the velocity and discuss.
 
 Using this NMO velocity, we can produce an NMO stack. Perform an NMO correction of all the midpoint gathers using the corresponding NMO velocity derived above and sum each along the offset direction. Organize all the stacks in a matrix and plot the result. Also make a stack using a constant NMO velocity. Discuss the results.
+
+
+
+
+```julia
+
+```
