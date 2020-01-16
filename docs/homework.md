@@ -7,16 +7,15 @@ For Windows, I recommend to use docker as [Devito](https://www.devitoproject.org
 ## Julia
 To install julia follow
 
-https://julialang.org/downloads/
+[https://julialang.org/downloads/](https://julialang.org/downloads/)
 
 And install Julia 1.2
-
 
 ## Python
 
 The recommended installation is via conda to have a stable environment.
 
-https://conda.io/miniconda.html
+[https://conda.io/miniconda.html](https://conda.io/miniconda.html)
 
 
 ## Packages
@@ -25,17 +24,18 @@ https://conda.io/miniconda.html
 For devito:
 
 ```
-git clone -b v3.2.0 https://github.com/opesci/devito.git
+git clone -b v3.2.0 https://github.com/devitocodes/devito.git
 cd devito
 conda env create -f environment.yml
 source activate devito
 pip install -e .
 ```
 
-This will create your devito environment. Remeber to always call `source activate devito` at every new session.
+This will create your devito environment. Remember to always call `source activate devito` at every new session.
 
 For JUDI, start julia and run
 ```
+using Pkg
 Pkg.add("JUDI")
 ```
 
@@ -45,7 +45,7 @@ all the dependencies should install.
 
 First install docker for your system
 
-https://www.docker.com/products/docker-desktop
+[https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
 
 Instead of having to install Python, Julia, Devito, JUDI and all the dependencies by yourself, you simply download the docker image and run it in a container. All you need to do is install docker and run:
 
@@ -73,7 +73,8 @@ This will give you access to a terminal, in which you can start Julia/Python, ru
 
 During the course you will work on the following exercises
 
-1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md)
+1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md) [Exercise 1](Assignments/Exercise1.md)
+2. NMO correction and velocity analysis [Exercise 2](Assignments/Exercise2.md)
 
 <!--
 1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md) [Exercise 1](Assignments/Exercise1.md) [[Solution]](https://www.slim.eos.ubc.ca/Teaching/EOSC454/exercise1_sol.html)
@@ -96,9 +97,9 @@ These exercises will introduce you to the [Julia programming language](https://j
 
 ### Hand in
 
-Please turn in your assignments as pdf files. The assignments should be send to [Felix J. Herrmann](mailto:felix.herrmann@gatech.edu). Late hand ins are not accepted.
+Please turn in your assignments as pdf files. The assignments should be send to Yijun Zhang](mailto:yzhang3198@gatech.edu). Late hand ins are not accepted.
 
-Unless stated otherwise the labs are due one week after the lab.
+**Unless stated otherwise the labs are due one week after the lab.**
 
 ### Feedback
 
