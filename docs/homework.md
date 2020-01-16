@@ -99,7 +99,7 @@ These exercises will introduce you to the [Julia programming language](https://j
 
 Please turn in your assignments as pdf files. The assignments should be send to [Yijun Zhang](mailto:yzhang3198@gatech.edu). Late hand ins are not accepted.
 
-**Unless stated otherwise the labs are due one week after the lab.**
+**Unless stated otherwise the labs are due one week after the assignments have been posted.**
 
 ### Feedback
 
