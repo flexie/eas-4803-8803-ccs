@@ -1,6 +1,6 @@
 # Installation
 
-The assignments require [Julia](https://julialang.org) and Python to be installed.
+The assignments require [Julia](https://julialang.org) and Python 3 to be installed (Python 2 will not work).
 
 For Windows, I recommend to use docker as [Devito](https://www.devitoproject.org) does not support Windows.
 
@@ -20,26 +20,42 @@ The recommended installation is via conda to have a stable environment.
 
 ## Packages
 
+For the assignments, you will need a few python and julia packages. Please follow these instructions to install all of the packages in the order described here.
 
-For devito:
+First, install Devito using `pip`, or see the [Devito's GitHub page](https://github.com/devitocodes/devito) for installation with Conda and further information. The current release of JUDI requires Python 3 and the current Devito version. Run all of the following commands from the (bash) terminal command line (not in the Julia REPL):
 
-```
-git clone -b v3.2.0 https://github.com/devitocodes/devito.git
-cd devito
-conda env create -f environment.yml
-source activate devito
-pip install -e .
+```bash
+pip install --user git+https://github.com/devitocodes/devito.git
 ```
 
-This will create your devito environment. Remember to always call `source activate devito` at every new session.
+For reading and writing seismic SEG-Y data, JUDI uses the [SegyIO](https://github.com/slimgroup/SegyIO.jl) package and matrix-free linear operators are based the [Julia Operator LIbrary](https://github.com/slimgroup/JOLI.jl/tree/master/src) (JOLI):
 
-For JUDI, start julia and run
-```
-using Pkg
-Pkg.add("JUDI")
+```bash
+julia -e 'using Pkg; Pkg.clone("https://github.com/slimgroup/SegyIO.jl.git")'
+julia -e 'using Pkg; Pkg.clone("https://github.com/slimgroup/JOLI.jl.git")'
 ```
 
-all the dependencies should install.
+Once Devito, SegyIO and JOLI are installed, you can install JUDI with Julia's `Pkg.clone`.
+
+```bash
+julia -e 'using Pkg; Pkg.clone("https://github.com/slimgroup/JUDI.jl")'
+```
+
+Once you have JUDI installed, you need to point Julia's PyCall package to the Python version for which we previously installed Devito. To do this, copy-paste the following commands into the (bash) terminal:
+
+```bash
+export PYTHON=$(which python)
+julia -e 'using Pkg; Pkg.build("PyCall")'
+```
+
+You can verify your installation by running:
+
+```bash
+julia ~/.julia/dev/JUDI/examples/scripts/modeling_basic_2D.jj
+```
+
+This command should finish without errors.
+
 
 ## Docker
 
