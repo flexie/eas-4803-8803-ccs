@@ -136,7 +136,7 @@ julia -e 'using Pkg; Pkg.build(&quot;PyCall&quot;)'
 <p>First install docker for your system</p>
 <p><a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a></p>
 <p>Instead of having to install Python, Julia, Devito, JUDI and all the dependencies by yourself, you simply download the docker image and run it in a container. All you need to do is install docker and run:</p>
-<pre><code>docker run -p 8888:8888 philippwitte/judi:v1.0.0
+<pre><code>docker run -p 8888:8888 philippwitte/judi:v1.1
 </code></pre>
 
 <p>This will download the image and launch a jupyter notebook that you can access from your internet browser. The command will display a link, which looks something like this:</p>
@@ -146,7 +146,7 @@ julia -e 'using Pkg; Pkg.build(&quot;PyCall&quot;)'
 </code></pre>
 
 <p>Copy-paste this link and replace the address <code>0e27b13128d4:8888</code> with <code>localhost:8888</code> (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Instead of a notebook, you can also launch an interactive session with a terminal by running:</p>
-<pre><code>docker run -it philippwitte/judi:v1.0.0 /bin/bash
+<pre><code>docker run -it philippwitte/judi:v1.1 /bin/bash
 </code></pre>
 
 <p>This will give you access to a terminal, in which you can start Julia/Python, run things interactively or modify code.</p>
