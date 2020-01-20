@@ -6,12 +6,14 @@
 - Guy Drijkoningen: [Seismic Data Processing](https://www.dropbox.com/s/x7sng1s982484o0/SeismicProcessing2%28tg001_ta3600%29.pdf?dl=0) - TG001 / TA3600 Chapters 1,2,3, 4.6, 4.7. and [Introduction to Reflection Seismology TA3520](https://www.dropbox.com/s/hgheb1u1rrflzpk/IntroductionreflectionSeismology%28ta3520%29.pdf?dl=0) Chapter 5.
 - Yilmaz's “bible”
 
+https://www.dropbox.com/s/hytfic068qp5jiq/4-Exploration_Seismology-basics.pdf?dl=0
+
 #### Material presented in class
 
 - [Slides for Lecture 1: Introduction](https://www.dropbox.com/s/urblegbb45cvcgr/1-Exploration_Seismology.pdf?dl=0)
 - [Slides for Lecture 2: Basic Seismic Data Processing 1](https://www.dropbox.com/s/7qi7kgm3d4ciakx/2-Exploration_Seismology-basics.pdf?dl=0)
 - [Slides for Lecture 3: Basic seismic data processing 2](https://www.dropbox.com/s/cix0d679i52t0x3/3-Exploration_Seismology-basics.pdf?dl=0)
-- [Slides for Lecture 4: Basic seismic data processing 3](https://www.dropbox.com/s/eaajioq7vbtga0g/4-Exploration_Seismology-basics.pdf?dl=0)
+- [Slides for Lecture 4: Basic seismic data processing 3](https://www.dropbox.com/s/hytfic068qp5jiq/4-Exploration_Seismology-basics.pdf?dl=0)
 - [Slides for Lecture 5: Basic seismic data processing 4](https://www.dropbox.com/s/hfyc81n012s8o4a/5-Exploration_Seismology-basics.pdf?dl=0)
 - [Slides for Lecture 6: Basic seismic data processing 5](https://www.dropbox.com/s/5sl67ssdzehu7jl/6-Exploration_Seismology-migration.pdf?dl=0)
 - [Slides for Lecture 7: Basic seismic data processing 6](https://www.dropbox.com/s/589st3bu5a5qwpg/7-Exploration_Seismology-migration.pdf?dl=0)
