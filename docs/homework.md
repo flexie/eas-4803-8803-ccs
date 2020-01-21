@@ -51,7 +51,7 @@ julia -e 'using Pkg; Pkg.build("PyCall")'
 You can verify your installation by running:
 
 ```bash
-julia ~/.julia/dev/JUDI/examples/scripts/modeling_basic_2D.jj
+julia ~/.julia/dev/JUDI/examples/scripts/modeling_basic_2D.jl
 ```
 
 This command should finish without errors.

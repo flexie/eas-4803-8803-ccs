@@ -1,4 +1,3 @@
-
 # Exercise 3: wavefield extrapolation and migration
 Contents:
  - Wavefield extrapolation
@@ -15,6 +14,7 @@ To illustrate this, we generate a source wavefield in the $t-x$ domain and extra
 
 ```julia
 using PyPlot
+using FFTW
 ```
 
 # f-k domain transform function fktran
@@ -89,7 +89,7 @@ xx = [xi for ti in t, xi in x];
 
 ```julia
 # Source wavefield is impulsive source at t=0.1 and x=500,
-source = (tt-.1).*exp.(-1e-3*(xx.-500).^2 .- 1e3*(tt-.1).^2);
+source = (tt .- .1).*exp.(-1e-3*(xx.-500).^2 .- 1e3*(tt .-.1).^2);
 ```
 
 
@@ -102,13 +102,13 @@ title("wavefield at z=0 m.")
 ```
 
 
-![png](../img//Exercise3_6_0.png)
+![png](../img/E3_output_6_0.png)
 
 
 
 
 
-    PyObject Text(0.5,1,'wavefield at z=0 m.')
+    PyObject Text(0.5, 1, 'wavefield at z=0 m.')
 
 
 
@@ -126,7 +126,7 @@ Next, we define the extrapolation factor and plot it.
 ff = [fi for fi in f, ki in k]
 kk = [ki for fi in f, ki in k]
 
-# the extrapolation factor for a velocity v is defined as follows
+# the extrapolation factor for a velocity v is defined as follows 
 # (note the factor \(2 pi\) to go from frequency to wavenumber)
 v  = 2000
 dz = 10
@@ -140,7 +140,7 @@ xlabel("k [1/m]");ylabel("|W|");title("|W| @ 10 Hz.");
 ```
 
 
-![png](../img//Exercise3_9_0.png)
+![png](../img/E3_output_9_0.png)
 
 
 The region where the extrapolation factor is smaller than one is called the evanescent region. Waves this these wavenumbers will be damped. We have to be carefull with the sign of \(k_z\) in the exponentional factor and make sure that the absolute value is always smaller than one.
@@ -164,13 +164,13 @@ title("wavefield at z=500 m.")
 ```
 
 
-![png](../img//Exercise3_11_0.png)
+![png](../img/E3_output_11_0.png)
 
 
 
 
 
-    PyObject Text(0.5,1,'wavefield at z=500 m.')
+    PyObject Text(0.5, 1, 'wavefield at z=500 m.')
 
 
 
@@ -194,10 +194,10 @@ Load the zero-offset `data data1_zero.segy` (in Dropbox) and define the source, 
 
 
 ```julia
-using SeisIO
+using SegyIO
 
 # Dowload and adapt path
-shot = segy_read("data_zo.segy")
+shot = segy_read("/home/yzhang3198/Downloads/data_segy/data1_zo.segy")
 
 shot_data = Float32.(shot.data)
 
@@ -207,7 +207,8 @@ nt = get_header(shot, "ns")[1]
 T = 0:dt:(nt -1)*dt
 ```
 
-    [1m[33mWARNING: [39m[22m[33mFixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=253644, maxsize=Inf, ptr=3601, mark=-1)[39m
+    ┌ Warning: Fixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=253644, maxsize=Inf, ptr=3601, mark=-1)
+    └ @ SegyIO /home/yzhang3198/.julia/packages/SegyIO/ak2qG/src/read/read_file.jl:26
 
 
 
@@ -225,13 +226,13 @@ ylabel("t [s]")
 ```
 
 
-![png](../img//Exercise3_16_0.png)
+![png](../img/E3_output_16_0.png)
 
 
 
 
 
-    PyObject Text(24,0.5,'t [s]')
+    PyObject Text(24.000000000000007, 0.5, 't [s]')
 
 
 
@@ -276,7 +277,7 @@ function wave_extrap(u,t,x,v,dz,dir)
 
     # take real part of wavefield
     v = real(v)
-
+    
     return v
 end
 ```
@@ -316,13 +317,13 @@ title("correct velocity")
 ```
 
 
-![png](../img//Exercise3_20_0.png)
+![png](../img/E3_output_20_0.png)
 
 
 
 
 
-    PyObject Text(0.5,1,'correct velocity')
+    PyObject Text(0.5, 1, 'correct velocity')
 
 
 
@@ -339,7 +340,7 @@ Read the data `data_ex3.segy` (in Dropbox)
 
 
 ```julia
-block = segy_read("data_ex3.segy")
+block = segy_read("/home/yzhang3198/Downloads/data_segy/data_ex3.segy")
 
 sx = get_header(block, "SourceX", scale=false)
 rx = get_header(block, "GroupX", scale=false)
@@ -353,7 +354,8 @@ xs = unique(sx)
 xr = unique(rx);
 ```
 
-    [1m[33mWARNING: [39m[22m[33mFixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=1385684, maxsize=Inf, ptr=3601, mark=-1)[39m
+    ┌ Warning: Fixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=1385684, maxsize=Inf, ptr=3601, mark=-1)
+    └ @ SegyIO /home/yzhang3198/.julia/packages/SegyIO/ak2qG/src/read/read_file.jl:26
 
 
 We extrapolate both source and receiver wavefields for one shot using `wave_extrap` (see comments in wave_extrap for documenation) and plot them side-by-side:
@@ -371,7 +373,7 @@ xx = [xi for ti in T, xi in xr];
 is = 6
 
 # source wavefield at z=0
-source = (tt-.1).*exp.(-1e-3*(xx-xs[is]).^2 - 1e3*(tt-.1).^2);
+source = (tt .-.1).*exp.(-1e-3*(xx .-xs[is]).^2 .- 1e3*(tt .-.1).^2);
 
 # receiver wavefield is data for corresponding shot
 receiver = Float32.(block.data[:, sx.==xs[is]]);
@@ -392,17 +394,17 @@ title("receiver wavefield at z=500 m.")
 ```
 
 
-![png](../img//Exercise3_26_0.png)
+![png](../img/E3_output_26_0.png)
 
 
 
-![png](../img//Exercise3_26_1.png)
+![png](../img/E3_output_26_1.png)
 
 
 
 
 
-    PyObject Text(0.5,1,'receiver wavefield at z=500 m.')
+    PyObject Text(0.5, 1, 'receiver wavefield at z=500 m.')
 
 
 
@@ -428,7 +430,7 @@ image = zeros(length(z),length(xr))
 for iz = 1:length(z)
     shoti       = wave_extrap(source, T, xr, v, z[iz], 1)
     reci        = wave_extrap(receiver, T, xr, v, z[iz], -1)
-    image[iz,:] = sum(shoti.*reci, 1)
+    image[iz,:] = sum(shoti .* reci, dims = 1)
 end
 
 ```
@@ -443,13 +445,13 @@ title("image for one source")
 ```
 
 
-![png](../img//Exercise3_30_0.png)
+![png](../img/E3_output_30_0.png)
 
 
 
 
 
-    PyObject Text(0.5,1,'image for one source')
+    PyObject Text(0.5, 1, 'image for one source')
 
 
 
@@ -471,7 +473,7 @@ function mig_extrap(data, t, xr, xs, z, v)
 #   image = mig_extrap(data,t,xr,xs,v)
 #
 # input:
-#   data  - data cube of size length(t) x length(xr) x length(xs)
+#   data  - data cube of size length(t) x length(xr) x length(xs) 
 #   t     - time coordinate in seconds as column vector
 #   xr    - receiver coordinate in meters as row vector
 #   xs    - source coordinate in meters as row vector
@@ -484,7 +486,7 @@ function mig_extrap(data, t, xr, xs, z, v)
     # initialize image
     image = zeros(length(z),length(xr));
 
-    # depth step
+    # depth step 
     dz = z[2] - z[1]
 
     # t-x grid
@@ -497,21 +499,26 @@ function mig_extrap(data, t, xr, xs, z, v)
         source   = (tt-.1).*exp.(-1e-3*(xx-xs[is]).^2 - 1e3*(tt-.1).^2);
 
         # select data beloning to source is
-        receiver =
+        receiver = 
 
         # loop over depth levels
         for iz = 1:length(z)
             # use wave_extrap to advance both wavefields one depthlevel
-            srci    =
-            reci    =
+            srci    = 
+            reci    = 
 
             # update image
-            image[iz,:] = image[iz,:] +
+            image[iz,:] = image[iz,:] + 
         end
         # end loop over depth levels
     end
     # end loop over shots
-
+    
     return image
 end
+```
+
+
+```julia
+
 ```
