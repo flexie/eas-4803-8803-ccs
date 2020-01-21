@@ -99,6 +99,7 @@
 <p>$ u(\omega,k,z + \Delta z) = u(\omega,k,z)\exp[\imath\Delta z\sqrt(\omega^2/v^2 - k^2)]$</p>
 <p>To illustrate this, we generate a source wavefield in the $t-x$ domain and extrapolate it. First, let's define an impulsive source.</p>
 <pre><code class="julia">using PyPlot
+using FFTW
 </code></pre>
 
 <h1 id="f-k-domain-transform-function-fktran">f-k domain transform function fktran</h1>
@@ -161,7 +162,7 @@ xx = [xi for ti in t, xi in x];
 </code></pre>
 
 <pre><code class="julia"># Source wavefield is impulsive source at t=0.1 and x=500,
-source = (tt-.1).*exp.(-1e-3*(xx.-500).^2 .- 1e3*(tt-.1).^2);
+source = (tt .- .1).*exp.(-1e-3*(xx.-500).^2 .- 1e3*(tt .-.1).^2);
 </code></pre>
 
 <pre><code class="julia"># plot it
@@ -171,8 +172,8 @@ ylabel(&quot;t [s]&quot;)
 title(&quot;wavefield at z=0 m.&quot;)
 </code></pre>
 
-<p><img alt="png" src="../../img/Exercise3_6_0.png" /></p>
-<pre><code>PyObject Text(0.5,1,'wavefield at z=0 m.')
+<p><img alt="png" src="../../img/E3_output_6_0.png" /></p>
+<pre><code>PyObject Text(0.5, 1, 'wavefield at z=0 m.')
 </code></pre>
 <pre><code class="julia"># now, transform it to the f-k domain using fktran
 source_fk, f, k = fktran(source,t,x,1);
@@ -183,7 +184,7 @@ source_fk, f, k = fktran(source,t,x,1);
 ff = [fi for fi in f, ki in k]
 kk = [ki for fi in f, ki in k]
 
-# the extrapolation factor for a velocity v is defined as follows
+# the extrapolation factor for a velocity v is defined as follows 
 # (note the factor \(2 pi\) to go from frequency to wavenumber)
 v  = 2000
 dz = 10
@@ -196,7 +197,7 @@ plot(k,abs.(W[ff.==10]))
 xlabel(&quot;k [1/m]&quot;);ylabel(&quot;|W|&quot;);title(&quot;|W| @ 10 Hz.&quot;);
 </code></pre>
 
-<p><img alt="png" src="../../img/Exercise3_9_0.png" /></p>
+<p><img alt="png" src="../../img/E3_output_9_0.png" /></p>
 <p>The region where the extrapolation factor is smaller than one is called the evanescent region. Waves this these wavenumbers will be damped. We have to be carefull with the sign of (k_z) in the exponentional factor and make sure that the absolute value is always smaller than one.</p>
 <p>The wavefield at z = 500 m looks like</p>
 <pre><code class="julia"># fix sign of kz
@@ -213,8 +214,8 @@ ylabel(&quot;t [s]&quot;)
 title(&quot;wavefield at z=500 m.&quot;)
 </code></pre>
 
-<p><img alt="png" src="../../img/Exercise3_11_0.png" /></p>
-<pre><code>PyObject Text(0.5,1,'wavefield at z=500 m.')
+<p><img alt="png" src="../../img/E3_output_11_0.png" /></p>
+<pre><code>PyObject Text(0.5, 1, 'wavefield at z=500 m.')
 </code></pre>
 <h1 id="questions">Questions</h1>
 <ul>
@@ -230,10 +231,10 @@ and taking the image to be slice of the wavefield at $t=0$ for each depth step: 
 <p>The function wave_extrap.m takes in a wavefield u and the correspoding time/space vectors t,x, a velocity v,
 a depth step dz and a propagation direction dir and extrapolates the input wavefield.</p>
 <p>Load the zero-offset <code>data data1_zero.segy</code> (in Dropbox) and define the source, receiver and time coordinates. The units of the source and receiver coordinates are in meters for this file. The data looks like this</p>
-<pre><code class="julia">using SeisIO
+<pre><code class="julia">using SegyIO
 
 # Dowload and adapt path
-shot = segy_read(&quot;data_zo.segy&quot;)
+shot = segy_read(&quot;/home/yzhang3198/Downloads/data_segy/data1_zo.segy&quot;)
 
 shot_data = Float32.(shot.data)
 
@@ -243,7 +244,8 @@ nt = get_header(shot, &quot;ns&quot;)[1]
 T = 0:dt:(nt -1)*dt
 </code></pre>
 
-<pre><code>[1m[33mWARNING: [39m[22m[33mFixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=253644, maxsize=Inf, ptr=3601, mark=-1)[39m
+<pre><code>┌ Warning: Fixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=253644, maxsize=Inf, ptr=3601, mark=-1)
+└ @ SegyIO /home/yzhang3198/.julia/packages/SegyIO/ak2qG/src/read/read_file.jl:26
 
 
 
@@ -256,8 +258,8 @@ xlabel(&quot;source position [m]&quot;)
 ylabel(&quot;t [s]&quot;)
 </code></pre>
 
-<p><img alt="png" src="../../img/Exercise3_16_0.png" /></p>
-<pre><code>PyObject Text(24,0.5,'t [s]')
+<p><img alt="png" src="../../img/E3_output_16_0.png" /></p>
+<pre><code>PyObject Text(24.000000000000007, 0.5, 't [s]')
 </code></pre>
 <p>Use the function <code>wave_extrap</code> to migrate the zero offset section. A reasonable depth axis is z = 0:5:1000. Use the source position as lateral position x. The correct velocity is v0 = 2000 km/s (but, remember this is zero-offset migration so adapt the velocity accordingly!). A zero-offset migration can done as follows:</p>
 <pre><code class="julia">function wave_extrap(u,t,x,v,dz,dir)
@@ -327,8 +329,8 @@ ylabel(&quot;z [m]&quot;)
 title(&quot;correct velocity&quot;)
 </code></pre>
 
-<p><img alt="png" src="../../img/Exercise3_20_0.png" /></p>
-<pre><code>PyObject Text(0.5,1,'correct velocity')
+<p><img alt="png" src="../../img/E3_output_20_0.png" /></p>
+<pre><code>PyObject Text(0.5, 1, 'correct velocity')
 </code></pre>
 <h1 id="questions_1">Questions</h1>
 <ul>
@@ -339,7 +341,7 @@ title(&quot;correct velocity&quot;)
 <h1 id="prestack-migration">Prestack migration</h1>
 <p>We can also create an image by extrapolating the source wavefields and the data and correlating them at different depth levels.</p>
 <p>Read the data <code>data_ex3.segy</code> (in Dropbox)</p>
-<pre><code class="julia">block = segy_read(&quot;data_ex3.segy&quot;)
+<pre><code class="julia">block = segy_read(&quot;/home/yzhang3198/Downloads/data_segy/data_ex3.segy&quot;)
 
 sx = get_header(block, &quot;SourceX&quot;, scale=false)
 rx = get_header(block, &quot;GroupX&quot;, scale=false)
@@ -353,7 +355,8 @@ xs = unique(sx)
 xr = unique(rx);
 </code></pre>
 
-<pre><code>[1m[33mWARNING: [39m[22m[33mFixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=1385684, maxsize=Inf, ptr=3601, mark=-1)[39m
+<pre><code>┌ Warning: Fixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=1385684, maxsize=Inf, ptr=3601, mark=-1)
+└ @ SegyIO /home/yzhang3198/.julia/packages/SegyIO/ak2qG/src/read/read_file.jl:26
 </code></pre>
 <p>We extrapolate both source and receiver wavefields for one shot using <code>wave_extrap</code> (see comments in wave_extrap for documenation) and plot them side-by-side:</p>
 <pre><code class="julia"># velocity
@@ -367,7 +370,7 @@ xx = [xi for ti in T, xi in xr];
 is = 6
 
 # source wavefield at z=0
-source = (tt-.1).*exp.(-1e-3*(xx-xs[is]).^2 - 1e3*(tt-.1).^2);
+source = (tt .-.1).*exp.(-1e-3*(xx .-xs[is]).^2 .- 1e3*(tt .-.1).^2);
 
 # receiver wavefield is data for corresponding shot
 receiver = Float32.(block.data[:, sx.==xs[is]]);
@@ -385,9 +388,9 @@ ylabel(&quot;t [s]&quot;)
 title(&quot;receiver wavefield at z=500 m.&quot;)
 </code></pre>
 
-<p><img alt="png" src="../../img/Exercise3_26_0.png" /></p>
-<p><img alt="png" src="../../img/Exercise3_26_1.png" /></p>
-<pre><code>PyObject Text(0.5,1,'receiver wavefield at z=500 m.')
+<p><img alt="png" src="../../img/E3_output_26_0.png" /></p>
+<p><img alt="png" src="../../img/E3_output_26_1.png" /></p>
+<pre><code>PyObject Text(0.5, 1, 'receiver wavefield at z=500 m.')
 </code></pre>
 <h1 id="question">Question</h1>
 <ul>
@@ -408,7 +411,7 @@ image = zeros(length(z),length(xr))
 for iz = 1:length(z)
     shoti       = wave_extrap(source, T, xr, v, z[iz], 1)
     reci        = wave_extrap(receiver, T, xr, v, z[iz], -1)
-    image[iz,:] = sum(shoti.*reci, 1)
+    image[iz,:] = sum(shoti .* reci, dims = 1)
 end
 
 </code></pre>
@@ -420,8 +423,8 @@ ylabel(&quot;z [m]&quot;)
 title(&quot;image for one source&quot;)
 </code></pre>
 
-<p><img alt="png" src="../../img/Exercise3_30_0.png" /></p>
-<pre><code>PyObject Text(0.5,1,'image for one source')
+<p><img alt="png" src="../../img/E3_output_30_0.png" /></p>
+<pre><code>PyObject Text(0.5, 1, 'image for one source')
 </code></pre>
 <h1 id="questions_2">Questions</h1>
 <ul>
@@ -438,7 +441,7 @@ title(&quot;image for one source&quot;)
 #   image = mig_extrap(data,t,xr,xs,v)
 #
 # input:
-#   data  - data cube of size length(t) x length(xr) x length(xs)
+#   data  - data cube of size length(t) x length(xr) x length(xs) 
 #   t     - time coordinate in seconds as column vector
 #   xr    - receiver coordinate in meters as row vector
 #   xs    - source coordinate in meters as row vector
@@ -451,7 +454,7 @@ title(&quot;image for one source&quot;)
     # initialize image
     image = zeros(length(z),length(xr));
 
-    # depth step
+    # depth step 
     dz = z[2] - z[1]
 
     # t-x grid
@@ -464,16 +467,16 @@ title(&quot;image for one source&quot;)
         source   = (tt-.1).*exp.(-1e-3*(xx-xs[is]).^2 - 1e3*(tt-.1).^2);
 
         # select data beloning to source is
-        receiver =
+        receiver = 
 
         # loop over depth levels
         for iz = 1:length(z)
             # use wave_extrap to advance both wavefields one depthlevel
-            srci    =
-            reci    =
+            srci    = 
+            reci    = 
 
             # update image
-            image[iz,:] = image[iz,:] +
+            image[iz,:] = image[iz,:] + 
         end
         # end loop over depth levels
     end
@@ -481,6 +484,9 @@ title(&quot;image for one source&quot;)
 
     return image
 end
+</code></pre>
+
+<pre><code class="julia">
 </code></pre></div>
         </div>
 
