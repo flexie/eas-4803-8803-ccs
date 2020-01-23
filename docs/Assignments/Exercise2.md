@@ -17,7 +17,7 @@ You can use the function `nmo` implemented below for this exercise.
 
 
 
-Please download data from Dropbox: https://www.dropbox.com/sh/ux1mhzids61pclx/AACtP4RG1BGSs8su_qPU0ncfa?dl=0
+Please download data from Dropbox: https://www.dropbox.com/s/lhjuvaidcttigqg/data.zip?dl=0 Password is exact same with the password which you used to access the lecture note. 
 
 
 ```julia
