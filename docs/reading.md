@@ -16,7 +16,7 @@ https://www.dropbox.com/s/hytfic068qp5jiq/4-Exploration_Seismology-basics.pdf?dl
 - [Slides for Lecture 4: Basic seismic data processing 3](https://www.dropbox.com/s/hytfic068qp5jiq/4-Exploration_Seismology-basics.pdf?dl=0)
 - [Slides for Lecture 5: Basic seismic data processing 4](https://www.dropbox.com/s/pgq1qsax4p3by07/5-Exploration_Seismology-basics.pdf?dl=0)
 - [Slides for Lecture 6: Basic seismic data processing 5](https://www.dropbox.com/s/3ivdg4ek4ft4tc6/6-Exploration_Seismology-migration.pdf?dl=0)
-- [Slides for Lecture 7: Basic seismic data processing 6](https://www.dropbox.com/s/589st3bu5a5qwpg/7-Exploration_Seismology-migration.pdf?dl=0)
+- [Slides for Lecture 7: Basic seismic data processing 6](https://www.dropbox.com/s/hyh1qa7cae21o0k/7-Exploration_Seismology-migration.pdf?dl=0)
 - [Slides for Lecture 8: Basic seismic data processing 7](https://www.dropbox.com/s/w3yv0atpmm46fa6/8-Exploration_Seismology-migration.pdf?dl=0)
 - [Slides for Lecture 7: Basic seismic data processing 6](https://www.dropbox.com/s/589st3bu5a5qwpg/7-Exploration_Seismology-migration.pdf?dl=0)
 - [Slides for Lecture 8: Basic seismic data processing 7](https://www.dropbox.com/s/w3yv0atpmm46fa6/8-Exploration_Seismology-migration.pdf?dl=0)
