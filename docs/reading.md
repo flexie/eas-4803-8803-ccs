@@ -24,8 +24,7 @@ https://www.dropbox.com/s/hytfic068qp5jiq/4-Exploration_Seismology-basics.pdf?dl
 )
 - [Slides for Lecture 10: Basic seismic data processing 9](https://www.dropbox.com/s/x2hfi4k0kcflvq3/10-Exploration_Seismology-fk-radon.pdf?dl=0
 )
-- [Slides for Lecture 11: Basic seismic data processing 10](https://www.dropbox.com/s/2y2proguwxhtooq/11-Exploration_Seismology-fk-radon.pdf?dl=0
-)
+- [Slides for Lecture 11: Basic seismic data processing 10](https://www.dropbox.com/s/u5umuw5i8fylrs0/11-Exploration_Seismology-fk-radon.pdf?dl=0)
 
 *** 
 
