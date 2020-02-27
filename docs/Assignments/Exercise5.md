@@ -1,4 +1,3 @@
-
 # Exercise 5: From processing to inversion I
 
 # Contents
@@ -35,7 +34,7 @@ A'
 
 
 
-    2×2 Array{Int64,2}:
+    2×2 LinearAlgebra.Adjoint{Int64,Array{Int64,2}}:
      1   3
      2  -1
 
@@ -94,6 +93,7 @@ The JOLI toolbox gives a way to represent matrices implicitly. A nice example is
 
 
 ```julia
+using FFTW
 # dimension
 N  = 10
 F1 = zeros(Complex{Float64}, N,N)
@@ -126,17 +126,34 @@ F2  = joDFT(N)
 
 
 
-    JOLI.joLinearFunction{Float64,Complex{Float64}}("joDFTp", 10, 10, JOLI.#514, Nullable{Function}(JOLI.#278), Nullable{Function}(JOLI.#515), Nullable{Function}(JOLI.#279), false, Nullable{Function}(JOLI.#516), Nullable{Function}(JOLI.#280), Nullable{Function}(JOLI.#517), Nullable{Function}(JOLI.#281), false)
+    joLinearFunction{Float64,Complex{Float64}}("joDFTp", 10, 10, getfield(JOLI, Symbol("##837#853")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}(Complex{Float64}, (10,), FFTW forward plan for 10-element array of Complex{Float64}
+    (dft-direct-10 "n2fv_10_avx2_128")), Nullable{Function}(getfield(JOLI, Symbol("##240#244")){getfield(JOLI, Symbol("##838#854")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}}(getfield(JOLI, Symbol("##838#854")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}(Float64, (10,), 0.1 * FFTW backward plan for 10-element array of Complex{Float64}
+    (dft-direct-10 "n2bv_10_avx2_128")))), Nullable{Function}(getfield(JOLI, Symbol("##838#854")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}(Float64, (10,), 0.1 * FFTW backward plan for 10-element array of Complex{Float64}
+    (dft-direct-10 "n2bv_10_avx2_128"))), Nullable{Function}(getfield(JOLI, Symbol("##241#245")){getfield(JOLI, Symbol("##837#853")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}}(getfield(JOLI, Symbol("##837#853")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}(Complex{Float64}, (10,), FFTW forward plan for 10-element array of Complex{Float64}
+    (dft-direct-10 "n2fv_10_avx2_128")))), true, Nullable{Function}(getfield(JOLI, Symbol("##839#855")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}(Float64, (10,), 0.1 * FFTW backward plan for 10-element array of Complex{Float64}
+    (dft-direct-10 "n2bv_10_avx2_128"))), Nullable{Function}(getfield(JOLI, Symbol("##242#246")){getfield(JOLI, Symbol("##840#856")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}}(getfield(JOLI, Symbol("##840#856")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}(Complex{Float64}, (10,), FFTW forward plan for 10-element array of Complex{Float64}
+    (dft-direct-10 "n2fv_10_avx2_128")))), Nullable{Function}(getfield(JOLI, Symbol("##840#856")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}(Complex{Float64}, (10,), FFTW forward plan for 10-element array of Complex{Float64}
+    (dft-direct-10 "n2fv_10_avx2_128"))), Nullable{Function}(getfield(JOLI, Symbol("##243#247")){getfield(JOLI, Symbol("##839#855")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}}(getfield(JOLI, Symbol("##839#855")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}(Float64, (10,), 0.1 * FFTW backward plan for 10-element array of Complex{Float64}
+    (dft-direct-10 "n2bv_10_avx2_128")))), true)
 
 
 
 
 ```julia
-whos(r"F1"), whos(r"F2");
+varinfo(r"F1"), varinfo(r"F2")
 ```
 
-                                F1   1600 bytes  10×10 Array{Complex{Float64},2}
-                                F2    582 bytes  JOLI.joLinearFunction{Float64,Comp…
+
+
+
+    (| name |      size | summary                         |
+    |:---- | ---------:|:------------------------------- |
+    | F1   | 1.602 KiB | 10×10 Array{Complex{Float64},2} |
+    , | name |      size | summary                                    |
+    |:---- | ---------:|:------------------------------------------ |
+    | F2   | 566 bytes | joLinearFunction{Float64,Complex{Float64}} |
+    )
+
 
 
 And this is only a small example! The reason why we want to have such operations behave like matrices is that we can use (some) standard algorithms that where written to work with matrices to work with large scale operations. As an example we use a Gaussian matrix:
@@ -156,11 +173,20 @@ G2 = joOnes(N);
 
 
 ```julia
-whos(r"G1"), whos(r"G2");
+varinfo(r"G1"),varinfo(r"G2")
 ```
 
-                                G1 781250 KB     10000×10000 Array{Float64,2}
-                                G2    246 bytes  JOLI.joMatrix{Float64,Float64}
+
+
+
+    (| name |        size | summary                      |
+    |:---- | -----------:|:---------------------------- |
+    | G1   | 762.939 MiB | 10000×10000 Array{Float64,2} |
+    , | name |      size | summary                   |
+    |:---- | ---------:|:------------------------- |
+    | G2   | 246 bytes | joMatrix{Float64,Float64} |
+    )
+
 
 
 # Deconvolution
@@ -168,7 +194,7 @@ We some signal $f(t)$ which is a convolution of some unkown signal $g(t)$ and a 
 
 For the example we use:
 
-
+ 
 
 
 ```julia
@@ -182,7 +208,7 @@ g = zeros(N,1);
 g[rand(1:N, k)] = randn(k,1);
 
 # filter
-w = (1-2*1e3*(t-.2).^2).*exp.(-1e3*(t-.2).^2);
+w = (1 .-2*1e3*(t .-.2).^2).*exp.(-1e3*(t .-.2).^2);
 
 # plot
 using PyPlot
@@ -195,12 +221,16 @@ plot(t,w);
 xlabel("t [s]");ylabel("w(t)");
 ```
 
+    ┌ Info: Recompiling stale cache file /home/yzhang3198/.julia/compiled/v1.2/PyPlot/oatAj.ji for PyPlot [d330b81b-6aea-500a-939a-2ce795aea3ee]
+    └ @ Base loading.jl:1240
 
-![png](../img/Exercise5_24_0.png)
+
+
+![png](../img/E5_output_24_1.png)
 
 
 
-![png](../img/Exercise5_24_1.png)
+![png](../img/E5_output_24_2.png)
 
 
 First, we consider the `forward` problem of convolving a signal, using JOLI.
@@ -223,13 +253,17 @@ lsqr will give us a solution that has a small two-norm and explains the data. Al
 https://github.com/slimgroup/GenSPGL.jl
 
  - Is this solution closer to the true one?
- - Look at the predicted signal for this solution, do you see a difference with the true signal? Can we really say that this is a better solution?
+ - Look at the predicted signal for this solution, do you see a difference with the true signal? Can we really say that this is a better solution? 
 
 
 ```julia
 using GenSPGL
 # Pkg.clone("https://github.com/slimgroup/GenSPGL.jl")
 ```
+
+    ┌ Info: Recompiling stale cache file /home/yzhang3198/.julia/compiled/v1.2/GenSPGL/1rFbK.ji for GenSPGL [46767539-6b09-4d43-90af-09e8ecbe3fb9]
+    └ @ Base loading.jl:1240
+
 
 
 ```julia
@@ -252,62 +286,86 @@ xlabel("t [s]");ylabel("f(t)");legend(["normal","JOLI", "g"]);
 ```
 
 
-![png](../img/Exercise5_28_0.png)
+![png](../img/E5_output_28_0.png)
 
 
 
 ```julia
+import Pkg;
+Pkg.add("IterativeSolvers")
 # true signal
 f = C*g + 1e-3*randn(N,1);
 
-# lsqr
-gt = C\f
-
+using IterativeSolvers
+gt = lsqr(C, f[:,1], damp=1e0)
 ```
 
+    [32m[1m  Updating[22m[39m registry at `~/.julia/registries/General`
+    [32m[1m  Updating[22m[39m git-repo `https://github.com/JuliaRegistries/General.git`
+    [2K[?25h[1mFetching:[22m[39m [========================================>]  100.0 %.0 %========>                                ]  18.1 %36.1 %======================>                  ]  54.2 %]  72.2 %.0 %[32m[1m  Updating[22m[39m registry at `~/.julia/registries/SLIMregistryJL`
+    [32m[1m  Updating[22m[39m git-repo `https://github.com/slimgroup/SLIMregistryJL.git`
+    [?25l[2K[?25h[32m[1m Resolving[22m[39m package versions...
+    [32m[1m Installed[22m[39m WoodburyMatrices ─ v0.5.1
+    [32m[1m Installed[22m[39m LaTeXStrings ───── v1.1.0
+    [32m[1m Installed[22m[39m Polynomials ────── v0.6.1
+    [32m[1m Installed[22m[39m DataStructures ─── v0.17.10
+    [32m[1m Installed[22m[39m HTTP ───────────── v0.8.11
+    [32m[1m Installed[22m[39m GeometryTypes ──── v0.7.9
+    [32m[1m  Updating[22m[39m `~/.julia/environments/v1.2/Project.toml`
+    [90m [no changes][39m
+    [32m[1m  Updating[22m[39m `~/.julia/environments/v1.2/Manifest.toml`
+     [90m [864edb3b][39m[93m ↑ DataStructures v0.17.9 ⇒ v0.17.10[39m
+     [90m [4d00f742][39m[93m ↑ GeometryTypes v0.7.7 ⇒ v0.7.9[39m
+     [90m [cd3eb016][39m[93m ↑ HTTP v0.8.8 ⇒ v0.8.11[39m
+     [90m [b964fa9f][39m[93m ↑ LaTeXStrings v1.0.3 ⇒ v1.1.0[39m
+     [90m [f27b6e38][39m[93m ↑ Polynomials v0.6.0 ⇒ v0.6.1[39m
+     [90m [efce3f68][39m[93m ↑ WoodburyMatrices v0.5.0 ⇒ v0.5.1[39m
 
 
 
-    2001×1 Array{Float64,2}:
-     0.00666159
-     0.00698098
-     0.00728673
-     0.00760021
-     0.00786498
-     0.00796295
-     0.00801857
-     0.00814685
-     0.00807513
-     0.0079503
-     0.00779799
-     0.00749169
-     0.00719726
-     ⋮         
-     0.00508929
-     0.00474104
-     0.00452079
-     0.00435027
-     0.00431479
-     0.00439437
-     0.00467603
-     0.00483907
-     0.00517327
-     0.00548942
-     0.00585045
-     0.00628071
+
+
+    2001-element Array{Float64,1}:
+     -0.026711020407238755 
+     -0.02430458845003921  
+     -0.021732823699727465 
+     -0.01903229844938986  
+     -0.01624223584966089  
+     -0.013403650118892975 
+     -0.01055844905996742  
+     -0.007748521131999995 
+     -0.005014829434839256 
+     -0.0023965345046637054
+      6.983318839339968e-5 
+      0.0023511316695113424
+      0.004418279428671759 
+      ⋮                    
+     -0.03568039275658377  
+     -0.036367167385888986 
+     -0.036839448269382076 
+     -0.03707193278694536  
+     -0.037043681395473434 
+     -0.036738716043437224 
+     -0.03614649561688319  
+     -0.035262256601174845 
+     -0.03408721073472233  
+     -0.03262859519536173  
+     -0.030899574695754523 
+     -0.028918998669671653 
 
 
 
 
 ```julia
+using LinearAlgebra
 # Solve
 opts = spgOptions(optTol = 1e-10,
                   verbosity = 1)
 
-#gtt, r, grads, info = spgl1(C, vec(f), tau = 0., sigma = norm(f - C*gt))
+#gtt, r, grads, info = spgl1(C, vec(f), tau = 0., sigma = norm(f - C*gt));
 ```
 
 
-
-
-    GenSPGL.spgOptions(1, 1, 100000, 3, 1.0e-6, 1.0e-6, 1.0e-10, 0.0001, 1.0e-16, 100000.0, 2, Inf, false, Nullable{Bool}(), Inf, [1], false, 3, 1, 10000, false, GenSPGL.NormL1_project, GenSPGL.NormL1_primal, GenSPGL.NormL1_dual, GenSPGL.funLS, false, false, false)
+```julia
+GenSPGL.spgOptions(1, 1, 100000, 3, 1.0e-6, 1.0e-6, 1.0e-10, 0.0001, 1.0e-16, 100000.0, 2, Inf, false, Nullable{Bool}(), Inf, [1], false, 3, 1, 10000, false, GenSPGL.NormL1_project, GenSPGL.NormL1_primal, GenSPGL.NormL1_dual, GenSPGL.funLS, false, false, false)
+```
