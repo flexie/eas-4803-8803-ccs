@@ -94,7 +94,7 @@
 </ul>
 <h1 id="kronecker">Kronecker</h1>
 <p>Given a matrix X, we often want to apply operations along both dimensions. For example, if each column is a trace we can do a temporal fourier transform of each trace as follows</p>
-<pre><code class="julia">using JOLI, JOLI.Seismic, GenSPGL, PyPlot
+<pre><code class="julia">using JOLI, GenSPGL, PyPlot, FFTW, LinearAlgebra
 </code></pre>
 
 <pre><code class="julia"># dummy matrix
@@ -107,25 +107,24 @@ Y  = F1*X
 </code></pre>
 
 <pre><code>10×5 Array{Complex{Float64},2}:
-  -1.25777+0.0im       -0.774641+0.0im      …   0.769853+0.0im     
- -0.654297+0.239707im   0.237683-0.15825im       1.79616+0.309481im
-  0.416353+1.54421im    0.429671-0.15162im      0.630353-0.853749im
- -0.820058+0.909454im   0.186228+1.00521im     -0.194571+0.35528im 
-  -1.24295-0.578256im   0.476904-1.38574im     0.0477609-0.885882im
-  -1.31471+0.0im        0.647963+0.0im      …    1.16376+0.0im     
-  -1.24295+0.578256im   0.476904+1.38574im     0.0477609+0.885882im
- -0.820058-0.909454im   0.186228-1.00521im     -0.194571-0.35528im 
-  0.416353-1.54421im    0.429671+0.15162im      0.630353+0.853749im
- -0.654297-0.239707im   0.237683+0.15825im       1.79616-0.309481im
+   1.41557+0.0im        -1.60638+0.0im       …   0.430018+0.0im      
+  0.672767+0.450352im  -0.938118+0.759956im       -0.1883-0.991497im 
+  0.406392+0.205739im  -0.302384+0.247512im      0.631065-1.30804im  
+ -0.618123-0.848047im  -0.121208+0.443261im     -0.646604-1.17498im  
+ -0.787335-0.450483im  0.0533324-0.395285im     -0.760621+0.0204424im
+  0.294818+0.0im       -0.429069+0.0im       …  -0.250248+0.0im      
+ -0.787335+0.450483im  0.0533324+0.395285im     -0.760621-0.0204424im
+ -0.618123+0.848047im  -0.121208-0.443261im     -0.646604+1.17498im  
+  0.406392-0.205739im  -0.302384-0.247512im      0.631065+1.30804im  
+  0.672767-0.450352im  -0.938118-0.759956im       -0.1883+0.991497im
 </code></pre>
 <p>We can do an fft along the second dimension as follows</p>
 <pre><code class="julia">F2 = joDFT(n2; DDT=joComplex)
-Y  = transpose(F2*transpose(X));
-
+Y  = transpose(F2*copy(transpose(X)));
 </code></pre>
 
 <p>Finally, we can combine both in one step as follows</p>
-<pre><code class="julia">Y = (F2*(F1*X).').';
+<pre><code class="julia">Y = transpose(F2*copy(transpose(F1*X)));
 </code></pre>
 
 <p>We can do the equivalent operation on the vectorized version of X via the Kronecker product. The formula is :</p>
@@ -160,35 +159,35 @@ r[101] = -.5
 r[151] = .75
 
 # wavelet
-w = (1-2*1e3*(t-.1).^2).*exp.(-1e3*(t-.1).^2)
+w = (1 .-2*1e3*(t .-.1).^2).*exp.(-1e3 .*(t .-.1).^2)
 </code></pre>
 
 <pre><code>251-element Array{Float64,1}:
- -0.000862599 
- -0.00173336  
- -0.00335964  
- -0.00627815  
- -0.0113054   
- -0.0196064   
- -0.0327228   
- -0.0525127   
- -0.0809414   
- -0.119668    
- -0.169407    
- -0.229101    
- -0.295059    
-  ⋮           
- -8.75953e-316
- -9.20212e-319
- -0.0         
- -0.0         
- -0.0         
- -0.0         
- -0.0         
- -0.0         
- -0.0         
- -0.0         
- -0.0         
+ -0.0008625986654872107
+ -0.0017333620023927386
+ -0.003359640068423334 
+ -0.00627815407118934  
+ -0.011305429764281264 
+ -0.019606375823452423 
+ -0.032722754572662376 
+ -0.05251269265727092  
+ -0.08094144772594736  
+ -0.11966839901351634  
+ -0.16940707917321376  
+ -0.22910148611303477  
+ -0.29505929933463465  
+  ⋮                    
+ -8.75952886e-316      
+ -9.2021e-319          
+ -0.0                  
+ -0.0                  
+ -0.0                  
+ -0.0                  
+ -0.0                  
+ -0.0                  
+ -0.0                  
+ -0.0                  
+ -0.0                  
  -0.0
 </code></pre>
 <p>The convolution is done by using the FFT SPOT operators, just like in the last exercise.</p>
