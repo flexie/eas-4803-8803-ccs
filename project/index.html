@@ -98,18 +98,19 @@
 <h2 id="data-and-scripts">Data and scripts</h2>
 <p>The data required please download from the following link with exactly same passwords as before</p>
 <p>https://www.dropbox.com/s/4vvmxju4bsfrwrm/GulfOfSuez178.segy?dl=0</p>
-<p>The projects are wrapped up in a docker image so that all the required dependencies are already installed. You will need to have docker installed. Once done run the following command</p>
-<pre><code>docker run -p 8888:8888 -v /path/to/files:/app/judi/data philippwitte/judi_eas_project:v1.0
+<p>The projects are wrapped up in a docker image so that all the required dependencies are already installed. You will need to have docker installed. Once done run the following command:</p>
+<pre><code>docker run -p 8888:8888 -v /path/to/files:/app/judi/data ddjj1118/judi_eas_project:v4.0
 </code></pre>
 
 <p>where <code>/path/to/files</code> is the absolute location of the project data on your own machine. Running this command will produce an output that looks like</p>
 <pre><code>
     Copy/paste this URL into your browser when you connect for the first time,
     to login with a token:
-        http://(9d81a99a7494 or 127.0.0.1):8888/?token=7b1629792186c4e469d30eb92e8e9670d4f3bfa96c0c799f
+           http://af637030c092:8888/?token=8f6c664eb945f9c6b7cd72669fef04a6dc70c08194cb87e9
+        or http://127.0.0.1:8888/?token=8f6c664eb945f9c6b7cd72669fef04a6dc70c08194cb87e9
 </code></pre>
 
-<p>Copy paste the URL in your browser and replace <code>(9d81a99a7494 or 127.0.0.1)</code> by <code>localhost</code>.</p>
+<p>Copy paste the URL in your browser and replace <code>(af637030c092 or 127.0.0.1)</code> by <code>localhost</code>.</p>
 <p>You will then be directed to a jupyter folder that contains the notebooks for the projects.</p>
 <h2 id="projects">Projects</h2>
 <p>As part of Lab 8, we are asking the students to work on a project in four groups. The projects are on the use of compressive sensing in seismic data acquisition and processing, and we are asking the students to make a comparison between different interpolation and acquisition techniques, namely</p>
