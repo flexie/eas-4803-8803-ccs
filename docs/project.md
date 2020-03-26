@@ -6,10 +6,10 @@ The data required please download from the following link with exactly same pass
 
 https://www.dropbox.com/s/4vvmxju4bsfrwrm/GulfOfSuez178.segy?dl=0
 
-The projects are wrapped up in a docker image so that all the required dependencies are already installed. You will need to have docker installed. Once done run the following command
+The projects are wrapped up in a docker image so that all the required dependencies are already installed. You will need to have docker installed. Once done run the following command:
 
 ```
-docker run -p 8888:8888 -v /path/to/files:/app/judi/data philippwitte/judi_eas_project:v1.0
+docker run -p 8888:8888 -v /path/to/files:/app/judi/data ddjj1118/judi_eas_project:v4.0
 ```
 
 where `/path/to/files` is the absolute location of the project data on your own machine. Running this command will produce an output that looks like
@@ -18,10 +18,11 @@ where `/path/to/files` is the absolute location of the project data on your own 
     
     Copy/paste this URL into your browser when you connect for the first time,
     to login with a token:
-        http://(9d81a99a7494 or 127.0.0.1):8888/?token=7b1629792186c4e469d30eb92e8e9670d4f3bfa96c0c799f
+           http://af637030c092:8888/?token=8f6c664eb945f9c6b7cd72669fef04a6dc70c08194cb87e9
+        or http://127.0.0.1:8888/?token=8f6c664eb945f9c6b7cd72669fef04a6dc70c08194cb87e9
 ```
 
-Copy paste the URL in your browser and replace `(9d81a99a7494 or 127.0.0.1)` by `localhost`.
+Copy paste the URL in your browser and replace `(af637030c092 or 127.0.0.1)` by `localhost`.
 
 You will then be directed to a jupyter folder that contains the notebooks for the projects.
 
