@@ -2,7 +2,9 @@
 
 ## Data and scripts
 
-The data required for the project is in the Dropbox folder used for the assignments
+The data required please download from the following link with exactly same passwords as before
+
+https://www.dropbox.com/s/4vvmxju4bsfrwrm/GulfOfSuez178.segy?dl=0
 
 The projects are wrapped up in a docker image so that all the required dependencies are already installed. You will need to have docker installed. Once done run the following command
 
