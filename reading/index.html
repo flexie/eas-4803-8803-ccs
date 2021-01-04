@@ -9,73 +9,60 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>Reading - Exploration Seismology</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
 
         <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="..">Exploration Seismology</a>
-                </div>
+                <a class="navbar-brand" href="..">Exploration Seismology</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
+                <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li >
-                                <a href="../outline/">Outline</a>
+                            <li class="navitem">
+                                <a href="../outline/" class="nav-link">Outline</a>
                             </li>
-                            <li >
-                                <a href="../goals/">Goals</a>
+                            <li class="navitem">
+                                <a href="../goals/" class="nav-link">Goals</a>
                             </li>
-                            <li class="active">
-                                <a href="./">Reading</a>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Reading</a>
                             </li>
-                            <li >
-                                <a href="../homework/">Homework</a>
+                            <li class="navitem">
+                                <a href="../homework/" class="nav-link">Homework</a>
                             </li>
-                            <li >
-                                <a href="../project/">Projects</a>
+                            <li class="navitem">
+                                <a href="../project/" class="nav-link">Projects</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../goals/">
+                            <li class="nav-item">
+                                <a rel="prev" href="../goals/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../homework/">
+                            <li class="nav-item">
+                                <a rel="next" href="../homework/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -85,29 +72,56 @@
         </div>
 
         <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#general-introduction">General introduction</a></li>
-            <li><a href="#reading-material">Reading material</a></li>
-            <li><a href="#material-presented-in-class">Material presented in class</a></li>
-        <li class="main "><a href="#seismic-data-acquisition">Seismic data acquisition</a></li>
-            <li><a href="#material-presented-in-class_1">Material presented in class</a></li>
-        <li class="main "><a href="#from-processing-to-inversion">From processing to inversion</a></li>
-            <li><a href="#reading-material_1">Reading material</a></li>
-            <li><a href="#material-presented-in-class_2">Material presented in class</a></li>
-        <li class="main "><a href="#compressive-sensing">Compressive sensing</a></li>
-            <li><a href="#reading-material_2">Reading material</a></li>
-            <li><a href="#material-presented-in-class_3">Material presented in class</a></li>
-        <li class="main "><a href="#linearized-inversion">Linearized inversion</a></li>
-            <li><a href="#reading-material_3">Reading material</a></li>
-            <li><a href="#material-presented-in-class_4">Material presented in class</a></li>
-        <li class="main "><a href="#rtm-fwi">RTM &amp; FWI</a></li>
-            <li><a href="#reading-material_4">Reading material</a></li>
-            <li><a href="#material-presented-in-class_5">Material presented in class</a></li>
-        <li class="main "><a href="#review">Review</a></li>
-    </ul>
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#general-introduction" class="nav-link">General introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#seismic-data-acquisition" class="nav-link">Seismic data acquisition</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#from-processing-to-inversion" class="nav-link">From processing to inversion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#compressive-sensing" class="nav-link">Compressive sensing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#linearized-inversion" class="nav-link">Linearized inversion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#rtm-fwi" class="nav-link">RTM &amp; FWI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#review" class="nav-link">Review</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
 </div></div>
-                <div class="col-md-9" role="main">
+                    <div class="col-md-9" role="main">
 
 <h1 id="general-introduction">General introduction</h1>
 <h4 id="reading-material">Reading material</h4>
@@ -198,6 +212,7 @@
 <ul>
 <li><a href="https://www.dropbox.com/s/05tyot8l4yaejfc/21-Exploration_Seismology-review.pdf?dl=0">Slides for Lecture 21: Review Migration,  Velocity Analyses, and AVO</a></li>
 </ul></div>
+            </div>
         </div>
 
         <footer class="col-md-12">
@@ -212,21 +227,21 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
         <script src="../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
                 <p>
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form role="form">
+                <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
@@ -235,12 +250,12 @@
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">

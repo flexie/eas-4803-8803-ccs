@@ -9,73 +9,60 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>Homework - Exploration Seismology</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
 
         <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="..">Exploration Seismology</a>
-                </div>
+                <a class="navbar-brand" href="..">Exploration Seismology</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
+                <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li >
-                                <a href="../outline/">Outline</a>
+                            <li class="navitem">
+                                <a href="../outline/" class="nav-link">Outline</a>
                             </li>
-                            <li >
-                                <a href="../goals/">Goals</a>
+                            <li class="navitem">
+                                <a href="../goals/" class="nav-link">Goals</a>
                             </li>
-                            <li >
-                                <a href="../reading/">Reading</a>
+                            <li class="navitem">
+                                <a href="../reading/" class="nav-link">Reading</a>
                             </li>
-                            <li class="active">
-                                <a href="./">Homework</a>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Homework</a>
                             </li>
-                            <li >
-                                <a href="../project/">Projects</a>
+                            <li class="navitem">
+                                <a href="../project/" class="nav-link">Projects</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../reading/">
+                            <li class="nav-item">
+                                <a rel="prev" href="../reading/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li >
-                                <a rel="prev" href="../project/">
+                            <li class="nav-item">
+                                <a rel="next" href="../project/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -85,17 +72,46 @@
         </div>
 
         <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#installation">Installation</a></li>
-            <li><a href="#julia">Julia</a></li>
-            <li><a href="#python">Python</a></li>
-            <li><a href="#packages">Packages</a></li>
-            <li><a href="#docker">Docker</a></li>
-            <li><a href="#exercises">Exercises</a></li>
-    </ul>
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#installation" class="nav-link">Installation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#julia" class="nav-link">Julia</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#python" class="nav-link">Python</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#packages" class="nav-link">Packages</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#docker" class="nav-link">Docker</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#exercises" class="nav-link">Exercises</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
 </div></div>
-                <div class="col-md-9" role="main">
+                    <div class="col-md-9" role="main">
 
 <h1 id="installation">Installation</h1>
 <p>The assignments require <a href="https://julialang.org">Julia</a> and Python 3 to be installed (Python 2 will not work).</p>
@@ -153,12 +169,12 @@ julia -e 'using Pkg; Pkg.build(&quot;PyCall&quot;)'
 <h2 id="exercises">Exercises</h2>
 <p>During the course you will work on the following exercises</p>
 <ol>
-<li>A first look at seismic data. <a href="../Assignments/introduction_to_julia/">Intro to julia</a> <a href="../Assignments/Exercise1/">Exercise 1</a></li>
-<li>NMO correction and velocity analysis <a href="../Assignments/Exercise2/">Exercise 2</a></li>
+<li>A first look at seismic data. <a href="../Assignments/introduction_to_julia/">Intro to julia</a> <a href="../Assignments/Exercise1/">Exercise 1</a>
+&lt;!-- 2. NMO correction and velocity analysis <a href="../Assignments/Exercise2/">Exercise 2</a></li>
 <li>Wavefield extrapolation and migration. <a href="../Assignments/Exercise3/">Exercise 3</a> (Due Date: February 4,2020)</li>
 <li>Fourier, Radon and filtering.<a href="../Assignments/Exercise4/">Exercise 4</a> (Due Date: February 11,2020)</li>
 <li>From processing to inversion I.<a href="../Assignments/Exercise5/">Exercise 5</a> (Due Date: March 5,2020)</li>
-<li>From processing to inversion II. <a href="../Assignments/Exercise6/">Exercise 6</a> (Due Date: March 17,2020)</li>
+<li>From processing to inversion II. <a href="../Assignments/Exercise6/">Exercise 6</a> (Due Date: March 17,2020) --&gt;</li>
 </ol>
 <!--
 1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md) [Exercise 1](Assignments/Exercise1.md) [[Solution]](https://www.slim.eos.ubc.ca/Teaching/EOSC454/exercise1_sol.html)
@@ -184,6 +200,7 @@ These exercises will introduce you to the [Julia programming language](https://j
 <p><strong>Unless stated otherwise the labs are due one week after the assignments have been posted.</strong></p>
 <h3 id="feedback">Feedback</h3>
 <p>We will give you feedback on the marking of the exercises.</p></div>
+            </div>
         </div>
 
         <footer class="col-md-12">
@@ -198,21 +215,21 @@ These exercises will introduce you to the [Julia programming language](https://j
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
         <script src="../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
                 <p>
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form role="form">
+                <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
@@ -221,12 +238,12 @@ These exercises will introduce you to the [Julia programming language](https://j
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">

@@ -9,73 +9,60 @@
         
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>Projects - Exploration Seismology</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
 
         <script src="../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
-
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-
-                <!-- Collapsed navigation -->
-                <div class="navbar-header">
-                    <!-- Expander button -->
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="..">Exploration Seismology</a>
-                </div>
+                <a class="navbar-brand" href="..">Exploration Seismology</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
                 <!-- Expanded navigation -->
-                <div class="navbar-collapse collapse">
+                <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li >
-                                <a href="../outline/">Outline</a>
+                            <li class="navitem">
+                                <a href="../outline/" class="nav-link">Outline</a>
                             </li>
-                            <li >
-                                <a href="../goals/">Goals</a>
+                            <li class="navitem">
+                                <a href="../goals/" class="nav-link">Goals</a>
                             </li>
-                            <li >
-                                <a href="../reading/">Reading</a>
+                            <li class="navitem">
+                                <a href="../reading/" class="nav-link">Reading</a>
                             </li>
-                            <li >
-                                <a href="../homework/">Homework</a>
+                            <li class="navitem">
+                                <a href="../homework/" class="nav-link">Homework</a>
                             </li>
-                            <li class="active">
-                                <a href="./">Projects</a>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Projects</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
-                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../homework/">
+                            <li class="nav-item">
+                                <a rel="prev" href="../homework/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
-                            <li class="disabled">
-                                <a rel="prev" >
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -85,14 +72,34 @@
         </div>
 
         <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#class-projects">Class projects</a></li>
-            <li><a href="#data-and-scripts">Data and scripts</a></li>
-            <li><a href="#projects">Projects</a></li>
-    </ul>
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#class-projects" class="nav-link">Class projects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#data-and-scripts" class="nav-link">Data and scripts</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#projects" class="nav-link">Projects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
 </div></div>
-                <div class="col-md-9" role="main">
+                    <div class="col-md-9" role="main">
 
 <h1 id="class-projects">Class projects</h1>
 <h2 id="data-and-scripts">Data and scripts</h2>
@@ -124,7 +131,7 @@ Download this version of <a href="https://github.com/docker/toolbox/releases/dow
 <p>Tis will give you the IP address of your docker that you can now use for accessing the notebook by replacing <code>127.0.0.1</code> in the address above by the output of the <code>docker-machine</code> command.</p>
 <p><strong>Token page</strong></p>
 <p>If you are redirected to a page that ask you to input the token or to set a password, you probably have another docker container running. Run the command <code>docker container ls</code> to check if there is any container running. This should look like:</p>
-<p><img alt="png" src="../img/doc-cont.png" /></p>
+<p><img alt="png" src="./img/doc-cont.png" /></p>
 <p>You can see in the <code>PORTS</code> column that a container is already using the port 8888. Delete all container using that port via <code>docker container rm -f CONTAINER ID</code> and restart the docker image:</p>
 <pre><code>docker run -p 8888:8888 -v /path/to/files:/app/judi/data ddjj1118/judi_eas_project:v4.0
 </code></pre>
@@ -178,6 +185,7 @@ Aleksandr Y. Aravkin, Rajiv Kumar, Hassan Mansour, Ben Recht, Felix J. Herrmann.
 
 Rajiv Kumar, Aleksandr Y. Aravkin, Ernie Esser, Hassan Mansour and Felix J. Herrmann. SVD-free low-rank matrix factorization : wavefield reconstruction via jittered subsampling and reciprocity. EAGE expanded abstract. 2014. In this expanded abstract, author explain the use of jittered sampling to optimize rank minimization based missing trace interpolation techniques.
 </code></pre></div>
+            </div>
         </div>
 
         <footer class="col-md-12">
@@ -192,21 +200,21 @@ Rajiv Kumar, Aleksandr Y. Aravkin, Ernie Esser, Hassan Mansour and Felix J. Herr
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
         <script src="../search/main.js" defer></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
             </div>
             <div class="modal-body">
                 <p>
                     From here you can search these documents. Enter
                     your search terms below.
                 </p>
-                <form role="form">
+                <form>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
                 <div id="mkdocs-search-results"></div>
@@ -215,12 +223,12 @@ Rajiv Kumar, Aleksandr Y. Aravkin, Ernie Esser, Hassan Mansour and Felix J. Herr
             </div>
         </div>
     </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
             </div>
             <div class="modal-body">
               <table class="table">
