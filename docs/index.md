@@ -8,9 +8,11 @@ CODA, room S1375B
 
 ## General Information
 
-Time and Location Tuesday/Thursday 1:30 pm - 2:45 pm, Cherry Emerson 204
+Time and Location Mon/Wed 11:00 AM - 12:15 pm
 
 Office Hours: by appointment 
+
+The course will be taugh remotely using [Microsoft Teams](https://faq.oit.gatech.edu/content/how-do-i-access-microsoft-teams)
 
 ### Course Description 
 
