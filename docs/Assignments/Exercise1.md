@@ -10,7 +10,10 @@ The Julia utilities for reading  SEGY data is SegyIO
 
 
 ```julia
-using SegyIO, PyPlot, Pkg
+using Pkg
+#Pkg.clone("https://github.com/slimgroup/SegyIO.jl.git")
+#Pkg.add("PyPlot")
+using SegyIO, PyPlot
 ```
 
 # Scaning the dataset
