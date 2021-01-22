@@ -108,7 +108,6 @@
 <p>The projects are wrapped up in a docker image so that all the required dependencies are already installed. You will need to have docker installed. Once done run the following command:</p>
 <pre><code>docker run -p 8888:8888 -v /path/to/files:/app/judi/data ddjj1118/judi_eas_project:v4.0
 </code></pre>
-
 <p>where <code>/path/to/files</code> is the absolute location of the project data on your own machine. Running this command will produce an output that looks like</p>
 <pre><code>
     Copy/paste this URL into your browser when you connect for the first time,
@@ -116,7 +115,6 @@
            http://af637030c092:8888/?token=8f6c664eb945f9c6b7cd72669fef04a6dc70c08194cb87e9
         or http://127.0.0.1:8888/?token=8f6c664eb945f9c6b7cd72669fef04a6dc70c08194cb87e9
 </code></pre>
-
 <p>Copy paste the URL in your browser and replace <code>(af637030c092 or 127.0.0.1)</code> by <code>localhost</code>.
 You will then be directed to a jupyter folder that contains the notebooks for the projects.</p>
 <h3 id="known-windows-issues-solutions">Known Windows issues solutions</h3>
@@ -127,7 +125,6 @@ Download this version of <a href="https://github.com/docker/toolbox/releases/dow
 <p>IP forward with docker on Wondows does not work and the address <code>http://127.0.0.1:8888/...</code> will probably not be reachable. To reach it run the following command in the docker terminal:</p>
 <pre><code>docker-machine ip
 </code></pre>
-
 <p>Tis will give you the IP address of your docker that you can now use for accessing the notebook by replacing <code>127.0.0.1</code> in the address above by the output of the <code>docker-machine</code> command.</p>
 <p><strong>Token page</strong></p>
 <p>If you are redirected to a page that ask you to input the token or to set a password, you probably have another docker container running. Run the command <code>docker container ls</code> to check if there is any container running. This should look like:</p>
@@ -135,7 +132,6 @@ Download this version of <a href="https://github.com/docker/toolbox/releases/dow
 <p>You can see in the <code>PORTS</code> column that a container is already using the port 8888. Delete all container using that port via <code>docker container rm -f CONTAINER ID</code> and restart the docker image:</p>
 <pre><code>docker run -p 8888:8888 -v /path/to/files:/app/judi/data ddjj1118/judi_eas_project:v4.0
 </code></pre>
-
 <p>You should now be able to access the notebooks at <code>http://machine-ip:8888/...</code></p>
 <h2 id="projects">Projects</h2>
 <p>As part of Lab 8, we are asking the students to work on a project in four groups. The projects are on the use of compressive sensing in seismic data acquisition and processing, and we are asking the students to make a comparison between different interpolation and acquisition techniques, namely</p>
