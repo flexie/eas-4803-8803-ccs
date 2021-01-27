@@ -98,7 +98,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#docker" class="nav-link">Docker</a>
+            <li class="nav-item" data-level="2"><a href="#docker-not-necessary-for-homework-but-important-for-project" class="nav-link">Docker (not necessary for homework but important for project)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -143,7 +143,8 @@ julia -e 'using Pkg; Pkg.build(&quot;PyCall&quot;)'
 <pre><code class="language-bash">julia ~/.julia/dev/JUDI/examples/scripts/modeling_basic_2D.jl
 </code></pre>
 <p>This command should finish without errors.</p>
-<h2 id="docker">Docker</h2>
+<h2 id="docker-not-necessary-for-homework-but-important-for-project">Docker (not necessary for homework but important for project)</h2>
+<p>Docker is a platform which builds a virtual machine/container for you in case some softwares above cannot be installed/processed in the environment on your local machine. Thus, we suggest you first try to install the softwares above and do the programming exercises on your local machine. The exercises should work well in apple/linux machines. If it renders problems on your machine (especially a windows one), you could install docker and follow the steps below to run julia sessions in a virtual environment.</p>
 <p>First install docker for your system</p>
 <p><a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a></p>
 <p>Instead of having to install Python, Julia, Devito, JUDI and all the dependencies by yourself, you simply download the docker image and run it in a container. All you need to do is install docker and run:</p>
