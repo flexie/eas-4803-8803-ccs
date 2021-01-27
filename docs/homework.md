@@ -5,6 +5,7 @@ The assignments require [Julia](https://julialang.org) and Python 3 to be instal
 For Windows, I recommend to use docker as [Devito](https://www.devitoproject.org) does not support Windows.
 
 ## Julia
+
 To install julia follow
 
 [https://julialang.org/downloads/](https://julialang.org/downloads/)
@@ -57,7 +58,9 @@ julia ~/.julia/dev/JUDI/examples/scripts/modeling_basic_2D.jl
 This command should finish without errors.
 
 
-## Docker
+## Docker (not necessary for homework but important for project)
+
+Docker is a platform which builds a virtual machine/container for you in case some softwares above cannot be installed/processed in the environment on your local machine. Thus, we suggest you first try to install the softwares above and do the programming exercises on your local machine. The exercises should work well in apple/linux machines. If it renders problems on your machine (especially a windows one), you could install docker and follow the steps below to run julia sessions in a virtual environment.
 
 First install docker for your system
 
