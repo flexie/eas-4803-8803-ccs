@@ -23,11 +23,17 @@ The recommended installation is via conda to have a stable environment.
 
 For the assignments, you will need a few python and julia packages. Please follow these instructions to install all of the packages in the order described here.
 
-First, install Devito using `pip`, or see the [Devito's GitHub page](https://github.com/devitocodes/devito) for installation with Conda and further information. The current release of JUDI requires Python 3 and the current Devito version. Run all of the following commands from the (bash) terminal command line (not in the Julia REPL):
+First, install Devito using `pip` (or `pip3`), or see the [Devito's GitHub page](https://github.com/devitocodes/devito) for installation with Conda and further information. The current release of [JUDI](https://github.com/slimgroup/JUDI.jl) requires Python 3 and the current Devito version. Run all of the following commands from the (bash) terminal command line (not in the Julia REPL):
 
 ```bash
 pip install --user git+https://github.com/devitocodes/devito.git
 ```
+
+```bash
+pip install --user git+https://github.com/devitocodes/devito.git
+```
+
+If these 2 commands don't work, please replace `pip` by `pip3` and try them again.
 
 For reading and writing seismic SEG-Y data, JUDI uses the [SegyIO](https://github.com/slimgroup/SegyIO.jl) package and matrix-free linear operators are based the [Julia Operator LIbrary](https://github.com/slimgroup/JOLI.jl/tree/master/src) (JOLI):
 
@@ -36,7 +42,7 @@ julia -e 'using Pkg; Pkg.clone("https://github.com/slimgroup/SegyIO.jl.git")'
 julia -e 'using Pkg; Pkg.clone("https://github.com/slimgroup/JOLI.jl.git")'
 ```
 
-Once Devito, SegyIO and JOLI are installed, you can install JUDI with Julia's `Pkg.clone`.
+Once Devito, SegyIO and JOLI are installed, you can install [JUDI](https://github.com/slimgroup/JUDI.jl) with Julia's `Pkg.clone`.
 
 ```bash
 julia -e 'using Pkg; Pkg.clone("https://github.com/slimgroup/JUDI.jl")'
@@ -48,6 +54,8 @@ Once you have JUDI installed, you need to point Julia's PyCall package to the Py
 export PYTHON=$(which python)
 julia -e 'using Pkg; Pkg.build("PyCall")'
 ```
+
+Again, try `export PYTHON3` if `export PYTHON` does not work.
 
 You can verify your installation by running:
 
