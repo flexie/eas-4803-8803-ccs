@@ -132,11 +132,11 @@
 </code></pre>
 <p>If these 2 commands don't work, please replace <code>pip</code> by <code>pip3</code> and try them again.</p>
 <p>For reading and writing seismic SEG-Y data, JUDI uses the <a href="https://github.com/slimgroup/SegyIO.jl">SegyIO</a> package and matrix-free linear operators are based the <a href="https://github.com/slimgroup/JOLI.jl/tree/master/src">Julia Operator LIbrary</a> (JOLI):</p>
-<pre><code class="language-bash">julia -e 'using Pkg; Pkg.clone(&quot;https://github.com/slimgroup/SegyIO.jl.git&quot;)'
-julia -e 'using Pkg; Pkg.clone(&quot;https://github.com/slimgroup/JOLI.jl.git&quot;)'
+<pre><code class="language-bash">julia -e 'using Pkg; Pkg.add(url=&quot;https://github.com/slimgroup/SegyIO.jl.git&quot;)'
+julia -e 'using Pkg; Pkg.add(url=&quot;https://github.com/slimgroup/JOLI.jl.git&quot;)'
 </code></pre>
-<p>Once Devito, SegyIO and JOLI are installed, you can install <a href="https://github.com/slimgroup/JUDI.jl">JUDI</a> with Julia's <code>Pkg.clone</code>.</p>
-<pre><code class="language-bash">julia -e 'using Pkg; Pkg.clone(&quot;https://github.com/slimgroup/JUDI.jl&quot;)'
+<p>Once Devito, SegyIO and JOLI are installed, you can install <a href="https://github.com/slimgroup/JUDI.jl">JUDI</a> with Julia's <code>Pkg.add</code>.</p>
+<pre><code class="language-bash">julia -e 'using Pkg; Pkg.add(url=&quot;https://github.com/slimgroup/JUDI.jl&quot;)'
 </code></pre>
 <p>Once you have JUDI installed, you need to point Julia's PyCall package to the Python version for which we previously installed Devito. To do this, copy-paste the following commands into the (bash) terminal:</p>
 <pre><code class="language-bash">export PYTHON=$(which python)
