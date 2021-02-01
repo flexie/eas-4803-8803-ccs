@@ -60,7 +60,7 @@ Again, try `export PYTHON3` if `export PYTHON` does not work.
 You can verify your installation by running:
 
 ```bash
-julia ~/.julia/dev/JUDI/examples/scripts/modeling_basic_2D.jl
+julia -e 'using Pkg; using JUDI; example=joinpath(dirname(pathof(JUDI)),"..","examples/scripts/modeling_basic_2D.jl");include(example);'
 ```
 
 This command should finish without errors.
