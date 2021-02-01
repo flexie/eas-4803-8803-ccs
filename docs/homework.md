@@ -29,11 +29,7 @@ First, install Devito using `pip` (or `pip3`), or see the [Devito's GitHub page]
 pip install --user git+https://github.com/devitocodes/devito.git
 ```
 
-```bash
-pip install --user git+https://github.com/devitocodes/devito.git
-```
-
-If these 2 commands don't work, please replace `pip` by `pip3` and try them again.
+If this command doesn't work, please replace `pip` by `pip3` and try it again.
 
 For reading and writing seismic SEG-Y data, JUDI uses the [SegyIO](https://github.com/slimgroup/SegyIO.jl) package and matrix-free linear operators are based the [Julia Operator LIbrary](https://github.com/slimgroup/JOLI.jl/tree/master/src) (JOLI):
 
