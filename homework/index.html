@@ -144,7 +144,7 @@ julia -e 'using Pkg; Pkg.build(&quot;PyCall&quot;)'
 </code></pre>
 <p>Again, try <code>export PYTHON3</code> if <code>export PYTHON</code> does not work.</p>
 <p>You can verify your installation by running:</p>
-<pre><code class="language-bash">julia ~/.julia/dev/JUDI/examples/scripts/modeling_basic_2D.jl
+<pre><code class="language-bash">julia -e 'using Pkg; using JUDI; example=joinpath(dirname(pathof(JUDI)),&quot;..&quot;,&quot;examples/scripts/modeling_basic_2D.jl&quot;);include(example);'
 </code></pre>
 <p>This command should finish without errors.</p>
 <h2 id="docker-not-necessary-for-homework-but-important-for-project">Docker (not necessary for homework but important for project)</h2>
