@@ -29,9 +29,15 @@ First, install Devito using `pip` (or `pip3`), or see the [Devito's GitHub page]
 pip install --user git+https://github.com/devitocodes/devito.git
 ```
 
-If this command doesn't work, please replace `pip` by `pip3` and try it again.
+Then install matplotlib by
 
-For reading and writing seismic SEG-Y data, JUDI uses the [SegyIO](https://github.com/slimgroup/SegyIO.jl) package and matrix-free linear operators are based the [Julia Operator LIbrary](https://github.com/slimgroup/JOLI.jl/tree/master/src) (JOLI):
+```bash
+pip install matplotlib
+```
+
+If these commands don't work, please replace `pip` by `pip3` and try it again.
+
+For reading and writing seismic SEG-Y data, JUDI uses the [SegyIO](https://github.com/slimgroup/SegyIO.jl) package and matrix-free linear operators are based the [Julia Operator LIbrary](https://github.com/slimgroup/JOLI.jl/tree/master/src) (JOLI), we can install these 2 packages via:
 
 ```bash
 julia -e 'using Pkg; Pkg.add(url="https://github.com/slimgroup/SegyIO.jl.git")'
@@ -51,7 +57,7 @@ export PYTHON=$(which python)
 julia -e 'using Pkg; Pkg.build("PyCall")'
 ```
 
-Again, try `export PYTHON3` if `export PYTHON` does not work.
+Again, try `which python3` if `which python` does not work.
 
 You can verify your installation by running:
 
