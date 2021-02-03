@@ -126,27 +126,33 @@
 <h2 id="packages">Packages</h2>
 <p>For the assignments, you will need a few python and julia packages. Please follow these instructions to install all of the packages in the order described here.</p>
 <p>First, install Devito using <code>pip</code> (or <code>pip3</code>), or see the <a href="https://github.com/devitocodes/devito">Devito's GitHub page</a> for installation with Conda and further information. The current release of <a href="https://github.com/slimgroup/JUDI.jl">JUDI</a> requires Python 3 and the current Devito version. Run all of the following commands from the (bash) terminal command line (not in the Julia REPL):</p>
-<pre><code class="language-bash">pip install --user git+https://github.com/devitocodes/devito.git
+<pre><code class="bash">pip install --user git+https://github.com/devitocodes/devito.git
 </code></pre>
+
 <p>Then install matplotlib by</p>
-<pre><code class="language-bash">pip install matplotlib
+<pre><code class="bash">pip install matplotlib
 </code></pre>
+
 <p>If these commands don't work, please replace <code>pip</code> by <code>pip3</code> and try it again.</p>
 <p>For reading and writing seismic SEG-Y data, JUDI uses the <a href="https://github.com/slimgroup/SegyIO.jl">SegyIO</a> package and matrix-free linear operators are based the <a href="https://github.com/slimgroup/JOLI.jl/tree/master/src">Julia Operator LIbrary</a> (JOLI), we can install these 2 packages via:</p>
-<pre><code class="language-bash">julia -e 'using Pkg; Pkg.add(url=&quot;https://github.com/slimgroup/SegyIO.jl.git&quot;)'
+<pre><code class="bash">julia -e 'using Pkg; Pkg.add(url=&quot;https://github.com/slimgroup/SegyIO.jl.git&quot;)'
 julia -e 'using Pkg; Pkg.add(url=&quot;https://github.com/slimgroup/JOLI.jl.git&quot;)'
 </code></pre>
+
 <p>Once Devito, SegyIO and JOLI are installed, you can install <a href="https://github.com/slimgroup/JUDI.jl">JUDI</a> with Julia's <code>Pkg.add</code>.</p>
-<pre><code class="language-bash">julia -e 'using Pkg; Pkg.add(url=&quot;https://github.com/slimgroup/JUDI.jl&quot;)'
+<pre><code class="bash">julia -e 'using Pkg; Pkg.add(url=&quot;https://github.com/slimgroup/JUDI.jl&quot;)'
 </code></pre>
+
 <p>Once you have JUDI installed, you need to point Julia's PyCall package to the Python version for which we previously installed Devito. To do this, copy-paste the following commands into the (bash) terminal:</p>
-<pre><code class="language-bash">export PYTHON=$(which python)
+<pre><code class="bash">export PYTHON=$(which python)
 julia -e 'using Pkg; Pkg.build(&quot;PyCall&quot;)'
 </code></pre>
+
 <p>Again, try <code>which python3</code> if <code>which python</code> does not work.</p>
 <p>You can verify your installation by running:</p>
-<pre><code class="language-bash">julia -e 'using Pkg; using JUDI; example=joinpath(dirname(pathof(JUDI)),&quot;..&quot;,&quot;examples/scripts/modeling_basic_2D.jl&quot;);include(example);'
+<pre><code class="bash">julia -e 'using Pkg; using JUDI; example=joinpath(dirname(pathof(JUDI)),&quot;..&quot;,&quot;examples/scripts/modeling_basic_2D.jl&quot;);include(example);'
 </code></pre>
+
 <p>This command should finish without errors.</p>
 <h2 id="docker-not-necessary-for-homework-but-important-for-project">Docker (not necessary for homework but important for project)</h2>
 <p>Docker is a platform which builds a virtual machine/container for you in case some softwares above cannot be installed/processed in the environment on your local machine. Thus, we suggest you first try to install the softwares above and do the programming exercises on your local machine. The exercises should work well in apple/linux machines. If it renders problems on your machine (especially a windows one), you could install docker and follow the steps below to run julia sessions in a virtual environment.</p>
@@ -155,22 +161,25 @@ julia -e 'using Pkg; Pkg.build(&quot;PyCall&quot;)'
 <p>Instead of having to install Python, Julia, Devito, JUDI and all the dependencies by yourself, you simply download the docker image and run it in a container. All you need to do is install docker and run:</p>
 <pre><code>docker run -p 8888:8888 philippwitte/judi:v1.1
 </code></pre>
+
 <p>This will download the image and launch a jupyter notebook that you can access from your internet browser. The command will display a link, which looks something like this:</p>
 <pre><code>Copy/paste this URL into your browser when you connect for the first time,
     to login with a token:
         http://0e27b13128d4:8888/?token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4&amp;token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4
 </code></pre>
+
 <p>Copy-paste this link and replace the address <code>0e27b13128d4:8888</code> with <code>localhost:8888</code> (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Instead of a notebook, you can also launch an interactive session with a terminal by running:</p>
 <pre><code>docker run -it philippwitte/judi:v1.1 /bin/bash
 </code></pre>
+
 <p>This will give you access to a terminal, in which you can start Julia/Python, run things interactively or modify code. However, figures from PyPlot sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended.</p>
 <h2 id="exercises">Exercises</h2>
 <p>During the course you will work on the following exercises</p>
 <ol>
 <li>A first look at seismic data. <a href="../Assignments/introduction_to_julia/">Intro to julia</a> <a href="../Assignments/Exercise1/">Exercise 1</a></li>
+<li>NMO correction and velocity analysis <a href="../Assignments/Exercise2/">Exercise 2</a></li>
 </ol>
-<!-- 2. NMO correction and velocity analysis [Exercise 2](Assignments/Exercise2.md)
-3. Wavefield extrapolation and migration. [Exercise 3](Assignments/Exercise3.md) (Due Date: February 4,2020)
+<!-- 3. Wavefield extrapolation and migration. [Exercise 3](Assignments/Exercise3.md) (Due Date: February 4,2020)
 4. Fourier, Radon and filtering.[Exercise 4](Assignments/Exercise4.md) (Due Date: February 11,2020)
 5. From processing to inversion I.[Exercise 5](Assignments/Exercise5.md) (Due Date: March 5,2020)
 6. From processing to inversion II. [Exercise 6](Assignments/Exercise6.md) (Due Date: March 17,2020) -->

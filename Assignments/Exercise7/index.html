@@ -129,9 +129,10 @@
 <p>To illustrate some key properties of the waveform inversion problem, we are going to conduct some experiments on the famous 'Camambert' model.</p>
 <h1 id="camambert-model">Camambert model:</h1>
 <p>The Camambert model consists of a circular perturbation,  , superimposed on a homogeneous medium,  , with velocity 2500 m/s.</p>
-<pre><code class="language-julia">using JUDI.TimeModeling, JUDI.SLIM_optim, PyPlot, SeisIO
+<pre><code class="julia">using JUDI.TimeModeling, JUDI.SLIM_optim, PyPlot, SeisIO
 </code></pre>
-<pre><code class="language-julia"># Velocity model
+
+<pre><code class="julia"># Velocity model
 
 # number of gridpoints
 n = (101, 101)
@@ -158,19 +159,22 @@ m = 1f0./vp.^2f0
 v0 = 2.5f0 * ones(Float32, n)
 m0 = 1f0./v0.^2f0
 </code></pre>
-<pre><code class="language-julia">imshow(m)
+
+<pre><code class="julia">imshow(m)
 </code></pre>
+
 <p><img alt="png" src="../../img/Exercise7_3_0.png" /></p>
 <pre><code>PyObject &lt;matplotlib.image.AxesImage object at 0x7fee6c4dca20&gt;
 </code></pre>
-<pre><code class="language-julia"># Set up model structure w/ squared slowness
+<pre><code class="julia"># Set up model structure w/ squared slowness
 model0 = Model(n, d, o, m0)
 model = Model(n, d, o, m)
 </code></pre>
+
 <pre><code>JUDI.TimeModeling.Model((101, 101), (10.0, 10.0), (0.0, 0.0), 40, Float32[0.16 0.16 … 0.16 0.16; 0.16 0.16 … 0.16 0.16; … ; 0.16 0.16 … 0.16 0.16; 0.16 0.16 … 0.16 0.16], 1)
 </code></pre>
 <h1 id="source-geometry">Source geometry</h1>
-<pre><code class="language-julia"># Sources
+<pre><code class="julia"># Sources
 nsrc = 10
 xsrc = convertToCell(linspace(10f0, 990f0, nsrc))
 ysrc = convertToCell(linspace(0f0, 0f0, nsrc))
@@ -182,10 +186,11 @@ dtS = 2f0
 # Set up source structure
 srcGeometry = Geometry(xsrc,ysrc,zsrc; dt=dtS, t=timeS)
 </code></pre>
+
 <pre><code>JUDI.TimeModeling.GeometryIC(Any[10.0, 118.889, 227.778, 336.667, 445.556, 554.444, 663.333, 772.222, 881.111, 990.0], Any[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], Any[10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0], Any[2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0], Any[501, 501, 501, 501, 501, 501, 501, 501, 501, 501], Any[1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0])
 </code></pre>
 <h1 id="receiver-geometry">Receiver geometry</h1>
-<pre><code class="language-julia"># Receievers reflection
+<pre><code class="julia"># Receievers reflection
 nrec = 50f0
 xrec = linspace(10f0, 990f0, nrec)
 yrec = 0f0
@@ -209,6 +214,7 @@ dtR = 2f0
 # Set up receiver structure
 recGeometry_transmission = Geometry(xrec,yrec,zrec;dt=dtR,t=timeR, nsrc=nsrc)
 </code></pre>
+
 <pre><code>JUDI.TimeModeling.GeometryIC(Any[10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0], Any[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], Any[990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0], Any[2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0], Any[501, 501, 501, 501, 501, 501, 501, 501, 501, 501], Any[1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0])
 </code></pre>
 <h1 id="optimization">Optimization</h1>
@@ -239,7 +245,7 @@ Transmission setup:<code>transmission_data.segy</code>.</p>
 <h1 id="bound-projection">Bound projection</h1>
 <p>ProjBound(x) = boundproject(x, maximum(m), .9*minimum(m))</p>
 <h1 id="setup">Setup</h1>
-<pre><code class="language-julia"># To setup the operator in for example the reflection case
+<pre><code class="julia"># To setup the operator in for example the reflection case
 
 # setup wavelet
 f0 = 0.01f0  # 5 Hz wavelet
@@ -251,25 +257,29 @@ q = judiVector(srcGeometry, wavelet)
 ntComp = get_computational_nt(srcGeometry, recGeometry_reflection, model)
 info = Info(prod(n), nsrc, ntComp)
 </code></pre>
+
 <pre><code>JUDI.TimeModeling.Info(10201, 10, Any[596, 596, 596, 596, 596, 596, 596, 596, 596, 596])
 </code></pre>
-<pre><code class="language-julia">
+<pre><code class="julia">
 F_r = judiModeling(info, model, srcGeometry, recGeometry_reflection)
 
 F_t = judiModeling(info, model, srcGeometry, recGeometry_transmission)
 </code></pre>
+
 <pre><code>JUDI.TimeModeling.judiPDEfull{Float32,Float32}("Proj*F*Proj'", 250500, 5010, JUDI.TimeModeling.Info(10201, 10, Any[596, 596, 596, 596, 596, 596, 596, 596, 596, 596]), JUDI.TimeModeling.Model((101, 101), (10.0, 10.0), (0.0, 0.0), 40, Float32[0.16 0.16 … 0.16 0.16; 0.16 0.16 … 0.16 0.16; … ; 0.16 0.16 … 0.16 0.16; 0.16 0.16 … 0.16 0.16], 1), JUDI.TimeModeling.GeometryIC(Any[10.0, 118.889, 227.778, 336.667, 445.556, 554.444, 663.333, 772.222, 881.111, 990.0], Any[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], Any[10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0], Any[2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0], Any[501, 501, 501, 501, 501, 501, 501, 501, 501, 501], Any[1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0]), JUDI.TimeModeling.GeometryIC(Any[10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0], Any[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], Any[990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0], Any[2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0], Any[501, 501, 501, 501, 501, 501, 501, 501, 501, 501], Any[1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0]), JUDI.TimeModeling.Options(8, false, false, 1000.0, false, false, "", "shot", false, false, nothing, nothing, Any[], 1, false), JUDI.TimeModeling.#85, Nullable{Function}(JUDI.TimeModeling.#86))
 </code></pre>
-<pre><code class="language-julia">d_trans = F_t * q
+<pre><code class="julia">d_trans = F_t * q
 </code></pre>
+
 <pre><code>JUDI.TimeModeling.judiVector{Float32}("Seismic data vector", 250500, 1, 10, JUDI.TimeModeling.GeometryIC(Any[10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0, 10.0f0:20.0f0:990.0f0], Any[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], Any[990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0, 990.0f0:0.0f0:990.0f0], Any[2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0], Any[501, 501, 501, 501, 501, 501, 501, 501, 501, 501], Any[1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0]), Array[Float32[0.0 0.0 … 0.0 -0.0; -0.0 -0.0 … -0.0 0.0; … ; -0.264154 -0.289299 … 0.226348 0.220771; 0.0 0.0 … 0.0 0.0], Float32[-0.0 0.0 … 0.0 -0.0; 0.0 -0.0 … -0.0 0.0; … ; -0.149297 -0.0876982 … 0.289633 0.307329; 0.0 0.0 … 0.0 0.0], Float32[0.0 -0.0 … -0.0 -0.0; -0.0 0.0 … 0.0 0.0; … ; 0.0364218 0.0267914 … 0.200437 0.193765; 0.0 0.0 … 0.0 0.0], Float32[0.0 0.0 … -0.0 -0.0; -0.0 -0.0 … 0.0 0.0; … ; 0.133302 0.14125 … -0.0362351 -0.0663129; 0.0 0.0 … 0.0 0.0], Float32[-0.0 -0.0 … -0.0 0.0; 0.0 0.0 … 0.0 -0.0; … ; 0.162256 0.161237 … 0.0194431 0.0264048; 0.0 0.0 … 0.0 0.0], Float32[0.0 -0.0 … -0.0 -0.0; -0.0 0.0 … 0.0 0.0; … ; 0.0264062 0.0194453 … 0.161238 0.162256; 0.0 0.0 … 0.0 0.0], Float32[-0.0 -0.0 … 0.0 0.0; 0.0 0.0 … -0.0 -0.0; … ; -0.0663133 -0.0362352 … 0.14125 0.133301; 0.0 0.0 … 0.0 0.0], Float32[-0.0 -0.0 … -0.0 0.0; 0.0 0.0 … 0.0 -0.0; … ; 0.193767 0.200438 … 0.0267931 0.0364229; 0.0 0.0 … 0.0 0.0], Float32[-0.0 0.0 … 0.0 -0.0; 0.0 -0.0 … -0.0 0.0; … ; 0.307329 0.289633 … -0.0877006 -0.1493; 0.0 0.0 … 0.0 0.0], Float32[-0.0 0.0 … 0.0 0.0; 0.0 -0.0 … -0.0 -0.0; … ; 0.22077 0.226348 … -0.2893 -0.264157; 0.0 0.0 … 0.0 0.0]])
 </code></pre>
-<pre><code class="language-julia">imshow(d_trans.data[10], vmin=-1, vmax=1, cmap=&quot;seismic&quot;)
+<pre><code class="julia">imshow(d_trans.data[10], vmin=-1, vmax=1, cmap=&quot;seismic&quot;)
 </code></pre>
+
 <p><img alt="png" src="../../img/Exercise7_15_0.png" /></p>
 <pre><code>PyObject &lt;matplotlib.image.AxesImage object at 0x7fee6a3370b8&gt;
 </code></pre>
-<pre><code class="language-julia">function f(x)
+<pre><code class="julia">function f(x)
 
     # Update model
     model0.m = convert(Array{Float32, 2}, reshape(x, model0.n))
@@ -295,13 +305,15 @@ F_t = judiModeling(info, model, srcGeometry, recGeometry_transmission)
 end
 
 </code></pre>
+
 <pre><code>f (generic function with 1 method)
 </code></pre>
-<pre><code class="language-julia">F0_t = judiModeling(info, model0, srcGeometry, recGeometry_transmission)
+<pre><code class="julia">F0_t = judiModeling(info, model0, srcGeometry, recGeometry_transmission)
 J = judiJacobian(F0_t, q);
 
 dm = J'*d_trans
 </code></pre>
+
 <pre><code>10201-element Array{Float32,1}:
   4.39141 
   0.676352
@@ -330,17 +342,19 @@ dm = J'*d_trans
   2.24424 
   2.51696
 </code></pre>
-<pre><code class="language-julia">imshow(d_trans.data[1], vmin=-1, vmax=1)
+<pre><code class="julia">imshow(d_trans.data[1], vmin=-1, vmax=1)
 </code></pre>
+
 <p><img alt="png" src="../../img/Exercise7_18_0.png" /></p>
 <pre><code>PyObject &lt;matplotlib.image.AxesImage object at 0x7fee68e88748&gt;
 </code></pre>
-<pre><code class="language-julia"># invert
+<pre><code class="julia"># invert
 options = pqn_options(verbose=3, maxIter=10, corrections=10)
 # Bound projection
 ProjBound(x) = boundproject(x, maximum(m), .9*minimum(m))
 x, fsave, funEvals= minConf_PQN(f, vec(m0), ProjBound, options)
 </code></pre>
+
 <pre><code>Running PQN...
 Number of L-BFGS Corrections to store: 10
 Spectral initialization of SPG: 0
@@ -369,9 +383,10 @@ Step size below progTol
 
 (Float32[0.444444, 0.444267, 0.444267, 0.444444, 0.444444, 0.444444, 0.444444, 0.444444, 0.444444, 0.444444  …  0.444444, 0.444444, 0.444444, 0.444444, 0.444444, 0.444444, 0.444444, 0.444444, 0.444444, 0.444444], [0.0, 2.33499e5, 2.33499e5], 6)
 </code></pre>
-<pre><code class="language-julia">
+<pre><code class="julia">
 </code></pre>
-<pre><code class="language-julia">
+
+<pre><code class="julia">
 </code></pre></div>
             </div>
         </div>
