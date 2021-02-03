@@ -128,8 +128,11 @@
 <p>First, install Devito using <code>pip</code> (or <code>pip3</code>), or see the <a href="https://github.com/devitocodes/devito">Devito's GitHub page</a> for installation with Conda and further information. The current release of <a href="https://github.com/slimgroup/JUDI.jl">JUDI</a> requires Python 3 and the current Devito version. Run all of the following commands from the (bash) terminal command line (not in the Julia REPL):</p>
 <pre><code class="language-bash">pip install --user git+https://github.com/devitocodes/devito.git
 </code></pre>
-<p>If this command doesn't work, please replace <code>pip</code> by <code>pip3</code> and try it again.</p>
-<p>For reading and writing seismic SEG-Y data, JUDI uses the <a href="https://github.com/slimgroup/SegyIO.jl">SegyIO</a> package and matrix-free linear operators are based the <a href="https://github.com/slimgroup/JOLI.jl/tree/master/src">Julia Operator LIbrary</a> (JOLI):</p>
+<p>Then install matplotlib by</p>
+<pre><code class="language-bash">pip install matplotlib
+</code></pre>
+<p>If these commands don't work, please replace <code>pip</code> by <code>pip3</code> and try it again.</p>
+<p>For reading and writing seismic SEG-Y data, JUDI uses the <a href="https://github.com/slimgroup/SegyIO.jl">SegyIO</a> package and matrix-free linear operators are based the <a href="https://github.com/slimgroup/JOLI.jl/tree/master/src">Julia Operator LIbrary</a> (JOLI), we can install these 2 packages via:</p>
 <pre><code class="language-bash">julia -e 'using Pkg; Pkg.add(url=&quot;https://github.com/slimgroup/SegyIO.jl.git&quot;)'
 julia -e 'using Pkg; Pkg.add(url=&quot;https://github.com/slimgroup/JOLI.jl.git&quot;)'
 </code></pre>
@@ -140,7 +143,7 @@ julia -e 'using Pkg; Pkg.add(url=&quot;https://github.com/slimgroup/JOLI.jl.git&
 <pre><code class="language-bash">export PYTHON=$(which python)
 julia -e 'using Pkg; Pkg.build(&quot;PyCall&quot;)'
 </code></pre>
-<p>Again, try <code>export PYTHON3</code> if <code>export PYTHON</code> does not work.</p>
+<p>Again, try <code>which python3</code> if <code>which python</code> does not work.</p>
 <p>You can verify your installation by running:</p>
 <pre><code class="language-bash">julia -e 'using Pkg; using JUDI; example=joinpath(dirname(pathof(JUDI)),&quot;..&quot;,&quot;examples/scripts/modeling_basic_2D.jl&quot;);include(example);'
 </code></pre>
