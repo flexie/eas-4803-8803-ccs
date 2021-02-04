@@ -133,7 +133,7 @@ These exercises will introduce you to the [Julia programming language](https://j
 
 Please turn in your assignments as pdf files. The assignments should be send to [Ziyi (Francis) Yin](mailto:ziyi.yin@gatech.edu). Late hand ins are not accepted.
 
-**Unless stated otherwise the labs are due one week after the assignments have been posted.**
+**Unless stated otherwise the labs are due one week after the assignments have been posted. For example, if a homework is posted before the lecture on Wednesday, you should submit your homework before the lecture on the next Wednesday in order for your homework to be considered as on-time. If you have difficulty on the homework and want to ask for extension, please email Dr. Felix Herrmann and cc TA in advance.**
 
 ### Feedback
 
