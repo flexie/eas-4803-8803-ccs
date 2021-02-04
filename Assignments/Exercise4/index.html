@@ -111,12 +111,11 @@
 - f-k filtering
 - Radon transform
 - Parabolic Radon transform</p>
-<pre><code class="julia">using PyPlot, SegyIO, FFTW
+<pre><code class="language-julia">using PyPlot, SegyIO, FFTW
 </code></pre>
-
 <p><strong>Data</strong></p>
 <p>We use a single midpoint gather of the data used in the previous exercises: shot.segy (no big endian this time).</p>
-<pre><code class="julia"># Dowload and adapt path
+<pre><code class="language-julia"># Dowload and adapt path
 shot = segy_read(&quot;/home/yzhang3198/Downloads/data_segy/shot.segy&quot;)
 
 shot_data = Float32.(shot.data)
@@ -126,7 +125,6 @@ dt = get_header(shot, &quot;dt&quot;)[1]/1e6
 nt = get_header(shot, &quot;ns&quot;)[1]
 T = 0:dt:(nt -1)*dt
 </code></pre>
-
 <pre><code>┌ Warning: Fixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=1705444, maxsize=Inf, ptr=3601, mark=-1)
 └ @ SegyIO /home/yzhang3198/.julia/packages/SegyIO/ak2qG/src/read/read_file.jl:26
 
@@ -136,14 +134,13 @@ T = 0:dt:(nt -1)*dt
 
 0.0:0.004:4.0
 </code></pre>
-<pre><code class="julia">imshow(shot_data, vmin=-1, vmax=1, cmap=&quot;Greys&quot;, extent=[h[end], h[1], T[end], T[1]], aspect=1000)
+<pre><code class="language-julia">imshow(shot_data, vmin=-1, vmax=1, cmap=&quot;Greys&quot;, extent=[h[end], h[1], T[end], T[1]], aspect=1000)
 xlabel(&quot;offset [m]&quot;);ylabel(&quot;time [s]&quot;);
 </code></pre>
-
 <p><img alt="png" src="../../img/E4_output_4_0.png" /></p>
 <p><strong>Temporal Fourier transform</strong></p>
 <p>We can use fftrl to perform a Fourier transform along the temporal direction. The power spectrum (i.e., the absolute value of the transformed data) looks like</p>
-<pre><code class="julia">function fftrl(a, t, mode)
+<pre><code class="language-julia">function fftrl(a, t, mode)
     # fft for real-valued vectors
     #
     # Tristan van Leeuwen, 2012
@@ -180,24 +177,21 @@ xlabel(&quot;offset [m]&quot;);ylabel(&quot;time [s]&quot;);
 end
 
 </code></pre>
-
 <pre><code>fftrl (generic function with 1 method)
 </code></pre>
-<pre><code class="julia">Data_fh, f = fftrl(shot_data, T, 1)
+<pre><code class="language-julia">Data_fh, f = fftrl(shot_data, T, 1)
 </code></pre>
-
 <pre><code>(Complex{Float32}[0.6844337f0 + 0.0f0im 0.9717815f0 + 0.0f0im … 0.09694278f0 + 0.0f0im 0.004332781f0 + 0.0f0im; -0.70118594f0 - 0.4517814f0im -0.41232893f0 - 0.46060145f0im … -1.3077996f0 - 0.49731374f0im -1.4023542f0 - 0.48800778f0im; … ; -0.121281974f0 + 0.0007099677f0im -0.08637722f0 - 0.00040336605f0im … 0.1578058f0 - 0.0011496469f0im 0.11014599f0 - 0.0002730284f0im; -0.12202144f0 + 0.00059955195f0im -0.08491863f0 - 0.00023266952f0im … 0.15901898f0 - 0.0005980283f0im 0.10969794f0 - 0.00018512644f0im], 0.0:0.25:125.0)
 </code></pre>
-<pre><code class="julia">imshow(abs.(Data_fh), cmap=&quot;jet&quot;, extent=[h[end], h[1], f[end], f[1]], aspect=20)
+<pre><code class="language-julia">imshow(abs.(Data_fh), cmap=&quot;jet&quot;, extent=[h[end], h[1], f[end], f[1]], aspect=20)
 xlabel(&quot;offset [m]&quot;);ylabel(&quot;frequency [Hz]&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/E4_output_8_0.png" /></p>
 <pre><code>PyObject Text(24.000000000000007, 0.5, 'frequency [Hz]')
 </code></pre>
 <p><strong>f-k filtering</strong>
 A Fourier transform along both time and offset direction is often referred to as an  transform. We can use fktran. The powerspectrum looks like</p>
-<pre><code class="julia">function fktran(a,t,x,mode)
+<pre><code class="language-julia">function fktran(a,t,x,mode)
     &quot;&quot;&quot;
     f-k transform for real-values input.
 
@@ -241,30 +235,25 @@ A Fourier transform along both time and offset direction is often referred to as
     return b, f, k
 end
 </code></pre>
-
 <pre><code>fktran (generic function with 1 method)
 </code></pre>
-<pre><code class="julia">Data_fk, fk, kx = fktran(shot_data, T, h, 1)
+<pre><code class="language-julia">Data_fk, fk, kx = fktran(shot_data, T, h, 1)
 </code></pre>
-
 <pre><code>(Complex{Float32}[0.002173217f0 + 0.37586603f0im -0.003716143f0 - 0.37589622f0im … -0.0037163715f0 + 0.37589744f0im 0.0021728363f0 - 0.37586543f0im; -0.06664165f0 + 0.37817085f0im 0.06513726f0 - 0.37864232f0im … -0.072564445f0 + 0.37711513f0im 0.07105575f0 - 0.37754175f0im; … ; 0.0033008547f0 + 0.40090138f0im -0.006969956f0 - 0.40087533f0im … -0.002999703f0 + 0.40091997f0im -0.0006929431f0 - 0.40090662f0im; 0.0019657868f0 + 0.40089262f0im -0.0056476546f0 - 0.4009117f0im … -0.0043306802f0 + 0.4009047f0im 0.000641849f0 - 0.4008996f0im], 0.0:0.25:125.0, 0.05:-0.00025:-0.05)
 </code></pre>
-<pre><code class="julia">imshow(abs.(Data_fk), cmap=&quot;jet&quot;, extent=[kx[end], kx[1], f[end], f[1]], aspect=.001)
+<pre><code class="language-julia">imshow(abs.(Data_fk), cmap=&quot;jet&quot;, extent=[kx[end], kx[1], f[end], f[1]], aspect=.001)
 xlabel(&quot;wavenumber [1/m&quot;);ylabel(&quot;frequency [Hz]&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/E4_output_12_0.png" /></p>
 <pre><code>PyObject Text(23.999999999999993, 0.5, 'frequency [Hz]')
 </code></pre>
-<pre><code class="julia">back, _, _ = fktran(Data_fk, fk, kx, -1)
+<pre><code class="language-julia">back, _, _ = fktran(Data_fk, fk, kx, -1)
 imshow(back, vmin=-1, vmax=1, cmap=&quot;Greys&quot;, extent=[h[end], h[1], T[end], T[1]], aspect=1000)
 xlabel(&quot;offset [m]&quot;);ylabel(&quot;time [s]&quot;);
 </code></pre>
-
 <p><img alt="png" src="../../img/E4_output_13_0.png" /></p>
-<pre><code class="julia">size(shot_data)
+<pre><code class="language-julia">size(shot_data)
 </code></pre>
-
 <pre><code>(1001, 401)
 </code></pre>
 <h1 id="questions">Questions:</h1>
@@ -274,27 +263,25 @@ xlabel(&quot;offset [m]&quot;);ylabel(&quot;time [s]&quot;);
 <li>Why is it important to have a good receiver sampling?</li>
 </ul>
 <p>A filter is simply a multiplicative factor applied in some transform domain, typically (f-h) or (f-k), followed by an inverse transform. For example, a band-pass filter in the (f-h) domain filters out higher temporal frequencies by setting them to zero. A simple band-pass filter looks like this:</p>
-<pre><code class="julia">F_hp = ones(length(f),length(h))
+<pre><code class="language-julia">F_hp = ones(length(f),length(h))
 F_hp[(f.&lt;5) .| (f.&gt;20.),:] .= 0
 
 imshow(F_hp, extent=[h[end], h[1], f[end], f[1]], aspect=20)
 colorbar()
 xlabel(&quot;offset [m]&quot;);ylabel(&quot;frequency [Hz]&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/E4_output_17_0.png" /></p>
 <pre><code>PyObject Text(24.000000000000007, 0.5, 'frequency [Hz]')
 </code></pre>
 <p>The filtered data looks like this</p>
-<pre><code class="julia">imshow(fftrl(F_hp.*Data_fh, f, -1)[1], cmap=&quot;Greys&quot;, vmin=-1, vmax=1, extent=[h[end], h[1], T[end], T[1]], aspect=1000)
+<pre><code class="language-julia">imshow(fftrl(F_hp.*Data_fh, f, -1)[1], cmap=&quot;Greys&quot;, vmin=-1, vmax=1, extent=[h[end], h[1], T[end], T[1]], aspect=1000)
 xlabel(&quot;offset [m]&quot;);ylabel(&quot;frequency [Hz]&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/E4_output_19_0.png" /></p>
 <pre><code>PyObject Text(24.000000000000007, 0.5, 'frequency [Hz]')
 </code></pre>
 <p>Do you see the artifacts? A way to reduce these artifacts is to smooth the filter. We can do this by convolving the filter with a triangular smoothing kernel. This is implemented in the function smooth_2D. The result looks like this:</p>
-<pre><code class="julia">#using Pkg; Pkg.add(&quot;Images&quot;) of you do not alread yhave it
+<pre><code class="language-julia">#using Pkg; Pkg.add(&quot;Images&quot;) of you do not alread yhave it
 using Images
 
 function smooth_2D(input, n1, n2)
@@ -304,28 +291,25 @@ function smooth_2D(input, n1, n2)
     return imfilter(input, centered(kernel))
 end
 </code></pre>
-
 <pre><code>smooth_2D (generic function with 1 method)
 </code></pre>
-<pre><code class="julia">F_hp_smooth = smooth_2D(F_hp, 5, 1)
+<pre><code class="language-julia">F_hp_smooth = smooth_2D(F_hp, 5, 1)
 imshow(F_hp_smooth, extent=[h[end], h[1], f[end], f[1]], aspect=20)
 colorbar()
 xlabel(&quot;offset [m]&quot;);ylabel(&quot;frequency [Hz]&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/E4_output_22_0.png" /></p>
 <pre><code>PyObject Text(24.000000000000007, 0.5, 'frequency [Hz]')
 </code></pre>
-<pre><code class="julia">imshow(fftrl(F_hp_smooth.*Data_fh, f, -1)[1], cmap=&quot;Greys&quot;, vmin=-1, vmax=1, extent=[h[end], h[1], T[end], T[1]], aspect=1000)
+<pre><code class="language-julia">imshow(fftrl(F_hp_smooth.*Data_fh, f, -1)[1], cmap=&quot;Greys&quot;, vmin=-1, vmax=1, extent=[h[end], h[1], T[end], T[1]], aspect=1000)
 xlabel(&quot;offset [m]&quot;);ylabel(&quot;frequency [Hz]&quot;)
 
 </code></pre>
-
 <p><img alt="png" src="../../img/E4_output_23_0.png" /></p>
 <pre><code>PyObject Text(24.000000000000007, 0.5, 'frequency [Hz]')
 </code></pre>
 <p>A (smoothed) filter in the (f-k) domain may look like this</p>
-<pre><code class="julia">ff = [fi for fi in f, kxi in kx]
+<pre><code class="language-julia">ff = [fi for fi in f, kxi in kx]
 kkx = [kxi for fi in f, kxi in kx]
 F_kx = zeros(length(fk),length(kx))
 
@@ -336,7 +320,6 @@ F_kx = smooth_2D(F_kx, 5, 5)
 imshow(F_kx, cmap=&quot;jet&quot;, extent=[kx[end], kx[1], f[end], f[1]], aspect=.001)
 xlabel(&quot;wavenumber [1/m&quot;);ylabel(&quot;frequency [Hz]&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/E4_output_25_0.png" /></p>
 <pre><code>PyObject Text(23.999999999999993, 0.5, 'frequency [Hz]')
 </code></pre>
@@ -348,7 +331,7 @@ Try it and compare the result with the original shot gather.</p>
 <p>$\hat{d}(\tau,p) = \int\mathrm{d}h\, d(t + ph, h)$</p>
 <p>The transform is implemented in the function lpradon.</p>
 <p>To get an idea of what this transform does, we consider the simple example in lines.segy.</p>
-<pre><code class="julia">function lpradon(input, t, h, q, power, mode)
+<pre><code class="language-julia">function lpradon(input, t, h, q, power, mode)
     # linear and parabolic Radon transform and its adjoint.
     #
     # Tristan van Leeuwen, 2012
@@ -407,10 +390,9 @@ Try it and compare the result with the original shot gather.</p>
     return out
 end
 </code></pre>
-
 <pre><code>lpradon (generic function with 1 method)
 </code></pre>
-<pre><code class="julia"># Dowload and adapt path
+<pre><code class="language-julia"># Dowload and adapt path
 shot_radon = segy_read(&quot;/home/yzhang3198/Downloads/data_segy/lines.segy&quot;)
 
 A = Float32.(shot_radon.data)
@@ -420,7 +402,6 @@ dt = get_header(shot_radon, &quot;dt&quot;)[1]/1e6
 nt = get_header(shot_radon, &quot;ns&quot;)[1]
 T = 0:dt:(nt -1)*dt
 </code></pre>
-
 <pre><code>┌ Warning: Fixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=1705444, maxsize=Inf, ptr=3601, mark=-1)
 └ @ SegyIO /home/yzhang3198/.julia/packages/SegyIO/ak2qG/src/read/read_file.jl:26
 
@@ -430,30 +411,27 @@ T = 0:dt:(nt -1)*dt
 
 0.0:0.004:4.0
 </code></pre>
-<pre><code class="julia">imshow(A, vmin=-.1, vmax=.1, cmap=&quot;Greys&quot;, extent=[h[end], h[1], T[end], T[1]], aspect=1000)
+<pre><code class="language-julia">imshow(A, vmin=-.1, vmax=.1, cmap=&quot;Greys&quot;, extent=[h[end], h[1], T[end], T[1]], aspect=1000)
 xlabel(&quot;offset [m]&quot;);ylabel(&quot;time [s]&quot;);
 </code></pre>
-
 <p><img alt="png" src="../../img/E4_output_30_0.png" /></p>
-<pre><code class="julia"># which p-values
+<pre><code class="language-julia"># which p-values
 p = 1e-3.*(-3:.05:3)
 
 # transform
 A_tp = lpradon(A, T, h, p, 1, 1);
 </code></pre>
-
-<pre><code class="julia"># plot
+<pre><code class="language-julia"># plot
 imshow(A_tp, vmin=-.25, vmax=.25, cmap=&quot;Greys&quot;, extent=[p[1], p[end], T[end], T[1]], aspect=.001)
 xlabel(&quot;slowness [s/m]&quot;);ylabel(&quot;time [s]&quot;);
 
 </code></pre>
-
 <p><img alt="png" src="../../img/E4_output_32_0.png" /></p>
 <h1 id="questions_2">Questions</h1>
 <p>Can you interpret the results?
 Describe how you would design <code>filters</code> in the $\tau-p$ domain to separate the different events.
 Try it. Use the <code>adjoint</code> option of the transform to transform back to the physical domain.</p>
-<pre><code class="julia">
+<pre><code class="language-julia">
 </code></pre></div>
             </div>
         </div>
