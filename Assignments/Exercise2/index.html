@@ -313,7 +313,7 @@ ylabel(&quot;time&quot;)
 <pre><code>PyObject Text(24.0, 0.5, 'time')
 </code></pre>
 <h1 id="velocity-analysis">Velocity analysis</h1>
-<p>Repeat the above outline procedure for a couple of mipdoint positions xm (e.g., <code>xm = [500 1000 2000]</code>). Organize the resulting NMO velocities in a matrix <code>Vm</code> (where column i is the NMO velocity for midpoint <code>xm[i]</code>) interpolate the results to obtain a velocity for all the midpoints using <code>Spline1D(xm, VM); spl(all_m)</code>. Plot the velocity and discuss.</p>
+<p>Repeat the above outline procedure for a couple of mipdoint positions xm (e.g., <code>xm = [500 1000 2000]</code>). Organize the resulting NMO velocities in a matrix <code>Vm</code> (where column i is the NMO velocity for midpoint <code>xm[i]</code>) interpolate the results to obtain a velocity for all the midpoints. You can either do <code>Spline1D</code> on every row of <code>Vm</code>, or do <code>Spline2D</code> which interpolates both time <code>T</code> and midpoint position <code>xm</code>. Plot the velocity and discuss.</p>
 <p>Using this NMO velocity, we can produce an NMO stack. Perform an NMO correction of all the midpoint gathers using the corresponding NMO velocity derived above and sum each along the offset direction. Organize all the stacks in a matrix and plot the result. Also make a stack using a constant NMO velocity. Discuss the results.</p>
 <pre><code class="language-julia">
 </code></pre></div>
