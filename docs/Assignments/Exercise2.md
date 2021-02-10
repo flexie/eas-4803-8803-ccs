@@ -345,7 +345,7 @@ ylabel("time")
 
 # Velocity analysis
 
-Repeat the above outline procedure for a couple of mipdoint positions xm (e.g., `xm = [500 1000 2000]`). Organize the resulting NMO velocities in a matrix `Vm` (where column i is the NMO velocity for midpoint `xm[i]`) interpolate the results to obtain a velocity for all the midpoints using `Spline1D(xm, VM); spl(all_m)`. Plot the velocity and discuss.
+Repeat the above outline procedure for a couple of mipdoint positions xm (e.g., `xm = [500 1000 2000]`). Organize the resulting NMO velocities in a matrix `Vm` (where column i is the NMO velocity for midpoint `xm[i]`) interpolate the results to obtain a velocity for all the midpoints. You can either do `Spline1D` on every row of `Vm`, or do `Spline2D` which interpolates both time `T` and midpoint position `xm`. Plot the velocity and discuss.
 
 Using this NMO velocity, we can produce an NMO stack. Perform an NMO correction of all the midpoint gathers using the corresponding NMO velocity derived above and sum each along the offset direction. Organize all the stacks in a matrix and plot the result. Also make a stack using a constant NMO velocity. Discuss the results.
 
