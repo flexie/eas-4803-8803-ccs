@@ -103,9 +103,9 @@ This will give you access to a terminal, in which you can start Julia/Python, ru
 During the course you will work on the following exercises
 
 1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md) [Exercise 1](Assignments/Exercise1.md) (Due: 11AM Feb 3, 2021)
-2. NMO correction and velocity analysis [Exercise 2](Assignments/Exercise2.md) (Due: 11AM Feb 10, 2021)
+2. NMO correction and velocity analysis. [Exercise 2](Assignments/Exercise2.md) (Due: 11AM Feb 10, 2021)
 3. Wavefield extrapolation and migration. [Exercise 3](Assignments/Exercise3.md) (Due: 11AM Feb 17, 2021)
-4. Fourier, Radon and filtering. [Exercise 4](Assignments/Exercise4.md) (Due Date: 11AM Mar 3,2021)
+4. Fourier, Radon and filtering. [Exercise 4](Assignments/Exercise4.md) (Due Date: 11AM Mar 15, 2021)
 
 <!-- 
 5. From processing to inversion I.[Exercise 5](Assignments/Exercise5.md) (Due Date: March 5,2020)
