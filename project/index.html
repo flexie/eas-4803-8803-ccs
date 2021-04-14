@@ -128,7 +128,7 @@ Download this version of <a href="https://github.com/docker/toolbox/releases/dow
 <p>Tis will give you the IP address of your docker that you can now use for accessing the notebook by replacing <code>127.0.0.1</code> in the address above by the output of the <code>docker-machine</code> command.</p>
 <p><strong>Token page</strong></p>
 <p>If you are redirected to a page that ask you to input the token or to set a password, you probably have another docker container running. Run the command <code>docker container ls</code> to check if there is any container running. This should look like:</p>
-<p><img alt="png" src="./img/doc-cont.png" /></p>
+<p><img alt="png" src="../img/doc-cont.png" /></p>
 <p>You can see in the <code>PORTS</code> column that a container is already using the port 8888. Delete all container using that port via <code>docker container rm -f CONTAINER ID</code> and restart the docker image:</p>
 <pre><code>docker run -p 8888:8888 -v /path/to/files:/app/judi/data ddjj1118/judi_eas_project:v4.0
 </code></pre>
