@@ -19,6 +19,8 @@ The Camambert model consists of a circular perturbation,  , superimposed on a ho
 
 
 ```julia
+using Pkg
+Pkg.update("JUDI")
 using JUDI.TimeModeling, JUDI.SLIM_optim, PyPlot, SeisIO
 ```
 
@@ -39,13 +41,13 @@ x = zeros(n)
 z = zeros(n)
 
 for i in 0:100
-    x[i+1, :] = i*10
-    z[:, i+1] = i*10
+    x[i+1, :] .= i*10
+    z[:, i+1] .= i*10
 end
 
 # 
 vp = 2.5f0 * ones(Float32, n)
-vp[find(sqrt.((x-500).^2 +(z-500).^2) .<=250)]=3.0f0
+vp[findall(sqrt.((x.-500).^2 +(z.-500).^2) .<=250)].=3.0f0
 m = 1f0./vp.^2f0
 #
 v0 = 2.5f0 * ones(Float32, n)
@@ -54,7 +56,7 @@ m0 = 1f0./v0.^2f0
 
 
 ```julia
-imshow(m)
+figure();imshow(m')
 ```
 
 
@@ -78,7 +80,7 @@ model = Model(n, d, o, m)
 
 
 
-    JUDI.TimeModeling.Model((101, 101), (10.0, 10.0), (0.0, 0.0), 40, Float32[0.16 0.16 … 0.16 0.16; 0.16 0.16 … 0.16 0.16; … ; 0.16 0.16 … 0.16 0.16; 0.16 0.16 … 0.16 0.16], 1)
+Model((101, 101), (10.0, 10.0), (0.0, 0.0), 40, Float32[0.16 0.16 … 0.16 0.16; 0.16 0.16 … 0.16 0.16; … ; 0.16 0.16 … 0.16 0.16; 0.16 0.16 … 0.16 0.16], 1)
 
 
 
@@ -88,9 +90,9 @@ model = Model(n, d, o, m)
 ```julia
 # Sources
 nsrc = 10
-xsrc = convertToCell(linspace(10f0, 990f0, nsrc))
-ysrc = convertToCell(linspace(0f0, 0f0, nsrc))
-zsrc = convertToCell(linspace(10f0, 10f0, nsrc))
+xsrc = convertToCell(range(10f0, stop=990f0, length=nsrc))
+ysrc = convertToCell(range(0f0, stop=0f0, length=nsrc))
+zsrc = convertToCell(range(10f0, stop=10f0, length=nsrc))
 # source sampling and number of time steps
 timeS = 1000f0
 dtS = 2f0
@@ -102,8 +104,7 @@ srcGeometry = Geometry(xsrc,ysrc,zsrc; dt=dtS, t=timeS)
 
 
 
-    JUDI.TimeModeling.GeometryIC(Any[10.0, 118.889, 227.778, 336.667, 445.556, 554.444, 663.333, 772.222, 881.111, 990.0], Any[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], Any[10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0], Any[2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0], Any[501, 501, 501, 501, 501, 501, 501, 501, 501, 501], Any[1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0, 1000.0])
-
+  GeometryIC(Any[10.0f0, 118.888885f0, 227.77777f0, 336.66666f0, 445.55554f0, 554.44446f0, 663.3333f0, 772.2222f0, 881.1111f0, 990.0f0], Any[0.0f0, 0.0f0, 0.0f0, 0.0f0, 0.0f0, 0.0f0, 0.0f0, 0.0f0, 0.0f0, 0.0f0], Any[10.0f0, 10.0f0, 10.0f0, 10.0f0, 10.0f0, 10.0f0, 10.0f0, 10.0f0, 10.0f0, 10.0f0], Any[2.0f0, 2.0f0, 2.0f0, 2.0f0, 2.0f0, 2.0f0, 2.0f0, 2.0f0, 2.0f0, 2.0f0], Any[501, 501, 501, 501, 501, 501, 501, 501, 501, 501], Any[1000.0f0, 1000.0f0, 1000.0f0, 1000.0f0, 1000.0f0, 1000.0f0, 1000.0f0, 1000.0f0, 1000.0f0, 1000.0f0])
 
 
 # Receiver geometry
@@ -111,10 +112,10 @@ srcGeometry = Geometry(xsrc,ysrc,zsrc; dt=dtS, t=timeS)
 
 ```julia
 # Receievers reflection
-nrec = 50f0
-xrec = linspace(10f0, 990f0, nrec)
+nrec = 50
+xrec = range(10f0, stop=990f0, length=nrec)
 yrec = 0f0
-zrec = linspace(10f0, 10f0, nrec)
+zrec = range(10f0, stop=10f0, length=nrec)
 # source sampling and number of time steps
 timeR = 1000f0
 dtR = 2f0
@@ -123,10 +124,10 @@ dtR = 2f0
 recGeometry_reflection = Geometry(xrec,yrec,zrec;dt=dtR,t=timeR, nsrc=nsrc)
 
 # Receievers transmission
-nrec = 50f0
-xrec = linspace(10f0, 990f0, nrec)
+nrec = 50
+xrec = range(10f0, stop=990f0, length=nrec)
 yrec = 0f0
-zrec = linspace(990f0, 990f0, nrec)
+zrec = range(990f0, stop=990f0, length=nrec)
 # source sampling and number of time steps
 timeR = 1000f0
 dtR = 2f0
