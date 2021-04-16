@@ -102,6 +102,24 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="class-projects">Class projects</h1>
+<p>This year's project is an extension to <a href="../Assignments/Exercise7/">Exercise 7</a>. Please follow the instructions there.</p>
+<h3 id="known-windows-issues-solutions">Known Windows issues solutions</h3>
+<p><strong>If you get an error message about Windows version</strong></p>
+<p>You probably either have Windows Home edition or a version older than Windows 10.
+Download this version of <a href="https://github.com/docker/toolbox/releases/download/v19.03.1/DockerToolbox-19.03.1.exe">Docker</a> and install it.</p>
+<p><strong>Accessing the notebook</strong></p>
+<p>IP forward with docker on Wondows does not work and the address <code>http://127.0.0.1:8888/...</code> will probably not be reachable. To reach it run the following command in the docker terminal:</p>
+<pre><code>docker-machine ip
+</code></pre>
+<p>Tis will give you the IP address of your docker that you can now use for accessing the notebook by replacing <code>127.0.0.1</code> in the address above by the output of the <code>docker-machine</code> command.</p>
+<p><strong>Token page</strong></p>
+<p>If you are redirected to a page that ask you to input the token or to set a password, you probably have another docker container running. Run the command <code>docker container ls</code> to check if there is any container running. This should look like:</p>
+<p><img alt="png" src="../img/doc-cont.png" /></p>
+<p>You can see in the <code>PORTS</code> column that a container is already using the port 8888. Delete all container using that port via <code>docker container rm -f CONTAINER ID</code> and restart the docker image:</p>
+<pre><code>docker run -p 8888:8888 -v /path/to/files:/app/judi/data ddjj1118/judi_eas_project:v4.0
+</code></pre>
+<p>You should now be able to access the notebooks at <code>http://machine-ip:8888/...</code></p>
+<p>&lt;!--</p>
 <h2 id="data-and-scripts">Data and scripts</h2>
 <p>The data required please download from the following link with exactly same passwords as before</p>
 <p>https://www.dropbox.com/s/4vvmxju4bsfrwrm/GulfOfSuez178.segy?dl=0</p>
@@ -117,7 +135,7 @@
 </code></pre>
 <p>Copy paste the URL in your browser and replace <code>(af637030c092 or 127.0.0.1)</code> by <code>localhost</code>.
 You will then be directed to a jupyter folder that contains the notebooks for the projects.</p>
-<h3 id="known-windows-issues-solutions">Known Windows issues solutions</h3>
+<h3 id="known-windows-issues-solutions_1">Known Windows issues solutions</h3>
 <p><strong>If you get an error message about Windows version</strong></p>
 <p>You probably either have Windows Home edition or a version older than Windows 10.
 Download this version of <a href="https://github.com/docker/toolbox/releases/download/v19.03.1/DockerToolbox-19.03.1.exe">Docker</a> and install it.</p>
