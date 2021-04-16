@@ -1,5 +1,41 @@
 # Class projects
 
+This year's project is an extension to [Exercise 7](Assignments/Exercise7.md). Please follow the instructions there.
+
+
+### Known Windows issues solutions
+
+**If you get an error message about Windows version**
+
+You probably either have Windows Home edition or a version older than Windows 10.
+Download this version of [Docker](https://github.com/docker/toolbox/releases/download/v19.03.1/DockerToolbox-19.03.1.exe) and install it.
+
+
+**Accessing the notebook**
+
+IP forward with docker on Wondows does not work and the address `http://127.0.0.1:8888/...` will probably not be reachable. To reach it run the following command in the docker terminal:
+
+```
+docker-machine ip
+```
+
+Tis will give you the IP address of your docker that you can now use for accessing the notebook by replacing `127.0.0.1` in the address above by the output of the `docker-machine` command.
+
+**Token page**
+
+If you are redirected to a page that ask you to input the token or to set a password, you probably have another docker container running. Run the command `docker container ls` to check if there is any container running. This should look like:
+
+![png](./img/doc-cont.png)
+
+You can see in the `PORTS` column that a container is already using the port 8888. Delete all container using that port via `docker container rm -f CONTAINER ID` and restart the docker image:
+
+```
+docker run -p 8888:8888 -v /path/to/files:/app/judi/data ddjj1118/judi_eas_project:v4.0
+```
+
+You should now be able to access the notebooks at `http://machine-ip:8888/...`
+
+<!--
 ## Data and scripts
 
 The data required please download from the following link with exactly same passwords as before
