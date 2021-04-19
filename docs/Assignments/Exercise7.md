@@ -142,7 +142,7 @@ dobs = F*q
 dobs0 = F0*q
 ```
 
-# Task: plot a single shot record of ``dobs`` and ``dobs0``. Choose the same source. What do you see in the shot record? If there are a couple of events, try to match them up with the corresponding reflectors.
+## *Task: plot a single shot record of ``dobs`` and ``dobs0``. Choose the same source. What do you see in the shot record? If there are a couple of events, try to match them up with the corresponding reflectors.*
 
 ```julia
 # hint: seismic data is as a judiVector
@@ -157,7 +157,7 @@ You can also generate a linearized shot record by
 dlin = J*dm
 ```
 
-# Task: do the same comparison of ``dlin`` and ``dobs-dobs0``. What do you see? Why do you observe this theoretically (think about math)?
+## *Task: do the same comparison of ``dlin`` and ``dobs-dobs0``. What do you see? Why do you observe this theoretically (think about math)?*
 
 ## Reverse time migration (RTM)
 
@@ -174,7 +174,7 @@ J.options.isic = true
 rtm2 = J'*dlin
 ```
 
-# Task: compare RTM results w/ and w/o ISIC, what do you see? Remember again to clip the vmin/vmax to see all the events in the images.
+## *Task: compare RTM results w/ and w/o ISIC, what do you see? Remember again to clip the vmin/vmax to see all the events in the images.*
 
 ```julia
 # hint: rtm1/rtm2 are PhysicalParameters. Do rtm1.data, rtm2.data to access the value. Again take care of vmin, vmax, aspect of plotting.
@@ -206,7 +206,7 @@ lsqr!(x1,J*Mr,dlin;maxiter=2,atol=0f0,verbose=true)
 
 The final solution is given by ``Mr*x1`` (``Mr`` is a right preconditioner so we are actually minimizing ``\frac{1}{2}\|\mathcal{J}\mathbf{M_r}\mathbf{x}- \mathbf{\delta d}\|_2^2``)
 
-# Task: compare LS-RTM result with the previous RTM result, what do you see?
+## *Task: compare LS-RTM result with the previous RTM result, what do you see?*
 
 ## Sparsity-promoting least-squares reverse time migration (SPLS-RTM)
 
@@ -276,8 +276,8 @@ end
 
 The solution is given by ``Mr*x2``.
 
-# Task: compare the image from LSQR and linearized Bregman. What do you see? Remember again about clipping
+## *Task: compare the image from LSQR and linearized Bregman. What do you see? Remember again about clipping*
 
-# Task: the images recovered above are focusing only in the central region. Why? (Hint: check source/receiver locations) How can we get a full illumination of the image? Make experiments to verify.
+## *Task: the images recovered above are focusing only in the central region. Why? (Hint: check source/receiver locations) How can we get a full illumination of the image? Make experiments to verify.*
 
-# Task: change acquisition to be transmission -- e.g. put sources as a vertical line on the left, receivers on the right. Show what RTM image looks like. Is it the same as you got from the reflective one?
+## *Task: change acquisition to be transmission -- e.g. put sources as a vertical line on the left, receivers on the right. Show what RTM image looks like. Is it the same as you got from the reflective seismic?*
