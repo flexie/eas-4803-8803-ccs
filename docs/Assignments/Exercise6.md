@@ -179,7 +179,7 @@ Y = X*[1;1]
 - Construct a JOLI operator that stacks a vectorized input matrix of size nt x nh along the columns. Use joDirac to define an identity operator.
 - Apply the operators C and S to the vector r to get something that resembles NMO-corrected data. You can reshape the vector into a matrix by using reshape. Plot the result.
 
-The next step is to define the NMO operator. Use joNMO and define the operator for a constant velocity of 2000 m/s. Apply it to the result of the previous exercise and plot the result.
+The next step is to construct an NMO operator. Please follow the function `nmo` in [Exercise2](https://flexie.github.io/-EAS4803-8803/Assignments/Exercise6/) and define the operator for a constant velocity of 2000 m/s. Don't forget to take care of the shape of input and output (they should both be vectors in proper lengths). Apply it to the result of the previous exercise and plot the result.
 
 Now, define a combined operator that predicts data given a spike train.
 
