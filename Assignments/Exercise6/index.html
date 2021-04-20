@@ -214,7 +214,69 @@ Y = X*[1;1]
 <li>Construct a JOLI operator that stacks a vectorized input matrix of size nt x nh along the columns. Use joDirac to define an identity operator.</li>
 <li>Apply the operators C and S to the vector r to get something that resembles NMO-corrected data. You can reshape the vector into a matrix by using reshape. Plot the result.</li>
 </ul>
-<p>The next step is to define the NMO operator. Use joNMO and define the operator for a constant velocity of 2000 m/s. Apply it to the result of the previous exercise and plot the result.</p>
+<p>The next step is to construct an NMO operator. Please follow the function <code>nmo</code> in <a href="https://flexie.github.io/-EAS4803-8803/Assignments/Exercise6/">Exercise2</a> and define a JOLI operator for a constant velocity of 2000 m/s. Don't forget to take care of the shape of input and output (they should both be vectors in proper lengths). You can do this by simply filling the blanks below. Apply it to the result of the previous exercise and plot the result.</p>
+<pre><code class="language-julia">function nmo(cmp, t, off, v,flag)
+# NMO correction and adjoint 
+#
+# use:
+#   out = nmo(in,t,h,v,flag)
+#
+# input:
+#   in   - data matrix of size [length(t) x length(h)], each column is a trace 
+#   t    - time vector [s]
+#   offsets    - offset vector [m]
+#   v    - NMO velocity [m/s] as vector of size [length(t) x 1].
+#   flag - 1:forward, -1:adjoint
+#
+# output
+#   out  - data matrix of size [length(t) x length(h)], each column is a trace 
+    if size(cmp, 2) == 1
+        return cmp
+    end
+    # size of data
+    nt, nh = size(cmp)
+    # make sure t and v are column vectors
+    t = t[:]
+    v = v[:]
+    # initialize output
+    out = zeros(nt, nh)
+    # loop over offset
+
+    for i = 1:nh
+        # NMO traveltime
+        tau = sqrt.(t.^2 + off[i].^2 ./v.^2);
+
+        A = getLA(t,tau);
+        # interpolate, forward or adjoint
+        new = zeros(size(out[:,i]))
+        if flag == 1
+            new[1:size(A*cmp[:,i])[1]] = A*cmp[:,i]
+        else
+            new[1:size(A'*cmp[:,i])[1]] = A'*cmp[:,i]
+        end
+        out[:,i] = new[1:nt]
+        #cmp
+    end
+    return vec(out)
+end
+
+function nmo_forward(vec_cmp,t,h,vel) 
+    mat_cmp = _ # to be done
+    return nmo(mat_cmp,t,h,vel,1)
+end
+function nmo_adjoint(vec_cmp,t,h,vel) 
+    mat_cmp = _ # to be done
+    return nmo(mat_cmp,t,h,vel,-1)
+end
+
+function joNMO(t,h,vel, n)
+    C = joLinearFunctionFwd_T(n, n,
+        v -&gt; nmo_forward(v, t,h,vel),
+        w -&gt; nmo_adjoint(w, t,h,vel),
+        Float64, Float64,name=&quot;NMO operator&quot;)
+end
+B = joNMO(_, _, _, _)
+</code></pre>
 <p>Now, define a combined operator that predicts data given a spike train.</p>
 <ul>
 <li>Check that your combined operator satisfies the dottest</li>
