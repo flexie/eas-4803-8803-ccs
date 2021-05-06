@@ -125,7 +125,7 @@ d_{NMO}(t_0,h) = d(\tau(t_0,h),h)
 $</p>
 <p>You can use the function <code>nmo</code> implemented below for this exercise.</p>
 <p>Please download data from Dropbox: https://www.dropbox.com/s/lhjuvaidcttigqg/data.zip?dl=0 Password is exact same with the password which you used to access the lecture note. </p>
-<pre><code class="julia">using Pkg
+<pre><code class="language-julia">using Pkg
 Pkg.add(&quot;Dierckx&quot;)
 using Dierckx
 function nmo(cmp, t, off, v)
@@ -164,7 +164,6 @@ function nmo(cmp, t, off, v)
     return out
 end
 </code></pre>
-
 <pre><code>[32m[1m  Updating[22m[39m registry at `~/.julia/registries/General`
 [32m[1m  Updating[22m[39m git-repo `https://github.com/JuliaRegistries/General.git`
 [2K[?25h[1mFetching:[22m[39m [========================================&gt;]  100.0 %.0 %[32m[1m Resolving[22m[39m package versions...
@@ -179,75 +178,65 @@ end
 
 nmo (generic function with 1 method)
 </code></pre>
-<pre><code class="julia">using SegyIO, PyPlot
+<pre><code class="language-julia">using SegyIO, PyPlot
 </code></pre>
-
-<pre><code class="julia"># read the dataset
+<pre><code class="language-julia"># read the dataset
 
 blocks = segy_read(&quot;/home/yzhang3198/Downloads/data_segy/cube2.segy&quot;);
 </code></pre>
-
 <pre><code>┌ Warning: Fixed length trace flag set in stream: IOBuffer(data=UInt8[...], readable=true, writable=false, seekable=true, append=false, size=90663444, maxsize=Inf, ptr=3601, mark=-1)
 └ @ SegyIO /home/yzhang3198/.julia/packages/SegyIO/ak2qG/src/read/read_file.jl:26
 </code></pre>
-<pre><code class="julia">sx = get_header(blocks, &quot;SourceX&quot;;scale=false)
+<pre><code class="language-julia">sx = get_header(blocks, &quot;SourceX&quot;;scale=false)
 rx = get_header(blocks, &quot;GroupX&quot;;scale=false);
 
 </code></pre>
-
-<pre><code class="julia"># Get the time axis. In this case the time axis is the same for all traces so we only need to extract it from the first trace
+<pre><code class="language-julia"># Get the time axis. In this case the time axis is the same for all traces so we only need to extract it from the first trace
 # dt needs to be corrected for the binary setup
 # All the times are in ms
 dt = get_header(blocks, &quot;dt&quot;)[1]/1000
 nt = get_header(blocks, &quot;ns&quot;)[1]
 T = 0:dt:(nt-1)*dt
 </code></pre>
-
 <pre><code>0.0:4.0:2000.0
 </code></pre>
-<pre><code class="julia"># Midpoint and offset
+<pre><code class="language-julia"># Midpoint and offset
 h = (sx .- rx);
 m = (sx .+ rx)./2;
 </code></pre>
-
-<pre><code class="julia">all_m = hcat(m'...)'
+<pre><code class="language-julia">all_m = hcat(m'...)'
 fold = [sum(all_m .== unique(all_m)[i]) for i=1:length(unique(all_m))];
 
 all_h = hcat(h'...)';
 </code></pre>
-
 <h1 id="pick-a-midpoint">Pick a midpoint</h1>
-<pre><code class="julia">Im = findall(all_m .== all_m[1000])
+<pre><code class="language-julia">Im = findall(all_m .== all_m[1000])
 offsets = sort((all_h[Im]));
 inds = sortperm(all_h[Im])
 cmp = Float32.(blocks.data[:, Im[inds]]);
 </code></pre>
-
-<pre><code class="julia">figure()
+<pre><code class="language-julia">figure()
 imshow(cmp, vmin=-1, vmax=1, cmap=&quot;Greys&quot;, aspect=3, extent=[offsets[1], offsets[end], T[end], 0])
 xlabel(&quot;offset&quot;)
 ylabel(&quot;time&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/output_11_0.png" /></p>
 <pre><code>PyObject Text(24.0, 0.5, 'time')
 </code></pre>
 <h1 id="constant-velocity-nmo-correction">Constant velocity NMO correction</h1>
-<pre><code class="julia">nmo_corrected1 = nmo(cmp, 1e-3.*T, offsets, 2000 .+ 0 .*T);
+<pre><code class="language-julia">nmo_corrected1 = nmo(cmp, 1e-3.*T, offsets, 2000 .+ 0 .*T);
 </code></pre>
-
-<pre><code class="julia">figure()
+<pre><code class="language-julia">figure()
 imshow(nmo_corrected1, vmin=-1, vmax=1, cmap=&quot;Greys&quot;, aspect=3, extent=[offsets[1], offsets[end], T[end], 0])
 xlabel(&quot;offset&quot;)
 ylabel(&quot;time&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/output_14_0.png" /></p>
 <pre><code>PyObject Text(24.0, 0.5, 'time')
 </code></pre>
 <h1 id="windowing">Windowing</h1>
 <p>We can see a lot of `artifacts' in the NMO corrected gather above. To avoid some of the artifacts, the midpoint gathers are often windowed to select reflected data only. All events that arrive before the direct wave are removed. A typical window looks like this (Hint: the slope of the triangle is related to the veloctity of the direct wave).</p>
-<pre><code class="julia"># grid
+<pre><code class="language-julia"># grid
 tt = [1e-3*ti for ti in T for h in offsets]
 hh = [h for ti in T for h in offsets]
 
@@ -259,19 +248,16 @@ xlabel(&quot;offset&quot;)
 ylabel(&quot;time&quot;)
 
 </code></pre>
-
 <p><img alt="png" src="../../img/output_16_0.png" /></p>
 <pre><code>PyObject Text(24.0, 0.5, 'time')
 </code></pre>
-<pre><code class="julia">muted = W'.*cmp;
+<pre><code class="language-julia">muted = W'.*cmp;
 </code></pre>
-
-<pre><code class="julia">figure()
+<pre><code class="language-julia">figure()
 imshow(muted, vmin=-1e0, vmax=1e0, cmap=&quot;Greys&quot;, aspect=3, extent=[offsets[1], offsets[end], T[end], 0])
 xlabel(&quot;offset&quot;)
 ylabel(&quot;time&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/output_18_0.png" /></p>
 <pre><code>PyObject Text(24.0, 0.5, 'time')
 </code></pre>
@@ -281,7 +267,7 @@ ylabel(&quot;time&quot;)
 <p>The function $ S(t_0,v) $ is called a semblance panel.</p>
 <p>The desired NMO velocity can be found by picking the maximum as a function of $t_0$ and $v$ from the semblance panel.</p>
 <p>An example of a semblance panel and the resulting NMO velocity is shown below.</p>
-<pre><code class="julia">v = 1000:(3000-1000)/(500-1):3000
+<pre><code class="language-julia">v = 1000:(3000-1000)/(500-1):3000
 # scan over velocities
 S = zeros(length(T),length(v));
 for k = 1:length(v)
@@ -289,54 +275,47 @@ for k = 1:length(v)
     S[:,k]  = sum(cmp_nmo .^2, dims = 2);
 end
 </code></pre>
-
-<pre><code class="julia">#Plot semblance panel
+<pre><code class="language-julia">#Plot semblance panel
 figure()
 imshow(S, vmin=0, vmax=1e3, cmap=&quot;jet&quot;, aspect=1, extent=[v[1], v[end], T[end], 0])
 xlabel(&quot;velocity&quot;)
 ylabel(&quot;tau&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/output_21_0.png" /></p>
 <pre><code>PyObject Text(24.0, 0.5, 'tau')
 </code></pre>
-<pre><code class="julia">#  pick v/tau pairs
+<pre><code class="language-julia">#  pick v/tau pairs
 </code></pre>
-
-<pre><code class="julia">tv   = 1e3*[0,    0.30, 0.35, 0.46, 0.65, 1.27, 2.00];
+<pre><code class="language-julia">tv   = 1e3*[0,    0.30, 0.35, 0.46, 0.65, 1.27, 2.00];
 vnmo =     [1500, 1500, 1600, 1700, 2000, 2179, 3000];
 spl = Spline1D(tv, vnmo; k=1)
 vnmo_all = spl(T);
 </code></pre>
-
 <h1 id="look-at-the-velocity-profile-with-the-picked-tauv-pairs">Look at the velocity profile with the picked tau/v pairs</h1>
-<pre><code class="julia"># Enable gui to have the cursor and pick v/tau pairs
+<pre><code class="language-julia"># Enable gui to have the cursor and pick v/tau pairs
 figure()
 imshow(S, vmin=0, vmax=1e3, cmap=&quot;jet&quot;, aspect=1, extent=[v[1], v[end], T[end], 0])
 plot(vnmo_all, T, &quot;-k&quot;)
 xlabel(&quot;velocity&quot;)
 ylabel(&quot;tau&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/output_25_0.png" /></p>
 <pre><code>PyObject Text(24.0, 0.5, 'tau')
 </code></pre>
-<pre><code class="julia">nmo_corrected = nmo(muted, 1e-3.*T, offsets, vnmo_all) ;
+<pre><code class="language-julia">nmo_corrected = nmo(muted, 1e-3.*T, offsets, vnmo_all) ;
 </code></pre>
-
-<pre><code class="julia">figure()
+<pre><code class="language-julia">figure()
 imshow(nmo_corrected, vmin=-1e0, vmax=1e0, cmap=&quot;Greys&quot;, aspect=3, extent=[offsets[1], offsets[end], T[end], 0])
 xlabel(&quot;offset&quot;)
 ylabel(&quot;time&quot;)
 </code></pre>
-
 <p><img alt="png" src="../../img/output_27_0.png" /></p>
 <pre><code>PyObject Text(24.0, 0.5, 'time')
 </code></pre>
 <h1 id="velocity-analysis">Velocity analysis</h1>
 <p>Repeat the above outline procedure for a couple of mipdoint positions xm (e.g., <code>xm = [500 1000 2000]</code>). Organize the resulting NMO velocities in a matrix <code>Vm</code> (where column i is the NMO velocity for midpoint <code>xm[i]</code>) interpolate the results to obtain a velocity for all the midpoints. You can either do <code>Spline1D</code> on every row of <code>Vm</code>, or do <code>Spline2D</code> which interpolates both time <code>T</code> and midpoint position <code>xm</code>. Plot the velocity and discuss.</p>
 <p>Using this NMO velocity, we can produce an NMO stack. Perform an NMO correction of all the midpoint gathers using the corresponding NMO velocity derived above and sum each along the offset direction. Organize all the stacks in a matrix and plot the result. Also make a stack using a constant NMO velocity. Discuss the results.</p>
-<pre><code class="julia">
+<pre><code class="language-julia">
 </code></pre></div>
             </div>
         </div>
