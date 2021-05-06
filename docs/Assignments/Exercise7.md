@@ -23,7 +23,7 @@ You will then be directed to a jupyter folder that contains the notebooks for th
 First, make sure we have the latest version of [Devito](https://www.devitoproject.org) installed. You can do this by click NEW, then go for TERMINAL in the browser with jupyter folder, then do
 
 ```bash
-pip install --upgrade devito
+pip install devito==4.3
 ```
 
 Then, we can create a new julia script and run the experiment in it.
