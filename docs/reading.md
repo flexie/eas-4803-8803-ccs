@@ -97,10 +97,11 @@ https://www.dropbox.com/s/hytfic068qp5jiq/4-Exploration_Seismology-basics.pdf?dl
 
 #### Material presented in class
 
-- Full-waveform inversion
+- - [Slides for Lecture 21: Full-waveform inversion and Reverse Time Migration](https://www.dropbox.com/s/fsquf33ucb62cia/21_Exploration_Seismology-fwi.pdf?dl=0)
+
 
 *** 
 
 # Review
 
-- [Slides for Lecture 21: Review Migration,  Velocity Analyses, and AVO](https://www.dropbox.com/s/05tyot8l4yaejfc/21-Exploration_Seismology-review.pdf?dl=0)
+- [Slides for Lecture 22: Review Migration,  Velocity Analyses, and AVO](https://www.dropbox.com/s/mv9sunt3hbbf29g/22-Exploration_Seismology-review.pdf?dl=0)
