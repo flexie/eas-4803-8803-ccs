@@ -8,22 +8,22 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Exercise 4: Fourier and Radon filtering - Exploration Seismology</title>
+        <title>Exercise 4: Fourier and Radon filtering - Seismic Monitoring CCS</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
         <script src="../../js/jquery-1.10.2.min.js" defer></script>
         <script src="../../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../..">Exploration Seismology</a>
+                <a class="navbar-brand" href="../..">Seismic Monitoring CCS</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -262,7 +262,7 @@ xlabel(&quot;offset [m]&quot;);ylabel(&quot;time [s]&quot;);
 <li>What do you see?</li>
 <li>Why is it important to have a good receiver sampling?</li>
 </ul>
-<p>A filter is simply a multiplicative factor applied in some transform domain, typically (f-h) or (f-k), followed by an inverse transform. For example, a band-pass filter in the (f-h) domain filters out higher temporal frequencies by setting them to zero. A simple band-pass filter looks like this:</p>
+<p>A filter is simply a multiplicative factor applied in some transform domain, typically <span class="arithmatex">\(f-h\)</span> or <span class="arithmatex">\(f-k\)</span>, followed by an inverse transform. For example, a band-pass filter in the <span class="arithmatex">\(f-h\)</span> domain filters out higher temporal frequencies by setting them to zero. A simple band-pass filter looks like this:</p>
 <pre><code class="language-julia">F_hp = ones(length(f),length(h))
 F_hp[(f.&lt;5) .| (f.&gt;20.),:] .= 0
 
@@ -308,7 +308,7 @@ xlabel(&quot;offset [m]&quot;);ylabel(&quot;frequency [Hz]&quot;)
 <p><img alt="png" src="../../img/E4_output_23_0.png" /></p>
 <pre><code>PyObject Text(24.000000000000007, 0.5, 'frequency [Hz]')
 </code></pre>
-<p>A (smoothed) filter in the (f-k) domain may look like this</p>
+<p>A (smoothed) filter in the <span class="arithmatex">\(f-k\)</span> domain may look like this</p>
 <pre><code class="language-julia">ff = [fi for fi in f, kxi in kx]
 kkx = [kxi for fi in f, kxi in kx]
 F_kx = zeros(length(fk),length(kx))
@@ -327,8 +327,8 @@ xlabel(&quot;wavenumber [1/m&quot;);ylabel(&quot;frequency [Hz]&quot;)
 <p>Describe how you would design filters to clean up shot gathers shot_noise1 and shot_noise2. (hint: look the f-k transform and compare to the orinigal data)
 Try it and compare the result with the original shot gather.</p>
 <h1 id="radon-transform">Radon transform</h1>
-<p>The Radon tranform performs sums along lines with different intercepts $\tau$) and slopes $p$. Hence, it is sometimes refered to as the $\tau-p$ transform in geophysics.</p>
-<p>$\hat{d}(\tau,p) = \int\mathrm{d}h\, d(t + ph, h)$</p>
+<p>The Radon tranform performs sums along lines with different intercepts <span class="arithmatex">\(\tau\)</span>) and slopes <span class="arithmatex">\(p\)</span>. Hence, it is sometimes refered to as the <span class="arithmatex">\(\tau-p\)</span> transform in geophysics.</p>
+<p><span class="arithmatex">\(\hat{d}(\tau,p) = \int\mathrm{d}h\, d(t + ph, h)\)</span></p>
 <p>The transform is implemented in the function lpradon.</p>
 <p>To get an idea of what this transform does, we consider the simple example in lines.segy.</p>
 <pre><code class="language-julia">function lpradon(input, t, h, q, power, mode)
@@ -429,7 +429,7 @@ xlabel(&quot;slowness [s/m]&quot;);ylabel(&quot;time [s]&quot;);
 <p><img alt="png" src="../../img/E4_output_32_0.png" /></p>
 <h1 id="questions_2">Questions</h1>
 <p>Can you interpret the results?
-Describe how you would design <code>filters</code> in the $\tau-p$ domain to separate the different events.
+Describe how you would design <code>filters</code> in the <span class="arithmatex">\(\tau-p\)</span> domain to separate the different events.
 Try it. Use the <code>adjoint</code> option of the transform to transform back to the physical domain.</p>
 <pre><code class="language-julia">
 </code></pre></div>
@@ -445,7 +445,9 @@ Try it. Use the <code>adjoint</code> option of the transform to transform back t
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="../../javascripts/mathjax.js" defer></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
         <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
@@ -456,16 +458,13 @@ Try it. Use the <code>adjoint</code> option of the transform to transform back t
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>

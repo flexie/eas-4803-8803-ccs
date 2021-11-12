@@ -8,22 +8,22 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Outline - Exploration Seismology</title>
+        <title>Outline - Seismic Monitoring CCS</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
         <script src="../js/jquery-1.10.2.min.js" defer></script>
         <script src="../js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">Exploration Seismology</a>
+                <a class="navbar-brand" href="..">Seismic Monitoring CCS</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -83,133 +83,111 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
-            
-            <li class="nav-item" data-level="1"><a href="#general-introduction" class="nav-link">General introduction</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#seismic-data-acquisition" class="nav-link">Seismic data acquisition</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#from-processing-to-inversion" class="nav-link">From processing to inversion</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#compressive-sensing" class="nav-link">Compressive sensing</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#linearized-inversion" class="nav-link">Linearized inversion</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#rtm-fwi" class="nav-link">RTM &amp; FWI</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="general-introduction">General introduction</h1>
-<h3 id="basic-seismic-data-processing">Basic seismic data processing</h3>
-<ul>
-<li>Explanation of the seismic method</li>
-<li>Seismic acquisition, different gathers, basics land and marine acquisition</li>
-<li>Post-stack seismic-data processing flow to create a seismic image:</li>
-<li>Common-midpoint sorting</li>
-<li>Normal-moveout correction</li>
-<li>Stack</li>
-<li>Zero-offset migration</li>
-<li>Time-to-depth conversion</li>
-<li>Time or depth migration</li>
-<li>Drawbacks of post-stack processing</li>
-<li>Intro pre-stack migration and velocity analysis</li>
-</ul>
-<h3 id="wavefield-extrapolation-pre-stack-migration-and-velocity-analysis">Wavefield extrapolation, pre-stack migration, and velocity analysis</h3>
-<ul>
-<li>Wavefield extrapolation via Rayleigh II</li>
-<li>Wavefield extrapolation via the f-k domain</li>
-<li>(V(z)) migration</li>
-<li>Shot record migration</li>
-<li>Recursive extrapolation in varying media</li>
-<li>Pre-stack shot migration</li>
-<li>One-way wave-equation migration</li>
-<li>Reverse-time migration</li>
-<li>Velocity-model estimation</li>
-<li>Traveltime tomography</li>
-<li>migration-velocity analysis</li>
-</ul>
-<h3 id="filtering">Filtering</h3>
-<ul>
-<li><code>f-k</code> filtering</li>
-<li>Radon filtering</li>
-<li>Linear Radon</li>
-<li>Multiple-removal via parabolic Radon transform</li>
-<li>Parabolic versus hyperbolic Radon</li>
-<li>Deconvolution</li>
-</ul>
-<hr />
-<h1 id="seismic-data-acquisition">Seismic data acquisition</h1>
-<ul>
-<li>Marine acquisition</li>
-<li>Challenges of 3D acquisition</li>
-<li>Wide-azimuth marine acquisition</li>
-<li>Coil sampling</li>
-</ul>
-<hr />
-<h1 id="from-processing-to-inversion">From processing to inversion</h1>
-<ul>
-<li>Forward and inverse problems</li>
-<li>Over and underdermined problems</li>
-<li>Pseudo/generalized inverses</li>
-<li>Least-squares and damped least-squares inversion</li>
-<li>Convolution/correlation, Radon, and NMO in tems of linear operators (matrices)</li>
-<li>Forward and adjoint operations and the 'dot test’ a la Jon Claerbout</li>
-<li>Pseudo inverse and regularization</li>
-<li>Deconvolution as an inversion problem ('matrix inverse’)</li>
-<li>Forward operator for NMO and least-squares NMO</li>
-<li>Removing multiples by high-resolution Radon transform</li>
-</ul>
-<hr />
-<h1 id="compressive-sensing">Compressive sensing</h1>
-<ul>
-<li>Nyquist sampling and aliasing</li>
-<li>Exploiting structure is seismic data by transform-domain sparsity promotion</li>
-<li>Basics of Compressive Sensing</li>
-<li>Design principles of Compressive Sensing</li>
-<li>Application of Compressive Sensing to Exploration Seismology</li>
-<li>Jittered sampling of shots</li>
-<li>Simultaneous 'land’ acquisition by summing randomly weighted shots</li>
-<li>Simultaneous 'marine’ acquisition with time-dithered sources</li>
-</ul>
-<hr />
-<h1 id="linearized-inversion">Linearized inversion</h1>
-<ul>
-<li>Introduction linearized amplitude versus offset/angle inversion</li>
-<li>Linearization of the reflection and transmission coefficients w.r.t. contrasts in density, compressional, and shear wavespeeds.</li>
-<li>Convolutional model for seismic reflectivity</li>
-<li>Relation between amplitudes of seismic data in the Radon domain and the linearized reflection coefficient.</li>
-<li>Practical workflow for linearized inversion of amplitude-versus-offset data.</li>
-</ul>
-<hr />
-<h1 id="rtm-fwi">RTM &amp; FWI</h1>
-<ul>
-<li>Basics of reverse-time migration (RTM) and full-waveform inversion (FWI) via the adjoint state method from physical and mathematical perspectives</li>
-<li>Derivation of expressions for the Jabobian and its adjoint</li>
-<li>Migration as the gradient of FWI</li>
-<li>Least-squares migration as the Gauss-Newton Hessian of FWI</li>
-<li>FWI with gradient descents</li>
-<li>FWI with Gauss-Newton</li>
-<li>Latest developments</li>
-</ul></div>
+<p>To be populated.</p>
+<!-- # General introduction
+
+### Basic seismic data processing
+
+- Explanation of the seismic method
+- Seismic acquisition, different gathers, basics land and marine acquisition
+- Post-stack seismic-data processing flow to create a seismic image:
+   - Common-midpoint sorting
+   - Normal-moveout correction
+   - Stack
+   - Zero-offset migration
+- Time-to-depth conversion
+- Time or depth migration
+- Drawbacks of post-stack processing
+- Intro pre-stack migration and velocity analysis
+
+### Wavefield extrapolation, pre-stack migration, and velocity analysis
+
+- Wavefield extrapolation via Rayleigh II
+- Wavefield extrapolation via the f-k domain
+- \(V(z)\) migration
+- Shot record migration
+- Recursive extrapolation in varying media
+- Pre-stack shot migration
+- One-way wave-equation migration
+- Reverse-time migration
+- Velocity-model estimation
+   - Traveltime tomography
+   - migration-velocity analysis
+
+
+### Filtering
+
+- ``f-k`` filtering
+- Radon filtering
+   - Linear Radon
+   - Multiple-removal via parabolic Radon transform
+   - Parabolic versus hyperbolic Radon
+- Deconvolution
+
+***
+
+
+# Seismic data acquisition
+
+- Marine acquisition
+- Challenges of 3D acquisition
+- Wide-azimuth marine acquisition
+- Coil sampling
+
+***
+
+# From processing to inversion
+
+- Forward and inverse problems
+- Over and underdermined problems
+- Pseudo/generalized inverses
+- Least-squares and damped least-squares inversion
+- Convolution/correlation, Radon, and NMO in tems of linear operators (matrices)
+- Forward and adjoint operations and the 'dot test’ a la Jon Claerbout
+- Pseudo inverse and regularization
+- Deconvolution as an inversion problem ('matrix inverse’)
+- Forward operator for NMO and least-squares NMO
+- Removing multiples by high-resolution Radon transform
+
+*** 
+
+# Compressive sensing
+
+- Nyquist sampling and aliasing
+- Exploiting structure is seismic data by transform-domain sparsity promotion
+- Basics of Compressive Sensing
+- Design principles of Compressive Sensing
+- Application of Compressive Sensing to Exploration Seismology
+- Jittered sampling of shots
+- Simultaneous 'land’ acquisition by summing randomly weighted shots
+- Simultaneous 'marine’ acquisition with time-dithered sources
+
+***
+
+# Linearized inversion 
+
+- Introduction linearized amplitude versus offset/angle inversion
+- Linearization of the reflection and transmission coefficients w.r.t. contrasts in density, compressional, and shear wavespeeds.
+- Convolutional model for seismic reflectivity
+- Relation between amplitudes of seismic data in the Radon domain and the linearized reflection coefficient.
+- Practical workflow for linearized inversion of amplitude-versus-offset data.
+
+***
+
+# RTM & FWI
+
+- Basics of reverse-time migration (RTM) and full-waveform inversion (FWI) via the adjoint state method from physical and mathematical perspectives
+- Derivation of expressions for the Jabobian and its adjoint
+- Migration as the gradient of FWI
+- Least-squares migration as the Gauss-Newton Hessian of FWI
+- FWI with gradient descents
+- FWI with Gauss-Newton
+- Latest developments --></div>
             </div>
         </div>
 
@@ -222,7 +200,9 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../js/base.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="../javascripts/mathjax.js" defer></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
         <script src="../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
@@ -233,16 +213,13 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>
