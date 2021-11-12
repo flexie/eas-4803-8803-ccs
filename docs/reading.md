@@ -1,4 +1,12 @@
-# General introduction
+In addition to the general texts, the course will review journal papers including
+
+- Papers on Sleipner [@Arts2003] [@Eiken2011] [@Furre2017] 
+- Coupling seismic to fluid flow [@li2020coupled]
+- Overview article [@Ringrose2021]
+
+\bibliography 
+
+<!-- # General introduction
 
 #### Reading material
 
@@ -104,4 +112,4 @@ https://www.dropbox.com/s/hytfic068qp5jiq/4-Exploration_Seismology-basics.pdf?dl
 
 # Review
 
-- [Slides for Lecture 22: Review Migration,  Velocity Analyses, and AVO](https://www.dropbox.com/s/mv9sunt3hbbf29g/22-Exploration_Seismology-review.pdf?dl=0)
+- [Slides for Lecture 22: Review Migration,  Velocity Analyses, and AVO](https://www.dropbox.com/s/mv9sunt3hbbf29g/22-Exploration_Seismology-review.pdf?dl=0) -->

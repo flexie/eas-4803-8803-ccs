@@ -1,4 +1,6 @@
-# General introduction
+To be populated.
+
+<!-- # General introduction
 
 ### Basic seismic data processing
 
@@ -96,4 +98,4 @@
 - Least-squares migration as the Gauss-Newton Hessian of FWI
 - FWI with gradient descents
 - FWI with Gauss-Newton
-- Latest developments
+- Latest developments -->

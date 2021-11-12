@@ -1,4 +1,6 @@
-# General introduction
+To be populated.
+
+<!-- # General introduction
 
 ### Basic seismic data processing
 
@@ -157,4 +159,4 @@
 - What sort of waves does full-waveform inversion rely on and why.
 - List at least two requirements of full-waveform inversion on the acquisition.
 - What does non-uniquness in full-waveform inversion refer to?
-- List at least one strategy people use to avoid getting stuck in a local minimum? What does this imply w.r.t. the wavelength and the propagation distance.
+- List at least one strategy people use to avoid getting stuck in a local minimum? What does this imply w.r.t. the wavelength and the propagation distance. -->

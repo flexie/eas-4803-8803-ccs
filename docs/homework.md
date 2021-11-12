@@ -1,4 +1,7 @@
-# Installation
+To be populated.
+
+
+<!-- # Installation
 
 The assignments require [Julia](https://julialang.org) and Python 3 to be installed (Python 2 will not work).
 
@@ -129,7 +132,7 @@ These exercises will introduce you to the [Julia programming language](https://j
 
 -->
 
-### Hand in
+<!-- ### Hand in
 
 Please turn in your assignments as pdf files. The assignments should be send to [Ziyi (Francis) Yin](mailto:ziyi.yin@gatech.edu). Late hand ins are not accepted.
 
@@ -137,4 +140,4 @@ Please turn in your assignments as pdf files. The assignments should be send to 
 
 ### Feedback
 
-We will give you feedback on the marking of the exercises.
+We will give you feedback on the marking of the exercises. --> 

@@ -1,4 +1,4 @@
-site_name: Exploration Seismology
+site_name: Seismic Monitoring CCS
 pages:
     - Outline: outline.md
     - Goals: goals.md
@@ -8,4 +8,25 @@ pages:
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - footnotes  
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+plugins:
+  - search
+  - bibtex:
+      bib_file: "refs.bib"
+      cite_style: "pandoc"
 

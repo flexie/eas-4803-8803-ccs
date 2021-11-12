@@ -1,4 +1,7 @@
-# Class projects
+To be populated.
+
+
+<!-- # Class projects
 
 This year's project is an extension to [Exercise 7](Assignments/Exercise7.md). Please follow the instructions there.
 
@@ -138,4 +141,4 @@ Papers that are relevant for the projects are:
 
 	Aleksandr Y. Aravkin, Rajiv Kumar, Hassan Mansour, Ben Recht, Felix J. Herrmann. A robust SVD-free approach to matrix completion, with applications to interpolation of large scale data. arXiv submission. In this paper, the author explain how to use rank-minimization techniques to recover random missing shots.
 
-	Rajiv Kumar, Aleksandr Y. Aravkin, Ernie Esser, Hassan Mansour and Felix J. Herrmann. SVD-free low-rank matrix factorization : wavefield reconstruction via jittered subsampling and reciprocity. EAGE expanded abstract. 2014. In this expanded abstract, author explain the use of jittered sampling to optimize rank minimization based missing trace interpolation techniques.
+	Rajiv Kumar, Aleksandr Y. Aravkin, Ernie Esser, Hassan Mansour and Felix J. Herrmann. SVD-free low-rank matrix factorization : wavefield reconstruction via jittered subsampling and reciprocity. EAGE expanded abstract. 2014. In this expanded abstract, author explain the use of jittered sampling to optimize rank minimization based missing trace interpolation techniques. -->

@@ -1,4 +1,4 @@
-# Exploration Seismology EAS 4520/8803
+# EAS 4803/8803–Seismic Monitoring CO~2~ Storage
 
 ### Instructor
 
@@ -8,16 +8,15 @@ CODA, room S1375B
 
 ## General Information
 
-Time and Location Mon/Wed 11:00 AM - 12:15 pm
+Time and Location Tue/Thur 03:30 PM - 04:455 PM in [Skiles]
 
-Office Hours: by appointment 
-
-The course will be taugh remotely using [Microsoft Teams](https://faq.oit.gatech.edu/content/how-do-i-access-microsoft-teams)
+Office Hours: by appointment via [Microsoft Teams](https://faq.oit.gatech.edu/content/how-do-i-access-microsoft-teams)
 
 ### Course Description 
 
-*This course contains a comprehensive review of reflection seismology and its application to oil and gas exploration. It includes key aspects of basic seismic data acquisition & processing and wave-equation based imaging and inversion.*
+*Carbon Capture and Storage (CCS) is widely considered as a key technology to combat climate change. This course presents a comprehensive review how seismic imaging can be used to monitor underground storage of carbon dioxide. Topics covered include basics of seismic data acquisition, wave propagation, and imaging, empirical relations between seismic and fluid-flow properties, two-phase flow equations describing CO~2~ plumes, and the challenges of designing a seismic monitoring system for geologic CO~2~ storage.* 
 
+<!-- 
 ### Course Outline
 
 See [Outline](outline.md) tab
@@ -32,14 +31,16 @@ See [Outline](outline.md) tab
 
 - [Linearized inversion](outline.md#Linearized inversion)
 
-- [RTM & FWI](outline.md#RTM & FWI)
+- [RTM & FWI](outline.md#RTM & FWI) -->
 
 
 ### Course Material
 
 #### Textbook 
 
-None required
+None required 
+
+\bibliography 
 
 #### Recommended texts
 
@@ -55,11 +56,11 @@ None required
 
 - [Fichtner, Andreas, Full Seismic Waveform Modelling and Inversion](https://www.amazon.com/Modelling-Inversion-Geophysical-Environmental-Mathematics/dp/3642158064)
 
-
 Additional material will be made available under the tab [Reading](reading.md).
 
-[website]:https://flexie.github.io/-EAS4803-8803/
+[website]:https://flexie.github.io/eas-4803-8803-ccs
 
+[Online]:https://gatech-primo.hosted.exlibrisgroup.com/primo-explore/fulldisplay?docid=01GALI_GIT_ALMA51300691090002947&context=L&vid=01GALI_GIT&search_scope=default_scope&tab=default_tab&lang=en_US
 
 ### Homework 
 
@@ -68,10 +69,9 @@ There will be homework exercises, which will mostly involve geophysics-related p
 
 ### Project
 
-You are required to write a term paper on any topic related to geophysics. This can be a literature review of a selected topic, or research project involving calculations, data analysis, or theoretical results done in consultation with the instructor. The topic needed to be approved by the instructor before the midterm. Your paper should be written up in a journal form with length, figures and referencing in a format suitable for submission to journals like Geophysical Research Letters (GRL). Preliminary version of the final paper should be shown to the instructor for approval at least two weeks before the final due date. You will present your term paper in a 15 minute AGU-style talk; a 12 minute presentation with 3 minutes of questions. The project will count as 15% of your overall course grade. Grading for your project will be based on the 12% of the quality of the research and the written paper, and 3% of your presentation.
+You are required to write a term paper on any topic related to monitoring of geologic CO~2~ storage. This can be a literature review of a selected topic, or research project involving calculations, data analysis, or theoretical results done in consultation with the instructor. The topic needs to be approved by the instructor before the midterm. Your paper should be written up in a journal form with length, figures and referencing in a format suitable for submission to journals like Geophysical Research Letters (GRL). Preliminary version of the final paper should be shown to the instructor for approval at least two weeks before the final due date. You will present your term paper in a 15 minute AGU-style talk; a 12 minute presentation with 3 minutes of questions. The project will count as 15% of your overall course grade. Grading for your project will be based on the 12% of the quality of the research and the written paper, and 3% of your presentation.
 
 You can find more details on the [Projects](project.md) page.
-
 
 ### Exams 
 
@@ -94,3 +94,4 @@ It is expected that all students are aware of their individual responsibilities 
 
 ***
 
+[Skiles]:https://www.google.com/maps/place/Skiles+Classroom+Building/@33.773547,-84.3981527,17z/data=!3m1!4b1!4m5!3m4!1s0x88f50489d844c161:0x34bc0f7009348d16!8m2!3d33.773547!4d-84.395964
