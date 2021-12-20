@@ -8,7 +8,7 @@ CODA, room S1375B
 
 ## General Information
 
-Time and Location Tue/Thur 03:30 PM - 04:45 PM in [Skiles] room 202 
+Time and Location Tue/Thur 03:30 PM - 04:45 PM in [Skiles] room 202
 
 Office Hours: by appointment via [Microsoft Teams](https://faq.oit.gatech.edu/content/how-do-i-access-microsoft-teams)
 
