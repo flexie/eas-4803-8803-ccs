@@ -14,7 +14,39 @@ Office Hours: by appointment via [Microsoft Teams](https://faq.oit.gatech.edu/co
 
 ### Course Description 
 
-*Carbon Capture and Storage (CCS) is widely considered as a key technology to combat climate change. This course presents a comprehensive review how seismic imaging can be used to monitor underground storage of carbon dioxide. Topics covered include basics of seismic data acquisition, wave propagation, and imaging, empirical relations between seismic and fluid-flow properties, two-phase flow equations describing CO~2~ plumes, and the challenges of designing a seismic monitoring system for geologic CO~2~ storage.* 
+*Carbon Capture and Storage (CCS) is widely considered as a key technology to combat climate change. This course presents a comprehensive review how seismic imaging can be used to monitor underground (geologic) storage of carbon dioxide. Topics covered include basics of seismic data acquisition, wave propagation, and imaging, empirical relations between seismic and fluid-flow properties, two-phase flow equations describing CO~2~ plumes, and the challenges of designing a seismic monitoring system for geologic CO~2~ storage.* 
+
+### COVID
+
+Georgia Tech is committed to promoting a campus community that supports holistic well-being, as well as empowering students to make choices that enable positive health outcomes. As we continue to live and learn through a pandemic, Georgia Tech strongly encourages students to utilize several tools not only to reduce their own risks of infection from Covid-19, but also to help reduce the overall levels of transmission in the community.
+
+These tools include: 
+
+1. Getting fully vaccinated. Getting vaccinated at Tech is easy and free.
+
+1. Wearing face coverings consistently in all indoor settings and also in outdoor settings when in close proximity to others.
+
+1. Getting tested on a regular basis, regardless of whether you are vaccinated or asymptomatic. No appointment is needed for Georgia Tech’s asymptomatic testing, and it is free.
+
+1. Avoiding touching your face until you have cleaned your hands with soap and water or used hand sanitizer.
+
+1. Immediately self-quarantining or self-isolating if you experience any symptoms that could be related to Covid-19 or if you have tested positive for Covid-19.
+
+Additional information and resources are available on the [Tech Moving Forward website](https://w3.health.itg.gatech.edu/tech-moving-forward).
+
+#### Information Related to Covid-19
+
+Students are expected to be familiar with and abide by the Institute guidelines, information, and updates related to Covid-19. Find campus operational updates, Frequently Asked Questions, and details on campus surveillance testing and vaccine appointments on the [Tech Moving Forward website](https://w3.health.itg.gatech.edu/tech-moving-forward).
+
+#### Recordings of Class Sessions and Required Permissions
+
+Classes may not be recorded by students without the express consent of the instructor unless it is pursuant to an accommodation granted by the Office of Disability services. Class recordings, lectures, presentations, and other materials posted on Canvas are for the sole purpose of educating the students currently enrolled in the course.
+
+Students may not record or share the materials or recordings, including screen capturing or automated bots, unless the instructor gives permission. Digitally proctored exams may require students to engage the video camera, but those recordings will not be shared with or disclosed to others without consent unless legally permitted.
+
+- For classes where participation is voluntary, students who participate with their camera engaged or utilize a profile image are agreeing to have their video or image recorded.
+
+- For classes requiring class participation, if students are identifiable by their names, facial images, voices, and/ or comments, written consent must be obtained before sharing the recording with persons outside of currently enrolled students in the class.
 
 <!-- 
 ### Course Outline
@@ -36,11 +68,10 @@ See [Outline](outline.md) tab
 
 ### Course Material
 
-#### Textbook 
+#### Textbook (ebook available from GT library)
 
-None required 
+- [Ringrose, P. (2020), How to Store CO~2~ Underground: insights from early-mover CCS Projects](https://link.springer.com/book/10.1007/978-3-030-33113-9)
 
-\bibliography 
 
 #### Recommended texts
 
