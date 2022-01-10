@@ -1,4 +1,88 @@
-To be populated
+<!-- To be populated
+
+[test](https://gtvault-my.sharepoint.com/:v:/g/personal/fherrmann9_gatech_edu/ER9Qy3ISKr1FjXxRmYDbDTABbYdKlf9BUjAWMvDZKkrXDw?email=felix.herrmann%40gatech.edu) -->
+
+## Part 1 – Basics Geological Storage
+
+### Motivation
+
+- History fossil fuels
+- History greenhouse gas
+- Why CCS?
+- Overview CCS
+- goals
+
+### Geological Storage
+
+#### Intro
+
+- properties CO~2~
+- capacity, injectivity, and containment
+- important terms
+- storage complex and time frame
+
+#### Porosity
+
+- porous media & void space
+- macroscopic properties
+- density method
+- typical porosities in clastic rocks
+- fluid saturation
+ 
+##### Containment
+
+- depth dependence rock properties
+- trapping mechanisms
+- storage security over time
+- capillary forces and trapping
+
+#### Surface tension
+
+- surface phenomena
+- Laplace's Equation
+- solid Surfaces and Wettibility
+- capillary Pressure
+- capillary Imbibition
+- imbibition & Drainage
+
+#### Flow in Porous Media
+
+- Darcy's Law
+- Posseuille Flow
+- Kozeny-Carman Equation
+- CO~2~-brine relative permeability curves
+- rock architecture at multiple scales
+- geochemical processes
+- CO~2~ dissolution
+ 
+
+### Calculating Storage Capacity
+
+- density of CO~2~
+- CO~2~ emissions
+- storage capacity estimation
+- matched capacity
+
+#### Storage Capacity Estimation
+
+- theoretical storage capacity
+- trapping CO~2~ as residual phase 
+- analytical approaches
+- model for CO~2~ plume
+- CO~2~ storage coefficient $C_c$
+- effect of fluid mobility
+- effect of gravity
+- effect of buoyancy on capacity
+- Sleipner example
+
+#### Flow dynamics
+
+- flow regimes
+- flow simulations
+- static geological model
+- dynamic two-phase flow simulations
+- Sleipner example
+
 
 <!-- ### Why do we need Geological Carbon Storage?
 
