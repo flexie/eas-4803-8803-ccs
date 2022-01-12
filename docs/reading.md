@@ -1,6 +1,21 @@
 ## Reading Part 1
 
-In addition to the general texts, the course will review journal papers including
+
+### Recordings lectures
+
+- [Recording for Lecture 1](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/New%20channel%20meeting-20220111_153536-Meeting%20Recording.mp4?csf=1&web=1&e=fHJqLg) 
+ 
+### Reading material next lecture (updated regularly)
+
+- from the main text by Ringrose[@ringrose2020store] read Chapter 1 and Chapter 2 until section 2.3, which was discussed during Lecture 1. 
+- In preparation of Lecture 2, read pages 17-29 from [Chapter 2](https://www.dropbox.com/s/10jxkl4sqz9cpno/chapter2gueguen.pdf?dl=0) of Gueguen[@gueguen1994introduction] (for more background see also [Chapter 1](https://www.dropbox.com/s/gas1x4fswnhno3w/chapter1gueguen.pdf?dl=0)). Also read sections 2.3.1 and 2.3.2 of the main text by Ringrose[@ringrose2020store].
+
+
+<!-- [here](https://www.dropbox.com/s/o7mveowljkwho28/chapter5gueguen.pdf?dl=0). -->
+
+### Additional material
+
+In addition to the general text [ringrose2020store], the course will review journal papers including
 
 - Papers on Sleipner [@Arts2003] [@Eiken2011] [@Furre2017] 
 - Coupling seismic to fluid flow [@li2020coupled]
