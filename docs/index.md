@@ -6,6 +6,11 @@
 Phone: +1 (404) 385-7069  
 CODA, room S1375B
 
+### TA
+
+[Ziyi (Francis) Yin](mailto:ziyi.yin@gatech.edu)
+Email: ziyi.yin@gatech.edu
+
 ## General Information
 
 Time and Location Tue/Thur 03:30 PM - 04:45 PM in [Skiles] room 202
