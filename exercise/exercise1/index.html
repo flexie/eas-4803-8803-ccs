@@ -7,15 +7,15 @@
         
         
         
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        <title>Seismic Monitoring CCS</title>
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Exercise 1 - Seismic Monitoring CCS</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
 
-        <script src="/js/jquery-1.10.2.min.js" defer></script>
-        <script src="/js/bootstrap.min.js" defer></script>
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="/.">Seismic Monitoring CCS</a>
+                <a class="navbar-brand" href="../..">Seismic Monitoring CCS</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -34,19 +34,19 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="/outline/" class="nav-link">Outline</a>
+                                <a href="../../outline/" class="nav-link">Outline</a>
                             </li>
                             <li class="navitem">
-                                <a href="/goals/" class="nav-link">Goals</a>
+                                <a href="../../goals/" class="nav-link">Goals</a>
                             </li>
                             <li class="navitem">
-                                <a href="/reading/" class="nav-link">Reading</a>
+                                <a href="../../reading/" class="nav-link">Reading</a>
                             </li>
                             <li class="navitem">
-                                <a href="/homework/" class="nav-link">Homework</a>
+                                <a href="../../homework/" class="nav-link">Homework</a>
                             </li>
                             <li class="navitem">
-                                <a href="/project/" class="nav-link">Projects</a>
+                                <a href="../../project/" class="nav-link">Projects</a>
                             </li>
                         </ul>
 
@@ -63,15 +63,40 @@
 
         <div class="container">
             <div class="row">
-
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
 
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#exercise-1" class="nav-link">Exercise 1</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#question-1" class="nav-link">Question 1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
 
+<h1 id="exercise-1">Exercise 1</h1>
+<h2 id="question-1">Question 1</h2>
+<p>In the lectures, we learn from slide 40 of lecture 1 that the thickness of a gas or oil column can be retained by</p>
+<p>```math #thick</p>
+<p>z_g =  \frac{2 \gamma \cos\theta (1/r_{cap}-1/r_{res})}{g (\rho_w-\rho_g)}</p>
+<p>```</p>
+<p>Please estimate the range of <code>z_g</code> for a CO<code>_2</code> reservoir. Free feel to search for some values in this formula and you can also follow some of the references below</p>
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0927775721009870?via%3Dihub">https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1468-8123.2007.00168.x</a>  <br />
+<a href="https://www.sciencedirect.com/science/article/pii/S0927775721009870?via%3Dihub">https://link.springer.com/content/pdf/10.1007/s13202-021-01298-9.pdf</a>  <br />
+<a href="https://www.sciencedirect.com/science/article/pii/S0927775721009870?via%3Dihub">https://www.sciencedirect.com/science/article/pii/S0927775721009870?via%3Dihub</a></p></div>
             </div>
         </div>
 
@@ -80,14 +105,14 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "/",
+            var base_url = "../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="/js/base.js" defer></script>
-        <script src="/javascripts/mathjax.js" defer></script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../javascripts/mathjax.js" defer></script>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
-        <script src="/search/main.js" defer></script>
+        <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
