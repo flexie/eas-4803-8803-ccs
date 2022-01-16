@@ -4,6 +4,9 @@
 ### Recordings lectures
 
 - [Recording for Lecture 1](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/New%20channel%20meeting-20220111_153536-Meeting%20Recording.mp4?csf=1&web=1&e=fHJqLg) 
+
+- [Recording for Lecture 2](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220113_153314-Meeting%20Recording.mp4?csf=1&web=1&e=3TjZB1)
+
  
 ### Reading material next lecture (updated regularly)
 
