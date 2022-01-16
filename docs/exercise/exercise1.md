@@ -10,15 +10,12 @@ z_g =  \frac{2 \gamma \cos\theta (1/r_{cap}-1/r_{res})}{g (\rho_w-\rho_g)}
 
 ```
 
-Assume:
+Please estimate the range of ``z_g`` for a CO``_2`` reservoir. Free feel to search for some values in this formula and you can also follow some of the references below
 
-1. caprock is in micropores, reservoir rock is in macropores (follow table 2 of [https://link.springer.com/content/pdf/10.1007/s13202-021-01298-9.pdf](https://link.springer.com/content/pdf/10.1007/s13202-021-01298-9.pdf))
-2. the contact angle ``\theta`` is ``60`` degress
-3. the interfacial tension is ``30`` mN/m
-4. gravity acceleration constant is ``9.8`` m/s``^2``
-5. water density is ``1000`` kg/m``^3``, super critical CO``_2`` density is ``776`` kg/m``^3``
+[https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1468-8123.2007.00168.x](https://www.sciencedirect.com/science/article/pii/S0927775721009870?via%3Dihub)    
+[https://link.springer.com/content/pdf/10.1007/s13202-021-01298-9.pdf](https://www.sciencedirect.com/science/article/pii/S0927775721009870?via%3Dihub)    
+[https://www.sciencedirect.com/science/article/pii/S0927775721009870?via%3Dihub](https://www.sciencedirect.com/science/article/pii/S0927775721009870?via%3Dihub)
 
-What is the estimated range of ``z_g``?
 
 
 
