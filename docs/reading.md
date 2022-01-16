@@ -7,7 +7,6 @@
 
 - [Recording for Lecture 2](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220113_153314-Meeting%20Recording.mp4?csf=1&web=1&e=3TjZB1)
 
- 
 ### Reading material next lecture (updated regularly)
 
 - from the main text by Ringrose[@ringrose2020store] read Chapter 1 and Chapter 2 until section 2.3, which was discussed during Lecture 1. 
