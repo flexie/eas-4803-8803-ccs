@@ -5,7 +5,7 @@
 
 Please explain what is happening on an atomic or molecular scale that causes the phenomenon of surface tension. In particular, why is the meniscus for water in a vertical capillary tube concave and that for mercury convex?
 
-![](figs/figa1.ps)
+![](figs/figa1.png)
 
 ## Q2
 
