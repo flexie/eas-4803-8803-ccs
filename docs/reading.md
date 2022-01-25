@@ -12,13 +12,17 @@
 
 
 - [Recording for Lecture 4][https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220120_152317-Meeting%20Recording.mp4?csf=1&web=1&e=elEm0u]
- 
+
+- [Recording for Lecture 4][https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220125_152917-Meeting%20Recording.mp4?csf=1&web=1&e=mvNFm3]
+
 ### Reading material next lecture (updated regularly)
 
 - From the main text by Ringrose[@ringrose2020store] read Chapter 1 and Chapter 2 until section 2.3, which was discussed during Lecture 1. 
 - In preparation of Lecture 2, read pages 17-29 from [Chapter 2](https://www.dropbox.com/s/10jxkl4sqz9cpno/chapter2gueguen.pdf?dl=0) of Gueguen[@gueguen1994introduction] (for more background see also [Chapter 1](https://www.dropbox.com/s/gas1x4fswnhno3w/chapter1gueguen.pdf?dl=0)). Also read sections 2.3.1 and 2.3.2 of the main text by Ringrose[@ringrose2020store].
 - In preparation of Lecture 3, Ringrose[@ringrose2020store] book section 2.3.1 until 2.3.4 and pages 30-39 from [Chapter 2](https://www.dropbox.com/s/10jxkl4sqz9cpno/chapter2gueguen.pdf?dl=0) of Gueguen[@gueguen1994introduction].
 - In preparation of Lecture 5, Ringrose[@ringrose2020store] book section 2.3.5 until 2.4.5.
+- In preparation of Lecture 5, Ringrose[@ringrose2020store] book section 2.4.5 until 2.5.3.
+
 <!-- [here](https://www.dropbox.com/s/o7mveowljkwho28/chapter5gueguen.pdf?dl=0). -->
 
 ### Additional material
