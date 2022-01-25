@@ -13,7 +13,7 @@
 
 - [Recording for Lecture 4][https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220120_152317-Meeting%20Recording.mp4?csf=1&web=1&e=elEm0u]
 
-- [Recording for Lecture 4][https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220125_152917-Meeting%20Recording.mp4?csf=1&web=1&e=mvNFm3]
+- [Recording for Lecture 5][https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220125_152917-Meeting%20Recording.mp4?csf=1&web=1&e=mvNFm3]
 
 ### Reading material next lecture (updated regularly)
 
