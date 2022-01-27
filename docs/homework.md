@@ -105,7 +105,9 @@ This will give you access to a terminal, in which you can start Julia/Python, ru
 
 During the lectures you will work on the following exercises
 
-1. Thickness of reservoir. [Exercise 1](exercise/exercise1.md) (Jan 18, 2022)
+1. Thickness of reservoir. [Exercise 1](exercise/exercise1.md) (Jan 20, 2022)
+
+1. Capacity coefficient. [Exercise 2](exercise/exercise2.md) (Jan 27, 2022)
 
 ## Homework Assignments
 
