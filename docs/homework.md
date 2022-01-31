@@ -69,10 +69,11 @@ julia -e 'using Pkg; using JUDI; example=joinpath(dirname(pathof(JUDI)),"..","ex
 
 This command should finish without errors.
 
+-->
 
-## Docker (not necessary for homework but important for project)
+## Docker
 
-Docker is a platform which builds a virtual machine/container for you in case some softwares above cannot be installed/processed in the environment on your local machine. Thus, we suggest you first try to install the softwares above and do the programming exercises on your local machine. The exercises should work well in apple/linux machines. If it renders problems on your machine (especially a windows one), you could install docker and follow the steps below to run julia sessions in a virtual environment.
+In this course, we will have a couple of coding assignments where you can run numerical experiments for CO$_2$ dynamics simulation and also seismic wave-based simulations with developed softwares. Docker is a platform which builds a virtual machine/container for you with the docker image that is set-up by us and is equipped with pre-installed softwares. With Docker, you can run software without the tedious installation process.
 
 First install docker for your system
 
@@ -81,7 +82,7 @@ First install docker for your system
 Instead of having to install Python, Julia, Devito, JUDI and all the dependencies by yourself, you simply download the docker image and run it in a container. All you need to do is install docker and run:
 
 ```
-docker run -p 8888:8888 philippwitte/judi:v1.1
+docker run -p 8888:8888 ziyiyin97/ccs-env:latest
 ```
 
 This will download the image and launch a jupyter notebook that you can access from your internet browser. The command will display a link, which looks something like this:
@@ -95,11 +96,10 @@ Copy/paste this URL into your browser when you connect for the first time,
 Copy-paste this link and replace the address `0e27b13128d4:8888` with `localhost:8888` (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Instead of a notebook, you can also launch an interactive session with a terminal by running:
 
 ```
-docker run -it philippwitte/judi:v1.1 /bin/bash
+docker run -it ziyiyin97/ccs-env:latest /bin/bash
 ```
 
 This will give you access to a terminal, in which you can start Julia/Python, run things interactively or modify code. However, figures from PyPlot sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended.
--->
 
 ## In-class Exercise
 
