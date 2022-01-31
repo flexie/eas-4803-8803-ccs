@@ -22,6 +22,8 @@
 - In preparation of Lecture 3, Ringrose[@ringrose2020store] book section 2.3.1 until 2.3.4 and pages 30-39 from [Chapter 2](https://www.dropbox.com/s/10jxkl4sqz9cpno/chapter2gueguen.pdf?dl=0) of Gueguen[@gueguen1994introduction].
 - In preparation of Lecture 5, Ringrose[@ringrose2020store] book section 2.3.5 until 2.4.5.
 - In preparation of Lecture 6, Ringrose[@ringrose2020store] book section 2.4.5 until 2.5.3.
+- In preparation of Lecture 7, Ringrose[@ringrose2020store] book section 2.5.4 until 2.7/
+
 
 <!-- [here](https://www.dropbox.com/s/o7mveowljkwho28/chapter5gueguen.pdf?dl=0). -->
 
