@@ -82,7 +82,7 @@ First install docker for your system
 Instead of having to install Python, Julia, Devito, JUDI and all the dependencies by yourself, you simply download the docker image and run it in a container. All you need to do is install docker and run:
 
 ```
-docker run -p 8888:8888 ziyiyin97/ccs-env:latest
+docker run -p 8888:8888 ziyiyin97/ccs-env:3.0
 ```
 
 This will download the image and launch a jupyter notebook that you can access from your internet browser. The command will display a link, which looks something like this:
@@ -96,7 +96,7 @@ Copy/paste this URL into your browser when you connect for the first time,
 Copy-paste this link and replace the address `0e27b13128d4:8888` with `localhost:8888` (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Instead of a notebook, you can also launch an interactive session with a terminal by running:
 
 ```
-docker run -it ziyiyin97/ccs-env:latest /bin/bash
+docker run -it ziyiyin97/ccs-env:3.0 /bin/bash
 ```
 
 This will give you access to a terminal, in which you can start Julia/Python, run things interactively or modify code. However, figures from PyPlot sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended.
