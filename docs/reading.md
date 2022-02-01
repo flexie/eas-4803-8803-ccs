@@ -2,6 +2,9 @@
 
 [Slides](https://www.dropbox.com/s/4ui6dsp7tfkggur/1_Lecture_CCS.pdf?dl=0)
 
+## Reading Part 2
+[slides](https://www.dropbox.com/s/jh2o737hvsu30wp/2_Lecture_CCS.pdf?dl=0)
+
 ### Recordings lectures
 
 - [Recording for Lecture 1](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/New%20channel%20meeting-20220111_153536-Meeting%20Recording.mp4?csf=1&web=1&e=fHJqLg) 
@@ -14,6 +17,8 @@
 - [Recording for Lecture 4](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220120_152317-Meeting%20Recording.mp4?csf=1&web=1&e=elEm0u)
 
 - [Recording for Lecture 5](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220125_152917-Meeting%20Recording.mp4?csf=1&web=1&e=mvNFm3)
+ 
+- [Recording for Lecture 6](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220127_153008-Meeting%20Recording.mp4?csf=1&web=1&e=W8tOhG)
 
 ### Reading material next lecture (updated regularly)
 
@@ -22,7 +27,7 @@
 - In preparation of Lecture 3, Ringrose[@ringrose2020store] book section 2.3.1 until 2.3.4 and pages 30-39 from [Chapter 2](https://www.dropbox.com/s/10jxkl4sqz9cpno/chapter2gueguen.pdf?dl=0) of Gueguen[@gueguen1994introduction].
 - In preparation of Lecture 5, Ringrose[@ringrose2020store] book section 2.3.5 until 2.4.5.
 - In preparation of Lecture 6, Ringrose[@ringrose2020store] book section 2.4.5 until 2.5.3.
-- In preparation of Lecture 7, Ringrose[@ringrose2020store] book section 2.5.4 until 2.7/
+- In preparation of Lecture 7, Ringrose[@ringrose2020store] book section 2.5.4 until 2.7.
 
 
 <!-- [here](https://www.dropbox.com/s/o7mveowljkwho28/chapter5gueguen.pdf?dl=0). -->
