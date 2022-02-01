@@ -115,6 +115,8 @@ During the course you will work on the following homework assignments
 
 1. Intro to rock physics. [Assignment 1](Assignments/homework1.md) (Due: 3:30 PM Jan 25, 2022)
 
+2. Fluid flow simulation. [Intro to julia](Assignments/introduction_to_julia.md) and [Assignment 2](Assignments/Homework2.md) (Due: 3:30 PM Feb 8, 2022)
+
 <!--
 1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md) [Exercise 1](Assignments/Exercise1.md) [[Solution]](https://www.slim.eos.ubc.ca/Teaching/EOSC454/exercise1_sol.html)
 
