@@ -1,9 +1,13 @@
 # Fluid Flow Simulation
 
-Adapted from https://lidongzh.github.io/FwiFlow.jl/dev/tutorials/flow/, Coupled Time-Lapse Full-Waveform Inversion for Subsurface Flow Problems Using Intrusive Automatic Differentiation
+Adapted from [the tutorial of FwiFlow.jl package](https://lidongzh.github.io/FwiFlow.jl/dev/tutorials/flow/), Coupled Time-Lapse Full-Waveform Inversion for Subsurface Flow Problems Using Intrusive Automatic Differentiation
 Dongzhuo Li, Kailai Xu, Jerry M. Harris, Eric Darve
 
 Thanks for the help on Docker image set-up from Thomas J. Grady II
+
+# Set-up
+
+### First, we set up some functions and structures below for fluid simulation, relative permeability, and fluid flow simulation.
 
 
 ```julia
@@ -120,6 +124,8 @@ end
 
 
 
+### Below is the main flow function -- taking permeability, porosity, injection, production, and simulation grid as inputs
+
 
 ```julia
 function flow(K, ϕ, qw, qo, grid;
@@ -148,22 +154,34 @@ end
 
 
 
+## Main script
+
+The main script is here! We start by loading the Julia packages. The main simulation is done in FwiFlow
+
 
 ```julia
 using FwiFlow
 using PyCall
 using LinearAlgebra
-using DelimitedFiles
 using PyPlot
+```
 
+    ┌ Warning: Cannot load /Users/francisyin/.julia/packages/ADCME/94vEM/deps/CustomOps/build/libadcme.dylib. Please recompile the shared library by `ADCME.precompile()` for using custom operators.
+    └ @ ADCME /Users/francisyin/.julia/packages/ADCME/94vEM/src/ADCME.jl:78
+
+
+### Next, let's set up the flow simulation parameters, i.e. the information of reservoir, injection etc.
+
+
+```julia
 # Hyperparameter for flow simulation
-n = (30, 15)
-h = 30.0
-hy= 10.0
-nt = 50
-dt = 20
+n = (30, 15)    # domain of simulation (number of cells in x * number of cells in z)
+h = 30.0        # size of the cell (in meter)
+hy= 10.0        # width of the cell in y direction (now it's 2D code but CO2 lives in 3D space!)
+nt = 50         # number of time steps
+dt = 20         # time interval between 2 adjacent time steps (in day), you should NOT set this large otherwise the solver will be unstable
 
-mutable struct comp_grid
+mutable struct comp_grid       # set up the grid structure
    n  :: Tuple{Integer, Integer} # x, z
    h  :: Float64 # meter
    hy :: Float64 # meter
@@ -173,35 +191,38 @@ end
 
 grid_ = comp_grid(n, h, hy, nt, dt)
 
-qw = zeros(nt, n[1], n[2])
-inj_loc = (3*h, 9*h)
-qw[:,Int(round(inj_loc[1]/h)), Int(round(inj_loc[2]/h))] .= 0.005
-
-qo = zeros(nt, n[1], n[2])
-prod_loc = (28*h, 9*h)
-qo[:,Int(round(prod_loc[1]/h)),Int(round(prod_loc[2]/h))] .= -0.005
-
-ϕ = 0.25 .* ones(n)
-K = 20.0 .* ones(n) # millidarcy
-K[:,8:10] .= 120.0
-
-S, p = flow(K, ϕ, qw, qo, grid_);
 ```
 
-    [32mLoad library operator (with gradient, multiple outputs = false): /Users/francisyin/.julia/packages/FwiFlow/4kyhS/deps/CustomOps/Upwlap/build/libUpwlapOp.dylib ==> upwlap_op[39m
-    [32mLoad library operator (with gradient, multiple outputs = false): /Users/francisyin/.julia/packages/FwiFlow/4kyhS/deps/CustomOps/Upwps/build/libUpwpsOp.dylib ==> upwps_op[39m
-    [32mLoad library operator (with gradient, multiple outputs = false): /Users/francisyin/.julia/packages/FwiFlow/4kyhS/deps/CustomOps/Saturation/build/libSatOp.dylib ==> sat_op[39m
 
 
-    ┌ Warning: Cannot load /Users/francisyin/.julia/packages/ADCME/94vEM/deps/CustomOps/build/libadcme.dylib. Please recompile the shared library by `ADCME.precompile()` for using custom operators.
-    └ @ ADCME /Users/francisyin/.julia/packages/ADCME/94vEM/src/ADCME.jl:78
-    ┌ Warning: `vendor()` is deprecated, use `BLAS.get_config()` and inspect the output instead
-    │   caller = npyinitialize() at numpy.jl:67
-    └ @ PyCall /Users/francisyin/.julia/packages/PyCall/L0fLP/src/numpy.jl:67
-    2022-02-01 14:14:10.989476: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-    2022-02-01 14:14:11.014711: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7ffdd1b8a0c0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-    2022-02-01 14:14:11.014724: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
 
+    comp_grid((30, 15), 30.0, 10.0, 50, 20)
+
+
+
+### Then let's set up the well information. In this software, there is assumed to be injection well(s) for CO2 injection and production well(s) for water production.
+
+
+```julia
+qw = zeros(nt, n[1], n[2]);
+inj_loc = (3*h, 9*h);    # injection location (at (3,9) cell in this case)
+qw[:,Int(round(inj_loc[1]/h)), Int(round(inj_loc[2]/h))] .= 0.005;   # in [m^3/s]
+
+qo = zeros(nt, n[1], n[2]);
+prod_loc = (28*h, 9*h);  # injection location (at (28,9) cell in this case)
+qo[:,Int(round(prod_loc[1]/h)),Int(round(prod_loc[2]/h))] .= -0.005; # also in [m^3/s]
+```
+
+### Then let's set up the permeability and porosity.
+
+
+```julia
+ϕ = 0.25 .* ones(n); # porosity [0-1]
+K = 20.0 .* ones(n); # permeability [millidarcy]
+K[:,8:10] .= 120.0;  # set a high permeability channel in the middle
+```
+
+### We can plot the permeability model and porosity model using PyPlot package. Its usage is quite similar to matplotlib in python (actually it's based on that)
 
 
 ```julia
@@ -214,7 +235,12 @@ legend(loc=3);
 ```
 
 
-![png](figs/output_5_0.png)
+![png](figs/output_15_0.png)
+
+
+    ┌ Warning: `vendor()` is deprecated, use `BLAS.get_config()` and inspect the output instead
+    │   caller = npyinitialize() at numpy.jl:67
+    └ @ PyCall /Users/francisyin/.julia/packages/PyCall/L0fLP/src/numpy.jl:67
 
 
 
@@ -228,8 +254,27 @@ legend(loc=3);
 ```
 
 
-![png](figs/output_6_0.png)
+![png](figs/output_16_0.png)
 
+
+### Now let's run the flow simulation in 1 line!
+
+
+```julia
+S, p = flow(K, ϕ, qw, qo, grid_);
+```
+
+    [32mLoad library operator (with gradient, multiple outputs = false): /Users/francisyin/.julia/packages/FwiFlow/4kyhS/deps/CustomOps/Upwlap/build/libUpwlapOp.dylib ==> upwlap_op[39m
+    [32mLoad library operator (with gradient, multiple outputs = false): /Users/francisyin/.julia/packages/FwiFlow/4kyhS/deps/CustomOps/Upwps/build/libUpwpsOp.dylib ==> upwps_op[39m
+    [32mLoad library operator (with gradient, multiple outputs = false): /Users/francisyin/.julia/packages/FwiFlow/4kyhS/deps/CustomOps/Saturation/build/libSatOp.dylib ==> sat_op[39m
+
+
+    2022-02-03 11:08:40.343352: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+    2022-02-03 11:08:40.369226: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fbea7857140 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+    2022-02-03 11:08:40.369239: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+
+
+### And then let's take a look at the CO2 saturation at various time steps.
 
 
 ```julia
@@ -245,7 +290,7 @@ suptitle("CO2 saturation [100%]")
 ```
 
 
-![png](figs/output_7_0.png)
+![png](figs/output_20_0.png)
 
 
 
@@ -258,9 +303,10 @@ suptitle("CO2 saturation [100%]")
 # TO-DO:
 
 ## Q1
-1. Calculate the amount of CO2 in the reservoir after 60 days of injection. Is it the same as the injection amount? (If not, why?)
-2. Calculate the capacity coefficient after 90 days of injection.
-3. Calculate the amount of CO2 in the reservoir at the end of injection. Is it the same as the injection amount? (If not, why?)
+1. What do you see in these time-varying CO2 saturation images? How do you interpret the movement of CO2?
+2. Calculate the amount of CO2 in the reservoir after 60 days of injection. Is it the same as the injection amount? (If not, why?)
+3. Calculate the capacity coefficient after 90 days of injection.
+4. Calculate the amount of CO2 in the reservoir at the end of injection. Is it the same as the injection amount? (If not, why?)
 
 ## Q2
 1. Re-run this experiment with a homogeneous permeability model, i.e. remove the yellow high permeability channel in the middle. Plot the CO2 saturations with correct labels and colorbars. Compare them with the saturations with the high permeability channel. What do you see? How do you interpret the result?

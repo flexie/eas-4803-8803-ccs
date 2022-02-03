@@ -71,18 +71,22 @@ This command should finish without errors.
 
 -->
 
+# Homework
+
+In this course, we will have a couple of coding assignments based on [Julia](https://julialang.org/downloads/), a fast, dynamic, reproducible composable and general open source programming language. You are encouraged to install [Julia](https://julialang.org/downloads/) on your system following the script to run some basic coding experiments to explore its usage and applications in scientific computing community.
+
+In particular, you will run numerical experiments for CO$_2$ dynamics simulation and also seismic wave-based simulations with academically developed softwares. To help you run these software, we highly recommend you use Docker, a platform which builds a virtual machine/container for you with the docker image, which is set-up by us and equipped with pre-installed softwares. The docker image is quite necessary for you to run the software without the tedious installation process, and to provide you with an environment on which the software runs out of the box.
+
 ## Docker
 
-In this course, we will have a couple of coding assignments where you can run numerical experiments for CO$_2$ dynamics simulation and also seismic wave-based simulations with developed softwares. Docker is a platform which builds a virtual machine/container for you with the docker image that is set-up by us and is equipped with pre-installed softwares. With Docker, you can run software without the tedious installation process.
-
-First install docker for your system
+First install docker for your system following the instruction here,
 
 [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
 
-Instead of having to install Python, Julia, Devito, JUDI and all the dependencies by yourself, you simply download the docker image and run it in a container. All you need to do is install docker and run:
+Instead of having to install Python, Julia, Devito, JUDI, FwiFlow and all the dependencies (these are the softwares that you will use for the numerical simulation) by yourself, you simply download the docker image and run it in a container. All you need to do is install docker, click the docker icon/app, open the terminal/command line ([powershell](https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/) in windows, also see [this](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)) on your system, and run:
 
 ```
-docker run -p 8888:8888 ziyiyin97/ccs-env:3.0
+docker run -p 8888:8888 ziyiyin97/ccs-env:v4.0 
 ```
 
 This will download the image and launch a jupyter notebook that you can access from your internet browser. The command will display a link, which looks something like this:
@@ -93,13 +97,26 @@ Copy/paste this URL into your browser when you connect for the first time,
         http://0e27b13128d4:8888/?token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4&token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4
 ```
 
-Copy-paste this link and replace the address `0e27b13128d4:8888` with `localhost:8888` (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Instead of a notebook, you can also launch an interactive session with a terminal by running:
+Copy-paste this link and replace the address `0e27b13128d4:8888` with `localhost:8888` (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Then, you can create a notebook there by clicking new -> notebook -> julia 1.7.1, and run the julia code in the jupyter notebook. Remember, the jupyter notebooks on the docker container don't stay there forever. Therefore, if you are half way on the homework and want to close the jupyter notebook, please remember to save the notebook to your local machine.
+
+Instead of a notebook, you can also launch an interactive session with a terminal by running:
 
 ```
-docker run -it ziyiyin97/ccs-env:3.0 /bin/bash
+docker run -it ziyiyin97/ccs-env:v4.0 /bin/bash
 ```
 
-This will give you access to a terminal, in which you can start Julia/Python, run things interactively or modify code. However, figures from PyPlot sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended.
+This will give you access to a terminal, in which you can start Julia/Python, run a couple of lines of code interactively. However, figures from PyPlot (the plotting package) sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended.
+
+### Window Users
+
+If you are using windows, you might need to enable hardware virtualization in their BIOS. You are suggested to look at [here](https://www.virtualmetric.com/blog/how-to-enable-hardware-virtualization) and [here](https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html). If you have any question, please reach out to us ASAP.
+
+
+## Some Useful Material
+
+Learn command line from [Software Carpentry](https://software-carpentry.org/)    
+Learn [jupyter notebook](https://jupyter.org/)    
+Learn [Julia](https://julialang.org/learning/)    
 
 ## In-class Exercise
 
@@ -113,9 +130,9 @@ During the lectures you will work on the following exercises
 
 During the course you will work on the following homework assignments
 
-1. Intro to rock physics. [Assignment 1](Assignments/homework1.md) (Due: 3:30 PM Jan 25, 2022)
+1. Intro to rock physics. [Assignment 1](Assignments/homework1.md). Submit your homework as a PDF report. (Due: 3:30 PM Jan 25, 2022)
 
-2. Fluid flow simulation. [Intro to julia](Assignments/introduction_to_julia.md) and [Assignment 2](Assignments/Homework2.md) (Due: 3:30 PM Feb 8, 2022)
+2. Fluid flow simulation. [Intro to julia](Assignments/introduction_to_julia.md) and [Assignment 2](Assignments/Homework2.md). Submit both jupyter notebook and a PDF file. (Due: 3:30 PM Feb 10, 2022)
 
 <!--
 1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md) [Exercise 1](Assignments/Exercise1.md) [[Solution]](https://www.slim.eos.ubc.ca/Teaching/EOSC454/exercise1_sol.html)
