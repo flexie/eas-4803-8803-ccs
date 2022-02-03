@@ -86,7 +86,7 @@ First install docker for your system following the instruction here,
 Instead of having to install Python, Julia, Devito, JUDI, FwiFlow and all the dependencies (these are the softwares that you will use for the numerical simulation) by yourself, you simply download the docker image and run it in a container. All you need to do is install docker, click the docker icon/app, open the terminal/command line ([powershell](https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/) in windows, also see [this](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)) on your system, and run:
 
 ```
-docker run -p 8888:8888 ziyiyin97/ccs-env:v4.0 
+docker run -p 8888:8888 ziyiyin97/ccs-env:v4.2 
 ```
 
 This will download the image and launch a jupyter notebook that you can access from your internet browser. The command will display a link, which looks something like this:
