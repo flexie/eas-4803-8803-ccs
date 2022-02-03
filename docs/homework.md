@@ -102,7 +102,7 @@ Copy-paste this link and replace the address `0e27b13128d4:8888` with `localhost
 Instead of a notebook, you can also launch an interactive session with a terminal by running:
 
 ```
-docker run -it ziyiyin97/ccs-env:v4.0 /bin/bash
+docker run -it ziyiyin97/ccs-env:v4.2 /bin/bash
 ```
 
 This will give you access to a terminal, in which you can start Julia/Python, run a couple of lines of code interactively. However, figures from PyPlot (the plotting package) sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended.
