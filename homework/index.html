@@ -84,28 +84,32 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="1"><a href="#homework" class="nav-link">Homework</a>
+              <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#docker" class="nav-link">Docker</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
+            <li class="nav-item" data-level="2"><a href="#some-useful-material" class="nav-link">Some Useful Material</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#in-class-exercise" class="nav-link">In-class Exercise</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
             <li class="nav-item" data-level="2"><a href="#homework-assignments" class="nav-link">Homework Assignments</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
             <li class="nav-item" data-level="2"><a href="#hand-in" class="nav-link">Hand in</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
             <li class="nav-item" data-level="2"><a href="#feedback" class="nav-link">Feedback</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -190,22 +194,31 @@ This command should finish without errors.
 
 -->
 
+<h1 id="homework">Homework</h1>
+<p>In this course, we will have a couple of coding assignments based on <a href="https://julialang.org/downloads/">Julia</a>, a fast, dynamic, reproducible composable and general open source programming language. You are encouraged to install <a href="https://julialang.org/downloads/">Julia</a> on your system following the script to run some basic coding experiments to explore its usage and applications in scientific computing community.</p>
+<p>In particular, you will run numerical experiments for CO<span class="arithmatex">\(_2\)</span> dynamics simulation and also seismic wave-based simulations with academically developed softwares. To help you run these software, we highly recommend you use Docker, a platform which builds a virtual machine/container for you with the docker image, which is set-up by us and equipped with pre-installed softwares. The docker image is quite necessary for you to run the software without the tedious installation process, and to provide you with an environment on which the software runs out of the box.</p>
 <h2 id="docker">Docker</h2>
-<p>In this course, we will have a couple of coding assignments where you can run numerical experiments for CO<span class="arithmatex">\(_2\)</span> dynamics simulation and also seismic wave-based simulations with developed softwares. Docker is a platform which builds a virtual machine/container for you with the docker image that is set-up by us and is equipped with pre-installed softwares. With Docker, you can run software without the tedious installation process.</p>
-<p>First install docker for your system</p>
+<p>First install docker for your system following the instruction here,</p>
 <p><a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a></p>
-<p>Instead of having to install Python, Julia, Devito, JUDI and all the dependencies by yourself, you simply download the docker image and run it in a container. All you need to do is install docker and run:</p>
-<pre><code>docker run -p 8888:8888 ziyiyin97/ccs-env:3.0
+<p>Instead of having to install Python, Julia, Devito, JUDI, FwiFlow and all the dependencies (these are the softwares that you will use for the numerical simulation) by yourself, you simply download the docker image and run it in a container. All you need to do is install docker, click the docker icon/app, open the terminal/command line (<a href="https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/">powershell</a> in windows, also see <a href="https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2">this</a>) on your system, and run:</p>
+<pre><code>docker run -p 8888:8888 ziyiyin97/ccs-env:v4.0 
 </code></pre>
 <p>This will download the image and launch a jupyter notebook that you can access from your internet browser. The command will display a link, which looks something like this:</p>
 <pre><code>Copy/paste this URL into your browser when you connect for the first time,
     to login with a token:
         http://0e27b13128d4:8888/?token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4&amp;token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4
 </code></pre>
-<p>Copy-paste this link and replace the address <code>0e27b13128d4:8888</code> with <code>localhost:8888</code> (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Instead of a notebook, you can also launch an interactive session with a terminal by running:</p>
-<pre><code>docker run -it ziyiyin97/ccs-env:3.0 /bin/bash
+<p>Copy-paste this link and replace the address <code>0e27b13128d4:8888</code> with <code>localhost:8888</code> (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Then, you can create a notebook there by clicking new -&gt; notebook -&gt; julia 1.7.1, and run the julia code in the jupyter notebook. Remember, the jupyter notebooks on the docker container don't stay there forever. Therefore, if you are half way on the homework and want to close the jupyter notebook, please remember to save the notebook to your local machine.</p>
+<p>Instead of a notebook, you can also launch an interactive session with a terminal by running:</p>
+<pre><code>docker run -it ziyiyin97/ccs-env:v4.0 /bin/bash
 </code></pre>
-<p>This will give you access to a terminal, in which you can start Julia/Python, run things interactively or modify code. However, figures from PyPlot sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended.</p>
+<p>This will give you access to a terminal, in which you can start Julia/Python, run a couple of lines of code interactively. However, figures from PyPlot (the plotting package) sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended.</p>
+<h3 id="window-users">Window Users</h3>
+<p>If you are using windows, you might need to enable hardware virtualization in their BIOS. You are suggested to look at <a href="https://www.virtualmetric.com/blog/how-to-enable-hardware-virtualization">here</a> and <a href="https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html">here</a>. If you have any question, please reach out to us ASAP.</p>
+<h2 id="some-useful-material">Some Useful Material</h2>
+<p>Learn command line from <a href="https://software-carpentry.org/">Software Carpentry</a>  <br />
+Learn <a href="https://jupyter.org/">jupyter notebook</a>  <br />
+Learn <a href="https://julialang.org/learning/">Julia</a>    </p>
 <h2 id="in-class-exercise">In-class Exercise</h2>
 <p>During the lectures you will work on the following exercises</p>
 <ol>
@@ -220,10 +233,10 @@ This command should finish without errors.
 <p>During the course you will work on the following homework assignments</p>
 <ol>
 <li>
-<p>Intro to rock physics. <a href="../Assignments/homework1/">Assignment 1</a> (Due: 3:30 PM Jan 25, 2022)</p>
+<p>Intro to rock physics. <a href="../Assignments/homework1/">Assignment 1</a>. Submit your homework as a PDF report. (Due: 3:30 PM Jan 25, 2022)</p>
 </li>
 <li>
-<p>Fluid flow simulation. <a href="../Assignments/introduction_to_julia/">Intro to julia</a> and <a href="../Assignments/Homework2/">Assignment 2</a> (Due: 3:30 PM Feb 8, 2022)</p>
+<p>Fluid flow simulation. <a href="../Assignments/introduction_to_julia/">Intro to julia</a> and <a href="../Assignments/Homework2/">Assignment 2</a>. Submit both jupyter notebook and a PDF file. (Due: 3:30 PM Feb 10, 2022)</p>
 </li>
 </ol>
 <!--
