@@ -97,7 +97,19 @@ Copy/paste this URL into your browser when you connect for the first time,
         http://0e27b13128d4:8888/?token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4&token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4
 ```
 
-Copy-paste this link and replace the address `0e27b13128d4:8888` with `localhost:8888` (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Then, you can create a notebook there by clicking new -> notebook -> julia 1.7.1, and run the julia code in the jupyter notebook. Remember, the jupyter notebooks on the docker container don't stay there forever. Therefore, if you are half way on the homework and want to close the jupyter notebook, please remember to save the notebook to your local machine.
+Copy-paste this link and replace the address `0e27b13128d4:8888` with `localhost:8888` (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Then, you can create a notebook there by clicking new -> notebook -> julia 1.7.1, and run the julia code in the jupyter notebook. Remember, the jupyter notebooks on the docker container don't stay there forever. Therefore, if you are half way on the homework and want to close the jupyter notebook, please remember to save the notebook to your local machine. If you do not want to save the notebook every time when you close the notebook, you can actually connect a folder on your machine to the docker container by
+
+```
+docker run -v /path/on/your/machine:/notebooks -p 8888:8888 ziyiyin97/ccs-env:v4.2 
+```
+
+where `/path/on/your/machine` is an absolute path on your own local machine. For example, if I want to connect the folder called `testdocker` on the desktop of my laptop, I can do
+
+```
+docker run -v /Users/francisyin/Desktop/testdocker:/notebooks -p 8888:8888 ziyiyin97/ccs-env:v4.2 
+```
+
+and then you will find the files in this folder will show up in the notebooks. Whatever you do on the docker container will also be saved in the local `testdocker` folder.
 
 Instead of a notebook, you can also launch an interactive session with a terminal by running:
 
@@ -105,7 +117,7 @@ Instead of a notebook, you can also launch an interactive session with a termina
 docker run -it ziyiyin97/ccs-env:v4.2 /bin/bash
 ```
 
-This will give you access to a terminal, in which you can start Julia/Python, run a couple of lines of code interactively. However, figures from PyPlot (the plotting package) sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended.
+This will give you access to a terminal, in which you can start Julia/Python, run a couple of lines of code interactively. However, figures from PyPlot (the plotting package) sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended for you to do the assignments.
 
 ### Window Users
 
