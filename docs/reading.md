@@ -21,6 +21,8 @@
 - [Recording for Lecture 6](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220127_153008-Meeting%20Recording.mp4?csf=1&web=1&e=W8tOhG)
  
 - [Recording for Lecture 7](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/New%20channel%20meeting-20220201_152913-Meeting%20Recording.mp4?csf=1&web=1&e=a2n2D6)
+ 
+- [Recording for Lecture 8](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220203_160258-Meeting%20Recording.mp4?csf=1&web=1&e=DbpCbi)
 
 ### Reading material next lecture (updated regularly)
 
@@ -31,7 +33,7 @@
 - In preparation of Lecture 6, Ringrose[@ringrose2020store] book section 2.4.5 until 2.5.3.
 - In preparation of Lecture 7, Ringrose[@ringrose2020store] book section 2.5.4 until 2.7.
 - In preparation of Lecture 8, Ringrose[@ringrose2020store] book section 2.7.1 
-
+- In preparation of Lecture 9, Ringrose[@ringrose2020store] book section 2.7.2 until 2.7.3 and 3.1 until 3.3 
 
 <!-- [here](https://www.dropbox.com/s/o7mveowljkwho28/chapter5gueguen.pdf?dl=0). -->
 
