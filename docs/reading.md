@@ -36,7 +36,7 @@
 
 - [Recording for Lecture 11](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220215_152848-Meeting%20Recording.mp4?csf=1&web=1&e=DsFIdC)
 
-[Recording for Lecture 12](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220217_154356-Meeting%20Recording.mp4?csf=1&web=1&e=gBkv7E)
+- [Recording for Lecture 12](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220217_154356-Meeting%20Recording.mp4?csf=1&web=1&e=gBkv7E)
 
 ### Reading material next lecture (updated regularly)
 
@@ -54,7 +54,7 @@
 
 ### Additional material
 
-In addition to the general text [ringrose2020store], the course will review journal papers including
+In addition to the general text [@ringrose2020store], the course will review journal papers including
 
 - Papers on Sleipner [@Arts2003] [@Eiken2011] [@Furre2017] 
 - Coupling seismic to fluid flow [@li2020coupled]
