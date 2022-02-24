@@ -1,19 +1,17 @@
-## Reading Part 1
+## Material presented in class 
 
-- [Slides](https://www.dropbox.com/s/4ui6dsp7tfkggur/1_Lecture_CCS.pdf?dl=0)
+- [Part 1 - Basics Geological Storage](https://www.dropbox.com/s/4ui6dsp7tfkggur/1_Lecture_CCS.pdf?dl=0)
+- [Part 2 – Design & Scale Up](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
 
-## Reading Part 2
-
-- [Slides](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
-
-## Reading part 3
-
-- [Basics Seismic Imaging 1](https://www.dropbox.com/s/9935l6wcfdquf25/3-lecture_CCS_basics_1.pdf?dl=0)
-- [Basics Seismic Imaging 2](https://www.dropbox.com/s/5pg2uwx7p6454r4/3-Lecture_CCS_basics_2.pdf?dl=0)
-- [Basics Seismic Imaging 3](https://www.dropbox.com/s/y70u0apow90f4wt/3-Lecture_CCS_basics_3.pdf?dl=0)
-- [Migration 1](https://www.dropbox.com/s/u6bts29f7g5lqpt/4-Lecture_migration_1.pdf?dl=0)
-- [Migration 2](https://www.dropbox.com/s/mlxbxnfr85brspc/4-Lecture_migration_2.pdf?dl=0)
-- [Acquisition 1](https://www.dropbox.com/s/mcy8sfwl40rn74p/5-Lecture_acquisition_1.pdf?dl=0)
+- Part 3 - Introduction Seismic Imaging
+    - [Basics Seismic Imaging 1](https://www.dropbox.com/s/9935l6wcfdquf25/3-lecture_CCS_basics_1.pdf?dl=0)
+    - [Basics Seismic Imaging 2](https://www.dropbox.com/s/5pg2uwx7p6454r4/3-Lecture_CCS_basics_2.pdf?dl=0)
+    - [Basics Seismic Imaging 3](https://www.dropbox.com/s/y70u0apow90f4wt/3-Lecture_CCS_basics_3.pdf?dl=0)
+- Part 4 - Basics Migration
+    - [Migration 1](https://www.dropbox.com/s/u6bts29f7g5lqpt/4-Lecture_migration_1.pdf?dl=0)
+    - [Migration 2](https://www.dropbox.com/s/mlxbxnfr85brspc/4-Lecture_migration_2.pdf?dl=0)
+- Part 4 - Basics Seismic Data Acquisition
+    - [Acquisition 1](https://www.dropbox.com/s/mcy8sfwl40rn74p/5-Lecture_acquisition_1.pdf?dl=0)
 
 ### Recordings lectures
 
