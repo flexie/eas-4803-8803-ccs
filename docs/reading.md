@@ -1,13 +1,19 @@
 ## Reading Part 1
 
-[Slides](https://www.dropbox.com/s/4ui6dsp7tfkggur/1_Lecture_CCS.pdf?dl=0)
+- [Slides](https://www.dropbox.com/s/4ui6dsp7tfkggur/1_Lecture_CCS.pdf?dl=0)
 
 ## Reading Part 2
-[Slides](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
+
+- [Slides](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
 
 ## Reading part 3
 
-[Slides 1](https://www.dropbox.com/s/9935l6wcfdquf25/3-lecture_CCS_basics_1.pdf?dl=0)
+- [Basics Seismic Imaging 1](https://www.dropbox.com/s/9935l6wcfdquf25/3-lecture_CCS_basics_1.pdf?dl=0)
+- [Basics Seismic Imaging 2](https://www.dropbox.com/s/5pg2uwx7p6454r4/3-Lecture_CCS_basics_2.pdf?dl=0)
+- [Basics Seismic Imaging 3](https://www.dropbox.com/s/y70u0apow90f4wt/3-Lecture_CCS_basics_3.pdf?dl=0)
+- [Migration 1](https://www.dropbox.com/s/u6bts29f7g5lqpt/4-Lecture_migration_1.pdf?dl=0)
+- [Migration 2](https://www.dropbox.com/s/mlxbxnfr85brspc/4-Lecture_migration_2.pdf?dl=0)
+- [Acquisition 1](https://www.dropbox.com/s/mcy8sfwl40rn74p/5-Lecture_acquisition_1.pdf?dl=0)
 
 ### Recordings lectures
 
@@ -37,8 +43,10 @@
 - [Recording for Lecture 11](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220215_152848-Meeting%20Recording.mp4?csf=1&web=1&e=DsFIdC)
 
 - [Recording for Lecture 12](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220217_154356-Meeting%20Recording.mp4?csf=1&web=1&e=gBkv7E)
+ 
+- [Recording for Lecture 13](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/New%20channel%20meeting-20220222_152821-Meeting%20Recording.mp4?csf=1&web=1&e=BfC009)
 
-### Reading material next lecture (updated regularly)
+### Reading material Parts 1 and 2
 
 - From the main text by Ringrose[@ringrose2020store] read Chapter 1 and Chapter 2 until section 2.3, which was discussed during Lecture 1. 
 - In preparation of Lecture 2, read pages 17-29 from [Chapter 2](https://www.dropbox.com/s/10jxkl4sqz9cpno/chapter2gueguen.pdf?dl=0) of Gueguen[@gueguen1994introduction] (for more background see also [Chapter 1](https://www.dropbox.com/s/gas1x4fswnhno3w/chapter1gueguen.pdf?dl=0)). Also read sections 2.3.1 and 2.3.2 of the main text by Ringrose[@ringrose2020store].
@@ -50,7 +58,11 @@
 - In preparation of Lecture 9, Ringrose[@ringrose2020store] book section 2.7.2 until 2.7.3 and 3.1 until 3.3 
 - In preparation of Lecture 11, Ringrose[@ringrose2020store] book section 3.4 and 3.6 and 4.
 
-<!-- [here](https://www.dropbox.com/s/o7mveowljkwho28/chapter5gueguen.pdf?dl=0). -->
+### Reading material Part 3
+
+- John Scales: [Theory of Seismic Imaging](https://www.dropbox.com/s/cdt8ndqy3fnvqpf/imaging_scales.pdf?dl=0) Chapters 1, 2, 10.3
+- Guy Drijkoningen: [Introduction to Reflection Seismology TA3520](https://www.dropbox.com/s/hgheb1u1rrflzpk/IntroductionreflectionSeismology%28ta3520%29.pdf?dl=0) Chapter 5 and [Seismic Data Processing](https://www.dropbox.com/s/x7sng1s982484o0/SeismicProcessing2%28tg001_ta3600%29.pdf?dl=0) - TG001 / TA3600 Chapters 1,2,3.
+
 
 ### Additional material
 
