@@ -2,7 +2,6 @@
 
 - [Part 1 - Basics Geological Storage](https://www.dropbox.com/s/4ui6dsp7tfkggur/1_Lecture_CCS.pdf?dl=0)
 - [Part 2 – Design & Scale Up](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
-
 - Part 3 - Introduction Seismic Imaging
     - [Basics Seismic Imaging 1](https://www.dropbox.com/s/9935l6wcfdquf25/3-lecture_CCS_basics_1.pdf?dl=0)
     - [Basics Seismic Imaging 2](https://www.dropbox.com/s/5pg2uwx7p6454r4/3-Lecture_CCS_basics_2.pdf?dl=0)
@@ -43,6 +42,8 @@
 - [Recording for Lecture 12](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220217_154356-Meeting%20Recording.mp4?csf=1&web=1&e=gBkv7E)
  
 - [Recording for Lecture 13](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/New%20channel%20meeting-20220222_152821-Meeting%20Recording.mp4?csf=1&web=1&e=BfC009)
+
+- [Recording for Lecture 14](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220224_153214-Meeting%20Recording.mp4?csf=1&web=1&e=Vjbf8V)
 
 ### Reading material Parts 1 and 2
 
