@@ -7,7 +7,7 @@ Contents:
 
 For a constant-velocity medium, we can extrapolate a wavefield at depth $z$ to depth $z+\Delta z$ via a simple phase shift in the $f-k$ domain:
 
-$ u(\omega,k,z + \Delta z) = u(\omega,k,z)\exp[\imath\Delta z\sqrt(\omega^2/v^2 - k^2)]$
+$u(\omega,k,z + \Delta z) = u(\omega,k,z)\exp[\imath\Delta z\sqrt{\omega^2/v^2 - k^2}]$
 
 To illustrate this, we generate a source wavefield in the $t-x$ domain and extrapolate it. First, let's define an impulsive source.
 
@@ -197,8 +197,8 @@ Load the zero-offset `data data1_zero.segy` and define the source, receiver and 
 using SegyIO
 
 # Dowload and adapt path
-run(`wget https://www.dropbox.com/s/7otrsjstdlrk5k4/data1_zo.segy?dl=0`)
-shot = segy_read(pwd()*"data1_zo.segy")
+run(`wget https://www.dropbox.com/s/7otrsjstdlrk5k4/data1_zo.segy`)
+shot = segy_read(pwd()*"/data1_zo.segy")
 
 shot_data = Float32.(shot.data)
 

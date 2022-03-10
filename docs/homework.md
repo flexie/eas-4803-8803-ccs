@@ -146,7 +146,7 @@ During the course you will work on the following homework assignments
 
 2. Fluid flow simulation. [Intro to julia](Assignments/introduction_to_julia.md) and [Assignment 2](Assignments/Homework2.md). Submit both jupyter notebook and a PDF file. (Due: 3:30 PM Feb 10, 2022)
 
-3. Wavefield extrapolation and migration. [Exercise 3](Assignments/Exercise3.md) (Due: 3:30 PM March 17, 2022)
+3. Wavefield extrapolation and migration. [Assignment 3](Assignments/Exercise3.md) (Due: 3:30 PM March 17, 2022)
 
 <!--
 1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md) [Exercise 1](Assignments/Exercise1.md) [[Solution]](https://www.slim.eos.ubc.ca/Teaching/EOSC454/exercise1_sol.html)
