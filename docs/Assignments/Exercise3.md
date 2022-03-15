@@ -7,7 +7,7 @@ Contents:
 
 For a constant-velocity medium, we can extrapolate a wavefield at depth $z$ to depth $z+\Delta z$ via a simple phase shift in the $f-k$ domain:
 
-$ u(\omega,k,z + \Delta z) = u(\omega,k,z)\exp[\imath\Delta z\sqrt(\omega^2/v^2 - k^2)]$
+$u(\omega,k,z + \Delta z) = u(\omega,k,z)\exp[\imath\Delta z\sqrt{\omega^2/v^2 - k^2}]$
 
 To illustrate this, we generate a source wavefield in the $t-x$ domain and extrapolate it. First, let's define an impulsive source.
 
@@ -190,14 +190,15 @@ a depth step dz and a propagation direction dir and extrapolates the input wavef
 
 
 
-Load the zero-offset `data data1_zero.segy` (in Dropbox) and define the source, receiver and time coordinates. The units of the source and receiver coordinates are in meters for this file. The data looks like this
+Load the zero-offset `data data1_zero.segy` and define the source, receiver and time coordinates. The units of the source and receiver coordinates are in meters for this file. The data looks like this
 
 
 ```julia
 using SegyIO
 
 # Dowload and adapt path
-shot = segy_read("/home/yzhang3198/Downloads/data_segy/data1_zo.segy")
+run(`wget https://www.dropbox.com/s/7otrsjstdlrk5k4/data1_zo.segy`)
+shot = segy_read(pwd()*"/data1_zo.segy")
 
 shot_data = Float32.(shot.data)
 
@@ -336,11 +337,12 @@ title("correct velocity")
 # Prestack migration
 We can also create an image by extrapolating the source wavefields and the data and correlating them at different depth levels.
 
-Read the data `data_ex3.segy` (in Dropbox)
+Read the data `data_ex3.segy`
 
 
 ```julia
-block = segy_read("/home/yzhang3198/Downloads/data_segy/data_ex3.segy")
+run(`wget https://www.dropbox.com/s/hotb48jaf3ksve5/data_ex3.segy`)
+block = segy_read(pwd()*"/data_ex3.segy")
 
 sx = get_header(block, "SourceX", scale=false)
 rx = get_header(block, "GroupX", scale=false)
@@ -516,9 +518,4 @@ function mig_extrap(data, t, xr, xs, z, v)
     
     return image
 end
-```
-
-
-```julia
-
 ```
