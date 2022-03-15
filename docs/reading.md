@@ -8,7 +8,7 @@
     - [Basics Seismic Imaging 3](https://www.dropbox.com/s/y70u0apow90f4wt/3-Lecture_CCS_basics_3.pdf?dl=0)
 - Part 4 - Basics Migration
     - [Migration 1](https://www.dropbox.com/s/u6bts29f7g5lqpt/4-Lecture_migration_1.pdf?dl=0)
-    - [Migration 2](https://www.dropbox.com/s/mlxbxnfr85brspc/4-Lecture_migration_2.pdf?dl=0)
+    - [Migration 2](https://www.dropbox.com/s/d9ple02tnbgdif3/4-Lecture_migration_2.pdf?dl=0)
 - Part 4 - Basics Seismic Data Acquisition
     - [Acquisition 1](https://www.dropbox.com/s/mcy8sfwl40rn74p/5-Lecture_acquisition_1.pdf?dl=0)
 
@@ -47,7 +47,7 @@
 
 - [Recording Lecture 15](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220303_153323-Meeting%20Recording.mp4?csf=1&web=1&e=ndQSlx)
 
-- [Recording Lecture 16]()
+- [Recording Lecture 16](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220310_155153-Meeting%20Recording.mp4?csf=1&web=1&e=ZpTslw)
  
 ### Reading material Parts 1 and 2
 
