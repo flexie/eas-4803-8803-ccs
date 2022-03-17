@@ -9,8 +9,11 @@
 - Part 4 - Basics Migration
     - [Migration 1](https://www.dropbox.com/s/u6bts29f7g5lqpt/4-Lecture_migration_1.pdf?dl=0)
     - [Migration 2](https://www.dropbox.com/s/d9ple02tnbgdif3/4-Lecture_migration_2.pdf?dl=0)
-- Part 4 - Basics Seismic Data Acquisition
-    - [Acquisition 1](https://www.dropbox.com/s/mcy8sfwl40rn74p/5-Lecture_acquisition_1.pdf?dl=0)
+- Part 5 - [Basics Seismic Data Acquisition](https://www.dropbox.com/s/mcy8sfwl40rn74p/5-Lecture_acquisition_1.pdf?dl=0)
+- Part 6 - [Basics Inverse Problems](https://www.dropbox.com/s/hh7w3okba4mrkh5/6-Lecture_CCS-inversion_intro.pdf?dl=0)
+- Part 7 - Seismic Data Acquisition with Compressive Sensing
+    - [Basics Compressive Sensing](https://www.dropbox.com/s/8pqfputkzaedp39/7-Lecture_CCS-intro-CS.pdf?dl=0)
+    - [Timelape Compressive Sensing](https://www.dropbox.com/s/19pe0b4idxuoriv/7-Lecture_CCS-time-lapse-CS.pdf?dl=0)
 
 ### Recordings lectures
 
@@ -49,6 +52,8 @@
 
 - [Recording Lecture 16](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220310_155153-Meeting%20Recording.mp4?csf=1&web=1&e=ZpTslw)
  
+- [Recording Lecture 16](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220315_154722-Meeting%20Recording.mp4?csf=1&web=1&e=Jy79Al)
+
 ### Reading material Parts 1 and 2
 
 - From the main text by Ringrose[@ringrose2020store] read Chapter 1 and Chapter 2 until section 2.3, which was discussed during Lecture 1. 
