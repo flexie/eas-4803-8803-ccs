@@ -1,4 +1,4 @@
-# Exercise 3: wavefield extrapolation and migration
+# Homework 3: wavefield extrapolation and migration
 Contents:
  - Wavefield extrapolation
  - Zero-offset migration

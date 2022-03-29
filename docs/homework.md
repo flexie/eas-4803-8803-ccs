@@ -148,6 +148,8 @@ During the course you will work on the following homework assignments
 
 3. Wavefield extrapolation and migration. [Assignment 3](Assignments/Exercise3.md) (Due: 3:30 PM March 29, 2022)
 
+4. Seismic imaging with sparsity-promoting least-squares migration. [Assignment 4](Assignments/Exercise7.md) (Due: 3:30 PM April 4, 2022)
+
 <!--
 1. A first look at seismic data. [Intro to julia](Assignments/introduction_to_julia.md) [Exercise 1](Assignments/Exercise1.md) [[Solution]](https://www.slim.eos.ubc.ca/Teaching/EOSC454/exercise1_sol.html)
 
