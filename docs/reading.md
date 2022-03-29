@@ -54,6 +54,8 @@
  
 - [Recording Lecture 17](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220315_154722-Meeting%20Recording.mp4?csf=1&web=1&e=Jy79Al)
 
+- [Recording Lecture 18](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220317_153126-Meeting%20Recording.mp4?csf=1&web=1&e=OMmoZM)
+
 ### Reading material Parts 1 and 2
 
 - From the main text by Ringrose[@ringrose2020store] read Chapter 1 and Chapter 2 until section 2.3, which was discussed during Lecture 1. 
