@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Exercise 7 : Seismic imaging - Seismic Monitoring CCS</title>
+        <title>Homework 4 : Seismic imaging - Seismic Monitoring CCS</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -74,9 +74,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#exercise-7-seismic-imaging" class="nav-link">Exercise 7 : Seismic imaging</a>
+            <li class="nav-item" data-level="1"><a href="#homework-4-seismic-imaging" class="nav-link">Homework 4 : Seismic imaging</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#set-up-the-experiment" class="nav-link">Set up the experiment</a>
+            <li class="nav-item" data-level="2"><a href="#lets-start" class="nav-link">Let's start!</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -84,19 +84,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#task-plot-a-single-shot-record-of-dobs-and-dobs0-choose-the-same-source-what-do-you-see-in-the-shot-record-if-there-are-a-couple-of-events-try-to-match-them-up-with-the-corresponding-reflectors" class="nav-link">Task: plot a single shot record of dobs and dobs0. Choose the same source. What do you see in the shot record? If there are a couple of events, try to match them up with the corresponding reflectors.</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#task-do-the-same-comparison-of-dlin-and-dobs-dobs0-what-do-you-see-why-do-you-observe-this-theoretically-think-about-math" class="nav-link">Task: do the same comparison of dlin and dobs-dobs0. What do you see? Why do you observe this theoretically (think about math)?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#reverse-time-migration-rtm" class="nav-link">Reverse time migration (RTM)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#task-compare-rtm-results-w-and-wo-isic-what-do-you-see-remember-again-to-clip-the-vminvmax-to-see-all-the-events-in-the-images" class="nav-link">Task: compare RTM results w/ and w/o ISIC, what do you see? Remember again to clip the vmin/vmax to see all the events in the images.</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -104,23 +92,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#task-compare-ls-rtm-result-with-the-previous-rtm-result-what-do-you-see" class="nav-link">Task: compare LS-RTM result with the previous RTM result, what do you see?</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#sparsity-promoting-least-squares-reverse-time-migration-spls-rtm" class="nav-link">Sparsity-promoting least-squares reverse time migration (SPLS-RTM)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#task-compare-the-image-from-lsqr-and-linearized-bregman-what-do-you-see-remember-again-about-clipping" class="nav-link">Task: compare the image from LSQR and linearized Bregman. What do you see? Remember again about clipping</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#task-the-images-recovered-above-are-focusing-only-in-the-central-region-why-hint-check-sourcereceiver-locations-how-can-we-get-a-full-illumination-of-the-image-make-experiments-to-verify" class="nav-link">Task: the images recovered above are focusing only in the central region. Why? (Hint: check source/receiver locations) How can we get a full illumination of the image? Make experiments to verify.</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#task-change-acquisition-to-be-transmission-eg-put-sources-as-a-vertical-line-on-the-left-receivers-on-the-right-show-what-rtm-image-looks-like-is-it-the-same-as-you-got-from-the-reflective-seismic" class="nav-link">Task: change acquisition to be transmission -- e.g. put sources as a vertical line on the left, receivers on the right. Show what RTM image looks like. Is it the same as you got from the reflective seismic?</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -131,9 +103,9 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="exercise-7-seismic-imaging">Exercise 7 : Seismic imaging</h1>
+<h1 id="homework-4-seismic-imaging">Homework 4 : Seismic imaging</h1>
 <p>In this exercise, we conduct a small 2D seismic imaging experiment on a 4-layer model example with <a href="https://github.com/slimgroup/JUDI.jl">JUDI</a>. We suggest you use a Docker image to run the experiment so that software packages are properly installed. To use the docker image, first install docker. Then, in the terminal, do </p>
-<pre><code class="language-bash">docker run -p 8888:8888 ddjj1118/judi_eas_project:v4.0
+<pre><code class="language-bash">docker run -p 8888:8888 ziyiyin97/ccs-env:v4.4
 </code></pre>
 <p>Running this command will produce an output that looks like</p>
 <pre><code>
@@ -144,23 +116,27 @@
 </code></pre>
 <p>Copy paste the URL in your browser and replace <code>(af637030c092 or 127.0.0.1)</code> by <code>localhost</code>.
 You will then be directed to a jupyter folder that contains the notebooks for the projects.</p>
-<p>First, make sure we have the latest version of <a href="https://www.devitoproject.org">Devito</a> installed. You can do this by click NEW, then go for TERMINAL in the browser with jupyter folder, then do</p>
-<pre><code class="language-bash">pip install devito==4.3
-</code></pre>
-<p>Then, we can create a new julia script and run the experiment in it.</p>
-<h2 id="set-up-the-experiment">Set up the experiment</h2>
-<pre><code class="language-julia">## First do using Pkg; Pkg.add(xxx); Pkg.update(xxx) to make sure they are installed and in the latest version
+<p>Then, we can create a new julia script and run the experiment in it. A couple of things before we go into the details:</p>
+<h3 id="1-try-to-give-your-interpretation-to-every-figure-you-plot-what-is-each-event-in-the-figure">1. Try to give your interpretation to every figure you plot. What is each event in the figure?</h3>
+<h3 id="2-plotting-is-hard-when-you-make-plots-make-sure-you-use-the-correct-labels-and-units-so-that-images-are-in-meters-data-is-in-seconds-also-make-sure-you-clip-the-image-by-vmin-and-vmax-keywords-in-imshow-function-so-that-you-see-all-the-events-in-the-image">2. Plotting is hard. When you make plots, make sure you use the correct labels and units so that images are in meters, data is in seconds. Also make sure you clip the image by <code>vmin</code> and <code>vmax</code> keywords in <code>imshow</code> function so that you see all the events in the image.</h3>
+<h3 id="3-to-plot-seismic-data-and-images-eg-rtm-we-always-put-vmin-vmax-so-that-0-is-at-the-center-in-your-colorscale-generally-we-use-cmapseismic-to-plot-seismic-data-cmapgreys-to-plot-seismic-images">3. To plot seismic data and images (e.g. RTM), we always put <code>vmin = -vmax</code> so that <span class="arithmatex">\(0\)</span> is at the center in your colorscale. Generally, we use <code>cmap="seismic"</code> to plot seismic data, <code>cmap="Greys"</code> to plot seismic images.</h3>
+<h2 id="lets-start">Let's start!</h2>
+<p>First we load the packages as usual.</p>
+<pre><code class="language-julia">## First do using Pkg; Pkg.add(xxx) in case any package is not installed yet
 using JUDI, PyPlot, Images, JOLI, IterativeSolvers, LinearAlgebra, Printf, Statistics
 </code></pre>
-<p>Here, we set up a <code>4</code>-layer model, where the velocities in each layer are <code>1.5/2.5/3/3.5</code> km/s. We often refer the first layer as the water layer/column in marine acquisition.</p>
+<p>Here, we set up a <span class="arithmatex">\(4\)</span>-layer model. The velocities in each layer are <span class="arithmatex">\(1.5/2.5/3/3.5\)</span> km/s. We often call the first layer as the water layer/column in marine acquisition and assume to know its depth.</p>
 <pre><code class="language-julia"># number of gridpoints
 n = (201, 101)
 
 # Grid spacing
-d = (10.0, 10.0)
+d = (10f0, 10f0) # in [m]
 
 # Origin
-o = (0., 0.)
+o = (0f0, 0f0) # in [m]
+
+# Extent
+extent = (o[1], o[1]+(n[1]-1)*d[1], o[2]+(n[2]-1)*d[2], o[2])   # in [m]
 
 # Velocity [km/s]
 v = ones(Float32,n) .+ 0.5f0
@@ -168,36 +144,39 @@ v[:,20:50] .= 2.5f0
 v[:,51:71] .= 3f0
 v[:,71:end] .= 3.5f0
 </code></pre>
-<p>Wave-equation simulations in JUDI are based on squared slowness <code>m</code>. Also, we make up a background model <code>m0</code> which is a smoothed version of the ground truth one. To make things simple, we assume to know the exact depth of ocean bottom and keep the water column fixed in the background model. The <code>dm</code>, as the difference of <code>m</code> and <code>m0</code>, only contains the sharp reflectors.</p>
+<p>Wave-equation simulations in JUDI are parameterized by squared slowness <span class="arithmatex">\(\mathbf{m}\)</span>. For migration, we make up a background model <span class="arithmatex">\(\mathbf{m}_0\)</span> as a smoothed version of the ground truth one. To make things simple, we assume to use the exact water layer in the background model. The squared slowness perturbation <span class="arithmatex">\(\delta\mathbf{m}\)</span>, as the difference of <span class="arithmatex">\(\mathbf{m}\)</span> and <span class="arithmatex">\(\mathbf{m}_0\)</span>, only contains the sharp reflectors.</p>
 <pre><code class="language-julia"># Slowness squared [s^2/km^2]
 m = (1f0 ./ v).^2
-m0 = convert(Array{Float32,2},imfilter(m, Kernel.gaussian(2)))
-m0[:,1:19] = m[:,1:19]
+m0 = deepcopy(m)
+m0[:,20:end] = convert(Array{Float32,2},imfilter(m[:,20:end], Kernel.gaussian(5)))  # smooth the true velocity to get m0
 dm = vec(m - m0)
 
-figure();
+figure(figsize=(20,12));
 subplot(1,3,1)
-imshow(reshape(m,n)');title(&quot;m&quot;)
+imshow(reshape(m,n)', extent=extent, interpolation=&quot;none&quot;, cmap=&quot;jet&quot;);title(&quot;m&quot;)
+xlabel(&quot;X [m]&quot;); ylabel(&quot;Z [m]&quot;);
 subplot(1,3,2)
-imshow(reshape(m0,n)');title(&quot;m0&quot;)
+imshow(reshape(m0,n)', extent=extent, interpolation=&quot;none&quot;, cmap=&quot;jet&quot;);title(&quot;m0&quot;)
+xlabel(&quot;X [m]&quot;); ylabel(&quot;Z [m]&quot;);
 subplot(1,3,3)
-imshow(reshape(dm,n)',cmap=&quot;Greys&quot;);title(&quot;dm&quot;)
+imshow(reshape(dm,n)', extent=extent, interpolation=&quot;none&quot;,cmap=&quot;Greys&quot;);title(&quot;dm&quot;)
+xlabel(&quot;X [m]&quot;); ylabel(&quot;Z [m]&quot;);
 </code></pre>
-<p><code>m</code> and <code>m0</code> are stored in <code>model</code> structure in JUDI, with physical information.</p>
+<p>The goal of seismic imaging/migration is to acquire this <span class="arithmatex">\(\delta\mathbf{m}\)</span> from seismic data. To run a seismic imaging experiment on the aforementioned model, let's start by generating the seismic data.</p>
 <pre><code class="language-julia">model0 = Model(n, d, o, m0; nb = 80)
 model = Model(n, d, o, m; nb = 80)
 </code></pre>
-<p>We set up the source geometry and receiver geometry as below. Simulations are in 2D so <code>y</code>-direction is always <code>0</code>. The sources are assumed to fire one-by-one while receivers are fixed.</p>
-<pre><code class="language-julia">
-nsrc = 8 # num of sources
-xsrc = convertToCell(range(900f0, stop=1100f0, length=nsrc)) # in [m]
-ysrc = convertToCell(range(0f0, stop=0f0, length=nsrc)) # in [m]
-zsrc = convertToCell(range(6f0, stop=6f0, length=nsrc)) # in [m]
+<p>Here, <span class="arithmatex">\(\mathbf{m}\)</span> and <span class="arithmatex">\(\mathbf{m}_0\)</span> are stored in <code>model</code> structure in JUDI, with metadata (e.g. number of grid points, dimension, spacing etc). We then set up the source geometry and receiver geometry as below. Notice that the numerical simulations here are in 2D, so <span class="arithmatex">\(y\)</span>-direction is always <span class="arithmatex">\(0\)</span>.</p>
+<pre><code class="language-julia">nsrc = 8 # num of sources
+xsrc = range(900f0, stop=1100f0, length=nsrc) # in [m]
+ysrc = range(0f0, stop=0f0, length=nsrc) # in [m]
+zsrc = range(6f0, stop=6f0, length=nsrc) # in [m]
 
-timeS = 1000f0 # recording time [ms]
+timeS = 1000f0 # source injection time [ms]
 dtS = 1f0 # time sampling [ms]
+ntS = Int(timeS/dtS) + 1    # number of time samples
 
-srcGeometry = Geometry(xsrc,ysrc,zsrc; dt=dtS, t=timeS)
+srcGeometry = Geometry(convertToCell(xsrc),convertToCell(ysrc),convertToCell(zsrc); dt=dtS, t=timeS)
 
 nrec = 100 # num of receivers
 xrec = range(d[1], stop=(n[1]-1)*d[1], length=nrec) # in [m]
@@ -206,60 +185,55 @@ zrec = range(10f0, stop=10f0, length=nrec)  # in [m]
 
 timeR = 1000f0 # recording time [ms]
 dtR = 1f0 # time sampling [ms]
+ntR = Int(timeR/dtR) + 1    # number of time samples
 
 recGeometry = Geometry(xrec,yrec,zrec;dt=dtR,t=timeR, nsrc=nsrc)
-
 </code></pre>
 <p>Set up the source with Ricker wavelet</p>
-<pre><code class="language-julia">
-f0 = 0.02f0  # 20 Hz wavelet
+<pre><code class="language-julia">f0 = 0.015f0  # 15 Hz wavelet
 wavelet = ricker_wavelet(timeS, dtS, f0)
-q = judiVector(srcGeometry, wavelet)
-
+q = judiVector(srcGeometry, wavelet)    # source
 </code></pre>
 <p>Set up computational time step</p>
-<pre><code class="language-julia">
-# Set up info structure for linear operators
+<pre><code class="language-julia"># Set up info structure for linear operators
 ntComp = get_computational_nt(srcGeometry, recGeometry, model)
 info = Info(prod(n), nsrc, ntComp)
-
 </code></pre>
-<p>Set up forward modeling operators in ground truth velocity, background velocity, and migration operator</p>
-<pre><code class="language-julia">F = judiModeling(info, model, srcGeometry, recGeometry) # forward modeling w/ true model
-F0 = judiModeling(info, model0, srcGeometry, recGeometry) # forward modeling w/ background model
+<p>Set up forward modeling operators in ground truth velocity, background velocity, and migration operator --- these are linear operators!!</p>
+<pre><code class="language-julia">F = judiModeling(info, model, srcGeometry, recGeometry; options=Options(isic=true)) # forward modeling w/ true model
+F0 = judiModeling(info, model0, srcGeometry, recGeometry; options=Options(isic=true)) # forward modeling w/ background model
 J = judiJacobian(F0,q) # demigration operator (adjoint of J is migration)
 </code></pre>
+<h3 id="task-please-plot-the-sourcesreceivers-overlaying-on-the-true-velocity-model-use-scatter-to-plot-scatter-points-in-an-image-where-are-the-sources-and-receivers"><em>Task: please plot the sources/receivers overlaying on the true velocity model. Use <code>scatter</code> to plot scatter points in an image. Where are the sources and receivers?</em></h3>
 <h2 id="generate-data">Generate data</h2>
 <p>Generate data in ground truth velocity and background velocity</p>
 <pre><code class="language-julia">dobs = F*q
 dobs0 = F0*q
 </code></pre>
-<h2 id="task-plot-a-single-shot-record-of-dobs-and-dobs0-choose-the-same-source-what-do-you-see-in-the-shot-record-if-there-are-a-couple-of-events-try-to-match-them-up-with-the-corresponding-reflectors"><em>Task: plot a single shot record of <code>dobs</code> and <code>dobs0</code>. Choose the same source. What do you see in the shot record? If there are a couple of events, try to match them up with the corresponding reflectors.</em></h2>
+<h3 id="task-plot-a-single-shot-record-of-dobs-and-dobs0-choose-the-same-source-what-do-you-see-in-the-shot-record-if-there-are-a-couple-of-events-try-to-match-them-up-with-the-corresponding-reflectors"><em>Task: plot a single shot record of <code>dobs</code> and <code>dobs0</code>. Choose the same source. What do you see in the shot record? If there are a couple of events, try to match them up with the corresponding reflectors.</em></h3>
 <pre><code class="language-julia"># hint: seismic data is as a judiVector
-# you can do this by figure();imshow(dobs.data[1],vmin=-0.02*norm(dobs.data[1],Inf),cmap=&quot;seismic&quot;,vmax=0.02*norm(dobs.data[1],Inf),aspect=&quot;auto&quot;)
+# you can access its value by, e.g.
+
+figure(figsize=(20,12));imshow(dobs.data[1],extent=(1, nrec, (ntR-1)*dtR, 0f0), vmin=-0.02*norm(dobs.data[1],Inf),cmap=&quot;seismic&quot;,vmax=0.02*norm(dobs.data[1],Inf),aspect=&quot;auto&quot;)
+xlabel(&quot;receiver no.&quot;);ylabel(&quot;[ms]&quot;);
+
 # This plots the shot record in correct velocity generated by the 1st source
-# IMPORTANT: always adjust vmin, vmax, aspect so that we can see the events clearly
 </code></pre>
 <p>You can also generate a linearized shot record by</p>
 <pre><code class="language-julia">dlin = J*dm
 </code></pre>
-<h2 id="task-do-the-same-comparison-of-dlin-and-dobs-dobs0-what-do-you-see-why-do-you-observe-this-theoretically-think-about-math"><em>Task: do the same comparison of <code>dlin</code> and <code>dobs-dobs0</code>. What do you see? Why do you observe this theoretically (think about math)?</em></h2>
+<h3 id="task-plot-a-shot-record-from-dlin-and-dobs-dobs0-what-do-you-see-why-do-you-observe-this-theoretically-think-about-math"><em>Task: plot a shot record from <code>dlin</code> and <code>dobs-dobs0</code>. What do you see? Why do you observe this theoretically (think about math)?</em></h3>
 <h2 id="reverse-time-migration-rtm">Reverse time migration (RTM)</h2>
-<p>From now on, we will only focusing on migrating the linearized data for simplicity. First, we can try reverse time migration by</p>
-<pre><code class="language-julia">rtm1 = J'*dlin
+<p>From now on, we will only focusing on imaging the linearized data for simplicity. First, we can try reverse time migration by</p>
+<pre><code class="language-julia">rtm = J'*dlin
 </code></pre>
-<p>To make the RTM image cleaner and with higher quality, <a href="https://slim.gatech.edu/Publications/Public/Conferences/EAGE/2017/witte2017EAGEspl/witte2017EAGEspl.html">Witte et al</a> developed an inverse-scattering imaging condition (ISIC), which has been incorporated in JUDI.</p>
-<pre><code class="language-julia">J.options.isic = true
-rtm2 = J'*dlin
-</code></pre>
-<h2 id="task-compare-rtm-results-w-and-wo-isic-what-do-you-see-remember-again-to-clip-the-vminvmax-to-see-all-the-events-in-the-images"><em>Task: compare RTM results w/ and w/o ISIC, what do you see? Remember again to clip the vmin/vmax to see all the events in the images.</em></h2>
-<pre><code class="language-julia"># hint: rtm1/rtm2 are PhysicalParameters. Do rtm1.data, rtm2.data to access the value. Again take care of vmin, vmax, aspect of plotting.
+<h3 id="task-compare-rtm-results-w-the-correct-squared-slowness-perturbation-dm-what-do-you-see-and-what-is-your-interpretation-on-the-result"><em>Task: compare RTM results w/ the correct squared slowness perturbation <code>dm</code>, what do you see and what is your interpretation on the result?</em></h3>
+<pre><code class="language-julia"># hint: rtm is not a matrix, but a PhysicalParameters (a data structure). Do rtm.data to access the value. Again take care of vmin, vmax, aspect of plotting.
 </code></pre>
 <h2 id="least-squares-reverse-time-migration-ls-rtm">Least-squares reverse time migration (LS-RTM)</h2>
 <p>Seismic imaging researchers are not always satisfied with RTM. Seismic imaging basically solves the optimization problem</p>
-<pre><code class="language-math">\min_{\mathbf{\delta m}} \frac{1}{2}\sum_{i=1}^{n_s}\|\mathcal{J}_i\mathbf{\delta m} - \mathbf{\delta d}\|_2^2
-</code></pre>
-<p>where RTM is only taking a full gradient of the objective w.r.t. <code>\delta m</code>. To get better images, we can minimize the objective by LSQR and apply a right preconditioner</p>
+<p><span class="arithmatex">\(\min_{\mathbf{\delta m}} \|\mathbf{J}\mathbf{\delta m} - \mathbf{\delta d}\|_2^2\)</span></p>
+<p>where RTM is only taking a full gradient of the objective w.r.t. <span class="arithmatex">\(\delta \mathbf{m}\)</span>. To get better images, we can minimize the objective by LSQR and apply a right preconditioner</p>
 <pre><code class="language-julia">
 # Right Preconditioner
 Tm = judiTopmute(model0.n, 19, 2)  # Mute water column
@@ -272,34 +246,15 @@ x1 = 0f0 .* model0.m
 
 lsqr!(x1,J*Mr,dlin;maxiter=2,atol=0f0,verbose=true)
 </code></pre>
-<p>The final solution is given by <code>Mr*x1</code> (<code>Mr</code> is a right preconditioner so we are actually minimizing <code>\frac{1}{2}\|\mathcal{J}\mathbf{M_r}\mathbf{x}- \mathbf{\delta d}\|_2^2</code>)</p>
-<h2 id="task-compare-ls-rtm-result-with-the-previous-rtm-result-what-do-you-see"><em>Task: compare LS-RTM result with the previous RTM result, what do you see?</em></h2>
+<p>The final solution is given by <code>Mr*x1</code> (<code>Mr</code> is a right preconditioner so we are actually solving <span class="arithmatex">\(\min_{\mathbf{x}}\|\mathbf{J}\mathbf{M}_r\mathbf{x}- \mathbf{\delta d}\|_2^2\)</span>)</p>
+<h3 id="task-compare-ls-rtm-result-with-the-previous-rtm-result-what-do-you-see"><em>Task: compare LS-RTM result with the previous RTM result, what do you see?</em></h3>
 <h2 id="sparsity-promoting-least-squares-reverse-time-migration-spls-rtm">Sparsity-promoting least-squares reverse time migration (SPLS-RTM)</h2>
 <p>The start-of-the-art imaging technique is to do LS-RTM while promoting sparsity of solution in Curvelet domain, see <a href="https://slim.gatech.edu/content/compressive-least-squares-migration-fly-fourier-transforms">Witte et al</a>. This can be achieved by linearized Bregman iterations, as shown below</p>
-<pre><code class="language-julia">
-# Soft thresholding functions and Curvelet transform
+<pre><code class="language-julia"># Soft thresholding functions and Curvelet transform
 soft_thresholding(x::Array{Float64}, lambda) = sign.(x) .* max.(abs.(x) .- convert(Float64, lambda), 0.0)
 soft_thresholding(x::Array{Float32}, lambda) = sign.(x) .* max.(abs.(x) .- convert(Float32, lambda), 0f0)
 
-n = model0.n
-C0 = joCurvelet2D(n[1], 2*n[2]; zero_finest = false, DDT = Float32, RDT = Float64)
-
-function C_fwd(im, C, n)
-    im = hcat(reshape(im, n), reshape(im, n)[:, end:-1:1])
-    coeffs = C*vec(im)
-    return coeffs
-end
-
-function C_adj(coeffs, C, n)
-    im = reshape(C'*coeffs, n[1], 2*n[2])
-    return vec(im[:, 1:n[2]] .+ im[:, end:-1:n[2]+1])
-end
-
-C = joLinearFunctionFwd_T(size(C0, 1), n[1]*n[2],
-                          x -&gt; C_fwd(x, C0, n),
-                          b -&gt; C_adj(b, C0, n),
-                          Float32,Float64, name=&quot;Cmirrorext&quot;)
-
+C = joCurvelet2D(n[1], n[2]; zero_finest = false, DDT = Float32, RDT = Float64)
 
 src_list = Set(collect(1:nsrc))
 batchsize = 2
@@ -316,7 +271,6 @@ for j = 1:niter
     length(src_list) &lt; batchsize &amp;&amp; (global src_list = Set(collect(1:nsrc)))
     i = [pop!(src_list) for b=1:batchsize]
     println(&quot;LS-RTM Iteration: $(j), imaging sources $(i)&quot;)
-    flush(Base.stdout)
 
     residual = J[i]*Mr*x2-dlin[i]
     phi = 0.5 * norm(residual)^2
@@ -328,18 +282,18 @@ for j = 1:niter
     # Update variables and save snapshot
     global z -= t*g
     C_z = C*z
-    (j==1) &amp;&amp; (global lambda = quantile(abs.(C_z), .95))   # estimate thresholding parameter in 1st iteration
+    (j==1) &amp;&amp; (global lambda = quantile(abs.(C_z), .6))   # estimate thresholding parameter in 1st iteration
     global x2 = adjoint(C)*soft_thresholding(C_z, lambda)
 
     @printf(&quot;At iteration %d function value is %2.2e and step length is %2.2e \n&quot;, j, phi, t)
     @printf(&quot;Lambda is %2.2e \n&quot;, lambda)
 end
-
 </code></pre>
 <p>The solution is given by <code>Mr*x2</code>.</p>
-<h2 id="task-compare-the-image-from-lsqr-and-linearized-bregman-what-do-you-see-remember-again-about-clipping"><em>Task: compare the image from LSQR and linearized Bregman. What do you see? Remember again about clipping</em></h2>
-<h2 id="task-the-images-recovered-above-are-focusing-only-in-the-central-region-why-hint-check-sourcereceiver-locations-how-can-we-get-a-full-illumination-of-the-image-make-experiments-to-verify"><em>Task: the images recovered above are focusing only in the central region. Why? (Hint: check source/receiver locations) How can we get a full illumination of the image? Make experiments to verify.</em></h2>
-<h2 id="task-change-acquisition-to-be-transmission-eg-put-sources-as-a-vertical-line-on-the-left-receivers-on-the-right-show-what-rtm-image-looks-like-is-it-the-same-as-you-got-from-the-reflective-seismic"><em>Task: change acquisition to be transmission -- e.g. put sources as a vertical line on the left, receivers on the right. Show what RTM image looks like. Is it the same as you got from the reflective seismic?</em></h2></div>
+<h3 id="task-try-to-explain-what-every-line-in-the-for-loop-does-ie-what-is-it-calculating-you-can-also-refer-to-algorithm-2-in-this-paper-for-more-detailsexplanations-if-you-have-any-question-let-francis-know"><em>Task: try to explain what every line in the for-loop does, i.e. what is it calculating. You can also refer to Algorithm 2 in this <a href="https://slim.gatech.edu/Publications/Public/Journals/Geophysics/2019/witte2018cls/witte2018cls.pdf">paper</a> for more details/explanations. If you have any question, let Francis know : )</em></h3>
+<h3 id="task-juxtapose-4-images-the-true-dm-the-rtm-result-the-ls-rtm-result-from-lsqr-the-sparsity-promoting-ls-rtm-from-linearized-bregman-what-do-you-see-remember-our-goal-is-to-get-an-image-that-is-similar-to-the-true-dm"><em>Task: Juxtapose 4 images: the true <code>dm</code>, the RTM result, the LS-RTM result from LSQR, the sparsity-promoting LS-RTM from Linearized Bregman. What do you see? Remember, our goal is to get an image that is similar to the true <code>dm</code>.</em></h3>
+<h3 id="task-the-seismic-images-except-for-the-true-dm-above-are-focusing-mainly-in-the-central-region-why-hint-check-sourcereceiver-locations-how-can-we-get-a-full-illumination-of-the-image-make-experiments-to-verify"><em>Task: The seismic images (except for the true <code>dm</code>) above are focusing mainly in the central region. Why? (Hint: check source/receiver locations) How can we get a full illumination of the image? Make experiments to verify.</em></h3>
+<h3 id="task-change-acquisition-to-be-transmission-eg-put-sources-as-a-vertical-line-on-the-left-receivers-on-the-right-show-what-rtm-image-looks-like-describe-your-observations-and-try-to-interpret-the-result-is-it-the-same-as-you-got-from-the-reflection-geometry"><em>Task: change acquisition to be transmission -- e.g. put sources as a vertical line on the left, receivers on the right. Show what RTM image looks like. Describe your observations and try to interpret the result. Is it the same as you got from the reflection geometry?</em></h3></div>
             </div>
         </div>
 
