@@ -2,7 +2,7 @@
 
 # Contents
  - Linear systems
- - SPOT
+ - JOLI
  - Deconvolotion
 
 ## Linear systems
