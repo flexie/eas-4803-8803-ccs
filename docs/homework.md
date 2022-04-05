@@ -148,6 +148,8 @@ During the course you will work on the following homework assignments
 
 3. Wavefield extrapolation and migration. [Assignment 3](Assignments/Exercise3.md) (Due: 3:30 PM March 29, 2022)
 
+4. From processing to inversion I. [Assignment 4](Assignments/Exercise5.md) (Due: 3:30 PM April 12, 2022)
+
 <!--
 4. Seismic imaging with sparsity-promoting least-squares migration. [Assignment 4](Assignments/Exercise7.md) (Due: 3:30 PM April 4, 2022)
 

@@ -1,4 +1,4 @@
-# Exercise 5: From processing to inversion I
+# Assignment 4: From processing to inversion I
 
 # Contents
  - Linear systems
@@ -56,7 +56,7 @@ x = [2; 2]
 
 
 
- - Desribe two ways to define a row vector.
+ - Describe two ways to define a row vector.
 
 Now, consider the matrices
 
@@ -70,7 +70,7 @@ A3 = [3 1;1 0;2 1];
 A4 = [2 4 3; 1 3 1];
 ```
 
-# Questions
+# Tasks
 
  - Look at A1'*A1, what kind of matrix is A1? What does this mean?
  - Look at A2*[1;2;3] and A2*[3;1;4], what can you say about the matrix A2?
@@ -122,19 +122,6 @@ using JOLI
 ```julia
 F2  = joDFT(N)
 ```
-
-
-
-
-    joLinearFunction{Float64,Complex{Float64}}("joDFTp", 10, 10, getfield(JOLI, Symbol("##837#853")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}(Complex{Float64}, (10,), FFTW forward plan for 10-element array of Complex{Float64}
-    (dft-direct-10 "n2fv_10_avx2_128")), Nullable{Function}(getfield(JOLI, Symbol("##240#244")){getfield(JOLI, Symbol("##838#854")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}}(getfield(JOLI, Symbol("##838#854")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}(Float64, (10,), 0.1 * FFTW backward plan for 10-element array of Complex{Float64}
-    (dft-direct-10 "n2bv_10_avx2_128")))), Nullable{Function}(getfield(JOLI, Symbol("##838#854")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}(Float64, (10,), 0.1 * FFTW backward plan for 10-element array of Complex{Float64}
-    (dft-direct-10 "n2bv_10_avx2_128"))), Nullable{Function}(getfield(JOLI, Symbol("##241#245")){getfield(JOLI, Symbol("##837#853")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}}(getfield(JOLI, Symbol("##837#853")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}(Complex{Float64}, (10,), FFTW forward plan for 10-element array of Complex{Float64}
-    (dft-direct-10 "n2fv_10_avx2_128")))), true, Nullable{Function}(getfield(JOLI, Symbol("##839#855")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}(Float64, (10,), 0.1 * FFTW backward plan for 10-element array of Complex{Float64}
-    (dft-direct-10 "n2bv_10_avx2_128"))), Nullable{Function}(getfield(JOLI, Symbol("##242#246")){getfield(JOLI, Symbol("##840#856")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}}(getfield(JOLI, Symbol("##840#856")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}(Complex{Float64}, (10,), FFTW forward plan for 10-element array of Complex{Float64}
-    (dft-direct-10 "n2fv_10_avx2_128")))), Nullable{Function}(getfield(JOLI, Symbol("##840#856")){DataType,Tuple{Int64},FFTW.cFFTWPlan{Complex{Float64},-1,false,1}}(Complex{Float64}, (10,), FFTW forward plan for 10-element array of Complex{Float64}
-    (dft-direct-10 "n2fv_10_avx2_128"))), Nullable{Function}(getfield(JOLI, Symbol("##243#247")){getfield(JOLI, Symbol("##839#855")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}}(getfield(JOLI, Symbol("##839#855")){DataType,Tuple{Int64},AbstractFFTs.ScaledPlan{Complex{Float64},FFTW.cFFTWPlan{Complex{Float64},1,false,1},Float64}}(Float64, (10,), 0.1 * FFTW backward plan for 10-element array of Complex{Float64}
-    (dft-direct-10 "n2bv_10_avx2_128")))), true)
 
 
 
@@ -235,43 +222,9 @@ xlabel("t [s]");ylabel("w(t)");
 
 First, we consider the `forward` problem of convolving a signal, using JOLI.
 
-Perform the convolution using the usual julia commands fft, ifft and element-wise multiplication .*.
-Creat a JOLI operator to do the same. You can construct an operator to do the multiplication with the filter using joDiag.
- - Compare the results of both.
- - Compare f to g, what do you notice?
- - Assuming that your convolution operator is called C:
+### Task: Perform the convolution using the usual julia commands fft, ifft and element-wise multiplication. Name your result f1. Hint: what is convolution in frequency domain?*.
 
-Now, construct the signal f using your SPOT operator and add some noise (i.e., f = C*g + 1e-1*randn(N,1)).
-Do you think C has a null-space? If so, describe it. (Hint: look at the filter).
-Use the adjoint of C as an approximation to the inverse, what does this correspond to and what does the reconstruction look like?
- - Describe how you would invert the system.
- - Use lsqr to do it. (you might need to increase the number of iterations.)
- - Look at the signal that is predicted by your reconstruction, do you see a difference with the true signal?
-
-lsqr will give us a solution that has a small two-norm and explains the data. Alternatively, we can use another solver that will give us a spiky solution and explains the data. This solver is spgl1. Try spgl1(C,f,0,1e-2).
-
-https://github.com/slimgroup/GenSPGL.jl
-
- - Is this solution closer to the true one?
- - Look at the predicted signal for this solution, do you see a difference with the true signal? Can we really say that this is a better solution? 
-
-
-```julia
-using GenSPGL
-# Pkg.clone("https://github.com/slimgroup/GenSPGL.jl")
-```
-
-    ┌ Info: Recompiling stale cache file /home/yzhang3198/.julia/compiled/v1.2/GenSPGL/1rFbK.ji for GenSPGL [46767539-6b09-4d43-90af-09e8ecbe3fb9]
-    └ @ Base loading.jl:1240
-
-
-
-```julia
-# FFT convolution
-wf = fft(w);
-f1 = ifft(wf.*fft(g));
-```
-
+We can also create a JOLI operator to do the same. We can construct an operator to do the multiplication with the filter using joDiag.
 
 ```julia
 # JOLI operator to perform convolution.
@@ -285,56 +238,40 @@ plot(t,g);
 xlabel("t [s]");ylabel("f(t)");legend(["normal","JOLI", "g"]);
 ```
 
+### Task
+ - Compare the results of both.
+ - Compare f to g, what do you notice?
+ - Assuming that your convolution operator is called C: Do you think C has a null-space? If so, describe it. (Hint: look at the filter).
 
-![png](../img/E5_output_28_0.png)
+Now, construct the signal f using your JOLI operator and add some noise.
 
+```julia
+f = C*g + 1e-3*randn(N);
+```
 
+### Task
+Use the adjoint of C as an approximation to the inverse, i.e. approximate the adjoint of C to the observation f. what does this correspond to and what does the reconstruction look like?
+
+### Task
+Follow the script below, use lsqr to invert for g. (you might need to increase the number of iterations.)
+Look at the signal that is predicted by your reconstruction, do you see a difference with the true signal?
 
 ```julia
 #import Pkg;
 #Pkg.add("IterativeSolvers")
 # true signal
-f = C*g + 1e-3*randn(N,1);
 
 using IterativeSolvers
-gt = lsqr(C, f[:,1], damp=1e0)
+gt = lsqr(C, f, damp=1e0)
 ```
 
+lsqr will give us a solution that has a small two-norm and explains the data. Alternatively, we can use another solver that will give us a spiky solution and explains the data. This solver is spgl1. Try inversion via spgl1.
 
-
-
-    2001-element Array{Float64,1}:
-     -0.026765495455154966 
-     -0.024372501865599402 
-     -0.021812612539567004 
-     -0.019122012082909645 
-     -0.01633958529976775  
-     -0.013506068684868172 
-     -0.010663162546350744 
-     -0.00785262568153794  
-     -0.005115374697020918 
-     -0.0024906096733761057
-     -1.4986943050695442e-5
-      0.002278141689642308 
-      0.0043594058595378075
-      ⋮                    
-     -0.03560294198794437  
-     -0.03629144156849411  
-     -0.036767753819178156 
-     -0.03700653703521157  
-     -0.036986740481555466 
-     -0.03669220444200575  
-     -0.03611213956737074  
-     -0.03524147363112396  
-     -0.03408105732013286  
-     -0.032637724383350115 
-     -0.03092420523388716  
-     -0.02895889685041065  
-
-
-
+https://github.com/slimgroup/GenSPGL.jl
 
 ```julia
+using GenSPGL
+# Pkg.clone("https://github.com/slimgroup/GenSPGL.jl")
 using LinearAlgebra
 # Solve
 opts = spgOptions(optTol = 1e-10,
@@ -343,7 +280,35 @@ opts = spgOptions(optTol = 1e-10,
 #gtt, r, grads, info = spgl1(C, vec(f), tau = 0., sigma = norm(f - C*gt));
 ```
 
+### Task
+ - Is this solution closer to the true one?
+ - Look at the predicted signal for this solution, do you see a difference with the true signal? Can we really say that this is a better solution? 
+
+## 2D compressive sensing
+
+In the following experiment, we extend the 1D compressive sensing to 2D---i.e., we aim to recover a sparse image (rather than a vector). Let's first set up the ground truth vector $g$.
 
 ```julia
-GenSPGL.spgOptions(1, 1, 100000, 3, 1.0e-6, 1.0e-6, 1.0e-10, 0.0001, 1.0e-16, 100000.0, 2, Inf, false, Nullable{Bool}(), Inf, [1], false, 3, 1, 10000, false, GenSPGL.NormL1_project, GenSPGL.NormL1_primal, GenSPGL.NormL1_dual, GenSPGL.funLS, false, false, false)
+n = (64, 64);
+nn = prod(n);
+k = 200;
+g = zeros(n);
+idx1 = rand(1:n[1], k);
+idx2 = rand(1:n[1], k);
+for i = 1:k
+    g[idx1[i],idx2[i]] = randn();
+end
 ```
+
+### Task: plot $g$ by `imshow` function with colorbars. Is $g$ sparse? How many non-zero entries are in $g$?
+
+Then, let's make a forward operator $A$ by JOLI. Following what we did in 1D, we hit the ground truth vector by the matrix $A$ and add some noise to get the observation $y$. Notice that the operator $A$ works on vectorized image.
+
+```julia
+subsamp = 0.25f0 # 25% subsampling ratio
+A = joRestriction(nn, sort(randperm(nn)[1:Int(round(subsamp*nn))]))*joRomberg(n[1],n[2])
+y = A * vec(g) + 1f-3*randn(size(A,1));
+```
+
+### Task: do LSQR and SPGL1. Plot the results. Compare with each other. What do you see?
+### Task: compute the norm of the residuals from the results by LSQR and SPGL1. Which one is larger? Any conclusion from these experiments?
