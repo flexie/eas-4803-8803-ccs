@@ -305,6 +305,7 @@ end
 Then, let's make a forward operator $A$ by JOLI. Following what we did in 1D, we hit the ground truth vector by the matrix $A$ and add some noise to get the observation $y$. Notice that the operator $A$ works on vectorized image.
 
 ```julia
+using Random
 subsamp = 0.25f0 # 25% subsampling ratio
 A = joRestriction(nn, sort(randperm(nn)[1:Int(round(subsamp*nn))]))*joRomberg(n[1],n[2])
 y = A * vec(g) + 1f-3*randn(size(A,1));
