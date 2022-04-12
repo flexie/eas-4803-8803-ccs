@@ -285,7 +285,7 @@ gt = lsqr(C, f, damp=1e0)
 <p>lsqr will give us a solution that has a small two-norm and explains the data. Alternatively, we can use another solver that will give us a spiky solution and explains the data. This solver is spgl1. Try inversion via spgl1.</p>
 <p>https://github.com/slimgroup/GenSPGL.jl</p>
 <pre><code class="language-julia">using GenSPGL
-# Pkg.clone(&quot;https://github.com/slimgroup/GenSPGL.jl&quot;)
+# Pkg.add(url=&quot;https://github.com/slimgroup/GenSPGL.jl&quot;)
 using LinearAlgebra
 # Solve
 opts = spgOptions(optTol = 1e-10,
