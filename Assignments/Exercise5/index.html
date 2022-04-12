@@ -312,7 +312,8 @@ end
 </code></pre>
 <h3 id="task-plot-g-by-imshow-function-with-colorbars-is-g-sparse-how-many-non-zero-entries-are-in-g">Task: plot <span class="arithmatex">\(g\)</span> by <code>imshow</code> function with colorbars. Is <span class="arithmatex">\(g\)</span> sparse? How many non-zero entries are in <span class="arithmatex">\(g\)</span>?</h3>
 <p>Then, let's make a forward operator <span class="arithmatex">\(A\)</span> by JOLI. Following what we did in 1D, we hit the ground truth vector by the matrix <span class="arithmatex">\(A\)</span> and add some noise to get the observation <span class="arithmatex">\(y\)</span>. Notice that the operator <span class="arithmatex">\(A\)</span> works on vectorized image.</p>
-<pre><code class="language-julia">subsamp = 0.25f0 # 25% subsampling ratio
+<pre><code class="language-julia">using Random
+subsamp = 0.25f0 # 25% subsampling ratio
 A = joRestriction(nn, sort(randperm(nn)[1:Int(round(subsamp*nn))]))*joRomberg(n[1],n[2])
 y = A * vec(g) + 1f-3*randn(size(A,1));
 </code></pre>
