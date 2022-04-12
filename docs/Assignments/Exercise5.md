@@ -191,8 +191,8 @@ N = length(t);
 
 # true signal g has approx k spikes with random amplitudes
 k = 20;
-g = zeros(N,1);
-g[rand(1:N, k)] = randn(k,1);
+g = zeros(N);
+g[rand(1:N, k)] = randn(k);
 
 # filter
 w = (1 .-2*1e3*(t .-.2).^2).*exp.(-1e3*(t .-.2).^2);
