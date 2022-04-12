@@ -271,7 +271,7 @@ https://github.com/slimgroup/GenSPGL.jl
 
 ```julia
 using GenSPGL
-# Pkg.clone("https://github.com/slimgroup/GenSPGL.jl")
+# Pkg.add(url="https://github.com/slimgroup/GenSPGL.jl")
 using LinearAlgebra
 # Solve
 opts = spgOptions(optTol = 1e-10,
