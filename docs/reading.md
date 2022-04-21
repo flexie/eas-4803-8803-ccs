@@ -15,6 +15,7 @@
     - [Basics Compressive Sensing](https://www.dropbox.com/s/519mfc4tq3por3m/7-Lecture_CCS-intro-CS.pdf?dl=0)
     - [Timelape Compressive Sensing](https://www.dropbox.com/s/19pe0b4idxuoriv/7-Lecture_CCS-time-lapse-CS.pdf?dl=0)
 - Part 8 - [Full-waveform inversion and least-squares migration](https://www.dropbox.com/s/ba5txfqx05p4kvs/8_Lecture_CCS_fwi.pdf?dl=0)
+- [Review](https://www.dropbox.com/s/bblvrd65jiwqn8u/review.pdf?dl=0)
 
 ### Recordings lectures
 
