@@ -138,7 +138,7 @@ Y  = transpose(F2*copy(transpose(X)));
 </code></pre>
 <p>We can do the equivalent operation on the vectorized version of X via the Kronecker product. The formula is :</p>
 <p>$ \mathrm{vec}(AXB) = (B^T\otimes A)\mathrm{vec}(X) $.</p>
-<p>where <span class="arithmatex">\(\mathrm{vec}\)</span> vectorizes a matrix <span class="arithmatex">\(X(:)\)</span>.</p>
+<p>where $\mathrm{vec}$ vectorizes a matrix $X(:)$.</p>
 <p>Use joKron to construct a 2D fft operator that works on a vectorized version of X, X(:).
 Show that the result is the same as when using the operators F1 and F2 separately.</p>
 <pre><code class="language-julia"># 2D FFT operator

@@ -219,7 +219,7 @@ G2 = joOnes(N);
 )
 </code></pre>
 <h1 id="deconvolution">Deconvolution</h1>
-<p>We some signal <span class="arithmatex">\(f(t)\)</span> which is a convolution of some unkown signal <span class="arithmatex">\(g(t)\)</span> and a known filter <span class="arithmatex">\(w(t)\)</span>. Given <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(w\)</span> we would like to retreive <span class="arithmatex">\(g\)</span>.</p>
+<p>We some signal $f(t)$ which is a convolution of some unkown signal $g(t)$ and a known filter $w(t)$. Given $f$ and $w$ we would like to retreive $g$.</p>
 <p>For the example we use:</p>
 <pre><code class="language-julia"># time axis
 t = 0:.001:2';
@@ -299,7 +299,7 @@ opts = spgOptions(optTol = 1e-10,
 <li>Look at the predicted signal for this solution, do you see a difference with the true signal? Can we really say that this is a better solution? </li>
 </ul>
 <h2 id="2d-compressive-sensing">2D compressive sensing</h2>
-<p>In the following experiment, we extend the 1D compressive sensing to 2D---i.e., we aim to recover a sparse image (rather than a vector). Let's first set up the ground truth vector <span class="arithmatex">\(g\)</span>.</p>
+<p>In the following experiment, we extend the 1D compressive sensing to 2D---i.e., we aim to recover a sparse image (rather than a vector). Let's first set up the ground truth vector $g$.</p>
 <pre><code class="language-julia">n = (64, 64);
 nn = prod(n);
 k = 200;
@@ -310,8 +310,8 @@ for i = 1:k
     g[idx1[i],idx2[i]] = randn();
 end
 </code></pre>
-<h3 id="task-plot-g-by-imshow-function-with-colorbars-is-g-sparse-how-many-non-zero-entries-are-in-g">Task: plot <span class="arithmatex">\(g\)</span> by <code>imshow</code> function with colorbars. Is <span class="arithmatex">\(g\)</span> sparse? How many non-zero entries are in <span class="arithmatex">\(g\)</span>?</h3>
-<p>Then, let's make a forward operator <span class="arithmatex">\(A\)</span> by JOLI. Following what we did in 1D, we hit the ground truth vector by the matrix <span class="arithmatex">\(A\)</span> and add some noise to get the observation <span class="arithmatex">\(y\)</span>. Notice that the operator <span class="arithmatex">\(A\)</span> works on vectorized image.</p>
+<h3 id="task-plot-g-by-imshow-function-with-colorbars-is-g-sparse-how-many-non-zero-entries-are-in-g">Task: plot $g$ by <code>imshow</code> function with colorbars. Is $g$ sparse? How many non-zero entries are in $g$?</h3>
+<p>Then, let's make a forward operator $A$ by JOLI. Following what we did in 1D, we hit the ground truth vector by the matrix $A$ and add some noise to get the observation $y$. Notice that the operator $A$ works on vectorized image.</p>
 <pre><code class="language-julia">using Random
 subsamp = 0.25f0 # 25% subsampling ratio
 A = joRestriction(nn, sort(randperm(nn)[1:Int(round(subsamp*nn))]))*joRomberg(n[1],n[2])
