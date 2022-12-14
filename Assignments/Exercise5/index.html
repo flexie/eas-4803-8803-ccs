@@ -108,14 +108,14 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="assignment-4-from-processing-to-inversion-i">Assignment 4: From processing to inversion I</h1>
-<h1 id="contents">Contents</h1>
+<h1 id="assignment-4-from-processing-to-inversion-i">Assignment 4: From processing to inversion I<a class="headerlink" href="#assignment-4-from-processing-to-inversion-i" title="Permanent link">&para;</a></h1>
+<h1 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Linear systems</li>
 <li>JOLI</li>
 <li>Deconvolotion</li>
 </ul>
-<h2 id="linear-systems">Linear systems</h2>
+<h2 id="linear-systems">Linear systems<a class="headerlink" href="#linear-systems" title="Permanent link">&para;</a></h2>
 <p>A matrix is represented in Julia as follows</p>
 <pre><code class="language-julia">A = [1 2;3 -1]
 </code></pre>
@@ -147,7 +147,7 @@ A2 = [0 2 2;2 1 -3;1 0 -2];
 A3 = [3 1;1 0;2 1];
 A4 = [2 4 3; 1 3 1];
 </code></pre>
-<h1 id="tasks">Tasks</h1>
+<h1 id="tasks">Tasks<a class="headerlink" href="#tasks" title="Permanent link">&para;</a></h1>
 <ul>
 <li>Look at A1'*A1, what kind of matrix is A1? What does this mean?</li>
 <li>Look at A2<em>[1;2;3] and A2</em>[3;1;4], what can you say about the matrix A2?</li>
@@ -161,7 +161,7 @@ A4 = [2 4 3; 1 3 1];
 <li>find a solution of A3*x = [5;2;5], is there only one solution? What characterizes the solution you found?</li>
 <li>find a solution of A4*x = [10;5], is there only one solution? What characterizes the solution you found?</li>
 </ul>
-<h1 id="joli">JOLI</h1>
+<h1 id="joli">JOLI<a class="headerlink" href="#joli" title="Permanent link">&para;</a></h1>
 <p>https://github.com/slimgroup/JOLI.jl</p>
 <p>The JOLI toolbox gives a way to represent matrices implicitly. A nice example is the Fourier transform. In julia, the Fourier transform of a vector is given by fft(x). We can explicitly construct a matrix representing the Fourier transform as follows</p>
 <pre><code class="language-julia">using FFTW
@@ -215,7 +215,7 @@ G2 = joOnes(N);
 | G2   | 246 bytes | joMatrix{Float64,Float64} |
 )
 </code></pre>
-<h1 id="deconvolution">Deconvolution</h1>
+<h1 id="deconvolution">Deconvolution<a class="headerlink" href="#deconvolution" title="Permanent link">&para;</a></h1>
 <p>We some signal <span class="arithmatex">\(f(t)\)</span> which is a convolution of some unkown signal <span class="arithmatex">\(g(t)\)</span> and a known filter <span class="arithmatex">\(w(t)\)</span>. Given <span class="arithmatex">\(f\)</span> and <span class="arithmatex">\(w\)</span> we would like to retreive <span class="arithmatex">\(g\)</span>.</p>
 <p>For the example we use:</p>
 <pre><code class="language-julia"># time axis
@@ -246,7 +246,7 @@ xlabel(&quot;t [s]&quot;);ylabel(&quot;w(t)&quot;);
 <p><img alt="png" src="../../img/E5_output_24_1.png" /></p>
 <p><img alt="png" src="../../img/E5_output_24_2.png" /></p>
 <p>First, we consider the <code>forward</code> problem of convolving a signal, using JOLI.</p>
-<h3 id="task-perform-the-convolution-using-the-usual-julia-commands-fft-ifft-and-element-wise-multiplication-name-your-result-f1-hint-what-is-convolution-in-frequency-domain">Task: Perform the convolution using the usual julia commands fft, ifft and element-wise multiplication. Name your result f1. Hint: what is convolution in frequency domain?*.</h3>
+<h3 id="task-perform-the-convolution-using-the-usual-julia-commands-fft-ifft-and-element-wise-multiplication-name-your-result-f1-hint-what-is-convolution-in-frequency-domain">Task: Perform the convolution using the usual julia commands fft, ifft and element-wise multiplication. Name your result f1. Hint: what is convolution in frequency domain?*.<a class="headerlink" href="#task-perform-the-convolution-using-the-usual-julia-commands-fft-ifft-and-element-wise-multiplication-name-your-result-f1-hint-what-is-convolution-in-frequency-domain" title="Permanent link">&para;</a></h3>
 <p>We can also create a JOLI operator to do the same. We can construct an operator to do the multiplication with the filter using joDiag.</p>
 <pre><code class="language-julia"># JOLI operator to perform convolution.
 C = joDFT(N)'*joDiag(wf)*joDFT(N);
@@ -258,7 +258,7 @@ plot(t,f2)
 plot(t,g);
 xlabel(&quot;t [s]&quot;);ylabel(&quot;f(t)&quot;);legend([&quot;normal&quot;,&quot;JOLI&quot;, &quot;g&quot;]);
 </code></pre>
-<h3 id="task">Task</h3>
+<h3 id="task">Task<a class="headerlink" href="#task" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Compare the results of both.</li>
 <li>Compare f to g, what do you notice?</li>
@@ -267,9 +267,9 @@ xlabel(&quot;t [s]&quot;);ylabel(&quot;f(t)&quot;);legend([&quot;normal&quot;,&q
 <p>Now, construct the signal f using your JOLI operator and add some noise.</p>
 <pre><code class="language-julia">f = C*g + 1e-3*randn(N);
 </code></pre>
-<h3 id="task_1">Task</h3>
+<h3 id="task_1">Task<a class="headerlink" href="#task_1" title="Permanent link">&para;</a></h3>
 <p>Use the adjoint of C as an approximation to the inverse, i.e. approximate the adjoint of C to the observation f. what does this correspond to and what does the reconstruction look like?</p>
-<h3 id="task_2">Task</h3>
+<h3 id="task_2">Task<a class="headerlink" href="#task_2" title="Permanent link">&para;</a></h3>
 <p>Follow the script below, use lsqr to invert for g. (you might need to increase the number of iterations.)
 Look at the signal that is predicted by your reconstruction, do you see a difference with the true signal?</p>
 <pre><code class="language-julia">#import Pkg;
@@ -290,12 +290,12 @@ opts = spgOptions(optTol = 1e-10,
 
 #gtt, r, grads, info = spgl1(C, vec(f), tau = 0., sigma = norm(f - C*gt));
 </code></pre>
-<h3 id="task_3">Task</h3>
+<h3 id="task_3">Task<a class="headerlink" href="#task_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Is this solution closer to the true one?</li>
 <li>Look at the predicted signal for this solution, do you see a difference with the true signal? Can we really say that this is a better solution? </li>
 </ul>
-<h2 id="2d-compressive-sensing">2D compressive sensing</h2>
+<h2 id="2d-compressive-sensing">2D compressive sensing<a class="headerlink" href="#2d-compressive-sensing" title="Permanent link">&para;</a></h2>
 <p>In the following experiment, we extend the 1D compressive sensing to 2D---i.e., we aim to recover a sparse image (rather than a vector). Let's first set up the ground truth vector <span class="arithmatex">\(g\)</span>.</p>
 <pre><code class="language-julia">n = (64, 64);
 nn = prod(n);
@@ -307,15 +307,15 @@ for i = 1:k
     g[idx1[i],idx2[i]] = randn();
 end
 </code></pre>
-<h3 id="task-plot-g-by-imshow-function-with-colorbars-is-g-sparse-how-many-non-zero-entries-are-in-g">Task: plot <span class="arithmatex">\(g\)</span> by <code>imshow</code> function with colorbars. Is <span class="arithmatex">\(g\)</span> sparse? How many non-zero entries are in <span class="arithmatex">\(g\)</span>?</h3>
+<h3 id="task-plot-g-by-imshow-function-with-colorbars-is-g-sparse-how-many-non-zero-entries-are-in-g">Task: plot <span class="arithmatex">\(g\)</span> by <code>imshow</code> function with colorbars. Is <span class="arithmatex">\(g\)</span> sparse? How many non-zero entries are in <span class="arithmatex">\(g\)</span>?<a class="headerlink" href="#task-plot-g-by-imshow-function-with-colorbars-is-g-sparse-how-many-non-zero-entries-are-in-g" title="Permanent link">&para;</a></h3>
 <p>Then, let's make a forward operator <span class="arithmatex">\(A\)</span> by JOLI. Following what we did in 1D, we hit the ground truth vector by the matrix <span class="arithmatex">\(A\)</span> and add some noise to get the observation <span class="arithmatex">\(y\)</span>. Notice that the operator <span class="arithmatex">\(A\)</span> works on vectorized image.</p>
 <pre><code class="language-julia">using Random
 subsamp = 0.25f0 # 25% subsampling ratio
 A = joRestriction(nn, sort(randperm(nn)[1:Int(round(subsamp*nn))]))*joRomberg(n[1],n[2])
 y = A * vec(g) + 1f-3*randn(size(A,1));
 </code></pre>
-<h3 id="task-do-lsqr-and-spgl1-plot-the-results-compare-with-each-other-what-do-you-see">Task: do LSQR and SPGL1. Plot the results. Compare with each other. What do you see?</h3>
-<h3 id="task-compute-the-norm-of-the-residuals-from-the-results-by-lsqr-and-spgl1-which-one-is-larger-any-conclusion-from-these-experiments">Task: compute the norm of the residuals from the results by LSQR and SPGL1. Which one is larger? Any conclusion from these experiments?</h3></div>
+<h3 id="task-do-lsqr-and-spgl1-plot-the-results-compare-with-each-other-what-do-you-see">Task: do LSQR and SPGL1. Plot the results. Compare with each other. What do you see?<a class="headerlink" href="#task-do-lsqr-and-spgl1-plot-the-results-compare-with-each-other-what-do-you-see" title="Permanent link">&para;</a></h3>
+<h3 id="task-compute-the-norm-of-the-residuals-from-the-results-by-lsqr-and-spgl1-which-one-is-larger-any-conclusion-from-these-experiments">Task: compute the norm of the residuals from the results by LSQR and SPGL1. Which one is larger? Any conclusion from these experiments?<a class="headerlink" href="#task-compute-the-norm-of-the-residuals-from-the-results-by-lsqr-and-spgl1-which-one-is-larger-any-conclusion-from-these-experiments" title="Permanent link">&para;</a></h3></div>
             </div>
         </div>
 
