@@ -45,6 +45,7 @@ In addition to the general text [@ringrose2020store], the course will review jou
 - Papers on Sleipner [@Arts2003] [@Eiken2011] [@Furre2017] 
 - Coupling seismic to fluid flow [@li2020coupled]
 - Overview article [@Ringrose2021] and this excellent [overview paper](https://royalsociety.org/topics-policy/projects/low-carbon-energy-programme/geological-carbon-storage/) from the UK Royal Society
+- Paper on (perception of) risk [@trupp2022risk] of CCS
 
 ## Recordings lectures
 

@@ -2,86 +2,225 @@
 
 [test](https://gtvault-my.sharepoint.com/:v:/g/personal/fherrmann9_gatech_edu/ER9Qy3ISKr1FjXxRmYDbDTABbYdKlf9BUjAWMvDZKkrXDw?email=felix.herrmann%40gatech.edu) -->
 
-## Part 1 – Basics Geological Storage
+# Part 1 – Basics Geological of Carbon Storage
 
-### Motivation
+## Motivation
 
 - History fossil fuels
 - History greenhouse gas
 - Why CCS?
 - Overview CCS
-- goals
+- Goals
 
-### Geological Storage
+## Geological Storage
 
-#### Intro
+### Intro
 
-- properties CO~2~
-- capacity, injectivity, and containment
-- important terms
-- storage complex and time frame
+- Overview CCS
+- Properties CO~2~
+- Capacity, injectivity, and containment
+- Important terms/concepts
+- Storage complex and time frame
 
-#### Porosity
+### Porosity
 
-- porous media & void space
-- macroscopic properties
-- density method
-- typical porosities in clastic rocks
-- fluid saturation
- 
-##### Containment
+- Porous media & void space
+- Macroscopic properties
+- Density method
+- Typical porosities in clastic rocks
+- Fluid saturation
 
-- depth dependence rock properties
-- trapping mechanisms
-- storage security over time
-- capillary forces and trapping
+### Containment
 
-#### Surface tension
+- Depth dependence rock properties
+- Trapping mechanisms
+- Storage security over time
+- Capillary forces and trapping
 
-- surface phenomena
+### Surface tension
+
+- Surface phenomena
 - Laplace's Equation
-- solid Surfaces and Wettibility
-- capillary Pressure
-- capillary Imbibition
-- imbibition & Drainage
+- Solid Surfaces and Wettibility
+- Capillary Pressure
+- Capillary Imbibition
+- Basic trap behavior
+- Imbibition & Drainage
+- Capillary forces
+- Resisual saturation
 
-#### Flow in Porous Media
+### Flow in Porous Media
 
 - Darcy's Law
 - Posseuille Flow
 - Kozeny-Carman Equation
 - CO~2~-brine relative permeability curves
-- rock architecture at multiple scales
-- geochemical processes
+- Corey model
+-  Capillary trapping
+- Rock architecture at multiple scales
+- Geochemical processes
 - CO~2~ dissolution
- 
 
-### Calculating Storage Capacity
+## Calculating Storage Capacity
 
-- density of CO~2~
+- Density of CO~2~
 - CO~2~ emissions
-- storage capacity estimation
-- matched capacity
+- Storage capacity estimation
+- Matched capacity
 
-#### Storage Capacity Estimation
+### Storage Capacity Estimation
 
-- theoretical storage capacity
-- trapping CO~2~ as residual phase 
-- analytical approaches
-- model for CO~2~ plume
+- Theoretical storage capacity
+- Trapping CO~2~ as residual phase 
+- Analytical approaches
+- Model for CO~2~ plume
 - CO~2~ storage coefficient $C_c$
-- effect of fluid mobility
-- effect of gravity
-- effect of buoyancy on capacity
+- Effect of fluid mobility
+- Effect of gravity
+- Effect of buoyancy on capacity
 - Sleipner example
 
-#### Flow dynamics
+## Flow dynamics
 
-- flow regimes
-- flow simulations
-- static geological model
-- dynamic two-phase flow simulations
+- Flow regimes
+- Flow simulations
+- Static geological model
+- Dynamic two-phase flow simulations
 - Sleipner example
+
+### Injectivity
+- Design of a storage project
+- Calculating injectivity
+- Effects of damage near well
+- Effects of intervention
+
+## Rock mechanics
+- Elastic response to CO~2~ storage
+- Fracture gradient and hydrostatic pressure
+- Stress
+- Compressibility
+- Factors that limit storage
+- Induced seismicity
+- Observed seismicity and deformation
+- Leakage question
+
+# Part 2 – Design & Scale Up 
+
+### Injection well design & placement
+- Building on Norway's experience
+- Key issues to ensure safe operations/sustained capacity/operational reliability
+- Effects of heterogeneity
+- Sleipner injection well design
+- Injection well placement
+
+### Transport
+- Systems
+- Issues
+- Pipelines
+- Shipping
+- CO~2~ phase diagram
+- Northern Lights concept
+
+### Storage Site Management
+- Risk - acceptable levels of risk
+- Risk mitigation
+- Ongoing work on Storage Risks
+
+## Forecasting Site Behavior 
+- First order approximation
+- Forecast scenarios
+- Storage Capacity Management
+- Temporal behavior pressure
+
+## Monitoring CO2 Storage Projects
+
+- Objectives & definitions
+- Different types of monitoring
+- Design of monitoring system
+- Cost considerations
+- Seismic Monitoring
+- Microseismic
+- Sleipner Monitoring Program
+- Future Directions
+- Risk management
+- Future directions
+- Global Scale Up
+
+# Part 3 – Seismic Monitoring 
+
+## Basics  
+- Passive/active seismic
+- Resolution & Penetration
+- Active Source Seismic Data
+- Seismic Traces
+- Marine Shot Record
+- Seismic Acquisition Land/Marine
+- Source Signature
+- Marine/Land Shot Records
+- Anatomy Shot Record/Multiples
+- From raw shot data to images
+- Different gathers common midpoint/common source/common receiver/common offset
+- Flattening gathers
+- Stacking
+
+## Processing Flow
+- Basic Post-Stack Seismic Data Processing Flow
+- Sorting data into Common Midpoint Gathers
+- Midpoint/Offset/Fold
+- Seismic Reflection
+- Multiples
+- NMO Velocity Analysis
+
+## Intro Migration 
+- Stacking
+- Zero-offset Time Migration
+- Exploding Reflector Model
+- Modeling/Migration
+- Migration Methods
+
+## Post-stack Migration 
+- Objective of seismic migration
+- Wavefield Extrapolation
+- Depth Migration
+- Zero-offset Depth Migration 
+
+## Pres-stack Migration 
+- Pre-stack Migration
+- Velocity-model Estimation
+- Traveltime Tomography
+- Migration-velocity Analysis
+- Resolution
+
+## Data Acquisition 
+- Practical aspects of seismic acquisition
+- Airguns
+- Challenges of 3D acquisition
+- Azimuth
+- Aliasing
+
+## Inverse problems
+- intro linear algebra
+- Forward/inverse problem
+- Least-squares
+- Non-uniqueness
+- Ill-posedness
+- Regularization
+- Matrix-free formulation
+
+### Compressive Sensing
+- What is compressive sensing?
+- Sampling Schemes
+- Sparse Recovery
+- Adaptation to Marine Acquisition
+- Simultaneous-source Marine Acquisition static
+- Simultaneous-source Marine Acquisition dynamic
+
+### Wave-based inversion
+- Problem statement
+- Full-Waveform Inversion
+- Linearized Inversion
+- JUDI-Julia Devito Inversion framework
+
 
 
 <!-- ### Why do we need Geological Carbon Storage?
