@@ -1,10 +1,9 @@
-To be populated.
+# Class project
+
+Towards the end of the term, the students will be asked to conduct a small 2D numerical experiment that is representative of a typical geological carbon storage project. To avoid the tedious installation process, we suggest you run the experiments within a docker image (ziyiyin97/ccs-env:v4.6). As part of this project, the students will run numerical simulations to model the injection of CO~2~ in the Compass model, a proxy Earth model representative for an area in the North Sea that is considered as a potential site for geological carbon storage. During this project, students will convert the simulated time-varying CO~2~ saturations to time-varying velocity models of the Earth based on rock physics modeling. These models will be used to simulate synthetic time-lapse seismic data. This simulated data will be used to test our seismic monitoring methodology. This project is an extension to [Exercise 7](Assignments/Exercise7.md). Please follow the instructions there.
 
 
-<!-- # Class projects
-
-This year's project is an extension to [Exercise 7](Assignments/Exercise7.md). Please follow the instructions there.
-
+<!--
 
 ### Known Windows issues solutions
 

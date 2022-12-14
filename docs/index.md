@@ -19,7 +19,7 @@ Office Hours: by appointment via [Microsoft Teams](https://faq.oit.gatech.edu/co
 
 ### Course Description 
 
-*Carbon Capture and Storage (CCS) is widely considered as a key technology to combat climate change. This course presents a comprehensive review how seismic imaging can be used to monitor underground (geologic) storage of carbon dioxide. Topics covered include basics of seismic data acquisition, wave propagation, and imaging, empirical relations between seismic and fluid-flow properties, two-phase flow equations describing CO~2~ plumes, and the challenges of designing a seismic monitoring system for geologic CO~2~ storage.* 
+*Carbon Capture and Storage (CCS) is widely considered as a key scalable negative-emission technology to help combat climate change. This course presents a comprehensive review on how seismic imaging can be used to monitor underground (geologic) storage of carbon dioxide. The course covers the [Basics of Geological Carbon Storage](outline.md), [Design & Scale Up](outline.md), and [Seismic Monitoring](outline.md).* 
 
 ### COVID
 
@@ -53,32 +53,13 @@ Students may not record or share the materials or recordings, including screen c
 
 - For classes requiring class participation, if students are identifiable by their names, facial images, voices, and/ or comments, written consent must be obtained before sharing the recording with persons outside of currently enrolled students in the class.
 
-<!-- 
-### Course Outline
+## Course Material
 
-See [Outline](outline.md) tab
+### Textbook on Geological Carbon Storage 
 
-- [General introduction](outline.md#General introduction)
+- [Ringrose, P. (2020), How to Store CO~2~ Underground: insights from early-mover CCS Projects](https://link.springer.com/book/10.1007/978-3-030-33113-9) ebook available from GT library
 
-- [Seismic data acquisition](outline.md#Seismic data acquisition)
-
-- [From processing to inversion](outline.md#From processing to inversion)
-
-- [Compressive sensing](outline.md#Compressive sensing)
-
-- [Linearized inversion](outline.md#Linearized inversion)
-
-- [RTM & FWI](outline.md#RTM & FWI) -->
-
-
-### Course Material
-
-#### Textbook (ebook available from GT library)
-
-- [Ringrose, P. (2020), How to Store CO~2~ Underground: insights from early-mover CCS Projects](https://link.springer.com/book/10.1007/978-3-030-33113-9)
-
-
-#### Recommended texts
+### Reference texts for Seismic Monitoring
 
 - [Sheriff, R. E., and L. P. Geldart (1995), Exploration Seismology (second edition), Cambridge University Express.](https://www.amazon.com/Exploration-Seismology-R-E-Sheriff/dp/0521468264)
 
@@ -88,33 +69,27 @@ See [Outline](outline.md) tab
 
 - [Zhou, H. (2014), Practical Seismic Data Analysis, Cambridge University Press.](https://www.amazon.com/Practical-Seismic-Data-Analysis-Hua-Wei/dp/0521199107)
 
-- [Heiner Igel, Computational Seismology---A Practical Introduction](https://www.amazon.com/Computational-Seismology-Introduction-Heiner-Igel/dp/0198717415)
+<!-- - [Heiner Igel, Computational Seismology---A Practical Introduction](https://www.amazon.com/Computational-Seismology-Introduction-Heiner-Igel/dp/0198717415)
 
-- [Fichtner, Andreas, Full Seismic Waveform Modelling and Inversion](https://www.amazon.com/Modelling-Inversion-Geophysical-Environmental-Mathematics/dp/3642158064)
+- [Fichtner, Andreas, Full Seismic Waveform Modelling and Inversion](https://www.amazon.com/Modelling-Inversion-Geophysical-Environmental-Mathematics/dp/3642158064) -->
 
-Additional material will be made available under the tab [Reading](reading.md).
+Additional more specific reading material can be found under the tab [Reading](reading.md).
 
 [website]:https://flexie.github.io/eas-4803-8803-ccs
-
 [Online]:https://gatech-primo.hosted.exlibrisgroup.com/primo-explore/fulldisplay?docid=01GALI_GIT_ALMA51300691090002947&context=L&vid=01GALI_GIT&search_scope=default_scope&tab=default_tab&lang=en_US
 
-### Homework 
+## Homework 
 
-There will be homework exercises, which will mostly involve geophysics-related programs, computer simulations, and data analysis. These assignments is designed for each student to work by him/herself. This [homework](homework.md) will count as 35% of your overall course grade.
+There will be homework exercises that will mostly involve geophysics-related programs, computer simulations, and data analysis. These assignments are designed for each student to work one by him/herself. Collaboration is to a reasonable degree encouraged. This [homework](homework.md) will count towards 35% of your overall course grade.
 
+## Project
+Toward the end of the term, you will work on a computational project entailing the different topics covered during the course. You can find more details on the [Projects](project.md) page. This [project](project.md) will count towards 15% of your overall course grade.
 
-### Project
-
-You are required to write a term paper on any topic related to monitoring of geologic CO~2~ storage. This can be a literature review of a selected topic, or research project involving calculations, data analysis, or theoretical results done in consultation with the instructor. The topic needs to be approved by the instructor before the midterm. Your paper should be written up in a journal form with length, figures and referencing in a format suitable for submission to journals like Geophysical Research Letters (GRL). Preliminary version of the final paper should be shown to the instructor for approval at least two weeks before the final due date. You will present your term paper in a 15 minute AGU-style talk; a 12 minute presentation with 3 minutes of questions. The project will count as 15% of your overall course grade. Grading for your project will be based on the 12% of the quality of the research and the written paper, and 3% of your presentation.
-
-You can find more details on the [Projects](project.md) page.
-
-### Exams 
+## Exams 
 
 There will be a midterm (25%) and a final exam (25%). Both of them are closed book. Reference to texts or other documents such as previous semester course materials during exams is strictly forbidden. Using these materials will be considered a direct violation of academic policy and will be dealt with according to the GT Academic Honor Code. The use of electronic devices (e.g. cellular phones, computers etc.) other than non-programmable calculators during exams and quizzes is not allowed. 
 
-
-### Evaluation
+## Evaluation
 
 - Homework assignments (35%)
 

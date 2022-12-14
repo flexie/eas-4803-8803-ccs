@@ -1,23 +1,25 @@
 site_name: Seismic Monitoring CCS
-pages:
+nav:
     - Outline: outline.md
-    - Goals: goals.md
+#    - Goals: goals.md
     - Reading: reading.md
     - Homework: homework.md
-    - Projects: project.md
+    - Project: project.md
 
 extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 markdown_extensions:
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.critic
-  - pymdownx.caret
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
-  - footnotes  
+- toc:
+    permalink: True
+- pymdownx.arithmatex:
+    generic: true
+- pymdownx.critic
+- pymdownx.caret
+- pymdownx.keys
+- pymdownx.mark
+- pymdownx.tilde
+- footnotes  
 
 extra_javascript:
   - javascripts/mathjax.js

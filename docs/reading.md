@@ -1,5 +1,7 @@
-## Material presented in class 
+# Material presented in class 
 
+To be populated during the course.
+<!-- 
 - [Part 1 - Basics Geological Storage](https://www.dropbox.com/s/4ui6dsp7tfkggur/1_Lecture_CCS.pdf?dl=0)
 - [Part 2 – Design & Scale Up](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
 - Part 3 - Introduction Seismic Imaging
@@ -15,9 +17,38 @@
     - [Basics Compressive Sensing](https://www.dropbox.com/s/519mfc4tq3por3m/7-Lecture_CCS-intro-CS.pdf?dl=0)
     - [Timelape Compressive Sensing](https://www.dropbox.com/s/19pe0b4idxuoriv/7-Lecture_CCS-time-lapse-CS.pdf?dl=0)
 - Part 8 - [Full-waveform inversion and least-squares migration](https://www.dropbox.com/s/ba5txfqx05p4kvs/8_Lecture_CCS_fwi.pdf?dl=0)
-- [Review](https://www.dropbox.com/s/bblvrd65jiwqn8u/review.pdf?dl=0)
+- [Review](https://www.dropbox.com/s/bblvrd65jiwqn8u/review.pdf?dl=0) -->
 
-### Recordings lectures
+
+## Parts 1 & 2
+
+- From the main text by Ringrose[@ringrose2020store] read Chapter 1 and Chapter 2 until section 2.3, which was discussed during Lecture 1. 
+- In preparation of Lecture 2, read pages 17-29 from [Chapter 2](https://www.dropbox.com/s/10jxkl4sqz9cpno/chapter2gueguen.pdf?dl=0) of Gueguen[@gueguen1994introduction] (for more background see also [Chapter 1](https://www.dropbox.com/s/gas1x4fswnhno3w/chapter1gueguen.pdf?dl=0)). Also read sections 2.3.1 and 2.3.2 of the main text by Ringrose[@ringrose2020store].
+- In preparation of Lecture 3, Ringrose[@ringrose2020store] book section 2.3.1 until 2.3.4 and pages 30-39 from [Chapter 2](https://www.dropbox.com/s/10jxkl4sqz9cpno/chapter2gueguen.pdf?dl=0) of Gueguen[@gueguen1994introduction].
+- In preparation of Lecture 5, Ringrose[@ringrose2020store] book section 2.3.5 until 2.4.5.
+- In preparation of Lecture 6, Ringrose[@ringrose2020store] book section 2.4.5 until 2.5.3.
+- In preparation of Lecture 7, Ringrose[@ringrose2020store] book section 2.5.4 until 2.7.
+- In preparation of Lecture 8, Ringrose[@ringrose2020store] book section 2.7.1 
+- In preparation of Lecture 9, Ringrose[@ringrose2020store] book section 2.7.2 until 2.7.3 and 3.1 until 3.3 
+- In preparation of Lecture 11, Ringrose[@ringrose2020store] book section 3.4 and 3.6 and 4.
+
+## Part 3
+
+- John Scales: [Theory of Seismic Imaging](https://www.dropbox.com/s/838iq6zgccgi5nw/imaging_scales.pdf?dl=0) Chapters 1, 2, 10.3
+- Guy Drijkoningen: [Introduction to Reflection Seismology TA3520](https://www.dropbox.com/s/hgheb1u1rrflzpk/IntroductionreflectionSeismology%28ta3520%29.pdf?dl=0) Chapter 5 and [Seismic Data Processing](https://www.dropbox.com/s/eenbrn85827joyl/IntroductionreflectionSeismology%28ta3520%29.pdf?dl=0) - TG001 / TA3600 Chapters 1,2,3.
+
+
+## Additional material
+
+In addition to the general text [@ringrose2020store], the course will review journal papers including
+
+- Papers on Sleipner [@Arts2003] [@Eiken2011] [@Furre2017] 
+- Coupling seismic to fluid flow [@li2020coupled]
+- Overview article [@Ringrose2021] and this excellent [overview paper](https://royalsociety.org/topics-policy/projects/low-carbon-energy-programme/geological-carbon-storage/) from the UK Royal Society
+
+## Recordings lectures
+
+Depending on the COVID situation recordings may be made. Below you find last year's recordings.
 
 - [Recording for Lecture 1](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/New%20channel%20meeting-20220111_153536-Meeting%20Recording.mp4?csf=1&web=1&e=fHJqLg) 
 
@@ -58,31 +89,6 @@
 
 - [Recording Lecture 18](https://gtvault.sharepoint.com/:v:/r/sites/SeismicMonitoringCO2Storage-EAS48038803/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220317_153126-Meeting%20Recording.mp4?csf=1&web=1&e=OMmoZM)
 
-### Reading material Parts 1 and 2
-
-- From the main text by Ringrose[@ringrose2020store] read Chapter 1 and Chapter 2 until section 2.3, which was discussed during Lecture 1. 
-- In preparation of Lecture 2, read pages 17-29 from [Chapter 2](https://www.dropbox.com/s/10jxkl4sqz9cpno/chapter2gueguen.pdf?dl=0) of Gueguen[@gueguen1994introduction] (for more background see also [Chapter 1](https://www.dropbox.com/s/gas1x4fswnhno3w/chapter1gueguen.pdf?dl=0)). Also read sections 2.3.1 and 2.3.2 of the main text by Ringrose[@ringrose2020store].
-- In preparation of Lecture 3, Ringrose[@ringrose2020store] book section 2.3.1 until 2.3.4 and pages 30-39 from [Chapter 2](https://www.dropbox.com/s/10jxkl4sqz9cpno/chapter2gueguen.pdf?dl=0) of Gueguen[@gueguen1994introduction].
-- In preparation of Lecture 5, Ringrose[@ringrose2020store] book section 2.3.5 until 2.4.5.
-- In preparation of Lecture 6, Ringrose[@ringrose2020store] book section 2.4.5 until 2.5.3.
-- In preparation of Lecture 7, Ringrose[@ringrose2020store] book section 2.5.4 until 2.7.
-- In preparation of Lecture 8, Ringrose[@ringrose2020store] book section 2.7.1 
-- In preparation of Lecture 9, Ringrose[@ringrose2020store] book section 2.7.2 until 2.7.3 and 3.1 until 3.3 
-- In preparation of Lecture 11, Ringrose[@ringrose2020store] book section 3.4 and 3.6 and 4.
-
-### Reading material Part 3
-
-- John Scales: [Theory of Seismic Imaging](https://www.dropbox.com/s/cdt8ndqy3fnvqpf/imaging_scales.pdf?dl=0) Chapters 1, 2, 10.3
-- Guy Drijkoningen: [Introduction to Reflection Seismology TA3520](https://www.dropbox.com/s/hgheb1u1rrflzpk/IntroductionreflectionSeismology%28ta3520%29.pdf?dl=0) Chapter 5 and [Seismic Data Processing](https://www.dropbox.com/s/x7sng1s982484o0/SeismicProcessing2%28tg001_ta3600%29.pdf?dl=0) - TG001 / TA3600 Chapters 1,2,3.
-
-
-### Additional material
-
-In addition to the general text [@ringrose2020store], the course will review journal papers including
-
-- Papers on Sleipner [@Arts2003] [@Eiken2011] [@Furre2017] 
-- Coupling seismic to fluid flow [@li2020coupled]
-- Overview article [@Ringrose2021]
 
 \bibliography 
 
