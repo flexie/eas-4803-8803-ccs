@@ -115,7 +115,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="homework-3-wavefield-extrapolation-and-migration">Homework 3: wavefield extrapolation and migration<a class="headerlink" href="#homework-3-wavefield-extrapolation-and-migration" title="Permanent link">&para;</a></h1>
+<h1 id="homework-3-wavefield-extrapolation-and-migration">Homework 3: wavefield extrapolation and migration</h1>
 <p>Contents:
  - Wavefield extrapolation
  - Zero-offset migration
@@ -127,7 +127,7 @@
 <pre><code class="language-julia">using PyPlot
 using FFTW
 </code></pre>
-<h1 id="f-k-domain-transform-function-fktran">f-k domain transform function fktran<a class="headerlink" href="#f-k-domain-transform-function-fktran" title="Permanent link">&para;</a></h1>
+<h1 id="f-k-domain-transform-function-fktran">f-k domain transform function fktran</h1>
 <pre><code class="language-julia">function fktran(a,t,x,mode)
     &quot;&quot;&quot;
     f-k transform for real-values input.
@@ -235,14 +235,14 @@ title(&quot;wavefield at z=500 m.&quot;)
 <p><img alt="png" src="../../img/E3_output_11_0.png" /></p>
 <pre><code>PyObject Text(0.5, 1, 'wavefield at z=500 m.')
 </code></pre>
-<h1 id="questions">Questions<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h1>
+<h1 id="questions">Questions</h1>
 <ul>
 <li>What happens if the imaginary part of kz has the wrong sign? try it.</li>
 <li>same for the real part.</li>
 <li>What does the extrapolator look like in the t-x domain?</li>
 <li>How can you extraplotate the wavefield in the t-x domain directly using the extrapolator in the t-x domain?</li>
 </ul>
-<h1 id="zero-offset-migration">Zero-offset migration<a class="headerlink" href="#zero-offset-migration" title="Permanent link">&para;</a></h1>
+<h1 id="zero-offset-migration">Zero-offset migration</h1>
 <p>In this part of the exercise we look at zero-offset migration. This type of migration is based on the
 "exploding-reflector" concept. Zero-offset migration can be done by exptrapolating the zero-offset data with half-velocity
 and taking the image to be slice of the wavefield at <span class="arithmatex">\(t=0\)</span> for each depth step: <span class="arithmatex">\(I(z,x) = u(z,x,t=0)\)</span></p>
@@ -346,13 +346,13 @@ title(&quot;correct velocity&quot;)
 <p><img alt="png" src="../../img/E3_output_20_0.png" /></p>
 <pre><code>PyObject Text(0.5, 1, 'correct velocity')
 </code></pre>
-<h1 id="questions_1">Questions<a class="headerlink" href="#questions_1" title="Permanent link">&para;</a></h1>
+<h1 id="questions_1">Questions</h1>
 <ul>
 <li>Compare the migrated result to the zero-offset section. What do you notice? For easier comparison, you might want to transform the time axis into depth using the correct velocity.</li>
 <li>Do a zero-offset migration for too low and too high velocities. What do you notice?</li>
 <li>Repeat the same exercise for data2_zo.su. What do you notice here?</li>
 </ul>
-<h1 id="prestack-migration">Prestack migration<a class="headerlink" href="#prestack-migration" title="Permanent link">&para;</a></h1>
+<h1 id="prestack-migration">Prestack migration</h1>
 <p>We can also create an image by extrapolating the source wavefields and the data and correlating them at different depth levels.</p>
 <p>Read the data <code>data_ex3.segy</code></p>
 <pre><code class="language-julia">run(`wget https://www.dropbox.com/s/hotb48jaf3ksve5/data_ex3.segy`)
@@ -404,7 +404,7 @@ title(&quot;receiver wavefield at z=500 m.&quot;)
 <p><img alt="png" src="../../img/E3_output_26_1.png" /></p>
 <pre><code>PyObject Text(0.5, 1, 'receiver wavefield at z=500 m.')
 </code></pre>
-<h1 id="question">Question<a class="headerlink" href="#question" title="Permanent link">&para;</a></h1>
+<h1 id="question">Question</h1>
 <ul>
 <li>Extrapolate both source and receiver wavefields to differents depths. What do you notice?</li>
 </ul>
@@ -436,7 +436,7 @@ title(&quot;image for one source&quot;)
 <p><img alt="png" src="../../img/E3_output_30_0.png" /></p>
 <pre><code>PyObject Text(0.5, 1, 'image for one source')
 </code></pre>
-<h1 id="questions_2">Questions<a class="headerlink" href="#questions_2" title="Permanent link">&para;</a></h1>
+<h1 id="questions_2">Questions</h1>
 <ul>
 <li>Use the template <code>mig_extrap</code> below and implement migration of multiple shots based on the above outlined algorithm by filling in the gaps. You can call wave_extrap as subroutine. Use mig_extrap.m for the following exercises.</li>
 <li>Migrate a single shot for velocities that are too low and too high (say 10 percent). What do you see?</li>

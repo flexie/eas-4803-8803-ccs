@@ -85,7 +85,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="exercise-1-a-first-look-at-seismic-data">Exercise 1: a first look at seismic data<a class="headerlink" href="#exercise-1-a-first-look-at-seismic-data" title="Permanent link">&para;</a></h1>
+<h1 id="exercise-1-a-first-look-at-seismic-data">Exercise 1: a first look at seismic data</h1>
 <p>In this exercise we will load some data into Julia and perform some basic operations.</p>
 <p>Seismic data are typically stored in a special binary format: SEGY. These file-formats store the data as mutliple time-series (traces) with the corresponding header information containing specific information about such as time sampling and source/receiver locations.</p>
 <p>The Julia utilities for reading  SEGY data is SegyIO</p>
@@ -94,7 +94,7 @@
 #Pkg.add(&quot;PyPlot&quot;)
 using SegyIO, PyPlot
 </code></pre>
-<h1 id="scaning-the-dataset">Scaning the dataset<a class="headerlink" href="#scaning-the-dataset" title="Permanent link">&para;</a></h1>
+<h1 id="scaning-the-dataset">Scaning the dataset</h1>
 <p>Thhe first step is to scan the dataset to extract header/metadat. This metadat contains the geometry and parameters of the survey such as the source/receiver locations and time sampling rate. The convention for the metadata is as follows:</p>
 <pre><code>The Source positions use the Source keyword such as SourceX
 The receiver position use the Group keyword such as GroupX

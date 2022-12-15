@@ -100,7 +100,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="exercise-4-fourier-and-radon-filtering">Exercise 4: Fourier and Radon filtering<a class="headerlink" href="#exercise-4-fourier-and-radon-filtering" title="Permanent link">&para;</a></h1>
+<h1 id="exercise-4-fourier-and-radon-filtering">Exercise 4: Fourier and Radon filtering</h1>
 <p>In this exercise we will look at seismic data in different domains and investigate how we can exploit behaviour of different kinds of noise in these domains to design filters.</p>
 <p>Contents:
 - Data
@@ -253,7 +253,7 @@ xlabel(&quot;offset [m]&quot;);ylabel(&quot;time [s]&quot;);
 </code></pre>
 <pre><code>(1001, 401)
 </code></pre>
-<h1 id="questions">Questions:<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h1>
+<h1 id="questions">Questions:</h1>
 <p>Subsample the data in the offset direction and look at the Fourier transform. (Hint: use Data[:,1:n:end] and h[1:n:end] where n is the number of times you want to subsample).</p>
 <ul>
 <li>What do you see?</li>
@@ -320,10 +320,10 @@ xlabel(&quot;wavenumber [1/m&quot;);ylabel(&quot;frequency [Hz]&quot;)
 <p><img alt="png" src="../../img/E4_output_25_0.png" /></p>
 <pre><code>PyObject Text(23.999999999999993, 0.5, 'frequency [Hz]')
 </code></pre>
-<h1 id="questions_1">Questions<a class="headerlink" href="#questions_1" title="Permanent link">&para;</a></h1>
+<h1 id="questions_1">Questions</h1>
 <p>Describe how you would design filters to clean up shot gathers shot_noise1 and shot_noise2. (hint: look the f-k transform and compare to the orinigal data)
 Try it and compare the result with the original shot gather.</p>
-<h1 id="radon-transform">Radon transform<a class="headerlink" href="#radon-transform" title="Permanent link">&para;</a></h1>
+<h1 id="radon-transform">Radon transform</h1>
 <p>The Radon tranform performs sums along lines with different intercepts <span class="arithmatex">\(\tau\)</span>) and slopes <span class="arithmatex">\(p\)</span>. Hence, it is sometimes refered to as the <span class="arithmatex">\(\tau-p\)</span> transform in geophysics.</p>
 <p><span class="arithmatex">\(\hat{d}(\tau,p) = \int\mathrm{d}h\, d(t + ph, h)\)</span></p>
 <p>The transform is implemented in the function lpradon.</p>
@@ -424,7 +424,7 @@ xlabel(&quot;slowness [s/m]&quot;);ylabel(&quot;time [s]&quot;);
 
 </code></pre>
 <p><img alt="png" src="../../img/E4_output_32_0.png" /></p>
-<h1 id="questions_2">Questions<a class="headerlink" href="#questions_2" title="Permanent link">&para;</a></h1>
+<h1 id="questions_2">Questions</h1>
 <p>Can you interpret the results?
 Describe how you would design <code>filters</code> in the <span class="arithmatex">\(\tau-p\)</span> domain to separate the different events.
 Try it. Use the <code>adjoint</code> option of the transform to transform back to the physical domain.</p>
