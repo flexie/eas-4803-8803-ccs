@@ -19,7 +19,10 @@ Office Hours: by appointment via [Microsoft Teams](https://faq.oit.gatech.edu/co
 
 ### Course Description 
 
-*Carbon Capture and Storage (CCS) is widely considered as a key scalable negative-emission technology to help combat climate change. This course presents a comprehensive review on how seismic imaging can be used to monitor underground (geologic) storage of carbon dioxide. The course covers the [Basics of Geological Carbon Storage](outline.md), [Design & Scale Up](outline.md), and [Seismic Monitoring](outline.md).* 
+<!-- *Carbon Capture and Storage (CCS) is widely considered as a key scalable negative-emission technology to help combat climate change. This course presents a comprehensive review on how seismic imaging can be used to monitor underground (geologic) storage of carbon dioxide. The course covers the [Basics of Geological Carbon Storage](outline.md), [Design & Scale Up](outline.md), and [Seismic Monitoring](outline.md).*  -->
+
+*Carbon Capture and Storage (CCS) is widely considered as a key scalable net-negative CO~2~ emission technology to help combat climate change. The course covers the Basics of [Geological Carbon Storage]((outline.md)), its [Design & Scale Up]((outline.md)), and its [Seismic Monitoring]((outline.md)). Aside from reviewing the geophysical challenges and computational aspects of monitoring Geological Carbon Storage, the course also addresses societal impact of this technology. Its (perceived) risk will be discussed by weighting the risk of doing something, by injecting CO~2~ underground, against doing nothing.*
+
 
 ### COVID
 

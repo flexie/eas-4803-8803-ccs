@@ -199,7 +199,7 @@
 - Aliasing
 
 ## Inverse problems
-- intro linear algebra
+- Intro linear algebra
 - Forward/inverse problem
 - Least-squares
 - Non-uniqueness
