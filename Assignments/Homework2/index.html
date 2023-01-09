@@ -106,12 +106,12 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="fluid-flow-simulation">Fluid Flow Simulation</h1>
+<h1 id="fluid-flow-simulation">Fluid Flow Simulation<a class="headerlink" href="#fluid-flow-simulation" title="Permanent link">&para;</a></h1>
 <p>Adapted from <a href="https://lidongzh.github.io/FwiFlow.jl/dev/tutorials/flow/">the tutorial of FwiFlow.jl package</a>, Coupled Time-Lapse Full-Waveform Inversion for Subsurface Flow Problems Using Intrusive Automatic Differentiation
 Dongzhuo Li, Kailai Xu, Jerry M. Harris, Eric Darve</p>
 <p>Thanks for the help on Docker image set-up from Thomas J. Grady II</p>
-<h1 id="set-up">Set-up</h1>
-<h3 id="first-we-set-up-some-functions-and-structures-below-for-fluid-simulation-relative-permeability-and-fluid-flow-simulation">First, we set up some functions and structures below for fluid simulation, relative permeability, and fluid flow simulation.</h3>
+<h1 id="set-up">Set-up<a class="headerlink" href="#set-up" title="Permanent link">&para;</a></h1>
+<h3 id="first-we-set-up-some-functions-and-structures-below-for-fluid-simulation-relative-permeability-and-fluid-flow-simulation">First, we set up some functions and structures below for fluid simulation, relative permeability, and fluid flow simulation.<a class="headerlink" href="#first-we-set-up-some-functions-and-structures-below-for-fluid-simulation-relative-permeability-and-fluid-flow-simulation" title="Permanent link">&para;</a></h3>
 <pre><code class="language-julia">const K_CONST =  9.869232667160130e-16 * 86400 * 1e3
 const ALPHA = 1.0
 const SRC_CONST = 86400.0 #
@@ -211,7 +211,7 @@ end
 </code></pre>
 <pre><code>imseq (generic function with 1 method)
 </code></pre>
-<h3 id="below-is-the-main-flow-function-taking-permeability-porosity-injection-production-and-simulation-grid-as-inputs">Below is the main flow function -- taking permeability, porosity, injection, production, and simulation grid as inputs</h3>
+<h3 id="below-is-the-main-flow-function-taking-permeability-porosity-injection-production-and-simulation-grid-as-inputs">Below is the main flow function -- taking permeability, porosity, injection, production, and simulation grid as inputs<a class="headerlink" href="#below-is-the-main-flow-function-taking-permeability-porosity-injection-production-and-simulation-grid-as-inputs" title="Permanent link">&para;</a></h3>
 <pre><code class="language-julia">function flow(K, ϕ, qw, qo, grid;
         ρw=501.9, ρo=1053.0, μw=0.1, μo=1.0, g=GRAV_CONST, S0=nothing)
     if isnothing(S0)
@@ -232,7 +232,7 @@ end
 </code></pre>
 <pre><code>flow (generic function with 1 method)
 </code></pre>
-<h2 id="main-script">Main script</h2>
+<h2 id="main-script">Main script<a class="headerlink" href="#main-script" title="Permanent link">&para;</a></h2>
 <p>The main script is here! We start by loading the Julia packages. The main simulation is done in FwiFlow</p>
 <pre><code class="language-julia">using FwiFlow
 using PyCall
@@ -242,7 +242,7 @@ using PyPlot
 <pre><code>┌ Warning: Cannot load /Users/francisyin/.julia/packages/ADCME/94vEM/deps/CustomOps/build/libadcme.dylib. Please recompile the shared library by `ADCME.precompile()` for using custom operators.
 └ @ ADCME /Users/francisyin/.julia/packages/ADCME/94vEM/src/ADCME.jl:78
 </code></pre>
-<h3 id="next-lets-set-up-the-flow-simulation-parameters-ie-the-information-of-reservoir-injection-etc">Next, let's set up the flow simulation parameters, i.e. the information of reservoir, injection etc.</h3>
+<h3 id="next-lets-set-up-the-flow-simulation-parameters-ie-the-information-of-reservoir-injection-etc">Next, let's set up the flow simulation parameters, i.e. the information of reservoir, injection etc.<a class="headerlink" href="#next-lets-set-up-the-flow-simulation-parameters-ie-the-information-of-reservoir-injection-etc" title="Permanent link">&para;</a></h3>
 <pre><code class="language-julia"># Hyperparameter for flow simulation
 n = (30, 15)    # domain of simulation (number of cells in x * number of cells in z)
 h = 30.0        # size of the cell (in meter)
@@ -263,7 +263,7 @@ grid_ = comp_grid(n, h, hy, nt, dt)
 </code></pre>
 <pre><code>comp_grid((30, 15), 30.0, 10.0, 50, 20)
 </code></pre>
-<h3 id="then-lets-set-up-the-well-information-in-this-software-there-is-assumed-to-be-injection-wells-for-co2-injection-and-production-wells-for-water-production">Then let's set up the well information. In this software, there is assumed to be injection well(s) for CO2 injection and production well(s) for water production.</h3>
+<h3 id="then-lets-set-up-the-well-information-in-this-software-there-is-assumed-to-be-injection-wells-for-co2-injection-and-production-wells-for-water-production">Then let's set up the well information. In this software, there is assumed to be injection well(s) for CO2 injection and production well(s) for water production.<a class="headerlink" href="#then-lets-set-up-the-well-information-in-this-software-there-is-assumed-to-be-injection-wells-for-co2-injection-and-production-wells-for-water-production" title="Permanent link">&para;</a></h3>
 <pre><code class="language-julia">qw = zeros(nt, n[1], n[2]);
 inj_loc = (3*h, 9*h);    # injection location (at (3,9) cell in this case)
 qw[:,Int(round(inj_loc[1]/h)), Int(round(inj_loc[2]/h))] .= 0.005;   # in [m^3/s]
@@ -272,12 +272,12 @@ qo = zeros(nt, n[1], n[2]);
 prod_loc = (28*h, 9*h);  # injection location (at (28,9) cell in this case)
 qo[:,Int(round(prod_loc[1]/h)),Int(round(prod_loc[2]/h))] .= -0.005; # also in [m^3/s]
 </code></pre>
-<h3 id="then-lets-set-up-the-permeability-and-porosity">Then let's set up the permeability and porosity.</h3>
+<h3 id="then-lets-set-up-the-permeability-and-porosity">Then let's set up the permeability and porosity.<a class="headerlink" href="#then-lets-set-up-the-permeability-and-porosity" title="Permanent link">&para;</a></h3>
 <pre><code class="language-julia">ϕ = 0.25 .* ones(n); # porosity [0-1]
 K = 20.0 .* ones(n); # permeability [millidarcy]
 K[:,8:10] .= 120.0;  # set a high permeability channel in the middle
 </code></pre>
-<h3 id="we-can-plot-the-permeability-model-and-porosity-model-using-pyplot-package-its-usage-is-quite-similar-to-matplotlib-in-python-actually-its-based-on-that">We can plot the permeability model and porosity model using PyPlot package. Its usage is quite similar to matplotlib in python (actually it's based on that)</h3>
+<h3 id="we-can-plot-the-permeability-model-and-porosity-model-using-pyplot-package-its-usage-is-quite-similar-to-matplotlib-in-python-actually-its-based-on-that">We can plot the permeability model and porosity model using PyPlot package. Its usage is quite similar to matplotlib in python (actually it's based on that)<a class="headerlink" href="#we-can-plot-the-permeability-model-and-porosity-model-using-pyplot-package-its-usage-is-quite-similar-to-matplotlib-in-python-actually-its-based-on-that" title="Permanent link">&para;</a></h3>
 <pre><code class="language-julia">figure();imshow(K',extent=(0,n[1]*h,n[2]*h,0));title(&quot;Permeability [md]&quot;);
 xlabel(&quot;X [m]&quot;);ylabel(&quot;Z [m]&quot;);
 colorbar();
@@ -298,7 +298,7 @@ scatter(prod_loc[1], prod_loc[2], marker=&quot;x&quot;, label=&quot;production&q
 legend(loc=3);
 </code></pre>
 <p><img alt="png" src="../figs/output_16_0.png" /></p>
-<h3 id="now-lets-run-the-flow-simulation-in-1-line">Now let's run the flow simulation in 1 line!</h3>
+<h3 id="now-lets-run-the-flow-simulation-in-1-line">Now let's run the flow simulation in 1 line!<a class="headerlink" href="#now-lets-run-the-flow-simulation-in-1-line" title="Permanent link">&para;</a></h3>
 <pre><code class="language-julia">S, p = flow(K, ϕ, qw, qo, grid_);
 </code></pre>
 <pre><code>[32mLoad library operator (with gradient, multiple outputs = false): /Users/francisyin/.julia/packages/FwiFlow/4kyhS/deps/CustomOps/Upwlap/build/libUpwlapOp.dylib ==&gt; upwlap_op[39m
@@ -310,7 +310,7 @@ legend(loc=3);
 2022-02-03 11:08:40.369226: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fbea7857140 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
 2022-02-03 11:08:40.369239: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
 </code></pre>
-<h3 id="and-then-lets-take-a-look-at-the-co2-saturation-at-various-time-steps">And then let's take a look at the CO2 saturation at various time steps.</h3>
+<h3 id="and-then-lets-take-a-look-at-the-co2-saturation-at-various-time-steps">And then let's take a look at the CO2 saturation at various time steps.<a class="headerlink" href="#and-then-lets-take-a-look-at-the-co2-saturation-at-various-time-steps" title="Permanent link">&para;</a></h3>
 <pre><code class="language-julia">figure(figsize=(20,12));
 obs = Int.(round.(range(1, stop=nt+1, length=9)));   # 9 observed time samples
 for i = 1:9
@@ -324,19 +324,19 @@ suptitle(&quot;CO2 saturation [100%]&quot;)
 <p><img alt="png" src="../figs/output_20_0.png" /></p>
 <pre><code>PyObject Text(0.5, 0.98, 'CO2 saturation [100%]')
 </code></pre>
-<h1 id="to-do">TO-DO:</h1>
-<h2 id="q1">Q1</h2>
+<h1 id="to-do">TO-DO:<a class="headerlink" href="#to-do" title="Permanent link">&para;</a></h1>
+<h2 id="q1">Q1<a class="headerlink" href="#q1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>What do you see in these time-varying CO2 saturation images? How do you interpret the movement of CO2?</li>
 <li>Calculate the amount of CO2 in the reservoir after 60 days of injection. Is it the same as the injection amount? (If not, why?)</li>
 <li>Calculate the capacity coefficient after 90 days of injection.</li>
 <li>Calculate the amount of CO2 in the reservoir at the end of injection. Is it the same as the injection amount? (If not, why?)</li>
 </ol>
-<h2 id="q2">Q2</h2>
+<h2 id="q2">Q2<a class="headerlink" href="#q2" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Re-run this experiment with a homogeneous permeability model, i.e. remove the yellow high permeability channel in the middle. Plot the CO2 saturations with correct labels and colorbars. Compare them with the saturations with the high permeability channel. What do you see? How do you interpret the result?</li>
 </ol>
-<h2 id="q3">Q3</h2>
+<h2 id="q3">Q3<a class="headerlink" href="#q3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Re-run this experiment with the high permeability channel, but without the production well, i.e. make it 0. Plot the CO2 saturations with correct labels and colorbars. What do you see? How do you interpret the result?</li>
 </ol></div>
