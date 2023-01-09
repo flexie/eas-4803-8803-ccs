@@ -8,8 +8,9 @@ CODA, room S1375B
 
 ### TA
 
-[Ziyi (Francis) Yin](mailto:ziyi.yin@gatech.edu)
-Email: ziyi.yin@gatech.edu
+[Abhinav P. Gahlot](mailto:agahlot8@gatech.edu)
+[Huseyin Tuna Erdinc](mailto:herdinc3@gatech.edu)
+Email: agahlot8@gatech.edu, herdinc3@gatech.edu
 
 ## General Information
 
