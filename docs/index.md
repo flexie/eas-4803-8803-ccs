@@ -8,9 +8,8 @@ CODA, room S1375B
 
 ### TA
 
-[Abhinav P. Gahlot](mailto:agahlot8@gatech.edu)
-[Huseyin Tuna Erdinc](mailto:herdinc3@gatech.edu)
-Email: agahlot8@gatech.edu, herdinc3@gatech.edu
+[Abhinav P. Gahlot](mailto:agahlot8@gatech.edu) Email: agahlot8@gatech.edu,
+[Huseyin Tuna Erdinc](mailto:herdinc3@gatech.edu) Email: herdinc3@gatech.edu
 
 ## General Information
 
