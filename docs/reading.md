@@ -1,6 +1,8 @@
 # Material presented in class 
 
 - [Part 1 - Basics Geological Storage](https://www.dropbox.com/s/nppagdpm7x8nlwh/mat_lec_1.pdf?dl=0)
+- [Part 2 - Basics Geological Storage](https://www.dropbox.com/s/dvyjjh52dtjjeco/mat_lec_2.pdf?dl=0)
+
 <!-- 
 - [Part 2 – Design & Scale Up](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
 - Part 3 - Introduction Seismic Imaging
