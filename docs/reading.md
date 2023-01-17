@@ -47,6 +47,7 @@ In addition to the general text [@ringrose2020store], the course will review jou
 - Coupling seismic to fluid flow [@li2020coupled]
 - Overview article [@Ringrose2021] and this excellent [overview paper](https://royalsociety.org/topics-policy/projects/low-carbon-energy-programme/geological-carbon-storage/) from the UK Royal Society
 - Paper on (perception of) risk [@trupp2022risk] of CCS
+- [Reservoir Model Design](https://www.dropbox.com/s/q7ce80f8txcgkvv/ringrose_reservoir.pdf?dl=0) [@ringrose2016reservoir] 
 
 ## Recordings lectures
 
