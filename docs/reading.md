@@ -1,7 +1,7 @@
 # Material presented in class 
-
-- [Part 1 - Basics Geological Storage](https://www.dropbox.com/s/nppagdpm7x8nlwh/mat_lec_1.pdf?dl=0)
-- [Part 2 - Basics Geological Storage](https://www.dropbox.com/s/dvyjjh52dtjjeco/mat_lec_2.pdf?dl=0)
+## Part 1
+- [Lec 1 - Basics Geological Storage](https://www.dropbox.com/s/nppagdpm7x8nlwh/mat_lec_1.pdf?dl=0)
+- [Lec 2 - Basics Geological Storage](https://www.dropbox.com/s/dvyjjh52dtjjeco/mat_lec_2.pdf?dl=0)
 
 <!-- 
 - [Part 2 – Design & Scale Up](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
@@ -21,7 +21,7 @@
 - [Review](https://www.dropbox.com/s/bblvrd65jiwqn8u/review.pdf?dl=0) -->
 
 
-## Parts 1 & 2
+## Part 2
 
 - From the main text by Ringrose[@ringrose2020store] read Chapter 1 and Chapter 2 until section 2.3, which was discussed during Lecture 1. 
 - In preparation of Lecture 2, read pages 17-29 from [Chapter 2](https://www.dropbox.com/s/10jxkl4sqz9cpno/chapter2gueguen.pdf?dl=0) of Gueguen[@gueguen1994introduction] (for more background see also [Chapter 1](https://www.dropbox.com/s/gas1x4fswnhno3w/chapter1gueguen.pdf?dl=0)). Also read sections 2.3.1 and 2.3.2 of the main text by Ringrose[@ringrose2020store].
