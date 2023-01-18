@@ -81,32 +81,23 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#homework" class="nav-link">Homework</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#docker" class="nav-link">Docker</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#some-useful-material" class="nav-link">Some Useful Material</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#in-class-exercise" class="nav-link">In-class Exercise</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#homework-assignments" class="nav-link">Homework Assignments</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
+            
             <li class="nav-item" data-level="2"><a href="#hand-in" class="nav-link">Hand in</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#feedback" class="nav-link">Feedback</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -189,35 +180,66 @@ You can verify your installation by running:
 
 This command should finish without errors.
 
--->
 
-<h1 id="homework">Homework<a class="headerlink" href="#homework" title="Permanent link">&para;</a></h1>
-<p>In this course, we will have a couple of coding assignments based on <a href="https://julialang.org/downloads/">Julia</a>, a fast, dynamic, reproducible composable and general open source programming language. You are encouraged to install <a href="https://julialang.org/downloads/">Julia</a> on your system following the script to run some basic coding experiments to explore its usage and applications in scientific computing community.</p>
-<p>In particular, you will run numerical experiments for CO<span class="arithmatex">\(_2\)</span> dynamics simulation and also seismic wave-based simulations with academically developed softwares. To help you run these software, we highly recommend you use Docker, a platform which builds a virtual machine/container for you with the docker image, which is set-up by us and equipped with pre-installed softwares. The docker image is quite necessary for you to run the software without the tedious installation process, and to provide you with an environment on which the software runs out of the box.</p>
-<h2 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
-<p>First install docker for your system following the instruction here,</p>
-<p><a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a></p>
-<p>Instead of having to install Python, Julia, Devito, JUDI, FwiFlow and all the dependencies (these are the softwares that you will use for the numerical simulation) by yourself, you simply download the docker image and run it in a container. All you need to do is install docker, click the docker icon/app, open the terminal/command line (<a href="https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/">powershell</a> in windows, also see <a href="https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2">this</a>) on your system, and run:</p>
+# Homework
+
+In this course, we will have a couple of coding assignments based on [Julia](https://julialang.org/downloads/), a fast, dynamic, reproducible composable and general open source programming language. You are encouraged to install [Julia](https://julialang.org/downloads/) on your system following the script to run some basic coding experiments to explore its usage and applications in scientific computing community.
+
+In particular, you will run numerical experiments for CO$_2$ dynamics simulation and also seismic wave-based simulations with academically developed softwares. To help you run these software, we highly recommend you use Docker, a platform which builds a virtual machine/container for you with the docker image, which is set-up by us and equipped with pre-installed softwares. The docker image is quite necessary for you to run the software without the tedious installation process, and to provide you with an environment on which the software runs out of the box.
+
+## Docker
+
+First install docker for your system following the instruction here,
+
+[https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
+
+Instead of having to install Python, Julia, Devito, JUDI, FwiFlow and all the dependencies (these are the softwares that you will use for the numerical simulation) by yourself, you simply download the docker image and run it in a container. All you need to do is install docker, click the docker icon/app, open the terminal/command line ([powershell](https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/) in windows, also see [this](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)) on your system, and run:
+
+
 <pre><code>docker run -p 8888:8888 ziyiyin97/ccs-env:v4.6 
 </code></pre>
-<p>This will download the image and launch a jupyter notebook that you can access from your internet browser. The command will display a link, which looks something like this:</p>
+
+
+This will download the image and launch a jupyter notebook that you can access from your internet browser. The command will display a link, which looks something like this:
+
+
 <pre><code>Copy/paste this URL into your browser when you connect for the first time,
     to login with a token:
         http://0e27b13128d4:8888/?token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4&amp;token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4
 </code></pre>
-<p>Copy-paste this link and replace the address <code>0e27b13128d4:8888</code> with <code>localhost:8888</code> (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Then, you can create a notebook there by clicking new -&gt; notebook -&gt; julia 1.7.1, and run the julia code in the jupyter notebook. Remember, the jupyter notebooks on the docker container don't stay there forever. Therefore, if you are half way on the homework and want to close the jupyter notebook, please remember to save the notebook to your local machine. If you do not want to save the notebook every time when you close the notebook, you can actually connect a folder on your machine to the docker container by</p>
+
+
+Copy-paste this link and replace the address `0e27b13128d4:8888` with `localhost:8888` (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Then, you can create a notebook there by clicking new -> notebook -> julia 1.7.1, and run the julia code in the jupyter notebook. Remember, the jupyter notebooks on the docker container don't stay there forever. Therefore, if you are half way on the homework and want to close the jupyter notebook, please remember to save the notebook to your local machine. If you do not want to save the notebook every time when you close the notebook, you can actually connect a folder on your machine to the docker container by
+
+
 <pre><code>docker run -v /path/on/your/machine:/notebooks -p 8888:8888 ziyiyin97/ccs-env:v4.6 
 </code></pre>
-<p>where <code>/path/on/your/machine</code> is an absolute path on your own local machine. For example, if I want to connect the folder called <code>testdocker</code> on the desktop of my laptop, I can do</p>
+
+
+where `/path/on/your/machine` is an absolute path on your own local machine. For example, if I want to connect the folder called `testdocker` on the desktop of my laptop, I can do
+
+
 <pre><code>docker run -v /Users/francisyin/Desktop/testdocker:/notebooks -p 8888:8888 ziyiyin97/ccs-env:v4.6 
 </code></pre>
-<p>and then you will find the files in this folder will show up in the notebooks. Whatever you do on the docker container will also be saved in the local <code>testdocker</code> folder.</p>
-<p>Instead of a notebook, you can also launch an interactive session with a terminal by running:</p>
+
+
+and then you will find the files in this folder will show up in the notebooks. Whatever you do on the docker container will also be saved in the local `testdocker` folder.
+
+Instead of a notebook, you can also launch an interactive session with a terminal by running:
+
+
 <pre><code>docker run -it ziyiyin97/ccs-env:v4.6 /bin/bash
 </code></pre>
-<p>This will give you access to a terminal, in which you can start Julia/Python, run a couple of lines of code interactively. However, figures from PyPlot (the plotting package) sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended for you to do the assignments.</p>
-<h3 id="window-users">Window Users<a class="headerlink" href="#window-users" title="Permanent link">&para;</a></h3>
-<p>If you are using windows, you might need to enable hardware virtualization in their BIOS. You are suggested to look at <a href="https://www.virtualmetric.com/blog/how-to-enable-hardware-virtualization">here</a> and <a href="https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html">here</a>. If you have any question, please reach out to us ASAP.</p>
+
+
+This will give you access to a terminal, in which you can start Julia/Python, run a couple of lines of code interactively. However, figures from PyPlot (the plotting package) sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended for you to do the assignments.
+
+### Window Users
+
+If you are using windows, you might need to enable hardware virtualization in their BIOS. You are suggested to look at [here](https://www.virtualmetric.com/blog/how-to-enable-hardware-virtualization) and [here](https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html). If you have any question, please reach out to us ASAP.
+
+-->
+
 <h2 id="some-useful-material">Some Useful Material<a class="headerlink" href="#some-useful-material" title="Permanent link">&para;</a></h2>
 <p>Learn command line from <a href="https://software-carpentry.org/">Software Carpentry</a>  <br />
 Learn <a href="https://jupyter.org/">jupyter notebook</a>  <br />
@@ -226,28 +248,26 @@ Learn <a href="https://julialang.org/learning/">Julia</a>    </p>
 <p>During the lectures you will work on the following exercises</p>
 <ol>
 <li>
-<p>Thickness of reservoir. <a href="../exercise/exercise1/">Exercise 1</a> (Jan 20, 2022)</p>
+<p>Thickness of reservoir. <a href="../exercise/exercise1/">Exercise 1</a> (Due date: TBA)</p>
 </li>
 <li>
-<p>Capacity coefficient. <a href="../exercise/exercise2/">Exercise 2</a> (Jan 27, 2022)</p>
+<p>Capacity coefficient. <a href="../exercise/exercise2/">Exercise 2</a> (Due date: TBA)</p>
 </li>
 </ol>
-<h2 id="homework-assignments">Homework Assignments<a class="headerlink" href="#homework-assignments" title="Permanent link">&para;</a></h2>
-<p>During the course you will work on the following homework assignments</p>
-<ol>
-<li>
-<p>Intro to rock physics. <a href="../Assignments/homework1/">Assignment 1</a>. Submit your homework as a PDF report. (Due: 3:30 PM Jan 25, 2022)</p>
-</li>
-<li>
-<p>Fluid flow simulation. <a href="../Assignments/introduction_to_julia/">Intro to julia</a> and <a href="../Assignments/Homework2/">Assignment 2</a>. Submit both jupyter notebook and a PDF file. (Due: 3:30 PM Feb 10, 2022)</p>
-</li>
-<li>
-<p>Wavefield extrapolation and migration. <a href="../Assignments/Exercise3/">Assignment 3</a> (Due: 3:30 PM March 29, 2022)</p>
-</li>
-<li>
-<p>From processing to inversion I. <a href="../Assignments/Exercise5/">Assignment 4</a> (Due: 3:30 PM April 12, 2022)</p>
-</li>
-</ol>
+<!--
+## Homework Assignments
+
+
+During the course you will work on the following homework assignments
+
+1. Intro to rock physics. [Assignment 1](Assignments/homework1.md). Submit your homework as a PDF report. (Due: 3:30 PM Jan 25, 2022)
+
+2. Fluid flow simulation. [Intro to julia](Assignments/introduction_to_julia.md) and [Assignment 2](Assignments/Homework2.md). Submit both jupyter notebook and a PDF file. (Due: 3:30 PM Feb 10, 2022)
+
+3. Wavefield extrapolation and migration. [Assignment 3](Assignments/Exercise3.md) (Due: 3:30 PM March 29, 2022)
+
+4. From processing to inversion I. [Assignment 4](Assignments/Exercise5.md) (Due: 3:30 PM April 12, 2022) -->
+
 <!--
 4. Seismic imaging with sparsity-promoting least-squares migration. [Assignment 4](Assignments/Exercise7.md) (Due: 3:30 PM April 4, 2022)
 
@@ -270,7 +290,7 @@ These exercises will introduce you to the [Julia programming language](https://j
 -->
 
 <h2 id="hand-in">Hand in<a class="headerlink" href="#hand-in" title="Permanent link">&para;</a></h2>
-<p>Please turn in your assignments as pdf files. The assignments should be send to <a href="mailto:ziyi.yin@gatech.edu">Ziyi (Francis) Yin</a>. Late hand-ins are not accepted. If you have difficulty on the homework and want to ask for extension, please email Dr. Felix Herrmann and cc TA in advance (at least 2 days before the deadline).</p>
+<p>Please turn in your assignments as pdf files. The assignments should be send to <a href="mailto:agahlot8@gatech.edu">Abhinav P. Gahlot</a> and <a href="mailto:herdinc3@gatech.edu">Huseyin Tuna Erdinc</a>. Late hand-ins are not accepted. If you have difficulty on the homework and want to ask for extension, please email Dr. Felix Herrmann and cc TA in advance (at least 2 days before the deadline).</p>
 <h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">&para;</a></h2>
 <p>We will give you feedback on the marking of the exercises.</p></div>
             </div>
