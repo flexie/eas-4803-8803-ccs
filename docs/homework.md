@@ -69,7 +69,6 @@ julia -e 'using Pkg; using JUDI; example=joinpath(dirname(pathof(JUDI)),"..","ex
 
 This command should finish without errors.
 
--->
 
 # Homework
 
@@ -123,6 +122,7 @@ This will give you access to a terminal, in which you can start Julia/Python, ru
 
 If you are using windows, you might need to enable hardware virtualization in their BIOS. You are suggested to look at [here](https://www.virtualmetric.com/blog/how-to-enable-hardware-virtualization) and [here](https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html). If you have any question, please reach out to us ASAP.
 
+-->
 
 ## Some Useful Material
 
@@ -134,11 +134,13 @@ Learn [Julia](https://julialang.org/learning/)
 
 During the lectures you will work on the following exercises
 
-1. Thickness of reservoir. [Exercise 1](exercise/exercise1.md) (Jan 20, 2022)
+1. Thickness of reservoir. [Exercise 1](exercise/exercise1.md) (Due date: TBA)
 
-1. Capacity coefficient. [Exercise 2](exercise/exercise2.md) (Jan 27, 2022)
+1. Capacity coefficient. [Exercise 2](exercise/exercise2.md) (Due date: TBA)
 
+<!--
 ## Homework Assignments
+
 
 During the course you will work on the following homework assignments
 
@@ -148,7 +150,7 @@ During the course you will work on the following homework assignments
 
 3. Wavefield extrapolation and migration. [Assignment 3](Assignments/Exercise3.md) (Due: 3:30 PM March 29, 2022)
 
-4. From processing to inversion I. [Assignment 4](Assignments/Exercise5.md) (Due: 3:30 PM April 12, 2022)
+4. From processing to inversion I. [Assignment 4](Assignments/Exercise5.md) (Due: 3:30 PM April 12, 2022) -->
 
 <!--
 4. Seismic imaging with sparsity-promoting least-squares migration. [Assignment 4](Assignments/Exercise7.md) (Due: 3:30 PM April 4, 2022)
@@ -173,7 +175,7 @@ These exercises will introduce you to the [Julia programming language](https://j
 
 ## Hand in
 
-Please turn in your assignments as pdf files. The assignments should be send to [Ziyi (Francis) Yin](mailto:ziyi.yin@gatech.edu). Late hand-ins are not accepted. If you have difficulty on the homework and want to ask for extension, please email Dr. Felix Herrmann and cc TA in advance (at least 2 days before the deadline).
+Please turn in your assignments as pdf files. The assignments should be send to [Abhinav P. Gahlot](mailto:agahlot8@gatech.edu) and [Huseyin Tuna Erdinc](mailto:herdinc3@gatech.edu). Late hand-ins are not accepted. If you have difficulty on the homework and want to ask for extension, please email Dr. Felix Herrmann and cc TA in advance (at least 2 days before the deadline).
 
 ## Feedback
 
