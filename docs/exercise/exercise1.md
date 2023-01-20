@@ -2,7 +2,7 @@
 
 ## Question 1
 
-In the lectures, we learn from slide 40 of lecture 1 that the thickness of a gas or oil column can be retained by
+In the lectures, we learn from slide 7 of lecture 4 that the thickness of a gas or oil column can be obtained by
 
 $z_g =  \frac{2 \gamma \cos\theta (1/r_{cap}-1/r_{res})}{g (\rho_w-\rho_g)}$
 
