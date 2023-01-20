@@ -177,8 +177,8 @@ These exercises will introduce you to the [Julia programming language](https://j
 
 ## Hand in
 
-Please turn in your assignments as pdf files. The assignments should be send to [Abhinav P. Gahlot](mailto:agahlot8@gatech.edu) and [Huseyin Tuna Erdinc](mailto:herdinc3@gatech.edu). Late hand-ins are not accepted. If you have difficulty on the homework and want to ask for extension, please email Dr. Felix Herrmann and cc TA in advance (at least 2 days before the deadline).
+Please turn in your assignments as pdf files. The assignments should be sent to [Abhinav P. Gahlot](mailto:agahlot8@gatech.edu) and [Huseyin Tuna Erdinc](mailto:herdinc3@gatech.edu). Late hand-ins are not accepted. If you have difficulty on the homework and want to ask for extension, please email Dr. Felix Herrmann and cc TA in advance (at least 2 days before the deadline).
 
 ## Feedback
 
-We will give you feedback on the marking of the exercises.
+We will give you feedback on the marking of the homeworks.
