@@ -24,8 +24,8 @@ Drawing inspiration from
 A. Donev et al., Improving the Density of Jammed Disordered Packings Using Ellipsoids,
 Science, 303, 990--993 (2004)
 
-D.A. Weitz, acking in the Spheres,
+D.A. Weitz, Packing in the Spheres,
 Science, 303, 968--969 (2004);
 
 measure the porosity of a random close packing of M&M's. Verify your result by bringing your particular collection of M&M's to class. You can work with other kinds of cookie packs as you like.
-(In addition, a brief report on your experiment, including a short discussion of how your result agrees or disagrees with what is presented in the above articles, is required.)
+(In addition, a brief report on your experiment, including a short discussion of how your result agrees or disagrees with what is presented in the above articles, if required.)

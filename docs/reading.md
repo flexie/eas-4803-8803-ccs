@@ -3,6 +3,7 @@
 - [Lec 1 - Basics Geological Storage](https://www.dropbox.com/s/nppagdpm7x8nlwh/mat_lec_1.pdf?dl=0)
 - [Lec 2 - Basics Geological Storage](https://www.dropbox.com/s/dvyjjh52dtjjeco/mat_lec_2.pdf?dl=0)
 - [Lec 3 - Basics Geological Storage](https://www.dropbox.com/s/kzto0tm218rmykz/mat_lec_3.pdf?dl=0)
+- [Lec 4 - Basics Geological Storage](https://www.dropbox.com/s/5uq7v2ta6ztcsy2/mat_lec_4.pdf?dl=0)
 
 <!-- 
 - [Part 2 – Design & Scale Up](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
