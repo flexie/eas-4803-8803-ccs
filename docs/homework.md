@@ -136,7 +136,10 @@ During the lectures you will work on the following exercises
 
 1. Thickness of reservoir. [Exercise 1](exercise/exercise1.md) (Due date: Jan 24, 2023 (Tue))
 
+<!--
+
 1. Capacity coefficient. [Exercise 2](exercise/exercise2.md) (Due date: TBA)
+-->
 
 ## Homework Assignments
 
