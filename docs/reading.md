@@ -43,13 +43,14 @@
 
 ## Additional material
 
-In addition to the general text [@ringrose2020store], the course will review journal papers including
+In addition to the general text [@ringrose2020store], the course will review journal papers/articles including
 
 - Papers on Sleipner [@Arts2003] [@Eiken2011] [@Furre2017] 
 - Coupling seismic to fluid flow [@li2020coupled]
 - Overview article [@Ringrose2021] and this excellent [overview paper](https://royalsociety.org/topics-policy/projects/low-carbon-energy-programme/geological-carbon-storage/) from the UK Royal Society
 - Paper on (perception of) risk [@trupp2022risk] of CCS
-- [Reservoir Model Design](https://www.dropbox.com/s/q7ce80f8txcgkvv/ringrose_reservoir.pdf?dl=0) [@ringrose2016reservoir] 
+- [Reservoir Model Design](https://www.dropbox.com/s/q7ce80f8txcgkvv/ringrose_reservoir.pdf?dl=0) [@ringrose2016reservoir]
+- [Irregular Is What’s Regular for CO2 Storage Plumes](https://jpt.spe.org/irregular-is-whats-regular-for-co2-storage-plumes) 
 
 ## Recordings lectures
 
