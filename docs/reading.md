@@ -50,7 +50,8 @@ In addition to the general text [@ringrose2020store], the course will review jou
 - Overview article [@Ringrose2021] and this excellent [overview paper](https://royalsociety.org/topics-policy/projects/low-carbon-energy-programme/geological-carbon-storage/) from the UK Royal Society
 - Paper on (perception of) risk [@trupp2022risk] of CCS
 - [Reservoir Model Design](https://www.dropbox.com/s/q7ce80f8txcgkvv/ringrose_reservoir.pdf?dl=0) [@ringrose2016reservoir]
-- [Irregular Is What’s Regular for CO2 Storage Plumes](https://jpt.spe.org/irregular-is-whats-regular-for-co2-storage-plumes) 
+- [Irregular Is What’s Regular for CO2 Storage Plumes](https://jpt.spe.org/irregular-is-whats-regular-for-co2-storage-plumes)
+- [The carbon capture crux: Lessons learned](https://ieefa.org/resources/carbon-capture-crux-lessons-learned) and [Why CCS is Not Like Reverse Gas Engineering](https://www.earthdoc.org/content/journals/10.3997/1365-2397.fb2022088)
 
 ## Recordings lectures
 
