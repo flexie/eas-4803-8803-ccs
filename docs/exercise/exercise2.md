@@ -2,7 +2,7 @@
 
 ## Question 1
 
-In the lectures, we learn from slide 75 of lecture 1 that the capacity coefficient of a reservoir can be computed by
+In the lectures, we learn from slide 25 of lecture 5&6 that the capacity coefficient of a reservoir can be computed by
 
 $C_c = \frac{V_{injected}}{V_{PV}} = \frac{Q_{well}t}{\phi B\pi r_{max}^2}$
 
