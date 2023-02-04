@@ -69,20 +69,21 @@ julia -e 'using Pkg; using JUDI; example=joinpath(dirname(pathof(JUDI)),"..","ex
 
 This command should finish without errors.
 
-
-# Homework
+-->
+## Docker Installation
 
 In this course, we will have a couple of coding assignments based on [Julia](https://julialang.org/downloads/), a fast, dynamic, reproducible composable and general open source programming language. You are encouraged to install [Julia](https://julialang.org/downloads/) on your system following the script to run some basic coding experiments to explore its usage and applications in scientific computing community.
 
 In particular, you will run numerical experiments for CO$_2$ dynamics simulation and also seismic wave-based simulations with academically developed softwares. To help you run these software, we highly recommend you use Docker, a platform which builds a virtual machine/container for you with the docker image, which is set-up by us and equipped with pre-installed softwares. The docker image is quite necessary for you to run the software without the tedious installation process, and to provide you with an environment on which the software runs out of the box.
 
-## Docker
-
 First install docker for your system following the instruction here,
 
 [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
 
-Instead of having to install Python, Julia, Devito, JUDI, FwiFlow and all the dependencies (these are the softwares that you will use for the numerical simulation) by yourself, you simply download the docker image and run it in a container. All you need to do is install docker, click the docker icon/app, open the terminal/command line ([powershell](https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/) in windows, also see [this](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)) on your system, and run:
+After succesfull docker instalation, next step is to download docker image of the fluid flow and seismic imaging software and their dependencies and run it in a container. Stay tuned for more updates on this step. This step will pe demonstrated in the class.
+
+<!--
+Instead of having to install Python, Julia, Devito, JUDI, Jutul (Subsurface fluid flow tool) and all the dependencies (these are the softwares that you will use for the numerical simulation) by yourself, you simply download the docker image and run it in a container. All you need to do is install docker, click the docker icon/app, open the terminal/command line ([powershell](https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/) in windows, also see [this](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)) on your system, and run:
 
 ```
 docker run -p 8888:8888 ziyiyin97/ccs-env:v4.6 
