@@ -80,13 +80,17 @@ First install docker for your system following the instruction here,
 
 [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
 
-After succesfull docker instalation, next step is to download docker image of the fluid flow and seismic imaging software and their dependencies and run it in a container. Stay tuned for more updates on this step. This step will be demonstrated in the class.
+After succesfull docker instalation, next step is to download docker image of the fluid flow and seismic imaging software and their dependencies and run it in a container. This step will be demonstrated in the class but try and familiarize yourself with the following steps.
 
-<!--
-Instead of having to install Python, Julia, Devito, JUDI, Jutul (Subsurface fluid flow tool) and all the dependencies (these are the softwares that you will use for the numerical simulation) by yourself, you simply download the docker image and run it in a container. All you need to do is install docker, click the docker icon/app, open the terminal/command line ([powershell](https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/) in windows, also see [this](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)) on your system, and run:
+Instead of having to install Python, Julia, Devito, JUDI, Jutul (Subsurface fluid flow tool) and all the dependencies (these are the softwares that you will use for the numerical simulation) by yourself, you simply download the docker image and run it in a container. All you need to do is install docker, click the docker icon/app or open the terminal/command line ([powershell](https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/) in windows, also see [this](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2)) on your system, and run:
 
 ```
-docker run -p 8888:8888 ziyiyin97/ccs-env:v4.6 
+docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /path/on/your/machine:/notebooks apgahlot/ccsenv:1.0
+```
+where `/path/on/your/machine` is an absolute path on your own local machine. For example, if I want to connect the folder called `testdocker` on the desktop of my laptop, I can do
+
+```
+docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /Users/abhinav/Desktop/testdocker:/notebooks apgahlot/ccsenv:1.0
 ```
 
 This will download the image and launch a jupyter notebook that you can access from your internet browser. The command will display a link, which looks something like this:
@@ -97,19 +101,21 @@ Copy/paste this URL into your browser when you connect for the first time,
         http://0e27b13128d4:8888/?token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4&token=84a95cf4319e8e68534f20c7c6474d9875f13c70270f35f4
 ```
 
-Copy-paste this link and replace the address `0e27b13128d4:8888` with `localhost:8888` (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Then, you can create a notebook there by clicking new -> notebook -> julia 1.7.1, and run the julia code in the jupyter notebook. Remember, the jupyter notebooks on the docker container don't stay there forever. Therefore, if you are half way on the homework and want to close the jupyter notebook, please remember to save the notebook to your local machine. If you do not want to save the notebook every time when you close the notebook, you can actually connect a folder on your machine to the docker container by
+Copy-paste the link that you get and replace the address `0e27b13128d4:8888` with `localhost:8888` (the link is created inside the docker container, which doesn't know that you mapped this port to your localhost w/ port no. 8888). Then, you can create a notebook there by clicking new -> notebook -> julia 1.7.1, and run the julia code in the jupyter notebook. Try running these packages in notebook for fun
 
 ```
-docker run -v /path/on/your/machine:/notebooks -p 8888:8888 ziyiyin97/ccs-env:v4.6 
+using JutulDarcyAD
+using LinearAlgebra
+using PyPlot
+using SlimPlotting
+using JLD2, Polynomials, Images
 ```
 
-where `/path/on/your/machine` is an absolute path on your own local machine. For example, if I want to connect the folder called `testdocker` on the desktop of my laptop, I can do
+<!--
+Remember, the jupyter notebooks on the docker container don't stay there forever. Therefore, if you are half way on the homework and want to close the jupyter notebook, please remember to save the notebook to your local machine. If you do not want to save the notebook every time when you close the notebook, you can actually connect a folder on your machine to the docker container by
+-->
 
-```
-docker run -v /Users/francisyin/Desktop/testdocker:/notebooks -p 8888:8888 ziyiyin97/ccs-env:v4.6 
-```
-
-and then you will find the files in this folder will show up in the notebooks. Whatever you do on the docker container will also be saved in the local `testdocker` folder.
+Whatever you do on the docker container will be saved in the local `testdocker` folder. And then you need to copy the homework notebook once it is released to this folder and run your codes in that notebook.
 
 Instead of a notebook, you can also launch an interactive session with a terminal by running:
 
@@ -119,11 +125,27 @@ docker run -it ziyiyin97/ccs-env:v4.6 /bin/bash
 
 This will give you access to a terminal, in which you can start Julia/Python, run a couple of lines of code interactively. However, figures from PyPlot (the plotting package) sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended for you to do the assignments.
 
+##### Number of cores/threads
+
+By default, the command
+
+```
+docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /path/on/your/machine:/notebooks apgahlot/ccsenv:1.0
+```
+will use 4 threads because in the above command JULIA_NUM_THREADS=4 is set. If you want to increase the number of threads to run your code faster, you need to know the number of threads on your machine and then set JULIA_NUM_THREADS equal to that number. To know the number of threads on your machine you can do:
+
+For Mac, write on terminal: `sysctl -n hw.logicalcpu`
+
+For Linux, write on terminal: `lscpu` 
+
+The number of threads = number of threads per core * No. of CPUs
+
+For windows: Follow this [link](https://www.intel.com/content/www/us/en/support/articles/000029254/processors.html#:~:text=Through%20Windows%20Task%20Manager%3A,Cores%20and%20Logical%20Processors%20(Threads))
+
 ### Window Users
 
 If you are using windows, you might need to enable hardware virtualization in their BIOS. You are suggested to look at [here](https://www.virtualmetric.com/blog/how-to-enable-hardware-virtualization) and [here](https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html). If you have any question, please reach out to us ASAP.
 
--->
 
 ## Some Useful Material
 
