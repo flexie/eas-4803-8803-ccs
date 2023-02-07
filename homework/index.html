@@ -221,7 +221,7 @@ Remember, the jupyter notebooks on the docker container don't stay there forever
 
 <p>Whatever you do on the docker container will be saved in the local <code>testdocker</code> folder. And then you need to copy the homework notebook once it is released to this folder and run your codes in that notebook.</p>
 <p>Instead of a notebook, you can also launch an interactive session with a terminal by running:</p>
-<pre><code>docker run -it ziyiyin97/ccs-env:v4.6 /bin/bash
+<pre><code>docker run -it apgahlot/ccsenv:1.0 /bin/bash
 </code></pre>
 <p>This will give you access to a terminal, in which you can start Julia/Python, run a couple of lines of code interactively. However, figures from PyPlot (the plotting package) sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended for you to do the assignments.</p>
 <h5 id="number-of-coresthreads">Number of cores/threads<a class="headerlink" href="#number-of-coresthreads" title="Permanent link">&para;</a></h5>
