@@ -120,7 +120,7 @@ Whatever you do on the docker container will be saved in the local `testdocker` 
 Instead of a notebook, you can also launch an interactive session with a terminal by running:
 
 ```
-docker run -it ziyiyin97/ccs-env:v4.6 /bin/bash
+docker run -it apgahlot/ccsenv:1.0 /bin/bash
 ```
 
 This will give you access to a terminal, in which you can start Julia/Python, run a couple of lines of code interactively. However, figures from PyPlot (the plotting package) sometimes do not render well from interactive julia sessions. Therefore, jupyter notebooks on docker are recommended for you to do the assignments.
