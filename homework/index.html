@@ -200,7 +200,7 @@ This command should finish without errors.
 <p>Instead of having to install Python, Julia, Devito, JUDI, Jutul (Subsurface fluid flow tool) and all the dependencies (these are the softwares that you will use for the numerical simulation) by yourself, you simply download the docker image and run it in a container. All you need to do is install docker, click the docker icon/app or open the terminal/command line (<a href="https://www.howtogeek.com/662611/9-ways-to-open-powershell-in-windows-10/">powershell</a> in windows, also see <a href="https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.2">this</a>) on your system, and run:</p>
 <pre><code>docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /path/on/your/machine:/notebooks apgahlot/ccsenv:1.0
 </code></pre>
-<p>where <code>/path/on/your/machine</code> is an absolute path on your own local machine. For example, if I want to connect the folder called <code>testdocker</code> on the desktop of my laptop, I can do</p>
+<p>where <code>/path/on/your/machine</code> is an absolute path on your own local machine. <strong>Remember giving a folder path is important</strong>. For example, if I want to connect the folder called <code>testdocker</code> on the desktop of my laptop, I can do</p>
 <pre><code>docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /Users/abhinav/Desktop/testdocker:/notebooks apgahlot/ccsenv:1.0
 </code></pre>
 <p>This will download the image and launch a jupyter notebook that you can access from your internet browser. The command will display a link, which looks something like this:</p>
