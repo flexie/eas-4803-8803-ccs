@@ -87,7 +87,7 @@ Instead of having to install Python, Julia, Devito, JUDI, Jutul (Subsurface flui
 ```
 docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /path/on/your/machine:/notebooks apgahlot/ccsenv:1.0
 ```
-where `/path/on/your/machine` is an absolute path on your own local machine. For example, if I want to connect the folder called `testdocker` on the desktop of my laptop, I can do
+where `/path/on/your/machine` is an absolute path on your own local machine. **Remember giving a folder path is important**. For example, if I want to connect the folder called `testdocker` on the desktop of my laptop, I can do
 
 ```
 docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /Users/abhinav/Desktop/testdocker:/notebooks apgahlot/ccsenv:1.0
