@@ -169,9 +169,10 @@ During the course you will work on the following homework assignments
 
 1. Intro to rock physics. [Assignment 1](Assignments/homework1.md). Submit your homework as a PDF report. (Due: 11:59 PM Jan 27, 2023)
 
-<!--
-2. Fluid flow simulation. [Intro to julia](Assignments/introduction_to_julia.md) and [Assignment 2](Assignments/Homework2.md). Submit both jupyter notebook and a PDF file. (Due: 3:30 PM Feb 10, 2022)
 
+2. Fluid flow simulation. [Assignment 2](Assignments/CCS8803_HW2.ipynb). Put this notebook in the folder which you made to run docker. Submit both jupyter notebook and a PDF file. (Due: 11:59 PM Feb 21, 2022 (Tue))
+
+<!--
 3. Wavefield extrapolation and migration. [Assignment 3](Assignments/Exercise3.md) (Due: 3:30 PM March 29, 2022)
 
 4. From processing to inversion I. [Assignment 4](Assignments/Exercise5.md) (Due: 3:30 PM April 12, 2022) -->
