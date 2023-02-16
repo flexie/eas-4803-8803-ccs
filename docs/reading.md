@@ -57,6 +57,7 @@ In addition to the general text [@ringrose2020store], the course will review jou
 - [Irregular Is What’s Regular for CO2 Storage Plumes](https://jpt.spe.org/irregular-is-whats-regular-for-co2-storage-plumes)
 - [The carbon capture crux: Lessons learned](https://ieefa.org/resources/carbon-capture-crux-lessons-learned) and [Why CCS is Not Like Reverse Gas Engineering](https://www.earthdoc.org/content/journals/10.3997/1365-2397.fb2022088)
 - [Deep geological storage of carbon dioxide (CO2), offshore UK: containment certainty](https://www.gov.uk/government/publications/deep-geological-storage-of-carbon-dioxide-co2-offshore-uk-containment-certainty)
+- [Risk sharing is vital for up scaling CCS, to combat climate change.](https://www.dropbox.com/s/oqmfjmntdzyxl3q/ringroserisk.pdf?dl=0)
 
 ## Recordings lectures
 
