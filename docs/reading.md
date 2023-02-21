@@ -9,6 +9,7 @@
 - [Lec 9 - Basics Geological Storage](https://www.dropbox.com/s/tvtwerdgu79cl7f/mat_lec_9.pdf?dl=0)
 - [Lec 10 - Basics Geological Storage](https://www.dropbox.com/s/clse6xjarvh8vae/mat_lec_10.pdf?dl=0)
 - [Lec 11 - Basics Geological Storage](https://www.dropbox.com/s/0h9uzmgyajemztt/mat_lec_11.pdf?dl=0)
+- [Lec 11 - Basics Geological Storage](https://www.dropbox.com/s/y3i8opoflv1tz4r/mat_lec_12.pdf?dl=0)
 <!-- 
 - [Part 2 – Design & Scale Up](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
 - Part 3 - Introduction Seismic Imaging
