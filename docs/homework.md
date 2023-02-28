@@ -159,7 +159,6 @@ During the lectures you will work on the following exercises
 
 1. Thickness of reservoir. [Exercise 1](exercise/exercise1.md) (Due date: Jan 24, 2023 (Tue))
 
-
 1. Capacity coefficient. [Exercise 2](exercise/exercise2.md) (Due date: Jan 31, 2023 (Tue))
 
 
@@ -169,8 +168,9 @@ During the course you will work on the following homework assignments
 
 1. Intro to rock physics. [Assignment 1](Assignments/homework1.md). Submit your homework as a PDF report. (Due: 11:59 PM Jan 27, 2023)
 
-2. Fluid flow simulation. [Assignment 2](Assignments/CCS8803_HW2.ipynb). You need to download the jupyter notebook and put it in the folder you created while running docker. And then when you run the docker again from the same folder you should be able to open the notebook in a browser. Please submit both the notebook and a pdf. (Due: 11:59 PM Feb 21, 2022 (Tue))
+2. Fluid flow simulation. [Assignment 2](Assignments/CCS8803_HW2.ipynb). You need to download the jupyter notebook and put it in the folder you created while running docker. And then when you run the docker again from the same folder you should be able to open the notebook in a browser. Please submit both the notebook and a pdf. (Due: 11:59 PM Feb 21, 2023 (Tue))
 
+2. Maximize injectivity of $CO_{2}$. [Assignment 3](Assignments/CCS8803_HW3.ipynb). You need to download the jupyter notebook and put it in the folder you created while running docker. And then when you run the docker again from the same folder you should be able to open the notebook in a browser. Please submit both the notebook and a pdf. (Due: 11:59 PM March 14, 2023 (Tue))
 <!--
 3. Wavefield extrapolation and migration. [Assignment 3](Assignments/Exercise3.md) (Due: 3:30 PM March 29, 2022)
 
