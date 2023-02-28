@@ -86,6 +86,11 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#new-docker-container-for-seismic-experiments" class="nav-link">New docker container for Seismic Experiments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#some-useful-material" class="nav-link">Some Useful Material</a>
               <ul class="nav flex-column">
               </ul>
@@ -235,6 +240,10 @@ Remember, the jupyter notebooks on the docker container don't stay there forever
 <p>For windows: Follow this <a href="https://www.intel.com/content/www/us/en/support/articles/000029254/processors.html#:~:text=Through%20Windows%20Task%20Manager%3A,Cores%20and%20Logical%20Processors%20(Threads)">link</a></p>
 <h3 id="window-users">Window Users<a class="headerlink" href="#window-users" title="Permanent link">&para;</a></h3>
 <p>If you are using windows, you might need to enable hardware virtualization in their BIOS. You are suggested to look at <a href="https://www.virtualmetric.com/blog/how-to-enable-hardware-virtualization">here</a> and <a href="https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html">here</a>. If you have any question, please reach out to us ASAP.</p>
+<h2 id="new-docker-container-for-seismic-experiments">New docker container for Seismic Experiments<a class="headerlink" href="#new-docker-container-for-seismic-experiments" title="Permanent link">&para;</a></h2>
+<pre><code>docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /path/on/your/machine:/notebooks apgahlot/ccsenv:2.0
+</code></pre>
+<p>Follow the same procedure as before to run new docker with the above command. Please note you will still use previous docker for HW3. This docker is for seismic modelling which is next part of the course and you will use it for seismic imaging experiment later. To get familiar, there is a notebook tutorial (In-class exercise 3) associated with this docker. You should download the notebook, put it the folder where you run this docker from, and play with it.</p>
 <h2 id="some-useful-material">Some Useful Material<a class="headerlink" href="#some-useful-material" title="Permanent link">&para;</a></h2>
 <p>Learn command line from <a href="https://software-carpentry.org/">Software Carpentry</a>  <br />
 Learn <a href="https://jupyter.org/">jupyter notebook</a>  <br />
@@ -247,6 +256,9 @@ Learn <a href="https://julialang.org/learning/">Julia</a>    </p>
 </li>
 <li>
 <p>Capacity coefficient. <a href="../exercise/exercise2/">Exercise 2</a> (Due date: Jan 31, 2023 (Tue))</p>
+</li>
+<li>
+<p>Introduction to JUDI. <a href="../exercise/CCS8803_JUDI_Tutorial.ipynb">Exercise 3</a> (Due date: Feb 28, 2023 (Tue))</p>
 </li>
 </ol>
 <h2 id="homework-assignments">Homework Assignments<a class="headerlink" href="#homework-assignments" title="Permanent link">&para;</a></h2>
