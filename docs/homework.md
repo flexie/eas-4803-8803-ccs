@@ -146,6 +146,12 @@ For windows: Follow this [link](https://www.intel.com/content/www/us/en/support/
 
 If you are using windows, you might need to enable hardware virtualization in their BIOS. You are suggested to look at [here](https://www.virtualmetric.com/blog/how-to-enable-hardware-virtualization) and [here](https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html). If you have any question, please reach out to us ASAP.
 
+## New docker container for Seismic Experiments
+
+```
+docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /path/on/your/machine:/notebooks apgahlot/ccsenv:2.0
+```
+Follow the same procedure as before to run new docker with the above command. Please note you will still use previous docker for HW3. This docker is for seismic modelling which is next part of the course and you will use it for seismic imaging experiment later. To get familiar, there is a notebook tutorial (In-class exercise 3) associated with this docker. You should download the notebook, put it the folder where you run this docker from, and play with it.
 
 ## Some Useful Material
 
@@ -159,7 +165,9 @@ During the lectures you will work on the following exercises
 
 1. Thickness of reservoir. [Exercise 1](exercise/exercise1.md) (Due date: Jan 24, 2023 (Tue))
 
-1. Capacity coefficient. [Exercise 2](exercise/exercise2.md) (Due date: Jan 31, 2023 (Tue))
+2. Capacity coefficient. [Exercise 2](exercise/exercise2.md) (Due date: Jan 31, 2023 (Tue))
+
+3. Introduction to JUDI. [Exercise 3](exercise/CCS8803_JUDI_Tutorial.ipynb) (Due date: Feb 28, 2023 (Tue))
 
 
 ## Homework Assignments
