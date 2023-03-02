@@ -241,10 +241,10 @@ Remember, the jupyter notebooks on the docker container don't stay there forever
 <h3 id="window-users">Window Users<a class="headerlink" href="#window-users" title="Permanent link">&para;</a></h3>
 <p>If you are using windows, you might need to enable hardware virtualization in their BIOS. You are suggested to look at <a href="https://www.virtualmetric.com/blog/how-to-enable-hardware-virtualization">here</a> and <a href="https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html">here</a>. If you have any question, please reach out to us ASAP.</p>
 <h2 id="new-docker-container-for-seismic-experiments">New docker container for Seismic Experiments<a class="headerlink" href="#new-docker-container-for-seismic-experiments" title="Permanent link">&para;</a></h2>
-<pre><code>docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /path/on/your/machine:/notebooks apgahlot/ccsenv:2.0
+<pre><code>docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /path/on/your/machine:/notebooks apgahlot/ccsenv:v2.0
 </code></pre>
-<p>Follow the same procedure as before to run new docker with the above command. Please note you will still use previous docker for HW3. This docker is for seismic modelling which is next part of the course and you will use it for seismic imaging experiment later. To get familiar, there is a notebook tutorial (In-class exercise 3) associated with this docker. You should download the notebook, put it the folder where you run this docker from, and play with it.<br />
-(Later you will also need a package called MECurvelets which can be installed by <code>using Pkg; Pkg.add(url="https://github.gatech.edu/SLIM/MECurvelets.jl")</code>. We will help installing this package)</p>
+<p>Follow the same procedure as before to run new docker with the above command. Please note you will still use previous docker for HW3. This docker is for seismic modelling which is next part of the course and you will use it for seismic imaging experiments later. To get familiar, there is a notebook tutorial (In-class exercise 3) associated with this docker. You should download the notebook, put it the folder where you run this docker from, and play with it.<br />
+(Later you will also need a package called MECurvelets which can be installed by <code>using Pkg; Pkg.add(url="https://github.gatech.edu/SLIM/MECurvelets.jl")</code>. We will help installing this package.)</p>
 <h2 id="some-useful-material">Some Useful Material<a class="headerlink" href="#some-useful-material" title="Permanent link">&para;</a></h2>
 <p>Learn command line from <a href="https://software-carpentry.org/">Software Carpentry</a>  <br />
 Learn <a href="https://jupyter.org/">jupyter notebook</a>  <br />
