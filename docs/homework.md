@@ -149,10 +149,10 @@ If you are using windows, you might need to enable hardware virtualization in th
 ## New docker container for Seismic Experiments
 
 ```
-docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /path/on/your/machine:/notebooks apgahlot/ccsenv:2.0
+docker run --platform linux/x86_64 --env JULIA_NUM_THREADS=4 -p 8888:8888 -v /path/on/your/machine:/notebooks apgahlot/ccsenv:v2.0
 ```
-Follow the same procedure as before to run new docker with the above command. Please note you will still use previous docker for HW3. This docker is for seismic modelling which is next part of the course and you will use it for seismic imaging experiment later. To get familiar, there is a notebook tutorial (In-class exercise 3) associated with this docker. You should download the notebook, put it the folder where you run this docker from, and play with it.  
-(Later you will also need a package called MECurvelets which can be installed by ```using Pkg; Pkg.add(url="https://github.gatech.edu/SLIM/MECurvelets.jl")```. We will help installing this package)
+Follow the same procedure as before to run new docker with the above command. Please note you will still use previous docker for HW3. This docker is for seismic modelling which is next part of the course and you will use it for seismic imaging experiments later. To get familiar, there is a notebook tutorial (In-class exercise 3) associated with this docker. You should download the notebook, put it the folder where you run this docker from, and play with it.  
+(Later you will also need a package called MECurvelets which can be installed by ```using Pkg; Pkg.add(url="https://github.gatech.edu/SLIM/MECurvelets.jl")```. We will help installing this package.)
 
 ## Some Useful Material
 
