@@ -170,6 +170,9 @@ During the lectures you will work on the following exercises
 
 3. Introduction to JUDI. [Exercise 3](exercise/CCS8803_JUDI_Tutorial.ipynb) (Due date: Feb 28, 2023 (Tue))
 
+4. Paper presentation. [Exercise 4](Due date: March 9, 2023 (Thurs))  
+Please find presentation evaluation format [here](exercise/present_eval_form.pdf).
+
 
 ## Homework Assignments
 
