@@ -94,6 +94,8 @@ Toward the end of the term, you will work on a computational project entailing t
 
 There will be a midterm (25%) and a final exam (25%). Both of them are closed book. Reference to texts or other documents such as previous semester course materials during exams is strictly forbidden. Using these materials will be considered a direct violation of academic policy and will be dealt with according to the GT Academic Honor Code. The use of electronic devices (e.g. cellular phones, computers etc.) other than non-programmable calculators during exams and quizzes is not allowed. 
 
+Mid-term exam date - March 30, 2023 (Thurs)
+
 ## Evaluation
 
 - Homework assignments (35%)
