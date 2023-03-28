@@ -14,6 +14,8 @@
 - [Lec 14 - Basics Geological Storage](https://www.dropbox.com/s/1q3lfl436c83jx1/mat_lec_14.pdf?dl=0)
 - [Lec 15 - Basic Seismic Imaging 1](https://www.dropbox.com/s/79qyubsdreariwq/3-Lecture_CCS_basics_1.pptx?dl=0)
 - [Lec 16 - Basic Seismic Imaging 2](https://www.dropbox.com/s/wscddpmps9iqjjn/3-Lecture_CCS_basics_2.pptx?dl=0)
+- [Lec 17&18 - Migration 1](https://www.dropbox.com/s/wy2juq46u2snx1s/Lecture_migration_1_Lec17%2618.pdf?dl=0)
+- [Lec 19 - Migration 2](https://www.dropbox.com/s/q8x0kwl474z1bi0/Lecture_migration_2_Lec19.pdf?dl=0)
 
 <!-- 
 - [Part 2 – Design & Scale Up](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
