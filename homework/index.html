@@ -115,6 +115,26 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-level="2"><a href="#objectivesscope-100-words-600-characters" class="nav-link">Objectives/Scope (100 words, 600 characters)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#methods-procedures-process-250-words-1500" class="nav-link">Methods, Procedures, Process (250 words, 1500)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#results-observations-conclusions-250-words-1500" class="nav-link">Results, Observations, Conclusions (250 words, 1500)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#significancenovelty-100-words-600" class="nav-link">Significance/Novelty (100 words, 600)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -278,6 +298,9 @@ Please find presentation evaluation format <a href="../exercise/present_eval_for
 <li>
 <p>Maximize injectivity of <span class="arithmatex">\(CO_{2}\)</span>. <a href="../Assignments/CCS8803_HW3_v2.ipynb">Assignment 3</a>. You need to download the jupyter notebook and put it in the folder you created while running docker. And then when you run the docker again from the same folder you should be able to open the notebook in a browser. Please submit both the notebook and a pdf. (Due: 11:59 PM March 14, 2023 (Tue))</p>
 </li>
+<li>
+<p>Seismic shot data generation and plot acquisition geometry. <a href="../Assignments/CCS8803_Seismic_Geometries_HW4.ipynb">Assignment 4</a>. You need to download the jupyter notebook and put it in the folder you created while running docker <code>ccsenv:v2.0</code>. And then when you run the docker again from the same folder you should be able to open the notebook in a browser. Please submit both the notebook and a pdf. (Due: 11:59 PM April 7, 2023 (Fri))</p>
+</li>
 </ol>
 <!--
 3. Wavefield extrapolation and migration. [Assignment 3](Assignments/Exercise3.md) (Due: 3:30 PM March 29, 2022)
@@ -308,7 +331,18 @@ These exercises will introduce you to the [Julia programming language](https://j
 <h2 id="hand-in">Hand in<a class="headerlink" href="#hand-in" title="Permanent link">&para;</a></h2>
 <p>Please turn in your assignments as pdf files. The assignments should be sent to <a href="mailto:agahlot8@gatech.edu">Abhinav P. Gahlot</a> and <a href="mailto:herdinc3@gatech.edu">Huseyin Tuna Erdinc</a>. Late hand-ins are not accepted. If you have difficulty on the homework and want to ask for extension, please email Dr. Felix Herrmann and cc TA in advance (at least 2 days before the deadline).</p>
 <h2 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">&para;</a></h2>
-<p>We will give you feedback on the marking of the homeworks.</p></div>
+<p>We will give you feedback on the marking of the homeworks.</p>
+<h2 id="objectivesscope-100-words-600-characters">Objectives/Scope (100 words, 600 characters)<a class="headerlink" href="#objectivesscope-100-words-600-characters" title="Permanent link">&para;</a></h2>
+<p>During time-lapse seismic monitoring, weak 4D signal below the level of inversion or migration artifacts poses challenges. To address these, low-cost randomized non-replicated acquisitions and linear joint recovery model (JRM) have been introduced to take advantage of shared information between different vintages in the time-lapse seismic data and subsurface structure undergoing localized changes. Since the relationship between seismic data and subsurface properties is seldomly linear, we propose a more versatile nonlinear JRM, which extends linear JRM to nonlinear forward modeling.</p>
+<h2 id="methods-procedures-process-250-words-1500">Methods, Procedures, Process (250 words, 1500)<a class="headerlink" href="#methods-procedures-process-250-words-1500" title="Permanent link">&para;</a></h2>
+<p>During linear JRM, for two seismic vintages, three unknown parameters are inverted, namely the common component, <span class="arithmatex">\(m_0\)</span>, and innovation components, <span class="arithmatex">\(\delta m_1\)</span> and <span class="arithmatex">\(\delta m_2\)</span>, with respect to this common component and there is a linear relationship between these components and seismic data. But during the proposed nonlinear JRM (nJRM), we take advantage of the full nonlinear relation between these components and time-lapse data resulting in the minimization of the objective included in Figure 1. After mathematical manipulations on the expression for the gradients, the computational costs of minimizing this joint objective can be made equivalent to independent FWI (one gradient per vintage).</p>
+<p>To demonstrate the advocacy of the proposed nonlinear extension, we consider an experimental setup involving CO<sub>2</sub> monitoring. To model a time-lapse change in the monitor survey, we simulated two-phase flow in a 2D slice from the Compass model (See Figure 1 (a)), followed by simulating time-lapse seismic data for the baseline and monitor surveys. These data are inverted using nJRM to obtain baseline and monitor images and their difference gives the time-lapse change due to CO<sub>2</sub> plume.</p>
+<h2 id="results-observations-conclusions-250-words-1500">Results, Observations, Conclusions (250 words, 1500)<a class="headerlink" href="#results-observations-conclusions-250-words-1500" title="Permanent link">&para;</a></h2>
+<p>Figures 1 (b) and (c) show independent and joint recovery, respectively, of the baseline <!-- Why the baseline, there is nothing interesting there. If you show an example, show monitor survey--> and Figures 2 (a), (b) and (c) show ground truth time-lapse, independent recovery time-lapse and nJRM time-lapse difference respectively for the non-replicated acquisition. In these figures, time-lapse differences inverted with nonlinear JRM are more accurate and contain less artifacts and noise thanks to exploiting common information between surveys. Moreover, independent recovery suffers consequently from non-replication with clear artifacts in the shallow area (Figure 2(c)) while nonlinear JRM stays relatively focused on the time-lapse difference.</p>
+<p>These results strengthens our argument for a low-cost randomized non-replicated acquisition in the time-lapse seismic survey for GCS. </p>
+<p>Finally, we measure the degree of repeatability of the recovery of the vintages and their time-lapse difference which is mathematically determined by the normalized root mean square (NRMS) value where a lower value indicates better recovery. In this study, the nrms value for the independent and nJRM recoveries are 1.05% and 0.46%, respectively. </p>
+<h2 id="significancenovelty-100-words-600">Significance/Novelty (100 words, 600)<a class="headerlink" href="#significancenovelty-100-words-600" title="Permanent link">&para;</a></h2>
+<p>To our knowledge, this is the first study on the application of non-linear JRM with non-replicated time-lapse data for geological carbon storage. With the proposed new technique which is also extendible to more than two vintages, we argue that there is no need for a replicated expensive time-lapse survey, rather non-replicated coarser surveys are sufficient to provide an artifact-free time-lapse signal with JRM. Additional material is available at https://slimgroup.github.io/IMAGE2023/.</p></div>
             </div>
         </div>
 
