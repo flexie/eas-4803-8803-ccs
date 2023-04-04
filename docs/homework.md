@@ -219,31 +219,3 @@ Please turn in your assignments as pdf files. The assignments should be sent to 
 ## Feedback
 
 We will give you feedback on the marking of the homeworks.
-
-
-
-
-
-
-
-## Objectives/Scope (100 words, 600 characters)
-
-During time-lapse seismic monitoring, weak 4D signal below the level of inversion or migration artifacts poses challenges. To address these, low-cost randomized non-replicated acquisitions and linear joint recovery model (JRM) have been introduced to take advantage of shared information between different vintages in the time-lapse seismic data and subsurface structure undergoing localized changes. Since the relationship between seismic data and subsurface properties is seldomly linear, we propose a more versatile nonlinear JRM, which extends linear JRM to nonlinear forward modeling.
-
-## Methods, Procedures, Process (250 words, 1500)
-
-During linear JRM, for two seismic vintages, three unknown parameters are inverted, namely the common component, $m_0$, and innovation components, $\delta m_1$ and $\delta m_2$, with respect to this common component and there is a linear relationship between these components and seismic data. But during the proposed nonlinear JRM (nJRM), we take advantage of the full nonlinear relation between these components and time-lapse data resulting in the minimization of the objective included in Figure 1. After mathematical manipulations on the expression for the gradients, the computational costs of minimizing this joint objective can be made equivalent to independent FWI (one gradient per vintage).
-
-To demonstrate the advocacy of the proposed nonlinear extension, we consider an experimental setup involving CO~2~ monitoring. To model a time-lapse change in the monitor survey, we simulated two-phase flow in a 2D slice from the Compass model (See Figure 1 (a)), followed by simulating time-lapse seismic data for the baseline and monitor surveys. These data are inverted using nJRM to obtain baseline and monitor images and their difference gives the time-lapse change due to CO~2~ plume.
-
-## Results, Observations, Conclusions (250 words, 1500)
-
-Figures 1 (b) and (c) show independent and joint recovery, respectively, of the baseline <!-- Why the baseline, there is nothing interesting there. If you show an example, show monitor survey--> and Figures 2 (a), (b) and (c) show ground truth time-lapse, independent recovery time-lapse and nJRM time-lapse difference respectively for the non-replicated acquisition. In these figures, time-lapse differences inverted with nonlinear JRM are more accurate and contain less artifacts and noise thanks to exploiting common information between surveys. Moreover, independent recovery suffers consequently from non-replication with clear artifacts in the shallow area (Figure 2(c)) while nonlinear JRM stays relatively focused on the time-lapse difference.
-
-These results strengthens our argument for a low-cost randomized non-replicated acquisition in the time-lapse seismic survey for GCS. 
-
-Finally, we measure the degree of repeatability of the recovery of the vintages and their time-lapse difference which is mathematically determined by the normalized root mean square (NRMS) value where a lower value indicates better recovery. In this study, the nrms value for the independent and nJRM recoveries are 1.05% and 0.46%, respectively. 
-
-## Significance/Novelty (100 words, 600)
-
-To our knowledge, this is the first study on the application of non-linear JRM with non-replicated time-lapse data for geological carbon storage. With the proposed new technique which is also extendible to more than two vintages, we argue that there is no need for a replicated expensive time-lapse survey, rather non-replicated coarser surveys are sufficient to provide an artifact-free time-lapse signal with JRM. Additional material is available at https://slimgroup.github.io/IMAGE2023/.
