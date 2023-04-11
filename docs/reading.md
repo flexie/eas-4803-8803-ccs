@@ -16,8 +16,8 @@
 - [Lec 16 - Basic Seismic Imaging 2](https://www.dropbox.com/s/wscddpmps9iqjjn/3-Lecture_CCS_basics_2.pptx?dl=0)
 - [Lec 17&18 - Migration 1](https://www.dropbox.com/s/wy2juq46u2snx1s/Lecture_migration_1_Lec17%2618.pdf?dl=0)
 - [Lec 19 - Migration 2](https://www.dropbox.com/s/q8x0kwl474z1bi0/Lecture_migration_2_Lec19.pdf?dl=0)
-- [Lec 20 - Aquisition 1](https://www.dropbox.com/s/gn7vlx5fp7dhxbl/6-Lecture_acquisition_Lec20.pdf?dl=0)
-
+- [Lec 20 - Aquisition](https://www.dropbox.com/s/gn7vlx5fp7dhxbl/6-Lecture_acquisition_Lec20.pdf?dl=0)
+- [Lec 21 - Intro CS and Inversion](https://www.dropbox.com/s/2xx0jt1iv0i97qz/6-Lecture_CCS-inversion_intro_Lec21.pdf?dl=0)
 <!-- 
 - [Part 2 – Design & Scale Up](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
 - Part 3 - Introduction Seismic Imaging
