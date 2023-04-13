@@ -19,7 +19,7 @@
 - [Lec 20 - Aquisition](https://www.dropbox.com/s/gn7vlx5fp7dhxbl/6-Lecture_acquisition_Lec20.pdf?dl=0)
 - [Lec 21 - Intro CS and Inversion](https://www.dropbox.com/s/2xx0jt1iv0i97qz/6-Lecture_CCS-inversion_intro_Lec21.pdf?dl=0)
 - [Lec 22 - FWI and RTM](https://www.dropbox.com/s/blpxs5jufr871l6/8_Lecture_CCS_fwi_Lec22.pdf?dl=0)
-
+- [Lec 23 - Compressive sensing](https://www.dropbox.com/s/m8amwxwldfte70y/7-Lecture_CCS-intro-CS.pdf?dl=0)
 <!-- 
 - [Part 2 – Design & Scale Up](https://www.dropbox.com/s/kbkb2vjz5alf6tr/2_Lecture_CCS.pdf?dl=0)
 - Part 3 - Introduction Seismic Imaging
