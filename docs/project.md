@@ -2,9 +2,9 @@
 Instructions for the final project
 
 You can find the course project folder on canvas files. In the folder, there are two notebooks - Monitor.ipynb and Classifier.ipynb, which you will essentially work on for this project. Please download the zip file and follow the instructions below:
-1) To run seismic imaging notebook, Monitor.ipynb, you need to run docker v2.0 which runs Julia. This notebook requires you to create 10 seismic test images which you will need to feed to neural classifier notebook below.
+1) To run seismic imaging notebook, Monitor.ipynb, you need to run docker v2.0 which runs Julia. This notebook requires you to create 10 leakage and 10 no-leakage seismic test images which you will need to feed to neural classifier notebook below.
 
-2) To run neural network notebook Monitor.ipynb, you don't the docker (so you can close it) but a python environment. To get the python environment, you need to run environment.yml file. As always, put everything in a folder. Go to the terminal, provide the path of the GCS-CAM folder and do
+2) To run neural network classifier notebook Monitor.ipynb, you don't need the docker (so you can close it) but a python environment. To get the python environment, you need to run environment.yml file. As always, put everything in a folder. Go to the terminal, provide the path of the GCS-CAM folder and do
 ````
 > conda env create -f environment.yml
 > source activate gcs-cam
