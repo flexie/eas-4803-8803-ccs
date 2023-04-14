@@ -1,9 +1,23 @@
 # Class project
+Instructions for the final project
 
-Towards the end of the term, the students will be asked to conduct a small 2D numerical experiment that is representative of a typical geological carbon storage project. To avoid the tedious installation process, we suggest you run the experiments within a docker image (ziyiyin97/ccs-env:v4.6). As part of this project, the students will run numerical simulations to model the injection of CO~2~ in the Compass model, a proxy Earth model representative for an area in the North Sea that is considered as a potential site for geological carbon storage. During this project, students will convert the simulated time-varying CO~2~ saturations to time-varying velocity models of the Earth based on rock physics modeling. These models will be used to simulate synthetic time-lapse seismic data. This simulated data will be used to test our seismic monitoring methodology. This project is an extension to [Exercise 7](Assignments/Exercise7.md). Please follow the instructions there.
+You can find the course project folder on canvas files. In the folder, there are two notebooks - Monitor.ipynb and Classifier.ipynb, which you will essentially work on for this project. Please download the zip file and follow the instructions below:
+1) To run seismic imaging notebook, Monitor.ipynb, you need to run docker v2.0 which runs Julia. This notebook requires you to create 10 seismic test images which you will need to feed to neural classifier notebook below.
 
+2) To run neural network notebook Monitor.ipynb, you don't the docker (so you can close it) but a python environment. To get the python environment, you need to run environment.yml file. As always, put everything in a folder. Go to the terminal, provide the path of the GCS-CAM folder and do
+````
+> conda env create -f environment.yml
+> source activate gcs-cam
+> python -m ipykernel install --user --name gcs-cam --display-name "Python (gcs-cam)"
+> cd ..
+> jupyter notebook
+````
+3) Now open the second notebook and choose gcs-cam environment as the kernel. This can be done by clicking on the Kernel menu and then click on change kernel option and choose gcs-cam.
+
+The questions and other instructions are provided in the notebook but feel free to let us know if you have any additional questions. Good luck!
 
 <!--
+Towards the end of the term, the students will be asked to conduct a small 2D numerical experiment that is representative of a typical geological carbon storage project. To avoid the tedious installation process, we suggest you run the experiments within a docker image (ziyiyin97/ccs-env:v4.6). As part of this project, the students will run numerical simulations to model the injection of CO~2~ in the Compass model, a proxy Earth model representative for an area in the North Sea that is considered as a potential site for geological carbon storage. During this project, students will convert the simulated time-varying CO~2~ saturations to time-varying velocity models of the Earth based on rock physics modeling. These models will be used to simulate synthetic time-lapse seismic data. This simulated data will be used to test our seismic monitoring methodology. This project is an extension to [Exercise 7](Assignments/Exercise7.md). Please follow the instructions there.
 
 ### Known Windows issues solutions
 
